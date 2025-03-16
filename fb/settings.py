@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -80,16 +81,22 @@ WSGI_APPLICATION = 'fb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'igreja_financas',
-       'USER': 'biel',
-       'PASSWORD': '9168',
-       'HOST': 'postgresql://fbdb_ilgc_user:mMoKtlHES8dUXdhKJaJPUFAsytcrq4Vo@dpg-cvb5475svqrc73c3rfd0-a/fbdb_ilgc',
-       'PORT': '5432',
-   }
-     }
+'''DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.postgresql',
+           'NAME': 'fbdb_ilgc',  # Nome do banco de dados
+           'USER': 'fbdb_ilgc_user',  # Nome de usuário
+           'PASSWORD': 'mMoKtlHES8dUXdhKJaJPUFAsytcrq4Vo',  # Senha
+           'HOST': 'dpg-cvb5475svqrc73c3rfd0-a',  # Host do banco de dados
+           'PORT': '5432',  # Porta padrão do PostgreSQL
+       }
+   }'''
+
+
+DATABASES ={
+  'default' : dj_database_url.parse("postgresql://fbdb_ilgc_user:mMoKtlHES8dUXdhKJaJPUFAsytcrq4Vo@dpg-cvb5475svqrc73c3rfd0-a.oregon-postgres.render.com/fbdb_ilgc")
+  
+}
 
 
 # Password validation
