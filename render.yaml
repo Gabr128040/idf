@@ -1,0 +1,15 @@
+services:
+ - type: web
+   name: igreja-financas-backend
+   runtime: python
+   buildCommand: "./build.sh"
+   startCommand: "gunicorn igreja_financas.wsgi:application"
+   envVars:
+     - key: DATABASE_URL
+       fromDatabase:
+         name: igreja_financas_db
+         property: connectionString
+     - key: SECRET_KEY
+       generateValue: true
+     - key: DEBUG
+       value: "False"
