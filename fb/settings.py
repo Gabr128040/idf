@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-&)$+e@akx1_6+$8lsk35-wh7_l9#zb0(=+$sb%2=)mgb#$3if*
 DEBUG = True
 
 ALLOWED_HOSTS = [
-  'https://idf-ip90.onrender.com'
+  'https://idf-ip90.onrender.com',
+  "*"
   ]
 CORS_ORIGIN_ALLOW_ALL=True
 
