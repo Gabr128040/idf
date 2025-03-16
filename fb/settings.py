@@ -86,7 +86,7 @@ DATABASES = {
              'NAME': 'igreja_financas',
              'USER': 'biel',
              'PASSWORD': '9168',
-             'HOST': 'localhost',
+             'HOST': 'postgresql://fbdb_ilgc_user:mMoKtlHES8dUXdhKJaJPUFAsytcrq4Vo@dpg-cvb5475svqrc73c3rfd0-a.oregon-postgres.render.com/fbdb_ilgc',
              'PORT': '5432',
          }
      }
