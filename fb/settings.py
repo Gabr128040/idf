@@ -81,14 +81,14 @@ WSGI_APPLICATION = 'fb.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-         'default': {
-             'ENGINE': 'django.db.backends.postgresql',
-             'NAME': 'igreja_financas',
-             'USER': 'biel',
-             'PASSWORD': '9168',
-             'HOST': 'postgresql://fbdb_ilgc_user:mMoKtlHES8dUXdhKJaJPUFAsytcrq4Vo@dpg-cvb5475svqrc73c3rfd0-a/fbdb_ilgc',
-             'PORT': '5432',
-         }
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'igreja_financas',
+       'USER': 'biel',
+       'PASSWORD': '9168',
+       'HOST': 'postgresql://fbdb_ilgc_user:mMoKtlHES8dUXdhKJaJPUFAsytcrq4Vo@dpg-cvb5475svqrc73c3rfd0-a/fbdb_ilgc',
+       'PORT': '5432',
+   }
      }
 
 
