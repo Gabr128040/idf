@@ -1,0 +1,19 @@
+.transaction-list {
+       margin-top: 2rem;
+     }
+
+     .transaction-list ul {
+       list-style-type: none;
+       padding: 0;
+     }
+
+     .transaction-list li {
+       display: flex;
+       justify-content: space-between;
+       padding: 0.5rem;
+       border-bottom: 1px solid #ccc;
+     }
+
+     .transaction-list li.despesa {
+       background-color: #ffcccc;
+     }
