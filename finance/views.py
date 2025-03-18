@@ -50,3 +50,20 @@ def user_login(request):
        }, status=status.HTTP_200_OK)
 
    return Response({'error': 'Credenciais inválidas'}, status=status.HTTP_400_BAD_REQUEST)
+   
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .models import Transacao
+
+@api_view(['GET'])
+def calcular_saldo(request):
+    # Soma dos dízimos e ofertas
+    total_entradas = Transacao.objects.filter(tipo__in=['D', 'O']).aggregate(total=models.Sum('quantia'))['total'] or 0
+
+    # Soma das despesas
+    total_despesas = Transacao.objects.filter(tipo='S').aggregate(total=models.Sum('quantia'))['total'] or 0
+
+    # Saldo = Total de entradas - Total de despesas
+    saldo = total_entradas - total_despesas
+
+    return Response({'saldo': saldo})
