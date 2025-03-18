@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.db import models
 
 from rest_framework import generics
 from .models import Transacao
