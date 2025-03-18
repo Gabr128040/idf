@@ -67,3 +67,26 @@ def calcular_saldo(request):
     saldo = total_entradas - total_despesas
 
     return Response({'saldo': saldo})
+    
+@api_view(['DELETE'])
+def deletar_transacao(request, id):
+      try:
+          transacao = Transacao.objects.get(id=id)
+          transacao.delete()
+          return Response(status=status.HTTP_204_NO_CONTENT)
+      except Transacao.DoesNotExist:
+          return Response({'error': 'Transação não encontrada'}, status=status.HTTP_404_NOT_FOUND)
+          
+          
+@api_view(['PUT'])
+def editar_transacao(request, id):
+      try:
+          transacao = Transacao.objects.get(id=id)
+          serializer = TransacaoSerializer(transacao, data=request.data, partial=True)
+          if serializer.is_valid():
+              serializer.save()
+              return Response(serializer.data)
+          return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+      except Transacao.DoesNotExist:
+          return Response({'error': 'Transação não encontrada'}, status=status.HTTP_404_NOT_FOUND)
+          
