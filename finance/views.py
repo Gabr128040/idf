@@ -90,3 +90,20 @@ def editar_transacao(request, id):
       except Transacao.DoesNotExist:
           return Response({'error': 'Transação não encontrada'}, status=status.HTTP_404_NOT_FOUND)
           
+# views.py
+from django.db.models import Q
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .models import Transacao
+from .serializers import TransacaoSerializer
+
+@api_view(['GET'])
+def listar_transacoes(request):
+    mes = request.query_params.get('mes')
+    ano = request.query_params.get('ano')
+    
+    # Filtro por mês e ano
+    transacoes = Transacao.objects.filter(data__month=mes, data__year=ano)
+    
+    serializer = TransacaoSerializer(transacoes, many=True)
+    return Response(serializer.data)

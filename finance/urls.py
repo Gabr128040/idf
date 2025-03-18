@@ -2,6 +2,7 @@ from django.urls import path
 from .views import TransacaoListCreateView, TransacaoRetrieveUpdateDestroyView
 from .views import user_register, user_login, calcular_saldo
 from .views import editar_transacao, deletar_transacao
+from .views import listar_transacoes
 
 urlpatterns = [
   path('transacoes/', TransacaoListCreateView.as_view(), name='transacao-list-create'),
@@ -11,4 +12,5 @@ urlpatterns = [
   path('saldo/', calcular_saldo, name='calcular_saldo'),
   path('transacoes/<int:id>/editar/', editar_transacao, name='editar_transacao'),
   path('transacoes/<int:id>/deletar/', deletar_transacao, name='deletar_transacao'),
+  path('transacoes/', listar_transacoes, name='listar_transacoes'),
 ]
