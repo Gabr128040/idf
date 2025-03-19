@@ -55,18 +55,24 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Transacao
 
+# views.py
+from django.db.models import Sum
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .models import Transacao
+
 @api_view(['GET'])
 def calcular_saldo(request):
-    # Soma dos dízimos e ofertas
-    total_entradas = Transacao.objects.filter(tipo__in=['D', 'O']).aggregate(total=models.Sum('quantia'))['total'] or 0
-
-    # Soma das despesas
-    total_despesas = Transacao.objects.filter(tipo='S').aggregate(total=models.Sum('quantia'))['total'] or 0
-
-    # Saldo = Total de entradas - Total de despesas
-    saldo = total_entradas - total_despesas
-
-    return Response({'saldo': saldo})
+   # Soma dos dízimos e ofertas
+   total_entradas = Transacao.objects.filter(tipo__in=['D', 'O']).aggregate(Sum('quantia'))['quantia__sum'] or 0
+   
+   # Soma das despesas
+   total_despesas = Transacao.objects.filter(tipo='S').aggregate(Sum('quantia'))['quantia__sum'] or 0
+   
+   # Saldo = Entradas - Despesas
+   saldo = total_entradas - total_despesas
+   
+   return Response({'saldo': saldo})
     
 @api_view(['DELETE'])
 def deletar_transacao(request, id):
