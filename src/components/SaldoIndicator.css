@@ -1,0 +1,13 @@
+.saldo-indicator {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.saldo-indicator h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}

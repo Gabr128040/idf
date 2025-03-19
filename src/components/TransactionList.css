@@ -1,0 +1,87 @@
+.transaction-list {
+       margin-top: 2rem;
+     }
+
+     .transaction-list ul {
+       list-style-type: none;
+       padding: 0;
+     }
+
+     .transaction-list li {
+       display: flex;
+       justify-content: space-between;
+       padding: 0.5rem;
+       border-bottom: 1px solid #ccc;
+     }
+
+     .transaction-list li.despesa {
+       background-color: #ffcccc;
+     }
+     
+.transaction-list {
+  margin-top: 20px;
+}
+
+.transaction-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.transaction-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.transaction-list li.despesa {
+  background-color: #ffcccc; /* Cor de fundo para despesas */
+}
+
+.transaction-list span {
+  flex: 1;
+  text-align: left;
+}
+
+.no-transactions {
+  text-align: center;
+  color: #888;
+  margin-top: 20px;
+}
+
+.transaction-list {
+  margin-top: 20px;
+}
+
+.transaction-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.transaction-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.transaction-list li.despesa {
+  background-color: #ffcccc; /* Cor de fundo para despesas */
+}
+
+.transaction-list span {
+  flex: 1;
+  text-align: left;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.no-transactions {
+  text-align: center;
+  color: #888;
+  margin-top: 20px;
+}
