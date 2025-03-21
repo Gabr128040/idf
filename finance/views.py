@@ -111,13 +111,20 @@ from .serializers import TransacaoSerializer
 
 @api_view(['GET'])
 def listar_transacoes(request):
-   mes = request.query_params.get('mes')
-   ano = request.query_params.get('ano')
+    mes = request.query_params.get('mes')
+    ano = request.query_params.get('ano')
 
-   if mes and ano:
-       transacoes = Transacao.objects.filter(data__month=mes, data__year=ano)
-   else:
-       transacoes = Transacao.objects.all()
+    if mes and ano:
+        try:
+            mes = int(mes)  # Converte o mês para inteiro
+            ano = int(ano)  # Converte o ano para inteiro
+            transacoes = Transacao.objects.filter(data__month=mes, data__year=ano)
+        except ValueError:
+            # Se os parâmetros não forem números válidos, retorna todas as transações
+            transacoes = Transacao.objects.all()
+    else:
+        # Se os parâmetros não forem fornecidos, retorna todas as transações
+        transacoes = Transacao.objects.all()
 
-   serializer = TransacaoSerializer(transacoes, many=True)
-   return Response(serializer.data)
+    serializer = TransacaoSerializer(transacoes, many=True)
+    return Response(serializer.data)
