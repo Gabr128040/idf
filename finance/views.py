@@ -106,27 +106,20 @@ import logging
 logger = logging.getLogger(__name__)
 
 from django.db import connection
-
 @api_view(['GET'])
 def listar_transacoes(request):
-   mes = request.query_params.get('mes')
-   ano = request.query_params.get('ano')
+    mes = request.query_params.get('mes')
+    ano = request.query_params.get('ano')
 
-   if mes and ano:
-       try:
-           mes = int(mes)
-           ano = int(ano)
-           query = """
-               SELECT * FROM finance_transacao
-               WHERE EXTRACT(MONTH FROM data) = %s AND EXTRACT(YEAR FROM data) = %s;
-           """
-           with connection.cursor() as cursor:
-               cursor.execute(query, [mes, ano])
-               transacoes = cursor.fetchall()
-       except ValueError:
-           transacoes = Transacao.objects.all()
-   else:
-       transacoes = Transacao.objects.all()
+    if mes and ano:
+        try:
+            mes = int(mes)
+            ano = int(ano)
+            transacoes = Transacao.objects.filter(data__month=mes, data__year=ano)
+        except ValueError:
+            transacoes = Transacao.objects.all()
+    else:
+        transacoes = Transacao.objects.all()
 
-   serializer = TransacaoSerializer(transacoes, many=True)
-   return Response(serializer.data)
+    serializer = TransacaoSerializer(transacoes, many=True)
+    return Response(serializer.data)
