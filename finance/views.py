@@ -104,9 +104,9 @@ from .models import Transacao
 from .serializers import TransacaoSerializer
 
 import logging
-     logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
-     @api_view(['GET'])
+@api_view(['GET'])
      def listar_transacoes(request):
          mes = request.query_params.get('mes')
          ano = request.query_params.get('ano')
