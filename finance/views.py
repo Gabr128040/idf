@@ -107,22 +107,22 @@ import logging
 logger = logging.getLogger(__name__)
 
 @api_view(['GET'])
-     def listar_transacoes(request):
-         mes = request.query_params.get('mes')
-         ano = request.query_params.get('ano')
+def listar_transacoes(request):
+   mes = request.query_params.get('mes')
+   ano = request.query_params.get('ano')
 
-         logger.info(f"Mes: {mes}, Ano: {ano}")
+   logger.info(f"Mes: {mes}, Ano: {ano}")
 
-         if mes and ano:
-             try:
-                 mes = int(mes)
-                 ano = int(ano)
-                 transacoes = Transacao.objects.filter(data__month=mes, data__year=ano)
-                 logger.info(f"Query: {transacoes.query}")
-             except ValueError:
-                 transacoes = Transacao.objects.all()
-         else:
-             transacoes = Transacao.objects.all()
+   if mes and ano:
+       try:
+           mes = int(mes)
+           ano = int(ano)
+           transacoes = Transacao.objects.filter(data__month=mes, data__year=ano)
+           logger.info(f"Query: {transacoes.query}")
+       except ValueError:
+           transacoes = Transacao.objects.all()
+   else:
+       transacoes = Transacao.objects.all()
 
-         serializer = TransacaoSerializer(transacoes, many=True)
-         return Response(serializer.data)
+   serializer = TransacaoSerializer(transacoes, many=True)
+   return Response(serializer.data)
