@@ -102,23 +102,27 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Transacao
 from .serializers import TransacaoSerializer
-
 import logging
 logger = logging.getLogger(__name__)
+
+from django.db import connection
 
 @api_view(['GET'])
 def listar_transacoes(request):
    mes = request.query_params.get('mes')
    ano = request.query_params.get('ano')
 
-   logger.info(f"Mes: {mes}, Ano: {ano}")
-
    if mes and ano:
        try:
            mes = int(mes)
            ano = int(ano)
-           transacoes = Transacao.objects.filter(data__month=mes, data__year=ano)
-           logger.info(f"Query: {transacoes.query}")
+           query = """
+               SELECT * FROM finance_transacao
+               WHERE EXTRACT(MONTH FROM data) = %s AND EXTRACT(YEAR FROM data) = %s;
+           """
+           with connection.cursor() as cursor:
+               cursor.execute(query, [mes, ano])
+               transacoes = cursor.fetchall()
        except ValueError:
            transacoes = Transacao.objects.all()
    else:
