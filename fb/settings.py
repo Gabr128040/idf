@@ -116,9 +116,15 @@ WSGI_APPLICATION = 'fb.wsgi.application'
    }'''
 
 
-DATABASES ={
-  'default' : dj_database_url.parse("postgresql://fbdb_ilgc_user:mMoKtlHES8dUXdhKJaJPUFAsytcrq4Vo@dpg-cvb5475svqrc73c3rfd0-a.oregon-postgres.render.com/fbdb_ilgc")
-  
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',  # Usando PostgreSQL
+        'NAME': 'postgres',                         # Nome do banco de dados
+        'USER': 'postgres',                         # Usuário do banco de dados
+        'PASSWORD': 'Uc5sjC61OJd0lYOz',             # Senha do banco de dados
+        'HOST': 'easily-suave-greyhound.data-1.use1.tembo.io',  # Hostname
+        'PORT': '5432',                             # Porta padrão do PostgreSQL
+    }
 }
 
 

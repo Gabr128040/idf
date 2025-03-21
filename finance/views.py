@@ -103,13 +103,21 @@ from rest_framework.response import Response
 from .models import Transacao
 from .serializers import TransacaoSerializer
 
+from django.db.models import Q
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .models import Transacao
+from .serializers import TransacaoSerializer
+
 @api_view(['GET'])
 def listar_transacoes(request):
-    mes = request.query_params.get('mes')
-    ano = request.query_params.get('ano')
-    
-    # Filtro por mês e ano
-    transacoes = Transacao.objects.filter(data__month=mes, data__year=ano)
-    
-    serializer = TransacaoSerializer(transacoes, many=True)
-    return Response(serializer.data)
+   mes = request.query_params.get('mes')
+   ano = request.query_params.get('ano')
+
+   if mes and ano:
+       transacoes = Transacao.objects.filter(data__month=mes, data__year=ano)
+   else:
+       transacoes = Transacao.objects.all()
+
+   serializer = TransacaoSerializer(transacoes, many=True)
+   return Response(serializer.data)
