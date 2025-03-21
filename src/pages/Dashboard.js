@@ -9,11 +9,8 @@ import './Dashboard.css';
 import { getTipoDisplay, getCultoDisplay, getTipoDespesaDisplay, formatDate } from '../utils';
 
 const Dashboard = () => {
-  
-  
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth() + 1); // Mês atual
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear()); // Ano atual
-  
   const [selectedTransaction, setSelectedTransaction] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [transactions, setTransactions] = useState([]);
@@ -23,51 +20,22 @@ const Dashboard = () => {
   const [isEditing, setIsEditing] = useState(false); // Controla se o modal de edição está aberto
   const navigate = useNavigate();
 
-
- // Função para buscar transações filtradas por mês/ano
+  // Função para buscar transações filtradas por mês/ano
   const fetchFilteredData = async (month, year) => {
-    try {
-      const token = localStorage.getItem('token');
-      if (!token) {
-        navigate('/login'); // Redireciona para o login se não houver token
-        return;
-      }
+  try {
+    const token = localStorage.getItem('token');
+    const response = await axios.get(
+      `https://idf-ip90.onrender.com/api/transacoes/?mes=${parseInt(month)}&ano=${parseInt(year)}`,
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+    setTransactions(response.data);
+  } catch (error) {
+    console.error('Erro ao buscar transações:', error);
+    setError('Erro ao carregar transações. Tente novamente.');
+  }
+};
 
-      const response = await axios.get(
-        `https://idf-ip90.onrender.com/api/transacoes/?mes=${month}&ano=${year}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
-      setTransactions(response.data); // Atualiza a lista de transações
-    } catch (error) {
-      console.error('Erro ao buscar transações:', error);
-      setError('Erro ao carregar transações. Tente novamente.');
-    }
-  };
-
-
-
-  // Função para buscar as transações
-  const fetchTransactions = async () => {
-    try {
-      const token = localStorage.getItem('token');
-      const response = await axios.get(
-        'https://idf-ip90.onrender.com/api/transacoes/',
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      setTransactions(response.data); // Atualiza a lista de transações
-    } catch (error) {
-      console.error('Erro ao buscar transações:', error);
-      setError('Erro ao carregar transações. Login novamente.');
-    }
-  };
-
- // Função para buscar o saldo
+  // Função para buscar o saldo
   const fetchSaldo = async () => {
     try {
       const token = localStorage.getItem('token');
@@ -93,11 +61,11 @@ const Dashboard = () => {
   const fetchData = async () => {
     await fetchFilteredData(selectedMonth, selectedYear);
     await fetchSaldo();
-    await fetchTransactions();
   };
 
-  // Carrega os dados ao montar o componente
+  // Carrega os dados ao montar o componente ou quando o mês/ano muda
   useEffect(() => {
+    fetchFilteredData(selectedMonth,selectedYear);
     fetchData();
   }, [selectedMonth, selectedYear]);
 
@@ -115,8 +83,8 @@ const Dashboard = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      alert('Transacao deletada com sucesso!')
-      setSelectedTransaction(null)
+      alert('Transacao deletada com sucesso!');
+      setSelectedTransaction(null);
       fetchData(); // Recarrega as transações e o saldo após deletar
     } catch (error) {
       console.error('Erro ao deletar transação:', error);
@@ -124,12 +92,11 @@ const Dashboard = () => {
     }
   };
 
-const handleOverlayClick = (e) => {
-  if (e.target === e.currentTarget) {
-    setSelectedTransaction(null); // Fecha o modal ao clicar fora
-  }
-};
-
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      setSelectedTransaction(null); // Fecha o modal ao clicar fora
+    }
+  };
 
   // Função para editar uma transação
   const handleEdit = (transaction) => {
@@ -146,10 +113,6 @@ const handleOverlayClick = (e) => {
     return <div className="error-message">{error}</div>; // Exibe a mensagem de erro
   }
 
-
-
-
-
   return (
     <div className="dashboard">
       <SaldoIndicator saldo={saldo} /> {/* Passa o saldo como prop */}
@@ -161,7 +124,7 @@ const handleOverlayClick = (e) => {
           onTransactionAdded={handleTransactionAdded} // Passa a função como prop
         />
       )}
-      
+
       <div className="month-filter">
         <select 
           value={selectedMonth} 
@@ -173,7 +136,7 @@ const handleOverlayClick = (e) => {
             </option>
           ))}
         </select>
-        
+
         <input 
           type="number" 
           value={selectedYear} 
@@ -182,7 +145,7 @@ const handleOverlayClick = (e) => {
           max={new Date().getFullYear()}
         />
       </div>
-      
+
       <TransactionList
         transactions={transactions}
         onEdit={handleEdit}
@@ -196,17 +159,17 @@ const handleOverlayClick = (e) => {
           onSave={handleSave}
         />
       )}
-      
-    {selectedTransaction && (
+
+      {selectedTransaction && (
         <div className="modal-overlay" onClick={handleOverlayClick}>
           <div className="modal-content">
             <h3>Detalhes da Transação</h3>
-            
+
             {/* Campos da transação */}
             <p><strong>Tipo:</strong> {getTipoDisplay(selectedTransaction.tipo)}</p>
             <p><strong>Valor:</strong> R$ {selectedTransaction.quantia}</p>
             <p><strong>Data:</strong> {formatDate(selectedTransaction.data)}</p>
-            
+
             {/* Campo específico por tipo */}
             {selectedTransaction.tipo === 'D' && (
               <p><strong>Contribuinte:</strong> {selectedTransaction.nome}</p>
@@ -217,14 +180,14 @@ const handleOverlayClick = (e) => {
             {selectedTransaction.tipo === 'S' && (
               <p><strong>Tipo de Despesa:</strong> {getTipoDespesaDisplay(selectedTransaction.tipo_despesa)}</p>
             )}
-            
+
             <p><strong>Descrição:</strong> {selectedTransaction.descricao}</p>
-            
+
             {/* Botões */}
             <button onClick={() => {
-        setSelectedTransaction(null); // Fecha o modal de informações
-        handleEdit(selectedTransaction); // Abre o formulário de edição
-      }}>Editar</button>
+              setSelectedTransaction(null); // Fecha o modal de informações
+              handleEdit(selectedTransaction); // Abre o formulário de edição
+            }}>Editar</button>
             <button onClick={() => {
               handleDelete(selectedTransaction);
             }} >Excluir</button>
@@ -232,7 +195,6 @@ const handleOverlayClick = (e) => {
           </div>
         </div>
       )}
-      
     </div>
   );
 };
