@@ -21,11 +21,12 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   // Função para buscar transações filtradas por mês/ano
-  const fetchFilteredData = async (month, year) => {
+const fetchFilteredData = async (month, year) => {
   try {
     const token = localStorage.getItem('token');
+    const formattedMonth = month < 10 ? `0${month}` : `${month}`; // Formata o mês com dois dígitos
     const response = await axios.get(
-      `https://idf-ip90.onrender.com/api/transacoes/?mes=${parseInt(month)}&ano=${parseInt(year)}`,
+      `https://idf-ip90.onrender.com/api/transacoes/?mes=${formattedMonth}&ano=${year}`,
       { headers: { Authorization: `Bearer ${token}` } }
     );
     setTransactions(response.data);
