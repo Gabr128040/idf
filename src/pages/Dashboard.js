@@ -135,6 +135,7 @@ const fetchFilteredData = async (month, year) => {
 
   return (
     <div className="dashboard">
+       {error && <div className="error-message">{error}</div>} {/* Exibe a mensagem de erro */}
       <SaldoIndicator saldo={saldo} /> {/* Passa o saldo como prop */}
       <button className="dashboard-button" onClick={() => setShowForm(!showForm)}>
         Criar/Editar/Deletar Registro
@@ -220,3 +221,5 @@ const fetchFilteredData = async (month, year) => {
 };
 
 export default Dashboard;
+
+
