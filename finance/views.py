@@ -106,7 +106,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 from django.db import connection
-@api_view(['GET'])
 import logging
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
