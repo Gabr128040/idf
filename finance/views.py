@@ -107,19 +107,38 @@ logger = logging.getLogger(__name__)
 
 from django.db import connection
 @api_view(['GET'])
+import logging
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+from .models import Transacao
+from .serializers import TransacaoSerializer
+
+@api_view(['GET'])
 def listar_transacoes(request):
     mes = request.query_params.get('mes')
     ano = request.query_params.get('ano')
 
-    if mes and ano:
-        try:
+    try:
+        if mes and ano:
             mes = int(mes)
             ano = int(ano)
             transacoes = Transacao.objects.filter(data__month=mes, data__year=ano)
-        except ValueError:
+        else:
             transacoes = Transacao.objects.all()
-    else:
-        transacoes = Transacao.objects.all()
 
-    serializer = TransacaoSerializer(transacoes, many=True)
-    return Response(serializer.data)
+        serializer = TransacaoSerializer(transacoes, many=True)
+        return Response(serializer.data)
+
+    except ValueError as e:
+        logger.error(f"Erro ao converter mês/ano: {e}")
+        return Response(
+            {"error": "Mês ou ano inválido. Certifique-se de usar valores numéricos."},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    except Exception as e:
+        logger.error(f"Erro inesperado ao listar transações: {e}")
+        return Response(
+            {"error": "Ocorreu um erro ao listar as transações. Tente novamente mais tarde."},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
