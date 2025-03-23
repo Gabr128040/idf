@@ -31,7 +31,7 @@ class Transacao(models.Model):
     culto = models.CharField(max_length=3, choices=CULTO_CHOICES, blank=True, null=True)  # Para ofertas
     tipo_despesa = models.CharField(max_length=2, choices=TIPO_DESPESA_CHOICES, blank=True, null=True)  # Para despesas
     class Meta:
-             db_table = 'finance_transacao'  # Define o nome da tabela manualmente
+             db_table = 'transacoes'  # Define o nome da tabela manualmente
     def __str__(self):
         return f"{self.get_tipo_display()} - {self.quantia}"
         
