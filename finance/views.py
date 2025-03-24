@@ -112,32 +112,42 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Transacao
 from .serializers import TransacaoSerializer
+# finance/views.py
+from django.db.models import Q
+import logging
+
+logger = logging.getLogger(__name__)
 
 @api_view(['GET'])
 def listar_transacoes(request):
     mes = request.query_params.get('mes')
     ano = request.query_params.get('ano')
+    
+    logger.info(f"Parâmetros recebidos - Mês: {mes}, Ano: {ano}")  # Log para debug
 
     try:
+        queryset = Transacao.objects.all()
+        
         if mes and ano:
-            mes = int(mes)
-            ano = int(ano)
-            transacoes = Transacao.objects.filter(mes=mes, ano=ano)
-        else:
-            transacoes = Transacao.objects.all()
+            try:
+                mes = int(mes)
+                ano = int(ano)
+                queryset = queryset.filter(
+                    Q(data__month=mes) & 
+                    Q(data__year=ano)
+                logger.info(f"Total de transações filtradas: {queryset.count()}")  # Debug
+            except ValueError:
+                return Response(
+                    {"error": "Mês e ano devem ser valores numéricos"},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
 
-        serializer = TransacaoSerializer(transacoes, many=True)
+        serializer = TransacaoSerializer(queryset, many=True)
         return Response(serializer.data)
 
-    except ValueError as e:
-        logger.error(f"Erro ao converter mês/ano: {e}")
-        return Response(
-            {"error": "Mês ou ano inválido. Certifique-se de usar valores numéricos."},
-            status=status.HTTP_400_BAD_REQUEST
-        )
     except Exception as e:
-        logger.error(f"Erro inesperado ao listar transações: {e}")
+        logger.error(f"Erro ao listar transações: {str(e)}", exc_info=True)
         return Response(
-            {"error": "Ocorreu um erro ao listar as transações. Tente novamente mais tarde."},
+            {"error": "Erro interno ao processar a requisição"},
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
