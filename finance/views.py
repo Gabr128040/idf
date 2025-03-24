@@ -122,7 +122,7 @@ def listar_transacoes(request):
         if mes and ano:
             mes = int(mes)
             ano = int(ano)
-            transacoes = Transacao.objects.filter(data__month=mes, data__year=ano)
+            transacoes = Transacao.objects.filter(mes=mes, ano=ano)
         else:
             transacoes = Transacao.objects.all()
 

@@ -30,8 +30,18 @@ class Transacao(models.Model):
     nome = models.CharField(max_length=100, blank=True, null=True)  # Para dízimos
     culto = models.CharField(max_length=3, choices=CULTO_CHOICES, blank=True, null=True)  # Para ofertas
     tipo_despesa = models.CharField(max_length=2, choices=TIPO_DESPESA_CHOICES, blank=True, null=True)  # Para despesas
+    mes = models.IntegerField(default=1)  # Valor padrão para mês (ex: janeiro)
+    ano = models.IntegerField(default=2025)  # Valor padrão para ano campo
+    
     class Meta:
-             db_table = 'transacoes'  # Define o nome da tabela manualmente
+        db_table = 'transacoes'  # Nome da tabela no banco de dados
+
+    def save(self, *args, **kwargs):
+        # Preenche os campos mes e ano automaticamente ao salvar
+        self.mes = self.data.month
+        self.ano = self.data.year
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return f"{self.get_tipo_display()} - {self.quantia}"
-        
+      
