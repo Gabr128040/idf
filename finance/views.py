@@ -115,6 +115,9 @@ from .serializers import TransacaoSerializer
 # finance/views.py
 from django.db.models import Q
 import logging
+# finance/views.py
+from django.db.models import Q
+import logging
 
 logger = logging.getLogger(__name__)
 
@@ -135,8 +138,7 @@ def listar_transacoes(request):
                 queryset = queryset.filter(
                     Q(data__month=mes) & 
                     Q(data__year=ano)
-                    )
-                print(f"Total de transações filtradas: {queryset.count()}")  # Debug
+                logger.info(f"Total de transações filtradas: {queryset.count()}")  # Debug
             except ValueError:
                 return Response(
                     {"error": "Mês e ano devem ser valores numéricos"},
@@ -147,7 +149,7 @@ def listar_transacoes(request):
         return Response(serializer.data)
 
     except Exception as e:
-        print(f"Erro ao listar transações: {str(e)}", exc_info=True)
+        logger.error(f"Erro ao listar transações: {str(e)}", exc_info=True)
         return Response(
             {"error": "Erro interno ao processar a requisição"},
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
