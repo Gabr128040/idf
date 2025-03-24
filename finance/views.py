@@ -135,6 +135,7 @@ def listar_transacoes(request):
                 queryset = queryset.filter(
                     Q(data__month=mes) & 
                     Q(data__year=ano)
+                    )
                 logger.info(f"Total de transações filtradas: {queryset.count()}")  # Debug
             except ValueError:
                 return Response(
