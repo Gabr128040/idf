@@ -136,7 +136,7 @@ def listar_transacoes(request):
                     Q(data__month=mes) & 
                     Q(data__year=ano)
                     )
-                logger.info(f"Total de transações filtradas: {queryset.count()}")  # Debug
+                print(f"Total de transações filtradas: {queryset.count()}")  # Debug
             except ValueError:
                 return Response(
                     {"error": "Mês e ano devem ser valores numéricos"},
@@ -147,7 +147,7 @@ def listar_transacoes(request):
         return Response(serializer.data)
 
     except Exception as e:
-        logger.error(f"Erro ao listar transações: {str(e)}", exc_info=True)
+        print(f"Erro ao listar transações: {str(e)}", exc_info=True)
         return Response(
             {"error": "Erro interno ao processar a requisição"},
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
