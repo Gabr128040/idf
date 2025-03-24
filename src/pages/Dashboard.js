@@ -25,33 +25,33 @@ const fetchFilteredData = async (month, year) => {
   try {
     const token = localStorage.getItem('token');
     if (!token) {
-      navigate('/login'); // Redireciona para o login se não houver token
+      navigate('/login');
       return;
     }
 
+    console.log(`Enviando requisição para mês: ${month}, ano: ${year}`); // Debug
+
     const response = await axios.get(
-      `https://idf-ip90.onrender.com/api/transacoes/?mes=${month}&ano=${year}`,
-      { headers: { Authorization: `Bearer ${token}` } }
+      `https://idf-ip90.onrender.com/api/transacoes/`,
+      {
+        params: { mes: month, ano: year },
+        headers: { Authorization: `Bearer ${token}` }
+      }
     );
 
-    if (response.data.error) {
-      setError(response.data.error); // Exibe o erro retornado pelo backend
+    console.log('Resposta recebida:', response.data); // Debug
+    
+    if (response.data.length > 0) {
+      setTransactions(response.data);
+      setError(null);
     } else {
-      setTransactions(response.data); // Atualiza a lista de transações
+      setTransactions([]);
+      setError("Nenhuma transação encontrada para este período");
     }
-  } catch (error) {
-    console.error('Erro ao buscar transações:', error);
 
-    if (error.response) {
-      // Erro retornado pelo backend
-      setError(error.response.data.error || "Erro ao carregar transações. Tente novamente.");
-    } else if (error.request) {
-      // Erro de conexão (não houve resposta do servidor)
-      setError("Não foi possível conectar ao servidor. Verifique sua conexão com a internet.");
-    } else {
-      // Erro inesperado
-      setError("Ocorreu um erro inesperado. Tente novamente mais tarde.");
-    }
+  } catch (error) {
+    console.error('Erro detalhado:', error.response || error); // Debug completo
+    setError(error.response?.data?.error || "Erro ao buscar transações");
   }
 };
 
