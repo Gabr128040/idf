@@ -16,15 +16,17 @@ const Login = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('https://idf-ip90.onrender.com/api/login/', formData);
-      localStorage.setItem('token', response.data.access); // Armazena o token
-      navigate('/'); // Redireciona para a página inicial
-    } catch (error) {
-      console.error('Erro ao fazer login:', error.response ? error.response.data : error.message);
-    }
-  };
+  e.preventDefault();
+  try {
+    const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/login/`, formData);
+    console.log('[DEBUG] Resposta do login:', response.data); // Log da resposta
+    localStorage.setItem('token', response.data.access);
+    console.log('[DEBUG] Token salvo:', response.data.access); // Log do token
+    navigate('/');
+  } catch (error) {
+    console.error('Erro ao fazer login:', error.response ? error.response.data : error.message);
+  }
+};
 
   return (
     <div className="login">

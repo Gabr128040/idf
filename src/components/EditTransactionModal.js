@@ -25,7 +25,7 @@ const EditTransactionModal = ({ transaction, onClose, onSave }) => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.put(
-        `https://idf-ip90.onrender.com/api/transacoes/${transaction.id}/editar/`,
+        `${process.env.REACT_APP_API_URL}/api/transacoes/${transaction.id}/editar/`,
         formData,
         {
           headers: {
@@ -44,8 +44,8 @@ const EditTransactionModal = ({ transaction, onClose, onSave }) => {
 
   return (
     <div className="modal-overlay">
-      <div className="modal">
-        <h2>Editar Transação</h2>
+      <div className="edit-transaction-modal">
+        <h3>Editar Transação</h3>
         <form onSubmit={handleSubmit}>
           {/* Campo para selecionar o tipo de transação */}
           <select name="tipo" value={formData.tipo} onChange={handleChange} required>

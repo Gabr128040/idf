@@ -1,0 +1,72 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #FFFFFF;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.modal p {
+  margin: 0 0 20px 0;
+  font-size: 1.1rem;
+  color: #2E3A59;
+}
+
+.modal button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.modal button:first-child {
+  background-color: #F5A623; /* Amarelo para "Sim" (excluir) */
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+
+.modal button:first-child:hover {
+  background-color: #E69520;
+}
+
+.modal button:last-child {
+  background-color: #4A90E2; /* Azul para "Não" (cancelar) */
+  color: #FFFFFF;
+}
+
+.modal button:last-child:hover {
+  background-color: #3A78C2;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .modal {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .modal p {
+    font-size: 1rem;
+  }
+
+  .modal button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}

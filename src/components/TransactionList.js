@@ -20,7 +20,7 @@ const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   };
   
   const fetchFilteredData = async (month, year) => {
-  const response = await axios.get(`https://idf-ip90.onrender.com/api/transacoes/?mes=${month}&ano=${year}`);
+  const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/transacoes/?mes=${month}&ano=${year}`);
   setTransactions(response.data);
 };
   
@@ -44,7 +44,7 @@ const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
     try {
       const token = localStorage.getItem('token');
       await axios.delete(
-        `https://idf-ip90.onrender.com/api/transacoes/${transactionToDelete}/`,
+        `${process.env.REACT_APP_API_URL}/api/transacoes/${transactionToDelete}/`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -1,46 +1,70 @@
 .navbar {
-       display: flex;
-       justify-content: space-between;
-       align-items: center;
-       padding: 1rem;
-       background-color: #333;
-       color: white;
-     }
+  background-color: #2E3A59;
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-     .navbar-logo {
-       font-size: 1.5rem;
-       font-weight: bold;
-     }
+.navbar-logo {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
 
-     .navbar-links {
-       display: flex;
-       gap: 1rem;
-     }
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
 
-     .navbar-links.active {
-       display: flex;
-       flex-direction: column;
-     }
+.navbar-links a {
+  color: #FFFFFF;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
 
-     .navbar-toggle {
-       display: none;
-       flex-direction: column;
-       cursor: pointer;
-     }
+.navbar-links a:hover {
+  color: #4A90E2;
+}
 
-     .navbar-toggle span {
-       width: 25px;
-       height: 3px;
-       background-color: white;
-       margin: 4px 0;
-     }
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
 
-     @media (max-width: 768px) {
-       .navbar-links {
-         display: none;
-       }
+.navbar-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+}
 
-       .navbar-toggle {
-         display: flex;
-       }
-     }
+/* Responsividade */
+@media (max-width: 600px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #2E3A59;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+}

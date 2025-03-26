@@ -19,7 +19,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://idf-ip90.onrender.com/api/register/', formData);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/register/`, formData);
       console.log('Cadastro realizado com sucesso:', response.data);
       navigate('/login'); // Redireciona para a página de login
     } catch (error) {

@@ -1,139 +1,194 @@
 .dashboard {
-       padding: 1rem;
-     }
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  background: transparent; /* Removido fundo, já que o body tem gradiente */
+  min-height: 100vh;
+}
 
-     .dashboard-button {
-       padding: 0.5rem 1rem;
-       background-color: #007bff;
-       color: white;
-       border: none;
-       border-radius: 5px;
-       cursor: pointer;
-     }
-
-     .dashboard-button:hover {
-       background-color: #0056b3;
-     }
-     
-  .dashboard {
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #4A90E2;
   padding: 20px;
 }
 
-.dashboard-button {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
+.error-message {
+  background-color: #F5A623;
+  color: #FFFFFF;
+  padding: 15px;
+  border-radius: 12px;
   margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.error-message button {
+  background-color: #FFFFFF;
+  color: #F5A623;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.error-message button:hover {
+  background-color: #F0F0F0;
+}
+
+.dashboard-button {
+  background-color: #4A90E2;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  transition: background-color 0.3s;
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .dashboard-button:hover {
-  background-color: #218838;
+  background-color: #3A78C2;
 }
 
-/* Dashboard.css */
 .month-filter {
-  margin: 20px 0;
   display: flex;
-  gap: 10px;
-  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .month-filter select,
 .month-filter input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #D3DCE6;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  flex: 1;
+  min-width: 120px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.month-filter input {
-  width: 80px;
+.month-filter select:focus,
+.month-filter input:focus {
+  border-color: #4A90E2;
+  outline: none;
+  box-shadow: 0 0 3px rgba(74, 144, 226, 0.3);
 }
 
-
-/* Dashboard.css */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Garante que o modal fique acima de tudo */
+  z-index: 1000;
 }
 
 .modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
+  background-color: #FFFFFF;
+  padding: 25px;
+  border-radius: 12px;
   width: 90%;
-  max-width: 500px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 0.3s ease; /* Animação de entrada */
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .modal-content h3 {
   margin-top: 0;
-  color: #333;
+  color: #2E3A59;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .modal-content p {
-  margin: 10px 0;
-  color: #555;
+  margin: 12px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #2E3A59;
+}
+
+.modal-content p strong {
+  color: #4A90E2;
 }
 
 .modal-content button {
-  margin: 5px;
-  padding: 8px 16px;
+  background-color: #4A90E2;
+  color: #FFFFFF;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
+  padding: 8px 15px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
 }
 
 .modal-content button:hover {
-  opacity: 0.9;
+  background-color: #3A78C2;
 }
 
-.modal-content button:first-of-type {
-  background-color: #4caf50; /* Verde para editar */
-  color: white;
+.modal-content button:nth-child(2) {
+  background-color: #F5A623; /* Botão "Excluir" */
 }
 
-.modal-content button:nth-of-type(2) {
-  background-color: #f44336; /* Vermelho para excluir */
-  color: white;
+.modal-content button:nth-child(2):hover {
+  background-color: #E69520;
 }
 
-.modal-content button:last-of-type {
-  background-color: #ccc; /* Cinza para fechar */
-  color: #333;
+.modal-content button:last-child {
+  background-color: #D3DCE6; /* Botão "Fechar" */
+  color: #2E3A59;
 }
 
-.error-message {
-  color: red;
-  background-color: #ffe6e6;
-  padding: 10px;
-  border: 1px solid red;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  text-align: center;
+.modal-content button:last-child:hover {
+  background-color: #C0C7D1;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 15px;
+  }
+
+  .month-filter {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dashboard-button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .modal-content {
+    padding: 15px;
+  }
+
+  .modal-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .modal-content p {
+    font-size: 0.9rem;
+  }
+
+  .modal-content button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
 }

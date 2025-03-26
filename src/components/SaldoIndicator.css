@@ -1,13 +1,39 @@
 .saldo-indicator {
-  padding: 10px;
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  margin-bottom: 20px;
+  background-color: #FFFFFF;
+  color: #2E3A59;
+  padding: 20px;
+  border-radius: 12px;
   text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .saldo-indicator h3 {
   margin: 0;
   font-size: 1.5rem;
-  color: #333;
+  font-weight: 600;
+  color: #2E3A59;
+}
+
+.saldo-indicator h3::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #4A90E2;
+  margin: 8px auto 0;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .saldo-indicator {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+
+  .saldo-indicator h3 {
+    font-size: 1.2rem;
+  }
 }

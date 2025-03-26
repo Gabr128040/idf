@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './TransactionForm.css';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const TransactionForm = ({ onTransactionAdded }) => {
   const [formData, setFormData] = useState({
     tipo: 'D',
@@ -25,8 +27,8 @@ const TransactionForm = ({ onTransactionAdded }) => {
     try {
       const token = localStorage.getItem('token');
       const url = formData.id
-        ? `https://idf-ip90.onrender.com/api/transacoes/${formData.id}/` // Editar
-        : 'https://idf-ip90.onrender.com/api/transacoes/'; // Criar
+        ? `${API_URL}/api/transacoes/${formData.id}/` // Editar
+        : `${API_URL}/api/transacoes/nova/`; // Criar
       const method = formData.id ? 'put' : 'post';
 
       const response = await axios[method](url, formData, {

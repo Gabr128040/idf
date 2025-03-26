@@ -1,87 +1,169 @@
 .transaction-list {
-       margin-top: 2rem;
-     }
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
 
-     .transaction-list ul {
-       list-style-type: none;
-       padding: 0;
-     }
-
-     .transaction-list li {
-       display: flex;
-       justify-content: space-between;
-       padding: 0.5rem;
-       border-bottom: 1px solid #ccc;
-     }
-
-     .transaction-list li.despesa {
-       background-color: #ffcccc;
-     }
-     
-.transaction-list {
-  margin-top: 20px;
+.transaction-list h2 {
+  margin: 0 0 20px 0;
+  color: #2E3A59;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .transaction-list ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .transaction-list li {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #D3DCE6;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.transaction-list li.despesa {
-  background-color: #ffcccc; /* Cor de fundo para despesas */
+.transaction-list li:hover {
+  background-color: #F5F7FA;
 }
 
-.transaction-list span {
+.transaction-list li:last-child {
+  border-bottom: none;
+}
+
+/* Simplifiquei o seletor para .despesa */
+.despesa {
+  background-color: rgba(245, 166, 35, 0.1); /* Fundo amarelo claro para despesas */
+  border-left: 4px solid #F5A623; /* Borda à esquerda em amarelo */
+}
+
+.despesa span:nth-child(2) {
+  color: #F5A623; /* Amarelo suave para o valor das despesas */
+}
+
+.transaction-list li span {
+  font-size: 1rem;
+  color: #2E3A59;
+}
+
+.transaction-list li span:nth-child(1) {
+  font-weight: 600;
   flex: 1;
-  text-align: left;
 }
 
-.no-transactions {
+.transaction-list li span:nth-child(2) {
+  color: #4A90E2;
+  font-weight: 500;
+  flex: 1;
+  text-align: right;
+}
+
+.transaction-list li span:nth-child(3) {
+  flex: 1;
   text-align: center;
-  color: #888;
-  margin-top: 20px;
+  color: #666;
 }
 
-.transaction-list {
-  margin-top: 20px;
-}
-
-.transaction-list ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.transaction-list li {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-}
-
-.transaction-list li.despesa {
-  background-color: #ffcccc; /* Cor de fundo para despesas */
-}
-
-.transaction-list span {
+.transaction-list li span:nth-child(4) {
   flex: 1;
-  text-align: left;
+  text-align: right;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.transaction-list .transaction-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.transaction-list .transaction-actions button {
+  background-color: #4A90E2;
+  color: #FFFFFF;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.transaction-list .transaction-actions button:hover {
+  background-color: #3A78C2;
+}
+
+.transaction-list .transaction-actions button:last-child {
+  background-color: #F5A623;
+}
+
+.transaction-list .transaction-actions button:last-child:hover {
+  background-color: #E69520;
 }
 
 .error-message {
-  color: red;
+  background-color: #F5A623;
+  color: #FFFFFF;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
   text-align: center;
-  margin-top: 20px;
 }
 
 .no-transactions {
+  background-color: #FFFFFF;
+  color: #2E3A59;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
-  color: #888;
-  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .transaction-list {
+    padding: 15px;
+  }
+
+  .transaction-list h2 {
+    font-size: 1.3rem;
+  }
+
+  .transaction-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 10px;
+  }
+
+  .transaction-list li span {
+    text-align: left !important;
+  }
+
+  .transaction-list li span:nth-child(2) {
+    text-align: left;
+  }
+
+  .transaction-list li span:nth-child(4) {
+    font-size: 0.8rem;
+  }
+
+  .transaction-list .transaction-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .transaction-list .transaction-actions button {
+    flex: 1;
+  }
+
+  .error-message,
+  .no-transactions {
+    padding: 15px;
+    font-size: 1rem;
+  }
 }
