@@ -1,0 +1,553 @@
+INFO 2025-03-25 14:31:58,311 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 14:32:21,059 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3']}>
+INFO 2025-03-25 14:32:29,293 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['8']}>
+INFO 2025-03-25 14:32:40,098 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['2']}>
+INFO 2025-03-25 14:32:47,164 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['4']}>
+INFO 2025-03-25 14:33:42,211 views Requisição recebida - Parâmetros: <QueryDict: {}>
+WARNING 2025-03-25 14:33:44,530 log Not Found: /favicon.ico
+WARNING 2025-03-25 14:33:46,149 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 14:33:46,200 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 14:33:47,811 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 14:33:47,893 log Unauthorized: /api/saldo/
+INFO 2025-03-25 14:33:57,466 views Login bem-sucedido para: biel
+INFO 2025-03-25 14:33:59,850 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 14:34:02,937 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 14:35:44,882 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 14:35:46,960 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 14:35:47,896 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 14:35:49,647 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 14:43:32,101 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 14:43:33,257 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 14:43:33,731 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 14:43:35,644 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 14:55:48,815 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 14:55:49,169 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 14:55:51,150 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 15:04:14,039 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 15:04:27,080 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 15:04:29,364 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 15:04:39,773 views Login bem-sucedido para: biel
+INFO 2025-03-25 15:04:41,855 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 15:04:43,696 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 15:05:12,535 views Login bem-sucedido para: biel
+INFO 2025-03-25 15:33:32,303 views Login bem-sucedido para: biel
+INFO 2025-03-25 15:34:28,878 views Login bem-sucedido para: biel
+INFO 2025-03-25 15:34:42,223 views Login bem-sucedido para: biel
+INFO 2025-03-25 15:34:43,227 views Login bem-sucedido para: biel
+INFO 2025-03-25 15:35:12,586 views Login bem-sucedido para: biel
+INFO 2025-03-25 15:35:13,820 views Login bem-sucedido para: biel
+INFO 2025-03-25 16:18:29,479 views Login bem-sucedido para: biel
+INFO 2025-03-25 16:29:23,291 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 16:29:51,774 views Login bem-sucedido para: biel
+INFO 2025-03-25 16:29:53,207 views Login bem-sucedido para: biel
+INFO 2025-03-25 16:31:41,039 autoreload /data/data/com.termux/files/home/projetos/backend/fb/fb/settings.py changed, reloading.
+INFO 2025-03-25 16:32:42,281 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 16:32:57,479 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:32:57,480 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:32:57,788 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 16:32:57,788 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 16:33:03,220 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:33:03,236 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:33:03,531 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 16:33:03,538 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 16:33:10,993 views Login bem-sucedido para: biel
+INFO 2025-03-25 16:33:11,847 views Login bem-sucedido para: biel
+INFO 2025-03-25 16:33:12,714 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:33:12,720 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:33:13,044 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 16:33:13,045 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 16:33:18,043 views Transação deletada com sucesso: ID 2
+INFO 2025-03-25 16:33:19,600 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:33:19,916 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 16:33:33,532 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:33:33,533 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:33:33,837 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 16:33:33,841 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 16:33:41,876 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['4'], 'ano': ['2025']}>
+INFO 2025-03-25 16:33:42,185 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 16:34:11,215 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:34:11,522 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 16:34:11,529 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 16:34:17,760 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:44:44,960 autoreload /data/data/com.termux/files/home/projetos/backend/fb/fb/settings.py changed, reloading.
+INFO 2025-03-25 16:44:47,320 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 16:45:57,139 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:45:57,163 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:45:57,572 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 16:46:04,227 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 16:46:15,934 views Login bem-sucedido para: biel
+INFO 2025-03-25 16:46:17,218 views Login bem-sucedido para: biel
+INFO 2025-03-25 16:46:17,690 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:46:17,787 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:46:18,028 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 16:46:18,106 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 16:46:43,812 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['4'], 'ano': ['2025']}>
+INFO 2025-03-25 16:46:44,176 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 16:48:27,595 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:48:27,946 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 16:48:27,947 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 16:48:34,240 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:49:56,694 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 16:49:57,036 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 16:49:57,092 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 16:50:03,393 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 17:01:46,945 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 17:01:47,259 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 17:01:47,260 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 17:01:53,554 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 17:02:00,932 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 17:02:01,269 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 17:02:07,333 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['4'], 'ano': ['2025']}>
+INFO 2025-03-25 17:02:07,634 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 17:03:18,684 views Transação editada com sucesso: ID 1
+INFO 2025-03-25 17:03:20,218 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['4'], 'ano': ['2025']}>
+INFO 2025-03-25 17:03:20,531 views Saldo calculado: 55.00 (Entradas: 55.00, Despesas: 0)
+INFO 2025-03-25 17:03:30,384 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 17:03:30,732 views Saldo calculado: 55.00 (Entradas: 55.00, Despesas: 0)
+INFO 2025-03-25 17:03:35,894 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['4'], 'ano': ['2025']}>
+INFO 2025-03-25 17:03:36,205 views Saldo calculado: 55.00 (Entradas: 55.00, Despesas: 0)
+INFO 2025-03-25 17:03:55,112 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['5'], 'ano': ['2025']}>
+INFO 2025-03-25 17:03:55,447 views Saldo calculado: 55.00 (Entradas: 55.00, Despesas: 0)
+INFO 2025-03-25 17:04:00,360 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['2'], 'ano': ['2025']}>
+INFO 2025-03-25 17:04:00,570 views Saldo calculado: 55.00 (Entradas: 55.00, Despesas: 0)
+INFO 2025-03-25 17:04:04,462 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 17:04:04,770 views Saldo calculado: 55.00 (Entradas: 55.00, Despesas: 0)
+INFO 2025-03-25 17:04:25,667 views Transação editada com sucesso: ID 3
+INFO 2025-03-25 17:04:27,234 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 17:04:27,553 views Saldo calculado: 75.00 (Entradas: 75.00, Despesas: 0)
+INFO 2025-03-25 17:04:34,666 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['4'], 'ano': ['2025']}>
+INFO 2025-03-25 17:04:34,989 views Saldo calculado: 75.00 (Entradas: 75.00, Despesas: 0)
+INFO 2025-03-25 17:04:47,116 views Transação deletada com sucesso: ID 1
+INFO 2025-03-25 17:04:48,600 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['4'], 'ano': ['2025']}>
+INFO 2025-03-25 17:04:48,906 views Saldo calculado: 45.00 (Entradas: 45.00, Despesas: 0)
+INFO 2025-03-25 17:04:52,590 views Transação deletada com sucesso: ID 3
+INFO 2025-03-25 17:04:54,074 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['4'], 'ano': ['2025']}>
+INFO 2025-03-25 17:04:54,427 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 17:16:11,804 autoreload /data/data/com.termux/files/home/projetos/backend/fb/finance/views.py changed, reloading.
+INFO 2025-03-25 17:16:14,203 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 17:16:59,389 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 17:16:59,391 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:16:59,392 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 17:16:59,689 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 17:16:59,690 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 17:16:59,693 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 17:17:01,743 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:17:01,751 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:17:02,090 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 17:17:02,092 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 17:17:16,574 views Login bem-sucedido para: biel
+INFO 2025-03-25 17:17:16,989 views Login bem-sucedido para: biel
+INFO 2025-03-25 17:17:18,228 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:17:18,279 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:17:18,527 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 17:17:18,532 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 17:17:34,040 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['4'], 'ano': ['2025']}>
+INFO 2025-03-25 17:17:34,367 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 17:17:39,432 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 17:17:39,776 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 17:17:43,976 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:17:44,291 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 17:19:04,462 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:19:04,795 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 17:19:20,615 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025']}>
+INFO 2025-03-25 17:19:20,949 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 17:19:27,916 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['4'], 'ano': ['2025']}>
+INFO 2025-03-25 17:19:28,225 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 17:20:03,956 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 17:20:10,315 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:21:18,819 views Usuário registrado com sucesso: Teste
+INFO 2025-03-25 17:21:30,943 views Login bem-sucedido para: Teste
+INFO 2025-03-25 17:21:32,429 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:21:32,434 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:21:32,741 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 17:21:32,747 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 17:25:30,903 autoreload /data/data/com.termux/files/home/projetos/backend/fb/finance/views.py changed, reloading.
+INFO 2025-03-25 17:25:33,133 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 17:25:37,480 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:25:37,480 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:25:37,781 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 17:25:37,782 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 17:25:54,990 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:25:55,303 views Saldo calculado: 50.00 (Entradas: 50.00, Despesas: 0)
+INFO 2025-03-25 17:26:21,540 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:26:21,879 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:40:32,590 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:40:32,980 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:40:34,250 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:40:34,251 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:40:34,554 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:40:34,625 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:40:39,427 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:40:39,592 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:46:19,603 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:46:19,604 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:46:19,915 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:46:26,578 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:46:28,717 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:46:28,724 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:46:29,043 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:46:29,051 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:47:50,793 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:47:50,796 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:47:51,106 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:47:57,598 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:54:40,159 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:54:40,654 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:54:40,671 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:54:46,137 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:54:46,290 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:54:46,607 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:54:46,631 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:54:46,950 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:55:03,481 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:55:03,589 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:55:03,792 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:55:03,901 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:55:09,065 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:55:09,069 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:55:09,371 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:55:09,372 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:56:20,750 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:56:21,092 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:56:27,298 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:56:27,606 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:56:43,764 views Login bem-sucedido para: biel
+INFO 2025-03-25 17:56:44,699 views Login bem-sucedido para: biel
+INFO 2025-03-25 17:56:45,436 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:56:45,588 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:56:45,903 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:56:45,906 views Saldo calculado: 150.00 (Entradas: 150.00, Despesas: 0)
+INFO 2025-03-25 17:57:29,598 views Transação deletada com sucesso: ID 4
+INFO 2025-03-25 17:57:31,200 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 17:57:31,457 views Saldo calculado: 125.00 (Entradas: 125.00, Despesas: 0)
+INFO 2025-03-25 18:59:33,623 autoreload Watching for file changes with StatReloader
+WARNING 2025-03-25 18:59:57,069 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 18:59:57,085 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 18:59:57,092 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 18:59:57,098 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 18:59:59,031 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 18:59:59,040 log Unauthorized: /api/saldo/
+INFO 2025-03-25 19:00:10,258 views Login bem-sucedido para: biel
+INFO 2025-03-25 19:00:11,196 views Login bem-sucedido para: biel
+INFO 2025-03-25 19:00:11,834 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 19:00:11,835 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 19:00:12,142 views Saldo calculado: 125.00 (Entradas: 125.00, Despesas: 0)
+INFO 2025-03-25 19:00:12,143 views Saldo calculado: 125.00 (Entradas: 125.00, Despesas: 0)
+INFO 2025-03-25 19:00:43,896 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 19:00:44,232 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 19:01:00,503 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 19:01:00,504 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 19:01:00,833 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 19:01:00,839 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 19:59:55,414 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 19:59:55,726 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 20:00:02,007 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 20:00:02,524 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 20:00:02,529 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 20:00:02,533 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 20:00:02,829 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 20:00:02,850 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+WARNING 2025-03-25 20:15:35,279 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 20:15:35,282 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 20:15:35,281 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 20:15:35,283 log Unauthorized: /api/saldo/
+INFO 2025-03-25 20:50:02,282 autoreload Watching for file changes with StatReloader
+WARNING 2025-03-25 20:54:11,396 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 20:54:11,399 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 20:54:11,402 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 20:54:11,405 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 20:54:17,008 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 20:54:17,012 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 20:54:18,345 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 20:54:18,350 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 20:54:19,523 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 20:54:19,535 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 20:54:19,587 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 20:54:19,593 log Unauthorized: /api/saldo/
+INFO 2025-03-25 20:54:26,186 views Login bem-sucedido para: biel
+INFO 2025-03-25 20:54:26,989 views Login bem-sucedido para: biel
+INFO 2025-03-25 20:54:27,823 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 20:54:27,826 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 20:54:28,143 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 20:54:28,144 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 20:59:32,651 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 20:59:32,655 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 20:59:32,964 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 20:59:39,618 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 21:24:09,854 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:24:10,196 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 21:24:10,197 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 21:24:16,339 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:25:10,863 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:25:11,170 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 21:25:11,469 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:25:11,534 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:25:11,828 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 21:25:11,834 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 21:25:17,426 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:25:17,779 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 21:32:36,420 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:32:36,778 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 21:32:43,223 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:32:43,477 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 21:32:47,012 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:32:47,062 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:32:47,476 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 21:32:47,477 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 21:35:15,354 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:35:15,355 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:35:22,307 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 21:35:22,406 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 21:38:18,311 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:38:18,638 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 21:38:18,647 views Saldo calculado: 100.00 (Entradas: 125.00, Despesas: 25.00)
+INFO 2025-03-25 21:38:23,400 views Transação deletada com sucesso: ID 7
+INFO 2025-03-25 21:38:25,038 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:38:25,042 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:38:25,350 views Saldo calculado: 125.00 (Entradas: 125.00, Despesas: 0)
+INFO 2025-03-25 21:45:20,120 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:45:20,496 views Saldo calculado: 125.00 (Entradas: 125.00, Despesas: 0)
+INFO 2025-03-25 21:45:26,777 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:45:27,083 views Saldo calculado: 125.00 (Entradas: 125.00, Despesas: 0)
+INFO 2025-03-25 21:47:22,543 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:47:22,545 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:47:29,663 views Saldo calculado: 125.00 (Entradas: 125.00, Despesas: 0)
+INFO 2025-03-25 21:47:29,869 views Saldo calculado: 125.00 (Entradas: 125.00, Despesas: 0)
+INFO 2025-03-25 21:54:10,361 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:54:10,714 views Saldo calculado: 125.00 (Entradas: 125.00, Despesas: 0)
+INFO 2025-03-25 21:54:16,858 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:54:17,061 views Saldo calculado: 125.00 (Entradas: 125.00, Despesas: 0)
+WARNING 2025-03-25 21:54:43,010 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 21:54:43,014 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 21:54:43,027 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 21:54:43,023 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 21:54:50,504 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 21:54:50,507 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 21:54:51,091 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 21:54:51,095 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 21:54:52,139 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 21:54:52,146 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 21:54:52,149 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 21:54:52,153 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 21:55:07,878 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 21:55:07,882 log Unauthorized: /api/saldo/
+INFO 2025-03-25 21:55:14,131 views Login bem-sucedido para: biel
+INFO 2025-03-25 21:55:14,959 views Login bem-sucedido para: biel
+INFO 2025-03-25 21:55:15,738 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:55:15,739 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:55:16,052 views Saldo calculado: 125.00 (Entradas: 125.00, Despesas: 0)
+INFO 2025-03-25 21:55:16,057 views Saldo calculado: 125.00 (Entradas: 125.00, Despesas: 0)
+INFO 2025-03-25 21:55:35,504 views Transação deletada com sucesso: ID 5
+INFO 2025-03-25 21:55:37,040 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 21:55:37,358 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:03:12,261 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:03:12,262 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:03:16,104 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:03:16,108 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:03:16,435 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:03:16,442 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:03:19,122 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:03:19,224 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:09:26,738 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:09:26,744 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:09:27,075 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:09:27,076 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:15:45,736 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:15:45,736 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:15:46,062 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:15:52,786 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:16:15,759 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:16:15,867 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:16:16,175 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:16:16,178 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:16:46,028 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:16:46,031 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:16:46,400 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:16:52,830 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:20:59,155 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:20:59,156 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:20:59,465 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:21:05,958 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:21:09,435 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:21:09,440 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:21:09,740 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:21:09,744 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:22:18,307 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:22:18,308 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 22:22:24,351 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:22:24,382 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:22:31,508 views Transação deletada com sucesso: ID 6
+INFO 2025-03-25 22:22:33,061 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:22:33,371 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 22:22:56,653 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:22:56,965 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:25:20,820 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:25:21,125 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:25:27,402 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:25:27,747 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:25:28,033 views Transação deletada com sucesso: ID 8
+INFO 2025-03-25 22:25:29,689 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:25:30,002 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 22:25:33,748 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:25:33,749 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:25:34,114 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 22:25:34,119 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 22:25:48,823 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:25:49,128 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:30:27,501 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:30:27,503 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:30:33,622 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:30:33,660 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:30:43,499 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:30:43,498 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:30:43,817 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:30:43,818 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:31:31,468 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:31:31,469 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:31:31,784 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:31:38,508 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:31:42,007 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:31:42,014 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:31:42,477 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:31:42,492 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:41:29,171 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:41:29,486 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:41:29,504 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:41:35,644 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:42:26,769 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:42:26,777 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:42:27,086 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:42:27,087 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:44:19,469 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:44:19,776 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:44:26,315 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:44:26,653 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:44:46,440 views Login bem-sucedido para: biel
+INFO 2025-03-25 22:44:47,434 views Login bem-sucedido para: biel
+INFO 2025-03-25 22:44:47,962 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:44:47,968 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:44:48,290 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:44:48,300 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:44:53,063 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:44:53,073 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:44:53,370 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:44:53,389 views Saldo calculado: 25.00 (Entradas: 25.00, Despesas: 0)
+INFO 2025-03-25 22:45:22,610 views Saldo calculado: -75.00 (Entradas: 25.00, Despesas: 100.00)
+INFO 2025-03-25 22:45:29,084 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:45:45,601 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:45:45,627 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:45:45,928 views Saldo calculado: -75.00 (Entradas: 25.00, Despesas: 100.00)
+INFO 2025-03-25 22:45:45,964 views Saldo calculado: -75.00 (Entradas: 25.00, Despesas: 100.00)
+INFO 2025-03-25 22:45:53,119 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['1'], 'ano': ['2025']}>
+INFO 2025-03-25 22:45:53,458 views Saldo calculado: -75.00 (Entradas: 25.00, Despesas: 100.00)
+INFO 2025-03-25 22:45:59,715 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:46:00,036 views Saldo calculado: -75.00 (Entradas: 25.00, Despesas: 100.00)
+INFO 2025-03-25 22:46:32,072 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:46:32,400 views Saldo calculado: -75.00 (Entradas: 25.00, Despesas: 100.00)
+INFO 2025-03-25 22:46:32,408 views Saldo calculado: -75.00 (Entradas: 25.00, Despesas: 100.00)
+INFO 2025-03-25 22:46:38,748 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:46:40,927 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:46:40,936 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:46:41,233 views Saldo calculado: -75.00 (Entradas: 25.00, Despesas: 100.00)
+INFO 2025-03-25 22:46:41,254 views Saldo calculado: -75.00 (Entradas: 25.00, Despesas: 100.00)
+INFO 2025-03-25 22:49:02,798 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:49:03,150 views Saldo calculado: -75.00 (Entradas: 25.00, Despesas: 100.00)
+INFO 2025-03-25 22:49:09,394 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:49:09,753 views Saldo calculado: -75.00 (Entradas: 25.00, Despesas: 100.00)
+INFO 2025-03-25 22:49:15,108 views Transação deletada com sucesso: ID 9
+INFO 2025-03-25 22:49:16,688 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:49:17,001 views Saldo calculado: -100.00 (Entradas: 0, Despesas: 100.00)
+INFO 2025-03-25 22:51:37,642 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 22:51:37,950 views Saldo calculado: -100.00 (Entradas: 0, Despesas: 100.00)
+INFO 2025-03-25 22:51:37,953 views Saldo calculado: -100.00 (Entradas: 0, Despesas: 100.00)
+INFO 2025-03-25 22:51:44,201 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:02:30,805 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:02:30,806 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:02:30,993 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:02:31,150 views Saldo calculado: -100.00 (Entradas: 0, Despesas: 100.00)
+INFO 2025-03-25 23:02:31,158 views Saldo calculado: -100.00 (Entradas: 0, Despesas: 100.00)
+INFO 2025-03-25 23:02:31,301 views Saldo calculado: -100.00 (Entradas: 0, Despesas: 100.00)
+INFO 2025-03-25 23:02:36,835 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:02:36,845 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:02:37,349 views Saldo calculado: -100.00 (Entradas: 0, Despesas: 100.00)
+INFO 2025-03-25 23:02:37,351 views Saldo calculado: -100.00 (Entradas: 0, Despesas: 100.00)
+INFO 2025-03-25 23:06:20,929 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:06:21,274 views Saldo calculado: -100.00 (Entradas: 0, Despesas: 100.00)
+INFO 2025-03-25 23:06:27,961 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:06:28,271 views Saldo calculado: -100.00 (Entradas: 0, Despesas: 100.00)
+INFO 2025-03-25 23:06:43,952 views Transação deletada com sucesso: ID 10
+INFO 2025-03-25 23:06:45,584 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:06:45,904 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 23:07:28,592 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:07:28,616 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:07:35,398 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 23:07:35,400 views Saldo calculado: 0 (Entradas: 0, Despesas: 0)
+INFO 2025-03-25 23:07:56,111 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:07:56,452 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 23:10:59,963 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:11:00,113 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:11:00,289 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 23:11:06,864 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 23:19:55,864 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:19:56,172 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 23:19:56,173 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 23:20:01,901 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:20:01,902 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:20:02,318 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:20:02,327 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 23:20:02,337 views Saldo calculado: 100.00 (Entradas: 100.00, Despesas: 0)
+INFO 2025-03-25 23:20:16,796 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:20:17,096 views Saldo calculado: 75.00 (Entradas: 100.00, Despesas: 25.00)
+INFO 2025-03-25 23:42:24,899 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 23:42:45,679 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:42:45,680 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:42:45,995 views Saldo calculado: 75.00 (Entradas: 100.00, Despesas: 25.00)
+INFO 2025-03-25 23:42:45,999 views Saldo calculado: 75.00 (Entradas: 100.00, Despesas: 25.00)
+INFO 2025-03-25 23:43:07,497 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:43:07,507 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:43:07,905 views Saldo calculado: 75.00 (Entradas: 100.00, Despesas: 25.00)
+INFO 2025-03-25 23:43:07,918 views Saldo calculado: 75.00 (Entradas: 100.00, Despesas: 25.00)
+INFO 2025-03-25 23:43:56,338 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:43:56,872 views Saldo calculado: 25.00 (Entradas: 100.00, Despesas: 75.00)
+INFO 2025-03-25 23:44:20,706 views Transação editada com sucesso: ID 13
+INFO 2025-03-25 23:44:22,353 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:44:22,665 views Saldo calculado: 125.00 (Entradas: 150.00, Despesas: 25.00)
+WARNING 2025-03-25 23:44:58,318 log Unauthorized: /api/transacoes/nova/
+WARNING 2025-03-25 23:45:07,674 log Unauthorized: /api/transacoes/nova/
+WARNING 2025-03-25 23:45:10,334 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 23:45:10,352 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 23:45:10,369 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 23:45:10,374 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 23:45:12,617 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 23:45:12,622 log Unauthorized: /api/saldo/
+WARNING 2025-03-25 23:45:12,637 log Unauthorized: /api/transacoes/
+WARNING 2025-03-25 23:45:12,643 log Unauthorized: /api/saldo/
+INFO 2025-03-25 23:45:19,361 views Login bem-sucedido para: biel
+INFO 2025-03-25 23:45:20,255 views Login bem-sucedido para: biel
+INFO 2025-03-25 23:45:21,114 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:45:21,119 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:45:21,431 views Saldo calculado: 125.00 (Entradas: 150.00, Despesas: 25.00)
+INFO 2025-03-25 23:45:21,523 views Saldo calculado: 125.00 (Entradas: 150.00, Despesas: 25.00)
+INFO 2025-03-25 23:45:50,313 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:45:50,614 views Saldo calculado: 225.00 (Entradas: 250.00, Despesas: 25.00)
+INFO 2025-03-25 23:46:17,806 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['1'], 'ano': ['2025']}>
+INFO 2025-03-25 23:46:18,194 views Saldo calculado: 225.00 (Entradas: 250.00, Despesas: 25.00)
+INFO 2025-03-25 23:46:23,538 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['2'], 'ano': ['2025']}>
+INFO 2025-03-25 23:46:30,553 views Saldo calculado: 225.00 (Entradas: 250.00, Despesas: 25.00)
+INFO 2025-03-25 23:46:53,791 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:46:53,793 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:46:54,103 views Saldo calculado: 225.00 (Entradas: 250.00, Despesas: 25.00)
+INFO 2025-03-25 23:46:54,114 views Saldo calculado: 225.00 (Entradas: 250.00, Despesas: 25.00)
+INFO 2025-03-25 23:56:28,118 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:56:28,579 views Saldo calculado: 225.00 (Entradas: 250.00, Despesas: 25.00)
+INFO 2025-03-25 23:56:30,660 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:56:33,507 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:56:33,851 views Saldo calculado: 225.00 (Entradas: 250.00, Despesas: 25.00)
+INFO 2025-03-25 23:56:34,019 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:56:34,323 views Saldo calculado: 225.00 (Entradas: 250.00, Despesas: 25.00)
+INFO 2025-03-25 23:56:35,375 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:56:35,686 views Saldo calculado: 225.00 (Entradas: 250.00, Despesas: 25.00)
+INFO 2025-03-25 23:56:54,661 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:56:54,999 views Saldo calculado: 225.00 (Entradas: 250.00, Despesas: 25.00)
+INFO 2025-03-25 23:56:56,436 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-03-25 23:56:56,787 views Saldo calculado: 225.00 (Entradas: 250.00, Despesas: 25.00)

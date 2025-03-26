@@ -1,16 +1,28 @@
+# finance/urls.py
 from django.urls import path
-from .views import TransacaoListCreateView, TransacaoRetrieveUpdateDestroyView
-from .views import user_register, user_login, calcular_saldo
-from .views import editar_transacao, deletar_transacao
-from .views import listar_transacoes
+from .views import (
+    TransacaoListCreateView,
+    TransacaoRetrieveUpdateDestroyView,
+    user_register,
+    user_login,
+    calcular_saldo,
+    editar_transacao,
+    deletar_transacao,
+    listar_transacoes,
+)
 
 urlpatterns = [
-  path('transacoes/', TransacaoListCreateView.as_view(), name='transacao-list-create'),
-  path('transacoes/<int:pk>/', TransacaoRetrieveUpdateDestroyView.as_view(), name='transacao-detail'),
-  path('register/', user_register, name='register'),
-  path('login/', user_login, name='login'),
-  path('saldo/', calcular_saldo, name='calcular_saldo'),
-  path('transacoes/<int:id>/editar/', editar_transacao, name='editar_transacao'),
-  path('transacoes/<int:id>/deletar/', deletar_transacao, name='deletar_transacao'),
-  path('transacoes/', listar_transacoes, name='listar_transacoes'),
+    # CRUD de Transações
+    path('transacoes/', listar_transacoes, name='listar_transacoes'),  # Lista com filtros personalizados
+    path('transacoes/nova/', TransacaoListCreateView.as_view(), name='transacao-create'),  # Criação separada
+    path('transacoes/<int:pk>/', TransacaoRetrieveUpdateDestroyView.as_view(), name='transacao-detail'),  # Detalhe
+    path('transacoes/<int:id>/editar/', editar_transacao, name='editar_transacao'),  # Edição
+    path('transacoes/<int:id>/deletar/', deletar_transacao, name='deletar_transacao'),  # Deleção
+
+    # Autenticação
+    path('register/', user_register, name='register'),
+    path('login/', user_login, name='login'),
+
+    # Saldo
+    path('saldo/', calcular_saldo, name='calcular_saldo'),
 ]

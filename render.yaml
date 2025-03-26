@@ -12,4 +12,4 @@ services:
      - key: SECRET_KEY
        generateValue: true
      - key: DEBUG
-       value: "False"
+       value: "True"
