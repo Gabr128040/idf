@@ -1,26 +1,72 @@
 import React, { useState } from 'react';
-     import { Link } from 'react-router-dom';
-     import './Navbar.css';
+import { useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import './Navbar.css';
 
-     const Navbar = () => {
-       const [isOpen, setIsOpen] = useState(false);
+const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate();
 
-       return (
-         <nav className="navbar">
-           <div className="navbar-logo">IMDB</div>
-           <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
-             <Link to="/">Painel</Link>
-             <Link to="/login">Login</Link>
-             <Link to="/register">Cadastro</Link>
-             <Link to="/database">Banco de Dados</Link>
-           </div>
-           <div className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
-             <span></span>
-             <span></span>
-             <span></span>
-           </div>
-         </nav>
-       );
-     };
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/login');
+  };
 
-     export default Navbar;
+  return (
+    <>
+      <div className="navbar">
+        <h1>IMDB</h1>
+        <motion.button
+          onClick={() => setShowMenu(!showMenu)}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          {showMenu ? <FaTimes /> : <FaBars />}
+        </motion.button>
+      </div>
+
+      <AnimatePresence>
+        {showMenu && (
+          <motion.div
+            className="nav-menu"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          >
+            <ul>
+              <li>
+                <a href="/" onClick={() => setShowMenu(false)}>
+                  Painel
+                </a>
+              </li>
+              <li>
+                <a href="/login" onClick={() => setShowMenu(false)}>
+                  Login
+                </a>
+              </li>
+              <li>
+                <a href="/register" onClick={() => setShowMenu(false)}>
+                  Cadastro
+                </a>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    handleLogout();
+                    setShowMenu(false);
+                  }}
+                >
+                  Sair
+                </button>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+export default Navbar;

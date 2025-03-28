@@ -2,128 +2,118 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './TransactionForm.css';
 
-const API_URL = process.env.REACT_APP_API_URL;
-
-const TransactionForm = ({ onTransactionAdded }) => {
+const TransactionForm = ({ onTransactionAdded, setNotification }) => {
   const [formData, setFormData] = useState({
     tipo: 'D',
     quantia: '',
     data: '',
-    descricao: '',
     nome: '',
     culto: '',
     tipo_despesa: '',
+    descricao: '',
   });
-  const [error, setError] = useState(null);
 
-  // Função para atualizar os campos do formulário
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Função para enviar o formulário
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const url = formData.id
-        ? `${API_URL}/api/transacoes/${formData.id}/` // Editar
-        : `${API_URL}/api/transacoes/nova/`; // Criar
-      const method = formData.id ? 'put' : 'post';
-
-      const response = await axios[method](url, formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+      // Formatar a data para o formato esperado pelo backend (ISO 8601)
+      const formattedData = {
+        ...formData,
+        data: formData.data ? `${formData.data}T00:00:00Z` : '', // Adiciona hora para compatibilidade com DateTimeField
+      };
+      await axios.post(
+        `${process.env.REACT_APP_API_URL}/api/transacoes/nova/`,
+        formattedData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setNotification({ message: 'Transação adicionada com sucesso!', type: 'success' });
+      onTransactionAdded();
+      setFormData({
+        tipo: 'D',
+        quantia: '',
+        data: '',
+        nome: '',
+        culto: '',
+        tipo_despesa: '',
+        descricao: '',
       });
-
-      alert(`Transação ${formData.id ? 'editada' : 'adicionada'} com sucesso!`);
-      onTransactionAdded(); // Notifica o componente pai para recarregar as transações
     } catch (error) {
-      console.error('Erro ao salvar transação:', error);
-      setError('Erro ao salvar transação. Tente novamente.');
+      setNotification({ message: 'Erro ao adicionar transação: ' + error.message, type: 'error' });
     }
   };
 
   return (
-    <form className="transaction-form" onSubmit={handleSubmit}>
-      {/* Campo para selecionar o tipo de transação */}
-      <select name="tipo" value={formData.tipo} onChange={handleChange} required>
-        <option value="D">Dízimo</option>
-        <option value="O">Oferta</option>
-        <option value="S">Despesa</option>
-      </select>
-
-      {/* Campo para a quantia */}
-      <input
-        type="number"
-        name="quantia"
-        placeholder="Quantia"
-        value={formData.quantia}
-        onChange={handleChange}
-        required
-      />
-
-      {/* Campo para a data */}
-      <input
-        type="date"
-        name="data"
-        value={formData.data}
-        onChange={handleChange}
-        required
-      />
-
-      {/* Campo para a descrição */}
-      <textarea
-        name="descricao"
-        placeholder="Descrição"
-        value={formData.descricao}
-        onChange={handleChange}
-        required
-      />
-
-      {/* Campo para o nome do contribuinte (apenas para dízimos) */}
-      {formData.tipo === 'D' && (
+    <div className="transaction-form">
+      <h2>Adicionar Transação</h2>
+      <form onSubmit={handleSubmit}>
+        <select name="tipo" value={formData.tipo} onChange={handleChange}>
+          <option value="D">Dízimo</option>
+          <option value="O">Oferta</option>
+          <option value="S">Despesa</option>
+        </select>
         <input
-          type="text"
-          name="nome"
-          placeholder="Nome do Contribuinte"
-          value={formData.nome}
+          type="number"
+          name="quantia"
+          placeholder="Quantia (R$)"
+          value={formData.quantia}
+          onChange={handleChange}
+          step="0.01" // Permite valores decimais
+          required
+        />
+        <input
+          type="date"
+          name="data"
+          value={formData.data}
           onChange={handleChange}
           required
         />
-      )}
-
-      {/* Campo para o culto (apenas para ofertas) */}
-      {formData.tipo === 'O' && (
-        <select name="culto" value={formData.culto} onChange={handleChange} required>
-          <option value="">Selecione o culto</option>
-          <option value="CV">Culto da Vitória</option>
-          <option value="EBD">EBD</option>
-          <option value="GR">Gratidão</option>
-          <option value="LR">Lar</option>
-          <option value="FM">Família</option>
-          <option value="DP">Departamento</option>
-          <option value="OT">Outro</option>
-        </select>
-      )}
-
-      {/* Campo para o tipo de despesa (apenas para despesas) */}
-      {formData.tipo === 'S' && (
-        <select name="tipo_despesa" value={formData.tipo_despesa} onChange={handleChange} required>
-          <option value="">Selecione o tipo de despesa</option>
-          <option value="CT">Conta</option>
-          <option value="IN">Insumo</option>
-          <option value="OT">Outro</option>
-        </select>
-      )}
-
-      {/* Botão de envio */}
-      <button type="submit">Enviar</button>
-
-      {/* Exibe mensagens de erro */}
-      {error && <div className="error-message">{error}</div>}
-    </form>
+        {formData.tipo === 'D' && (
+          <input
+            type="text"
+            name="nome"
+            placeholder="Nome do Contribuinte"
+            value={formData.nome}
+            onChange={handleChange}
+          />
+        )}
+        {formData.tipo === 'O' && (
+          <select name="culto" value={formData.culto} onChange={handleChange}>
+            <option value="">Selecione o Culto</option>
+            <option value="CV">Culto da Vitória</option>
+            <option value="EBD">EBD</option>
+            <option value="GR">Gratidão</option>
+            <option value="LR">Lar</option>
+            <option value="FM">Família</option>
+            <option value="DP">Departamento</option>
+            <option value="OT">Outro</option>
+          </select>
+        )}
+        {formData.tipo === 'S' && (
+          <select name="tipo_despesa" value={formData.tipo_despesa} onChange={handleChange}>
+            <option value="">Selecione o Tipo de Despesa</option>
+            <option value="CT">Conta</option>
+            <option value="IN">Insumo</option>
+            <option value="OT">Outro</option>
+          </select>
+        )}
+        <textarea
+          name="descricao"
+          placeholder="Descrição (opcional)"
+          value={formData.descricao}
+          onChange={handleChange}
+        />
+        <button type="submit">Adicionar</button>
+      </form>
+    </div>
   );
 };
 
