@@ -2616,3 +2616,349 @@ INFO 2025-03-28 17:21:42,987 views Requisição recebida - Parâmetros: <QueryDi
 INFO 2025-03-28 17:21:43,481 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0)
 INFO 2025-03-28 17:25:56,158 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
 INFO 2025-03-28 17:25:56,476 views Saldo calculado: 186.45 (Entradas: 186.45, Despesas: 0)
+INFO 2025-04-04 17:26:41,680 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 17:29:04,259 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 17:31:11,302 autoreload /data/data/com.termux/files/home/att/backend/fb/settings.py changed, reloading.
+INFO 2025-04-04 17:31:14,119 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 17:42:04,026 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-04 17:42:43,090 log Not Found: /
+WARNING 2025-04-04 17:42:43,198 log Not Found: /favicon.ico
+WARNING 2025-04-04 17:42:52,565 log Not Found: /api
+WARNING 2025-04-04 17:43:03,746 log Not Found: /api/listar_transacoes
+INFO 2025-04-04 17:43:15,408 views Requisição recebida - Parâmetros: <QueryDict: {}>
+ERROR 2025-04-04 17:43:17,201 views Erro ao listar transações: 'No time zone found with key America/Sao_Paulo'
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.12/zoneinfo/_common.py", line 12, in load_tzdata
+    return resources.files(package_name).joinpath(resource_name).open("rb")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/importlib/resources/_common.py", line 46, in wrapper
+    return func(anchor)
+           ^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/importlib/resources/_common.py", line 56, in files
+    return from_package(resolve(anchor))
+                        ^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/functools.py", line 912, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/importlib/resources/_common.py", line 82, in _
+    return importlib.import_module(cand)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'tzdata'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/att/backend/finance/views.py", line 137, in listar_transacoes
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 538, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/fields.py", line 1207, in to_representation
+    value = self.enforce_timezone(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/fields.py", line 1150, in enforce_timezone
+    field_timezone = self.timezone if hasattr(self, 'timezone') else self.default_timezone()
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/fields.py", line 1174, in default_timezone
+    return timezone.get_current_timezone() if settings.USE_TZ else None
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/django/utils/timezone.py", line 66, in get_current_timezone
+    return getattr(_active, "value", get_default_timezone())
+                                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/django/utils/timezone.py", line 52, in get_default_timezone
+    return zoneinfo.ZoneInfo(settings.TIME_ZONE)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/zoneinfo/_common.py", line 24, in load_tzdata
+    raise ZoneInfoNotFoundError(f"No time zone found with key {key}")
+zoneinfo._common.ZoneInfoNotFoundError: 'No time zone found with key America/Sao_Paulo'
+ERROR 2025-04-04 17:43:17,317 log Internal Server Error: /api/transacoes/
+INFO 2025-04-04 17:43:53,913 views Requisição recebida - Parâmetros: <QueryDict: {}>
+ERROR 2025-04-04 17:43:55,774 views Erro ao listar transações: 'No time zone found with key America/Sao_Paulo'
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.12/zoneinfo/_common.py", line 12, in load_tzdata
+    return resources.files(package_name).joinpath(resource_name).open("rb")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/importlib/resources/_common.py", line 46, in wrapper
+    return func(anchor)
+           ^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/importlib/resources/_common.py", line 56, in files
+    return from_package(resolve(anchor))
+                        ^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/functools.py", line 912, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/importlib/resources/_common.py", line 82, in _
+    return importlib.import_module(cand)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'tzdata'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/att/backend/finance/views.py", line 137, in listar_transacoes
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 538, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/fields.py", line 1207, in to_representation
+    value = self.enforce_timezone(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/fields.py", line 1150, in enforce_timezone
+    field_timezone = self.timezone if hasattr(self, 'timezone') else self.default_timezone()
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/fields.py", line 1174, in default_timezone
+    return timezone.get_current_timezone() if settings.USE_TZ else None
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/django/utils/timezone.py", line 66, in get_current_timezone
+    return getattr(_active, "value", get_default_timezone())
+                                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/django/utils/timezone.py", line 52, in get_default_timezone
+    return zoneinfo.ZoneInfo(settings.TIME_ZONE)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/zoneinfo/_common.py", line 24, in load_tzdata
+    raise ZoneInfoNotFoundError(f"No time zone found with key {key}")
+zoneinfo._common.ZoneInfoNotFoundError: 'No time zone found with key America/Sao_Paulo'
+ERROR 2025-04-04 17:43:55,792 log Internal Server Error: /api/transacoes/
+WARNING 2025-04-04 17:46:53,057 log Not Found: /favicon.ico
+INFO 2025-04-04 17:46:55,517 views Requisição recebida - Parâmetros: <QueryDict: {}>
+ERROR 2025-04-04 17:46:57,438 views Erro ao listar transações: 'datetime.date' object has no attribute 'utcoffset'
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/att/backend/finance/views.py", line 137, in listar_transacoes
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 538, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/fields.py", line 1207, in to_representation
+    value = self.enforce_timezone(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/fields.py", line 1153, in enforce_timezone
+    if timezone.is_aware(value):
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/django/utils/timezone.py", line 221, in is_aware
+    return value.utcoffset() is not None
+           ^^^^^^^^^^^^^^^
+AttributeError: 'datetime.date' object has no attribute 'utcoffset'
+ERROR 2025-04-04 17:46:57,456 log Internal Server Error: /api/transacoes/
+INFO 2025-04-04 17:48:44,402 views Requisição recebida - Parâmetros: <QueryDict: {}>
+ERROR 2025-04-04 17:48:46,222 views Erro ao listar transações: 'datetime.date' object has no attribute 'utcoffset'
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/att/backend/finance/views.py", line 137, in listar_transacoes
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 538, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/fields.py", line 1207, in to_representation
+    value = self.enforce_timezone(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/fields.py", line 1153, in enforce_timezone
+    if timezone.is_aware(value):
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/django/utils/timezone.py", line 221, in is_aware
+    return value.utcoffset() is not None
+           ^^^^^^^^^^^^^^^
+AttributeError: 'datetime.date' object has no attribute 'utcoffset'
+ERROR 2025-04-04 17:48:46,266 log Internal Server Error: /api/transacoes/
+INFO 2025-04-04 17:48:54,439 views Requisição recebida - Parâmetros: <QueryDict: {}>
+ERROR 2025-04-04 17:48:56,192 views Erro ao listar transações: 'datetime.date' object has no attribute 'utcoffset'
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/att/backend/finance/views.py", line 137, in listar_transacoes
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 538, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/fields.py", line 1207, in to_representation
+    value = self.enforce_timezone(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/fields.py", line 1153, in enforce_timezone
+    if timezone.is_aware(value):
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/django/utils/timezone.py", line 221, in is_aware
+    return value.utcoffset() is not None
+           ^^^^^^^^^^^^^^^
+AttributeError: 'datetime.date' object has no attribute 'utcoffset'
+ERROR 2025-04-04 17:48:56,210 log Internal Server Error: /api/transacoes/
+INFO 2025-04-04 17:51:56,074 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 17:52:03,929 views Requisição recebida - Parâmetros: <QueryDict: {}>
+ERROR 2025-04-04 17:52:05,609 views Erro ao listar transações: 'datetime.date' object has no attribute 'utcoffset'
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/att/backend/finance/views.py", line 137, in listar_transacoes
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/serializers.py", line 538, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/fields.py", line 1207, in to_representation
+    value = self.enforce_timezone(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/rest_framework/fields.py", line 1153, in enforce_timezone
+    if timezone.is_aware(value):
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.12/site-packages/django/utils/timezone.py", line 221, in is_aware
+    return value.utcoffset() is not None
+           ^^^^^^^^^^^^^^^
+AttributeError: 'datetime.date' object has no attribute 'utcoffset'
+ERROR 2025-04-04 17:52:05,674 log Internal Server Error: /api/transacoes/
+INFO 2025-04-04 17:55:07,113 autoreload /data/data/com.termux/files/home/att/backend/finance/models.py changed, reloading.
+INFO 2025-04-04 17:55:09,213 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 17:57:12,410 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-04 17:57:20,335 log Not Found: /favicon.ico
+INFO 2025-04-04 17:57:22,746 views Requisição recebida - Parâmetros: <QueryDict: {}>
+INFO 2025-04-04 17:57:45,296 views Requisição recebida - Parâmetros: <QueryDict: {}>
+INFO 2025-04-04 17:58:40,857 views Requisição recebida - Parâmetros: <QueryDict: {}>
+INFO 2025-04-04 18:05:53,968 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 18:06:50,856 views Login bem-sucedido para: biel
+INFO 2025-04-04 18:06:52,817 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:06:53,211 views Saldo calculado: 196.45 (Entradas: 196.45, Despesas: 0)
+INFO 2025-04-04 18:06:54,699 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:06:55,110 views Saldo calculado: 196.45 (Entradas: 196.45, Despesas: 0)
+INFO 2025-04-04 18:07:06,643 views Saldo calculado: 196.45 (Entradas: 196.45, Despesas: 0)
+INFO 2025-04-04 18:07:08,627 views Saldo calculado: 196.45 (Entradas: 196.45, Despesas: 0)
+INFO 2025-04-04 18:07:13,004 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:07:14,970 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:07:40,634 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:07:40,989 views Saldo calculado: 186.45 (Entradas: 186.45, Despesas: 0)
+WARNING 2025-04-04 18:07:59,543 log Bad Request: /api/transacoes/nova/
+INFO 2025-04-04 18:08:32,188 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['2'], 'ano': ['2025']}>
+INFO 2025-04-04 18:08:39,149 views Saldo calculado: 186.45 (Entradas: 186.45, Despesas: 0)
+INFO 2025-04-04 18:08:44,970 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['2'], 'ano': ['2025']}>
+INFO 2025-04-04 18:08:49,450 views Requisição recebida - Parâmetros: <QueryDict: {'ano__lte': ['2025'], 'mes__lte': ['1']}>
+INFO 2025-04-04 18:09:14,848 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:09:15,195 views Saldo calculado: 186.45 (Entradas: 186.45, Despesas: 0)
+INFO 2025-04-04 18:09:16,750 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:09:17,069 views Saldo calculado: 186.45 (Entradas: 186.45, Despesas: 0)
+INFO 2025-04-04 18:09:36,037 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:09:37,884 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:09:43,130 views Saldo calculado: 186.45 (Entradas: 186.45, Despesas: 0)
+INFO 2025-04-04 18:09:45,221 views Saldo calculado: 186.45 (Entradas: 186.45, Despesas: 0)
+INFO 2025-04-04 18:12:16,402 views Saldo calculado: 186.45 (Entradas: 186.45, Despesas: 0)
+INFO 2025-04-04 18:12:18,552 views Saldo calculado: 186.45 (Entradas: 186.45, Despesas: 0)
+INFO 2025-04-04 18:12:22,735 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:12:24,587 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:12:44,037 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:12:44,553 views Saldo calculado: 186.45 (Entradas: 186.45, Despesas: 0)
+INFO 2025-04-04 18:12:45,921 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:12:46,399 views Saldo calculado: 186.45 (Entradas: 186.45, Despesas: 0)
+INFO 2025-04-04 18:12:54,090 views Saldo calculado: 186.45 (Entradas: 186.45, Despesas: 0)
+INFO 2025-04-04 18:12:54,555 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['2'], 'ano': ['2025']}>
+INFO 2025-04-04 18:13:05,250 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['2'], 'ano': ['2025']}>
+WARNING 2025-04-04 18:13:26,192 log Bad Request: /api/transacoes/nova/
+INFO 2025-04-04 18:17:22,941 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:17:23,449 views Saldo calculado: 186.45 (Entradas: 186.45, Despesas: 0)
+INFO 2025-04-04 18:17:24,851 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:17:25,347 views Saldo calculado: 186.45 (Entradas: 186.45, Despesas: 0)
+INFO 2025-04-04 18:29:00,878 views Login bem-sucedido para: biel
+INFO 2025-04-04 18:31:21,700 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:31:22,112 views Saldo calculado: 286.45 (Entradas: 286.45, Despesas: 0)
+INFO 2025-04-04 18:31:23,952 views Saldo calculado: 286.45 (Entradas: 286.45, Despesas: 0)
+INFO 2025-04-04 18:31:24,166 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+WARNING 2025-04-04 18:31:41,068 log Bad Request: /api/transacoes/nova/
+WARNING 2025-04-04 18:32:07,891 log Not Found: /
+WARNING 2025-04-04 18:32:07,981 log Not Found: /
+WARNING 2025-04-04 18:32:08,401 log Not Found: /favicon.ico
+INFO 2025-04-04 18:32:28,004 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:32:28,479 views Saldo calculado: 286.45 (Entradas: 286.45, Despesas: 0)
+WARNING 2025-04-04 18:32:31,473 log Unauthorized: /api/transacoes/
+WARNING 2025-04-04 18:32:31,476 log Unauthorized: /api/saldo/
+WARNING 2025-04-04 18:32:31,502 log Unauthorized: /api/transacoes/
+WARNING 2025-04-04 18:32:31,532 log Unauthorized: /api/saldo/
+INFO 2025-04-04 18:32:40,394 views Login bem-sucedido para: biel
+INFO 2025-04-04 18:32:42,026 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:32:42,357 views Saldo calculado: 286.45 (Entradas: 286.45, Despesas: 0)
+INFO 2025-04-04 18:32:43,884 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:32:44,243 views Saldo calculado: 286.45 (Entradas: 286.45, Despesas: 0)
+WARNING 2025-04-04 18:32:59,214 log Bad Request: /api/transacoes/nova/
+WARNING 2025-04-04 18:33:11,052 log Bad Request: /api/transacoes/nova/
+WARNING 2025-04-04 18:33:37,559 log Bad Request: /api/transacoes/nova/
+INFO 2025-04-04 18:39:32,930 views Saldo calculado: 286.45 (Entradas: 286.45, Despesas: 0)
+INFO 2025-04-04 18:39:36,731 views Saldo calculado: 286.45 (Entradas: 286.45, Despesas: 0)
+INFO 2025-04-04 18:39:37,273 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:39:39,165 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:39:55,156 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:39:55,752 views Saldo calculado: 296.45 (Entradas: 296.45, Despesas: 0)

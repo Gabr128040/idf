@@ -25,7 +25,7 @@ class Transacao(models.Model):
 
     tipo = models.CharField(max_length=1, choices=TIPO_CHOICES)
     quantia = models.DecimalField(max_digits=10, decimal_places=2)
-    data = models.DateTimeField()
+    data = models.DateField()
     descricao = models.TextField(blank=True, null=True)
     nome = models.CharField(max_length=100, blank=True, null=True)  # Para dízimos
     culto = models.CharField(max_length=3, choices=CULTO_CHOICES, blank=True, null=True)  # Para ofertas
