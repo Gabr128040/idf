@@ -20,36 +20,43 @@ const TransactionForm = ({ onTransactionAdded, setNotification }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const token = localStorage.getItem('token');
-      // Formatar a data para o formato esperado pelo backend (ISO 8601)
-      const formattedData = {
-        ...formData,
-        data: formData.data ? `${formData.data}T00:00:00Z` : '', // Adiciona hora para compatibilidade com DateTimeField
-      };
-      await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/transacoes/nova/`,
-        formattedData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      setNotification({ message: 'Transação adicionada com sucesso!', type: 'success' });
-      onTransactionAdded();
-      setFormData({
-        tipo: 'D',
-        quantia: '',
-        data: '',
-        nome: '',
-        culto: '',
-        tipo_despesa: '',
-        descricao: '',
-      });
+        const token = localStorage.getItem('token');
+        // Não adicionar hora, apenas enviar a data no formato YYYY-MM-DD
+        const formattedData = {
+            ...formData,
+            quantia: parseFloat(formData.quantia) || 0,  // Converter quantia para número
+            culto: formData.culto || null,  // Converter strings vazias para null
+            tipo_despesa: formData.tipo_despesa || null,
+            nome: formData.nome || null,
+            descricao: formData.descricao || null,
+        };
+        console.log("Dados enviados:", formattedData);  // Adicionar log para depuração
+        const response = await axios.post(
+            `${process.env.REACT_APP_API_URL}/api/transacoes/nova/`,
+            formattedData,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'application/json',  // Adicionar explicitamente
+                },
+            }
+        );
+        setNotification({ message: 'Transação adicionada com sucesso!', type: 'success' });
+        onTransactionAdded(response.data);  // Passar os dados da transação criada
+        setFormData({
+            tipo: 'D',
+            quantia: '',
+            data: '',
+            nome: '',
+            culto: '',
+            tipo_despesa: '',
+            descricao: '',
+        });
     } catch (error) {
-      setNotification({ message: 'Erro ao adicionar transação: ' + error.message, type: 'error' });
+        console.error('Erro ao adicionar transação:', error.response?.data || error.message);
+        setNotification({ message: 'Erro ao adicionar transação: ' + (error.response?.data?.detail || error.message), type: 'error' });
     }
-  };
+};
 
   return (
     <div className="transaction-form">
