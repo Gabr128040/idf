@@ -47,6 +47,6 @@ export const getTipoDespesaDisplay = (tipoDespesa) => {
 };
 
 export const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  return `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}`;
+    const [year, month, day] = dateString.split('-'); // Divide "2025-02-03" em ["2025", "02", "03"]
+    return `${day.padStart(2, '0')}/${month.padStart(2, '0')}`; // Retorna "03/02"
 };
