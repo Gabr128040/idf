@@ -2998,3 +2998,24 @@ INFO 2025-04-04 22:27:25,632 views RequisiÃ§Ã£o recebida - ParÃ¢metros: <QueryDi
 INFO 2025-04-04 22:27:25,945 views Saldo calculado: 306.45 (Entradas: 306.45, Despesas: 0)
 INFO 2025-04-04 22:28:00,102 views RequisiÃ§Ã£o recebida - ParÃ¢metros: <QueryDict: {'ano': ['2025']}>
 INFO 2025-04-04 22:28:00,570 views Saldo calculado: 961.45 (Entradas: 961.45, Despesas: 0)
+INFO 2025-04-07 00:51:15,055 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-07 00:51:29,487 log Not Found: /
+WARNING 2025-04-07 00:51:30,252 log Not Found: /favicon.ico
+INFO 2025-04-07 00:52:42,682 views Requisição recebida - Parâmetros: <QueryDict: {}>
+WARNING 2025-04-07 00:53:20,505 log Not Found: /favicon.ico
+INFO 2025-04-07 10:46:02,427 autoreload Watching for file changes with StatReloader
+INFO 2025-04-07 11:02:46,119 autoreload Watching for file changes with StatReloader
+INFO 2025-04-07 11:48:33,452 views Login bem-sucedido para: biel
+INFO 2025-04-07 11:48:35,363 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-07 11:48:35,782 views Saldo calculado: 961.45 (Entradas: 961.45, Despesas: 0)
+INFO 2025-04-07 11:48:37,256 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-07 11:48:37,615 views Saldo calculado: 961.45 (Entradas: 961.45, Despesas: 0)
+INFO 2025-04-07 11:48:46,014 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-07 11:48:46,422 views Saldo calculado: 961.45 (Entradas: 961.45, Despesas: 0)
+INFO 2025-04-07 11:48:48,266 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-07 11:48:48,673 views Saldo calculado: 961.45 (Entradas: 961.45, Despesas: 0)
+INFO 2025-04-07 11:49:04,818 views Login bem-sucedido para: biel
+INFO 2025-04-07 11:49:06,543 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-07 11:49:06,873 views Saldo calculado: 961.45 (Entradas: 961.45, Despesas: 0)
+INFO 2025-04-07 11:49:08,389 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-07 11:49:08,745 views Saldo calculado: 961.45 (Entradas: 961.45, Despesas: 0)
