@@ -2962,3 +2962,39 @@ INFO 2025-04-04 18:39:37,273 views Requisição recebida - Parâmetros: <QueryDi
 INFO 2025-04-04 18:39:39,165 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
 INFO 2025-04-04 18:39:55,156 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
 INFO 2025-04-04 18:39:55,752 views Saldo calculado: 296.45 (Entradas: 296.45, Despesas: 0)
+INFO 2025-04-04 18:46:45,429 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 18:47:18,522 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:47:18,843 views Saldo calculado: 296.45 (Entradas: 296.45, Despesas: 0)
+INFO 2025-04-04 18:47:22,255 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:47:22,938 views Saldo calculado: 296.45 (Entradas: 296.45, Despesas: 0)
+INFO 2025-04-04 18:47:24,243 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:47:24,809 views Saldo calculado: 296.45 (Entradas: 296.45, Despesas: 0)
+INFO 2025-04-04 18:47:42,351 views Login bem-sucedido para: biel
+INFO 2025-04-04 18:47:42,866 views Login bem-sucedido para: biel
+INFO 2025-04-04 18:47:44,246 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:47:44,601 views Saldo calculado: 296.45 (Entradas: 296.45, Despesas: 0)
+INFO 2025-04-04 18:47:46,061 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 18:47:48,676 views Saldo calculado: 296.45 (Entradas: 296.45, Despesas: 0)
+INFO 2025-04-04 21:33:07,109 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-04 21:33:35,106 log Unauthorized: /api/transacoes/
+WARNING 2025-04-04 21:33:35,118 log Unauthorized: /api/saldo/
+WARNING 2025-04-04 21:33:35,223 log Unauthorized: /api/transacoes/
+WARNING 2025-04-04 21:33:35,223 log Unauthorized: /api/saldo/
+INFO 2025-04-04 21:33:39,854 views Login bem-sucedido para: biel
+INFO 2025-04-04 21:33:40,273 views Login bem-sucedido para: biel
+INFO 2025-04-04 21:33:42,172 views Saldo calculado: 296.45 (Entradas: 296.45, Despesas: 0)
+INFO 2025-04-04 21:33:42,580 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 21:33:45,447 views Saldo calculado: 296.45 (Entradas: 296.45, Despesas: 0)
+INFO 2025-04-04 21:33:48,816 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 21:35:31,540 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 21:35:31,853 views Saldo calculado: 306.45 (Entradas: 306.45, Despesas: 0)
+INFO 2025-04-04 22:05:35,408 views Saldo calculado: 306.45 (Entradas: 306.45, Despesas: 0)
+INFO 2025-04-04 22:05:37,745 views Saldo calculado: 306.45 (Entradas: 306.45, Despesas: 0)
+INFO 2025-04-04 22:05:43,496 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 22:05:45,594 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 22:27:23,839 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 22:27:24,157 views Saldo calculado: 306.45 (Entradas: 306.45, Despesas: 0)
+INFO 2025-04-04 22:27:25,632 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 22:27:25,945 views Saldo calculado: 306.45 (Entradas: 306.45, Despesas: 0)
+INFO 2025-04-04 22:28:00,102 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-04-04 22:28:00,570 views Saldo calculado: 961.45 (Entradas: 961.45, Despesas: 0)
