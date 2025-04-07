@@ -262,6 +262,15 @@ const Dashboard = () => {
         saida: dizimoIgreja.toFixed(2),
       });
 
+      for (let i = 0; i < 5; i++) {
+        formattedData.push({
+          dia: '',
+          discriminacao: '',
+          entrada: '',
+          saida: '',
+        });
+      }
+
       // Calcular o saldo do mês sem incluir o dízimo da igreja como saída
       let saldoMes = totalEntradas - totalSaidas;
 
