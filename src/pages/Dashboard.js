@@ -180,17 +180,17 @@ const Dashboard = () => {
     setShowReportOptions(false);
     setIsLoading(true);
     setError(null);
-
+  
     try {
       const transactions = reportTransactions;
-
+  
       transactions.sort((a, b) => new Date(a.data) - new Date(b.data));
-
+  
       const reportData = {};
       transactions.forEach((transaction) => {
         const date = new Date(transaction.data);
         const day = date.toLocaleDateString('pt-BR', { day: '2-digit' });
-
+  
         if (!reportData[day]) {
           reportData[day] = {
             dizimos: 0,
@@ -198,7 +198,7 @@ const Dashboard = () => {
             despesas: [],
           };
         }
-
+  
         if (transaction.tipo === 'D') {
           reportData[day].dizimos += parseFloat(transaction.quantia);
         } else if (transaction.tipo === 'O') {
@@ -211,7 +211,7 @@ const Dashboard = () => {
           });
         }
       });
-
+  
       const formattedData = [];
       Object.keys(reportData).forEach((day) => {
         if (reportData[day].dizimos > 0) {
@@ -222,7 +222,7 @@ const Dashboard = () => {
             saida: '0.00',
           });
         }
-
+  
         if (reportData[day].ofertas > 0) {
           formattedData.push({
             dia: day,
@@ -231,7 +231,7 @@ const Dashboard = () => {
             saida: '0.00',
           });
         }
-
+  
         reportData[day].despesas.forEach((despesa) => {
           formattedData.push({
             dia: day,
@@ -241,62 +241,28 @@ const Dashboard = () => {
           });
         });
       });
-
+  
       let totalEntradas = transactions
         .filter((t) => t.tipo === 'D' || t.tipo === 'O')
         .reduce((sum, t) => sum + parseFloat(t.quantia), 0);
       let totalSaidas = transactions
         .filter((t) => t.tipo === 'S')
         .reduce((sum, t) => sum + parseFloat(t.quantia), 0);
+  
+      // Calcular o dízimo da igreja (10% das entradas)
+      const dizimoIgreja = totalEntradas * 0.1;
+  
+      // Adicionar o dízimo da igreja ao relatório, mas não contabilizá-lo como saída
+      formattedData.push({
+        dia: '', // Sem dia associado
+        discriminacao: 'Dízimo da Igreja',
+        entrada: '0.00',
+        saida: dizimoIgreja.toFixed(2),
+      });
+  
+      // Calcular o saldo do mês sem incluir o dízimo da igreja como saída
       let saldoMes = totalEntradas - totalSaidas;
-
-      const gratificacaoPastor = 900;
-      let gratificacaoAplicada = false;
-      if (includeGratificacao && saldoMes >= gratificacaoPastor) {
-        formattedData.push({
-          dia: '',
-          discriminacao: 'Gratificação do Pastor',
-          entrada: '0.00',
-          saida: gratificacaoPastor.toFixed(2),
-        });
-        totalSaidas += gratificacaoPastor;
-        saldoMes -= gratificacaoPastor;
-        gratificacaoAplicada = true;
-      }
-
-      const dizimoGratificacao = gratificacaoPastor * 0.1;
-      if (gratificacaoAplicada && includeDizimoGratificacao) {
-        formattedData.push({
-          dia: '',
-          discriminacao: 'Dízimo da Gratificação',
-          entrada: dizimoGratificacao.toFixed(2),
-          saida: '0.00',
-        });
-        totalEntradas += dizimoGratificacao;
-        saldoMes += dizimoGratificacao;
-      }
-
-      if (includeDizimoIgreja) {
-        const dizimoIgreja = totalEntradas * 0.1;
-        formattedData.push({
-          dia: '',
-          discriminacao: 'Dízimo da Igreja',
-          entrada: '0.00',
-          saida: dizimoIgreja.toFixed(2),
-        });
-        totalSaidas += dizimoIgreja;
-        saldoMes -= dizimoIgreja;
-      }
-
-      for (let i = 0; i < 5; i++) {
-        formattedData.push({
-          dia: '',
-          discriminacao: '',
-          entrada: '',
-          saida: '',
-        });
-      }
-
+  
       const previousMonth = selectedMonth === 1 ? 12 : selectedMonth - 1;
       const previousYear = selectedMonth === 1 ? selectedYear - 1 : selectedYear;
       const axios = axiosLocal.create({
@@ -305,8 +271,10 @@ const Dashboard = () => {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
       });
-      const previousResponse = await axios.get(`/api/transacoes/?ano__lte=${previousYear}&mes__lte=${previousMonth}`);
+      const previousResponse = await axios.get(`/api/transacoes/?ano=${previousYear}&mes=${previousMonth}`);
       const previousTransactions = previousResponse.data;
+  
+      // Calcular saldo anterior com base apenas nas transações do mês anterior
       const previousEntradas = previousTransactions
         .filter((t) => t.tipo === 'D' || t.tipo === 'O')
         .reduce((sum, t) => sum + parseFloat(t.quantia), 0);
@@ -314,18 +282,20 @@ const Dashboard = () => {
         .filter((t) => t.tipo === 'S')
         .reduce((sum, t) => sum + parseFloat(t.quantia), 0);
       const saldoAnterior = previousEntradas - previousSaidas;
+  
+      // Calcular total em caixa corretamente
       const totalCaixa = saldoAnterior + saldoMes;
-
+  
       const doc = new jsPDF();
       doc.setFont("times");
-
+  
       try {
         doc.addImage(logo, 'JPG', 14, 10, 30, 30);
       } catch (err) {
         console.error('Erro ao adicionar o logotipo:', err);
         setNotification({ message: 'Erro ao adicionar o logotipo ao PDF. Verifique o arquivo da imagem.', type: 'error' });
       }
-
+  
       doc.setFontSize(14);
       doc.setFont("times", "bold");
       doc.text('IGREJA DE DEUS MISSIONÁRIA', 105, 20, { align: 'center' });
@@ -337,7 +307,7 @@ const Dashboard = () => {
       doc.text(`MÊS: ${new Date(0, selectedMonth - 1).toLocaleString('pt-BR', { month: 'long' }).toUpperCase()}`, 14, 50);
       doc.text(`ANO: ${selectedYear}`, 105, 50, { align: 'center' });
       doc.text('EBENÉZER', 180, 50);
-
+  
       autoTable(doc, {
         startY: 60,
         head: [['DIA', 'DISCRIMINAÇÃO', 'ENTRADA', 'SAÍDA']],
@@ -371,7 +341,7 @@ const Dashboard = () => {
           3: { cellWidth: 35, halign: 'right' },
         },
       });
-
+  
       const finalY = doc.lastAutoTable.finalY + 15;
       doc.setFontSize(12);
       doc.setFont("times", "bold");
@@ -380,15 +350,15 @@ const Dashboard = () => {
       doc.text(`SALDO DO MÊS: R$ ${saldoMes.toFixed(2)}`, 14, finalY + 16);
       doc.text(`SALDO ANTERIOR: R$ ${saldoAnterior.toFixed(2)}`, 14, finalY + 24);
       doc.text(`TOTAL EM CAIXA: R$ ${totalCaixa.toFixed(2)}`, 14, finalY + 32);
-
+  
       const signatureY = finalY + 50;
       doc.setFontSize(10);
       doc.setFont("times", "normal");
       doc.text('TESOUREIRO: ______________________________', 14, signatureY);
       doc.text('DIRIGENTE DA CONGREGAÇÃO: ______________________________', 14, signatureY + 10);
-      doc.text('DIRETOR FINANCEIRO IDM SEDE: Patrícia Maria de Silva', 14, signatureY + 20);
+      doc.text('DIRETOR FINANCEIRO IDM SEDE: ______________________________', 14, signatureY + 20); // Nome removido
       doc.text('CONSELHO FISCAL: ______________________________', 14, signatureY + 30);
-
+  
       doc.save(`relatorio_financeiro_${selectedMonth}_${selectedYear}.pdf`);
       setNotification({ message: 'Relatório gerado com sucesso!', type: 'success' });
     } catch (err) {
@@ -397,7 +367,7 @@ const Dashboard = () => {
       setIsLoading(false);
     }
   };
-
+  
   const openReportOptions = async () => {
     if (!selectedMonth || !selectedYear) {
       setNotification({ message: 'Por favor, selecione um mês e ano para gerar o relatório.', type: 'error' });
