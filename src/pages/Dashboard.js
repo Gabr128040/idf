@@ -48,6 +48,10 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   const [isGratificacaoEnabled, setIsGratificacaoEnabled] = useState(true);
+  const [showPdfOptions, setShowPdfOptions] = useState(false); // Estado para exibir o menu de PDF
+  const [pdfMonth, setPdfMonth] = useState(''); // Mês para o PDF
+  const [pdfYear, setPdfYear] = useState(new Date().getFullYear()); // Ano para o PDF
+
 
   useEffect(() => {
     setupAxiosInterceptors(navigate);
@@ -101,8 +105,8 @@ const Dashboard = () => {
 
     if (searchDay) {
       filtered = filtered.filter((transaction) => {
-        const day = new Date(transaction.data).toLocaleDateString('pt-BR', { day: '2-digit' });
-        return day === searchDay;
+        const day = transaction.data.split('-')[2]; // Extrai o dia diretamente da string "YYYY-MM-DD"
+        return day === searchDay.padStart(2, '0'); // Compara como strings no formato "DD"
       });
     }
 
@@ -128,6 +132,13 @@ const Dashboard = () => {
   const handleDelete = (transaction) => {
     setTransactionToDelete(transaction);
     setIsModalOpen(true);
+  };
+
+  const handleGratificacaoChange = (checked) => {
+    setIncludeGratificacao(checked);
+    if (!checked) {
+      setIncludeDizimoGratificacao(false); // Desmarcar o checkbox de dízimo da gratificação
+    }
   };
 
   const confirmDelete = async () => {
@@ -446,14 +457,26 @@ const Dashboard = () => {
           <>
             <SaldoIndicator className="saldo-indicator" saldo={saldo} />
 
-            <motion.button
-              className="dashboard-button"
-              onClick={() => setShowForm(!showForm)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {showForm ? 'Fechar Formulário' : 'Criar/Editar/Deletar Registro'}
-            </motion.button>
+            {/* Botões de Criar Transação e Gerar PDF */}
+            <div className="button-group">
+              <motion.button
+                className="dashboard-button"
+                onClick={() => setShowForm(!showForm)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {showForm ? 'Fechar Formulário' : 'Criar Transação'}
+              </motion.button>
+
+              <motion.button
+                className="dashboard-button pdf-button"
+                onClick={() => setShowPdfOptions(true)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Gerar PDF
+              </motion.button>
+            </div>
 
             {showForm && (
               <motion.div
@@ -467,34 +490,101 @@ const Dashboard = () => {
               </motion.div>
             )}
 
-            <div className="month-filter">
-              <select
-                value={selectedMonth}
-                onChange={(e) => setSelectedMonth(e.target.value === '' ? '' : Number(e.target.value))}
+
+            {/* Modal de Opções do PDF */}
+            {showPdfOptions && (
+              <motion.div
+                className="modal-overlay"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                onClick={(e) => e.target === e.currentTarget && setShowPdfOptions(false)}
               >
-                <option value="">Todos os Meses</option>
-                {Array.from({ length: 12 }, (_, i) => (
-                  <option key={i + 1} value={i + 1}>
-                    {new Date(0, i).toLocaleString('pt-BR', { month: 'long' })}
-                  </option>
-                ))}
-              </select>
-              <input
-                type="number"
-                value={selectedYear}
-                onChange={(e) => setSelectedYear(Number(e.target.value))}
-                min="2020"
-                max={new Date().getFullYear()}
-              />
-              <motion.button
-                className="dashboard-button"
-                onClick={openReportOptions}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Gerar Relatório Mensal
-              </motion.button>
-            </div>
+                <motion.div
+                  className="modal-content"
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.9, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <h3>Opções do Relatório</h3>
+                  <div className="pdf-options">
+                    <div className="pdf-select-group">
+                      <label>Mês</label>
+                      <select
+                        className="pdf-select"
+                        value={pdfMonth}
+                        onChange={(e) => setPdfMonth(e.target.value === '' ? '' : Number(e.target.value))}
+                      >
+                        <option value="">Selecione o Mês</option>
+                        {Array.from({ length: 12 }, (_, i) => (
+                          <option key={i + 1} value={i + 1}>
+                            {new Date(0, i).toLocaleString('pt-BR', { month: 'long' })}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="pdf-select-group">
+                      <label>Ano</label>
+                      <input
+                        className="pdf-input"
+                        type="number"
+                        value={pdfYear}
+                        onChange={(e) => setPdfYear(Number(e.target.value))}
+                        min="2020"
+                        max={new Date().getFullYear()}
+                      />
+                    </div>
+                  </div>
+                  <div style={{ marginBottom: '15px' }}>
+                    <label style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <input
+                        type="checkbox"
+                        checked={includeGratificacao}
+                        onChange={(e) => handleGratificacaoChange(e.target.checked)}
+                        disabled={!isGratificacaoEnabled}
+                      />
+                      Incluir Gratificação do Pastor (R$ 900,00)
+                    </label>
+                    {!isGratificacaoEnabled && (
+                      <p style={{ color: '#ffcc00', fontSize: '14px', marginTop: '5px' }}>
+                        Aviso: O saldo atual não é suficiente para incluir a gratificação do pastor.
+                      </p>
+                    )}
+                  </div>
+                  <div style={{ marginBottom: '15px' }}>
+                    <label style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <input
+                        type="checkbox"
+                        checked={includeDizimoGratificacao}
+                        onChange={(e) => setIncludeDizimoGratificacao(e.target.checked)}
+                        disabled={!includeGratificacao}
+                      />
+                      Incluir Dízimo da Gratificação (10% da gratificação)
+                    </label>
+                  </div>
+                  <div style={{ marginBottom: '15px' }}>
+                    <label style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <input
+                        type="checkbox"
+                        checked={includeDizimoIgreja}
+                        onChange={(e) => setIncludeDizimoIgreja(e.target.checked)}
+                      />
+                      Incluir Dízimo da Igreja (10% das entradas)
+                    </label>
+                  </div>
+                  <div className="button-group">
+                    <button className="edit" onClick={generateMonthlyReport}>
+                      Gerar Relatório
+                    </button>
+                    <button className="close" onClick={() => setShowPdfOptions(false)}>
+                      Cancelar
+                    </button>
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
 
             <motion.button
               className="filter-toggle-button"
@@ -514,6 +604,28 @@ const Dashboard = () => {
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.3 }}
                 >
+
+                  {/* Filtros */}
+                  <div className="month-filter">
+                    <select
+                      value={selectedMonth}
+                      onChange={(e) => setSelectedMonth(e.target.value === '' ? '' : Number(e.target.value))}
+                    >
+                      <option value="">Todos os Meses</option>
+                      {Array.from({ length: 12 }, (_, i) => (
+                        <option key={i + 1} value={i + 1}>
+                          {new Date(0, i).toLocaleString('pt-BR', { month: 'long' })}
+                        </option>
+                      ))}
+                    </select>
+                    <input
+                      type="number"
+                      value={selectedYear}
+                      onChange={(e) => setSelectedYear(Number(e.target.value))}
+                      min="2020"
+                      max={new Date().getFullYear()}
+                    />
+                  </div>
                   <div className="filter-group">
                     <div className="filter-item">
                       <label>Dia</label>

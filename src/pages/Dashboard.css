@@ -4,12 +4,14 @@
   min-height: 100vh;
   background-color: #f4f7fa;
   font-family: 'Poppins', sans-serif;
-  padding: 10px; /* Reduzido de 20px para 10px */
+  padding: 10px;
+  /* Reduzido de 20px para 10px */
 }
 
 .dashboard-content {
   margin-top: 80px;
-  padding: 0 10px; /* Reduzido de 20px para 10px */
+  padding: 0 10px;
+  /* Reduzido de 20px para 10px */
   max-width: 1200px;
   margin: 80px auto;
 }
@@ -292,4 +294,21 @@
 .modal-content button.close {
   background-color: #ccc;
   color: black;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.pdf-button {
+  background-color: #f39c12;
+  /* Laranja */
+}
+
+.pdf-button:hover {
+  background-color: #e67e22;
+  /* Laranja mais escuro */
 }
