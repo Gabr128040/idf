@@ -312,3 +312,49 @@
   background-color: #e67e22;
   /* Laranja mais escuro */
 }
+
+/* Estilo do grupo de seleção no modal de PDF */
+.pdf-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.pdf-select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pdf-select-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.pdf-select,
+.pdf-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease;
+}
+
+.pdf-select:focus,
+.pdf-input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.pdf-select {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.pdf-input {
+  width: 100%;
+  max-width: 150px;
+}
