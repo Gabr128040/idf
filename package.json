@@ -23,7 +23,7 @@
   "scripts": {
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "REACT_APP_API_URL=http://localhost:8000 react-scripts start",
+    "start": "react-scripts start",
     "start-prod": "REACT_APP_API_URL=https://idf-ip90.onrender.com react-scripts start",
     "build": "REACT_APP_API_URL=https://idf-ip90.onrender.com react-scripts build"
   },
