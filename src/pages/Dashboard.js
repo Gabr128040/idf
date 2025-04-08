@@ -391,10 +391,6 @@ const Dashboard = () => {
   };
 
   const openReportOptions = async () => {
-    if (!selectedMonth || !selectedYear) {
-      setNotification({ message: 'Por favor, selecione um mês e ano para gerar o relatório.', type: 'error' });
-      return;
-    }
 
     try {
       const axios = axiosLocal.create({
@@ -421,7 +417,7 @@ const Dashboard = () => {
 
       // Atualizar o estado para verificar se a gratificação é possível
       setIsGratificacaoEnabled(saldoFinal >= 900);
-      setShowReportOptions(true);
+      
     } catch (err) {
       setNotification({ message: 'Erro ao buscar transações para o relatório: ' + err.message, type: 'error' });
     }
@@ -470,8 +466,10 @@ const Dashboard = () => {
 
               <motion.button
                 className="dashboard-button pdf-button"
-                onClick={() => setShowPdfOptions(true)}
-                whileHover={{ scale: 1.05 }}
+                onClick={async () => {
+                  await openReportOptions(); // Atualiza o estado antes de abrir o modal
+                  setShowPdfOptions(true);
+                }} whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Gerar PDF
@@ -559,8 +557,8 @@ const Dashboard = () => {
                         type="checkbox"
                         checked={includeDizimoGratificacao}
                         onChange={(e) => setIncludeDizimoGratificacao(e.target.checked)}
-                        disabled={!includeGratificacao}
-                      />
+                        disabled={!includeGratificacao || !isGratificacaoEnabled} 
+                        />
                       Incluir Dízimo da Gratificação (10% da gratificação)
                     </label>
                   </div>
