@@ -24,8 +24,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start": "react-scripts start",
-    "start-prod": "REACT_APP_API_URL=https://idf-ip90.onrender.com react-scripts start",
-    "build": "REACT_APP_API_URL=https://idf-ip90.onrender.com react-scripts build"
+    "start-prod": "REACT_APP_API_URL=https://idf-ni2j.onrender.com react-scripts start",
+    "build": "REACT_APP_API_URL=https://idf-ni2j.onrender.com react-scripts build"
   },
   "eslintConfig": {
     "extends": [
