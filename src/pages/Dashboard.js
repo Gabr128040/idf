@@ -285,8 +285,8 @@ const Dashboard = () => {
       // Calcular o saldo do mês sem incluir o dízimo da igreja como saída
       let saldoMes = totalEntradas - totalSaidas;
 
-      const previousMonth = selectedMonth === 1 ? 12 : selectedMonth - 1;
-      const previousYear = selectedMonth === 1 ? selectedYear - 1 : selectedYear;
+      const previousMonth = pdfMonth === 1 ? 12 : pdfMonth - 1;
+      const previousYear = pdfMonth === 1 ? selectedYear - 1 : selectedYear;
       const axios = axiosLocal.create({
         baseURL: process.env.REACT_APP_API_URL,
         headers: {
@@ -326,8 +326,8 @@ const Dashboard = () => {
       doc.text('CNPJ: 05.869.914/0001-07', 105, 28, { align: 'center' });
       doc.text('DEPARTAMENTO FINANCEIRO', 105, 36, { align: 'center' });
       doc.setFontSize(12);
-      doc.text(`MÊS: ${new Date(0, selectedMonth - 1).toLocaleString('pt-BR', { month: 'long' }).toUpperCase()}`, 14, 50);
-      doc.text(`ANO: ${selectedYear}`, 105, 50, { align: 'center' });
+      doc.text(`MÊS: ${new Date(0, pdfMonth - 1).toLocaleString('pt-BR', { month: 'long' }).toUpperCase()}`, 14, 50);
+      doc.text(`ANO: ${pdfYear}`, 105, 50, { align: 'center' });
       doc.text('EBENÉZER', 180, 50);
 
       autoTable(doc, {
@@ -381,7 +381,7 @@ const Dashboard = () => {
       doc.text('DIRETOR FINANCEIRO IDM SEDE: ______________________________', 14, signatureY + 20); // Nome removido
       doc.text('CONSELHO FISCAL: ______________________________', 14, signatureY + 30);
 
-      doc.save(`relatorio_financeiro_${selectedMonth}_${selectedYear}.pdf`);
+      doc.save(`relatorio_financeiro_${pdfMonth}_${pdfYear}.pdf`);
       setNotification({ message: 'Relatório gerado com sucesso!', type: 'success' });
     } catch (err) {
       setNotification({ message: 'Erro ao gerar o relatório: ' + err.message, type: 'error' });
@@ -400,7 +400,7 @@ const Dashboard = () => {
         },
       });
 
-      const response = await axios.get(`/api/transacoes/?mes=${selectedMonth}&ano=${selectedYear}`);
+      const response = await axios.get(`/api/transacoes/?mes=${pdfMonth}&ano=${pdfYear}`);
       const transactions = response.data;
 
       setReportTransactions(transactions);
