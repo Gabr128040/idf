@@ -12,7 +12,7 @@ import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import { motion, AnimatePresence } from 'framer-motion';
 import axiosLocal from 'axios';
-import logo from '../assets/logo.jpg';
+import logo from '../assets/logo.png';
 import './Dashboard.css';
 import { getTipoDisplay, getCultoDisplay, getTipoDespesaDisplay, formatDate } from '../utils';
 import { FaCalendarAlt, FaSearch } from 'react-icons/fa';
@@ -383,7 +383,7 @@ const Dashboard = () => {
 
       // Cabeçalho
       try {
-        doc.addImage(logo, 'JPG', 10, 10, 15, 15); // Reduzir tamanho da logo
+        doc.addImage(logo, 'PNG', 10, 10, 15, 15); // Reduzir tamanho da logo
       } catch (err) {
         console.error('Erro ao adicionar o logotipo:', err);
         setNotification({ message: 'Erro ao adicionar o logotipo ao PDF. Verifique o arquivo da imagem.', type: 'error' });
@@ -436,8 +436,8 @@ const Dashboard = () => {
       doc.setFont("times", "bold");
       doc.text(`TOTAL DE ENTRADA: R$ ${truncateToTwoDecimals(totalEntradas)}`, 10, finalY);
       doc.text(`TOTAL DE SAÍDA DO MÊS: R$ ${truncateToTwoDecimals(totalSaidas)}`, 10, finalY + 5);
-      doc.text(`SALDO DO MÊS: R$ ${truncateToTwoDecimals(saldoMes)}`, 10, finalY + 10);
-      doc.text(`SALDO ANTERIOR: R$ ${truncateToTwoDecimals(saldoAnterior)}`, 10, finalY + 15);
+      doc.text(`SALDO DO MÊS: R$ ${saldoMes.toFixed(2)}`, 10, finalY + 10);
+      doc.text(`SALDO ANTERIOR: R$ ${saldoAnterior.toFixed(2)}`, 10, finalY + 15);
       doc.text(`TOTAL EM CAIXA: R$ ${truncateToTwoDecimals(totalEmCaixa)}`, 10, finalY + 20);
 
       const signatureY = finalY + 30;
