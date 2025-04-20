@@ -358,3 +358,15 @@
   width: 100%;
   max-width: 150px;
 }
+
+.modal-content label {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.modal-content input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
