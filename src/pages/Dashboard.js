@@ -319,28 +319,53 @@ const Dashboard = () => {
         }
       }
 
-      // Preencher o array formattedData com as transações originais
-      transactions.forEach((transaction) => {
-        const day = transaction.data.split('-')[2]; // Extrair apenas o dia no formato "DD"
-        let discriminacao = '';
+// Agrupar dízimos por dia
+const groupedDizimos = transactions
+  .filter((transaction) => transaction.tipo === 'D') // Filtrar apenas os dízimos
+  .reduce((acc, transaction) => {
+    const day = transaction.data.split('-')[2]; // Extrair o dia no formato "DD"
+    if (!acc[day]) {
+      acc[day] = 0; // Inicializar o valor do dia
+    }
+    acc[day] += parseFloat(transaction.quantia); // Somar os valores dos dízimos do mesmo dia
+    return acc;
+  }, {});
 
-        // Determinar a discriminação com base no tipo da transação
-        if (transaction.tipo === 'D') {
-          discriminacao = 'Dízimo';
-        } else if (transaction.tipo === 'O') {
-          discriminacao = 'Oferta';
-        } else if (transaction.tipo === 'S') {
-          const tipoDespesa = getTipoDespesaDisplay(transaction.tipo_despesa);
-          discriminacao = tipoDespesa === 'Outro' ? (transaction.descricao || 'Outro') : tipoDespesa;
-        }
+// Adicionar os dízimos agrupados ao formattedData
+Object.keys(groupedDizimos).forEach((day) => {
+  formattedData.push({
+    dia: day.padStart(2, '0'), // Garantir que o dia tenha dois dígitos
+    discriminacao: 'Dízimo',
+    entrada: `R$ ${truncateToTwoDecimals(groupedDizimos[day])}`,
+    saida: '-',
+  });
+});
 
-        formattedData.push({
-          dia: day.padStart(2, '0'), // Garantir que o dia tenha dois dígitos
-          discriminacao,
-          entrada: transaction.tipo === 'D' || transaction.tipo === 'O' ? `R$ ${truncateToTwoDecimals(parseFloat(transaction.quantia))}` : '-',
-          saida: transaction.tipo === 'S' ? `R$ ${truncateToTwoDecimals(parseFloat(transaction.quantia))}` : '-',
-        });
-      });
+// Adicionar as outras transações (não-dízimos) ao formattedData
+transactions
+  .filter((transaction) => transaction.tipo !== 'D') // Excluir os dízimos já agrupados
+  .forEach((transaction) => {
+    const day = transaction.data.split('-')[2]; // Extrair o dia no formato "DD"
+    let discriminacao = '';
+
+    // Determinar a discriminação com base no tipo da transação
+    if (transaction.tipo === 'O') {
+      discriminacao = 'Oferta';
+    } else if (transaction.tipo === 'S') {
+      const tipoDespesa = getTipoDespesaDisplay(transaction.tipo_despesa);
+      discriminacao = tipoDespesa === 'Outro' ? (transaction.descricao || 'Outro') : tipoDespesa;
+    }
+
+    formattedData.push({
+      dia: day.padStart(2, '0'), // Garantir que o dia tenha dois dígitos
+      discriminacao,
+      entrada: transaction.tipo === 'O' ? `R$ ${truncateToTwoDecimals(parseFloat(transaction.quantia))}` : '-',
+      saida: transaction.tipo === 'S' ? `R$ ${truncateToTwoDecimals(parseFloat(transaction.quantia))}` : '-',
+    });
+  });
+
+// Ordenar todas as transações no formattedData em ordem crescente de dias
+formattedData.sort((a, b) => parseInt(a.dia) - parseInt(b.dia));
 
       // Adicionar as transações extras ao final da tabela
       if (includeGratificacao) {
