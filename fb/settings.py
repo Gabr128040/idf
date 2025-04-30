@@ -29,7 +29,17 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'corsheaders',
     'finance',
+    'cloudinary',
+    'cloudinary_storage',
 ]
+
+# Configuração do Cloudinary
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dxzscdgkg',
+    'API_KEY': '559429955681198',
+    'API_SECRET': 'QBrJKO8ILw0zvh0gezuixoIuLGo',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Middleware
 MIDDLEWARE = [

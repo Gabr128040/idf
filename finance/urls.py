@@ -9,6 +9,9 @@ from .views import (
     editar_transacao,
     deletar_transacao,
     listar_transacoes,
+    RelatorioListView,
+    SalvarRelatorioView,
+    DeletarRelatorioView
 )
 
 urlpatterns = [
@@ -25,4 +28,9 @@ urlpatterns = [
 
     # Saldo
     path('saldo/', calcular_saldo, name='calcular_saldo'),
+    #relatorios
+    path('relatorios/', RelatorioListView.as_view(), name='relatorios-list'),
+    path('relatorios/salvar/', SalvarRelatorioView.as_view(), name='salvar-relatorio'),
+    path('relatorios/<int:relatorio_id>/deletar/', DeletarRelatorioView.as_view(), name='deletar-relatorio'),
+
 ]

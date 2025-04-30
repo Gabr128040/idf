@@ -44,4 +44,18 @@ class Transacao(models.Model):
 
     def __str__(self):
         return f"{self.get_tipo_display()} - {self.quantia}"
+    
+
+from cloudinary_storage.storage import MediaCloudinaryStorage
+from django.db import models
+
+class Relatorio(models.Model):
+    nome = models.CharField(max_length=255)  # Nome do arquivo
+    mes = models.IntegerField()  # Mês do relatório
+    ano = models.IntegerField()  # Ano do relatório
+    data_geracao = models.DateTimeField(auto_now_add=True)  # Data de geração
+    arquivo = models.FileField(storage=MediaCloudinaryStorage(), upload_to='relatorios/')  # Salvar no Cloudinary
+
+    def __str__(self):
+        return f"{self.nome} ({self.mes}/{self.ano})"
       

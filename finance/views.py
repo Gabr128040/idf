@@ -1,17 +1,24 @@
 # finance/views.py
+
+# Importações
 import logging
 from django.contrib.auth.models import User
 from django.db.models import Sum
 from rest_framework import generics, status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
-from .models import Transacao
-from .serializers import TransacaoSerializer
+from .models import Transacao, Relatorio
+from .serializers import TransacaoSerializer, RelatorioSerializer
 
+# Configuração do logger
 logger = logging.getLogger('finance')
 
+# -------------------------------
 # Views de CRUD Genéricas
+# -------------------------------
+
 class TransacaoListCreateView(generics.ListCreateAPIView):
     """Lista todas as transações ou cria uma nova."""
     queryset = Transacao.objects.all()
@@ -22,7 +29,10 @@ class TransacaoRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Transacao.objects.all()
     serializer_class = TransacaoSerializer
 
+# -------------------------------
 # Views de Autenticação
+# -------------------------------
+
 @api_view(['POST'])
 def user_register(request):
     """Registra um novo usuário e retorna tokens JWT."""
@@ -72,7 +82,10 @@ def user_login(request):
     logger.warning(f"Tentativa de login inválida para: {username}")
     return Response({'error': 'Credenciais inválidas'}, status=status.HTTP_400_BAD_REQUEST)
 
+# -------------------------------
 # Views de Transações Personalizadas
+# -------------------------------
+
 @api_view(['GET'])
 def calcular_saldo(request):
     """Calcula o saldo total (entradas - despesas)."""
@@ -120,7 +133,7 @@ def deletar_transacao(request, id):
 
 @api_view(['GET'])
 def listar_transacoes(request):
-    logger.debug("Teste de log funcionando!")
+    """Lista transações com filtros opcionais de mês e ano."""
     logger.info("Requisição recebida - Parâmetros: %s", request.query_params)
     try:
         mes = request.query_params.get('mes')
@@ -131,10 +144,56 @@ def listar_transacoes(request):
         if ano:
             filtros["data__year"] = int(ano)
         queryset = Transacao.objects.filter(**filtros).order_by('-data')  # Ordena por data decrescente
-        logger.debug(f"Query executada: {str(queryset.query)}")
-        logger.debug(f"Total de registros encontrados: {queryset.count()}")
         serializer = TransacaoSerializer(queryset, many=True)
         return Response(serializer.data)
     except Exception as e:
         logger.exception(f"Erro ao listar transações: {str(e)}")
         return Response({'error': 'Erro interno ao listar transações'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+# -------------------------------
+# Views de Relatórios
+# -------------------------------
+
+class RelatorioListView(APIView):
+    """Lista todos os relatórios ou cria um novo."""
+    def get(self, request):
+        relatorios = Relatorio.objects.all().order_by('-data_geracao')
+        serializer = RelatorioSerializer(relatorios, many=True)
+        return Response(serializer.data)
+    
+    def post(self, request):
+        serializer = RelatorioSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class SalvarRelatorioView(APIView):
+    """Salva um relatório enviado pelo frontend."""
+    def post(self, request):
+        nome = request.data.get('nome')
+        mes = request.data.get('mes')
+        ano = request.data.get('ano')
+        arquivo = request.FILES['arquivo']
+
+        relatorio = Relatorio.objects.create(
+            nome=nome,
+            mes=mes,
+            ano=ano,
+            arquivo=arquivo
+        )
+
+        return Response({
+            'message': 'Relatório salvo com sucesso!',
+            'url': relatorio.arquivo.url
+        }, status=status.HTTP_201_CREATED)
+
+class DeletarRelatorioView(APIView):
+    """Deleta um relatório existente."""
+    def delete(self, request, relatorio_id):
+        try:
+            relatorio = Relatorio.objects.get(id=relatorio_id)
+            relatorio.delete()
+            return Response({'message': 'Relatório deletado com sucesso!'}, status=status.HTTP_204_NO_CONTENT)
+        except Relatorio.DoesNotExist:
+            return Response({'error': 'Relatório não encontrado!'}, status=status.HTTP_404_NOT_FOUND)
