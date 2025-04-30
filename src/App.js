@@ -6,6 +6,7 @@ import React from 'react';
      import Register from './pages/Register';
      import PrivateRoute from './components/PrivateRoute';
      import './App.css';
+     import Relatorios from './pages/Relatorios';
 
      const App = () => {
        return (
@@ -15,6 +16,7 @@ import React from 'react';
              <Route path="/login" element={<Login />} />
              <Route path="/register" element={<Register />} />
              <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+             <Route path="/relatorios" element={<Relatorios />} />
            </Routes>
          </Router>
        );

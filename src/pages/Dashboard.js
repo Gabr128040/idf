@@ -474,6 +474,30 @@ formattedData.sort((a, b) => parseInt(a.dia) - parseInt(b.dia));
       doc.text('CONSELHO FISCAL: ______________________________', 10, signatureY + 15);
 
       doc.save(`relatorio_financeiro_${pdfMonth}_${pdfYear}.pdf`);
+
+      const saveRelatorio = async (nome, mes, ano, pdfBlob) => {
+        const formData = new FormData();
+        formData.append('nome', nome);
+        formData.append('mes', mes);
+        formData.append('ano', ano);
+        formData.append('arquivo', pdfBlob); // O arquivo PDF gerado
+      
+        try {
+          const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/relatorios/salvar/`, formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          });
+          console.log('Relatório salvo com sucesso:', response.data);
+        } catch (error) {
+          console.error('Erro ao salvar relatório:', error);
+        }
+      };
+      
+       // Gerar o PDF como Blob
+      const pdfBlob = doc.output('blob');
+      await saveRelatorio(`relatorio_${pdfMonth}_${pdfYear}.pdf`, pdfMonth, pdfYear, pdfBlob);
+
       setNotification({ message: 'Relatório gerado com sucesso!', type: 'success' });
     } catch (err) {
       setNotification({ message: 'Erro ao gerar o relatório: ' + err.message, type: 'error' });

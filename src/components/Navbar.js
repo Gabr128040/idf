@@ -42,6 +42,9 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
+                <a href="/relatorios">Relatórios</a>
+              </li>
+              <li>
                 <a href="/login" onClick={() => setShowMenu(false)}>
                   Login
                 </a>

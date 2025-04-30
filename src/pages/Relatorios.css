@@ -1,0 +1,86 @@
+/* Estilo geral da página */
+.relatorios {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  /* Título da página */
+  .relatorios h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Lista de relatórios */
+  .relatorios ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Cada item da lista */
+  .relatorios li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Nome do relatório */
+  .relatorios li span {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Botão de download */
+  .relatorios li a {
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .relatorios li a:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .relatorios li {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .relatorios li a {
+      margin-top: 10px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+
+  .delete-button {
+    margin-left: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-button:hover {
+    background-color: #e60000;
+  }
