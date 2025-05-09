@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security
 SECRET_KEY = 'django-insecure-&)$+e@akx1_6+$8lsk35-wh7_l9#zb0(=+$sb%2=)mgb#$3if*'
 DEBUG = True
-ALLOWED_HOSTS = ['https://idf-ip90.onrender.com', '*']
+ALLOWED_HOSTS = ['*']
 
 # Installed Apps
 INSTALLED_APPS = [
@@ -85,10 +85,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'Uc5sjC61OJd0lYOz',
-        'HOST': 'easily-suave-greyhound.data-1.use1.tembo.io',
-        'PORT': '5432',
+        'USER': 'postgres.rraelzwaqvmlngigijwd',
+        'PASSWORD': '9168gabr128040',
+        'HOST': 'aws-0-sa-east-1.pooler.supabase.com',
+        'PORT': '6543',
     }
 }
 
