@@ -194,6 +194,10 @@ const Dashboard = () => {
     return Math.trunc(value * 100) / 100;
   };
 
+  const getLastDayOfMonth = (year, month) => {
+    return new Date(year, month, 0).toISOString().split('T')[0]; // Retorna no formato "YYYY-MM-DD"
+  };
+
   const generateMonthlyReport = async () => {
     if (!pdfMonth) {
       setNotification({ message: 'Por favor, selecione um mês para gerar o relatório.', type: 'error' });
@@ -280,6 +284,8 @@ const Dashboard = () => {
       }
 
 
+      // Calcular a data do último dia do mês
+      const lastDayOfMonth = getLastDayOfMonth(pdfYear, pdfMonth);
 
       // Criar oficialmente no site apenas se os checkboxes estiverem ativados
       if (updateSystem) {
@@ -289,7 +295,7 @@ const Dashboard = () => {
             tipo_despesa: 'OT',
             descricao: 'Gratificação do Líder',
             quantia: gratificacao,
-            data: new Date().toISOString().split('T')[0], // Data atual
+            data: lastDayOfMonth, // Usar o último dia do mês
           };
           await axios.post('/api/transacoes/nova/', gratificacaoTransacao);
           transactions.push(gratificacaoTransacao); // Adicionar ao array de transações
@@ -300,7 +306,7 @@ const Dashboard = () => {
             tipo: 'D',
             descricao: 'Dízimo da Gratificação',
             quantia: dizimoGratificacao,
-            data: new Date().toISOString().split('T')[0], // Data atual
+            data: lastDayOfMonth, // Usar o último dia do mês
           };
           await axios.post('/api/transacoes/nova/', dizimoGratificacaoTransacao);
           transactions.push(dizimoGratificacaoTransacao); // Adicionar ao array de transações
@@ -312,89 +318,130 @@ const Dashboard = () => {
             tipo_despesa: 'OT',
             descricao: 'Dízimo da Igreja',
             quantia: dizimoIgreja,
-            data: new Date().toISOString().split('T')[0], // Data atual
+            data: lastDayOfMonth, // Usar o último dia do mês
           };
           await axios.post('/api/transacoes/nova/', dizimoIgrejaTransacao);
           transactions.push(dizimoIgrejaTransacao); // Adicionar ao array de transações
         }
       }
 
-// Agrupar dízimos por dia
-const groupedDizimos = transactions
-  .filter((transaction) => transaction.tipo === 'D') // Filtrar apenas os dízimos
-  .reduce((acc, transaction) => {
-    const day = transaction.data.split('-')[2]; // Extrair o dia no formato "DD"
-    if (!acc[day]) {
-      acc[day] = 0; // Inicializar o valor do dia
-    }
-    acc[day] += parseFloat(transaction.quantia); // Somar os valores dos dízimos do mesmo dia
-    return acc;
-  }, {});
+      // Agrupar dízimos por dia
+      const groupedDizimos = transactions
+        .filter((transaction) => transaction.tipo === 'D') // Filtrar apenas os dízimos
+        .reduce((acc, transaction) => {
+          const day = transaction.data.split('-')[2]; // Extrair o dia no formato "DD"
+          if (!acc[day]) {
+            acc[day] = 0; // Inicializar o valor do dia
+          }
+          acc[day] += parseFloat(transaction.quantia); // Somar os valores dos dízimos do mesmo dia
+          return acc;
+        }, {});
 
-// Adicionar os dízimos agrupados ao formattedData
-Object.keys(groupedDizimos).forEach((day) => {
-  formattedData.push({
-    dia: day.padStart(2, '0'), // Garantir que o dia tenha dois dígitos
-    discriminacao: 'Dízimo',
-    entrada: `R$ ${truncateToTwoDecimals(groupedDizimos[day])}`,
-    saida: '-',
-  });
-});
-
-// Adicionar as outras transações (não-dízimos) ao formattedData
-transactions
-  .filter((transaction) => transaction.tipo !== 'D') // Excluir os dízimos já agrupados
-  .forEach((transaction) => {
-    const day = transaction.data.split('-')[2]; // Extrair o dia no formato "DD"
-    let discriminacao = '';
-
-    // Determinar a discriminação com base no tipo da transação
-    if (transaction.tipo === 'O') {
-      discriminacao = 'Oferta';
-    } else if (transaction.tipo === 'S') {
-      const tipoDespesa = getTipoDespesaDisplay(transaction.tipo_despesa);
-      discriminacao = tipoDespesa === 'Outro' ? (transaction.descricao || 'Outro') : tipoDespesa;
-    }
-
-    formattedData.push({
-      dia: day.padStart(2, '0'), // Garantir que o dia tenha dois dígitos
-      discriminacao,
-      entrada: transaction.tipo === 'O' ? `R$ ${truncateToTwoDecimals(parseFloat(transaction.quantia))}` : '-',
-      saida: transaction.tipo === 'S' ? `R$ ${truncateToTwoDecimals(parseFloat(transaction.quantia))}` : '-',
-    });
-  });
-
-// Ordenar todas as transações no formattedData em ordem crescente de dias
-formattedData.sort((a, b) => parseInt(a.dia) - parseInt(b.dia));
-
-      // Adicionar as transações extras ao final da tabela
-      if (includeGratificacao) {
+      // Adicionar os dízimos agrupados ao formattedData
+      Object.keys(groupedDizimos).forEach((day) => {
         formattedData.push({
-          dia: '',
-          discriminacao: 'Gratificação do Líder',
-          entrada: '-',
-          saida: `R$ ${truncateToTwoDecimals(gratificacao)}`,
-        });
-      }
-
-      if (includeDizimoGratificacao) {
-        formattedData.push({
-          dia: '',
-          discriminacao: 'Dízimo da Gratificação',
-          entrada: `R$ ${truncateToTwoDecimals(dizimoGratificacao)}`,
+          dia: day.padStart(2, '0'), // Garantir que o dia tenha dois dígitos
+          discriminacao: 'Dízimo',
+          entrada: `R$ ${truncateToTwoDecimals(groupedDizimos[day])}`,
           saida: '-',
         });
-      }
+      });
 
-      if (includeDizimoIgreja) {
-        formattedData.push({
-          dia: '',
-          discriminacao: 'Dízimo da Igreja',
-          entrada: '-',
-          saida: `R$ ${truncateToTwoDecimals(dizimoIgreja)}`,
+      // Adicionar as outras transações (não-dízimos) ao formattedData
+      transactions
+        .filter((transaction) => transaction.tipo !== 'D') // Excluir os dízimos já agrupados
+        .forEach((transaction) => {
+          const day = transaction.data.split('-')[2]; // Extrair o dia no formato "DD"
+          let discriminacao = '';
+
+          // Determinar a discriminação com base no tipo da transação
+          if (transaction.tipo === 'O') {
+            discriminacao = 'Oferta';
+          } else if (transaction.tipo === 'S') {
+            const tipoDespesa = getTipoDespesaDisplay(transaction.tipo_despesa);
+            discriminacao = tipoDespesa === 'Outro' ? (transaction.descricao || 'Outro') : tipoDespesa;
+          }
+
+          formattedData.push({
+            dia: day.padStart(2, '0'), // Garantir que o dia tenha dois dígitos
+            discriminacao,
+            entrada: transaction.tipo === 'O' ? `R$ ${truncateToTwoDecimals(parseFloat(transaction.quantia))}` : '-',
+            saida: transaction.tipo === 'S' ? `R$ ${truncateToTwoDecimals(parseFloat(transaction.quantia))}` : '-',
+          });
         });
-      }
 
+        // Adicionar 5 linhas vazias para preenchimento manual antes das transações extras
+for (let i = 0; i < 5; i++) {
+  formattedData.push({
+    dia: '', // Campo vazio para o dia
+    discriminacao: '', // Campo vazio para discriminação
+    entrada: '', // Campo vazio para entrada
+    saida: '', // Campo vazio para saída
+  });
+}
+
+// Adicionar as transações extras ao final da tabela (somente se não forem criadas oficialmente no sistema)
+if (!updateSystem) {
+  if (includeGratificacao) {
+    formattedData.push({
+      dia: '',
+      discriminacao: 'Gratificação do Líder',
+      entrada: '-',
+      saida: `R$ ${truncateToTwoDecimals(gratificacao)}`,
+    });
+  }
+
+  if (includeDizimoGratificacao) {
+    formattedData.push({
+      dia: '',
+      discriminacao: 'Dízimo da Gratificação',
+      entrada: `R$ ${truncateToTwoDecimals(dizimoGratificacao)}`,
+      saida: '-',
+    });
+  }
+
+  if (includeDizimoIgreja) {
+    formattedData.push({
+      dia: '',
+      discriminacao: 'Dízimo da Igreja',
+      entrada: '-',
+      saida: `R$ ${truncateToTwoDecimals(dizimoIgreja)}`,
+    });
+  }
+}
+
+      // Ordenar todas as transações no formattedData em ordem crescente de dias
+      formattedData.sort((a, b) => parseInt(a.dia) - parseInt(b.dia));
+
+      // Adicionar as transações extras ao final da tabela (somente se não forem criadas oficialmente no sistema)
+      if (!updateSystem) {
+        if (includeGratificacao) {
+          formattedData.push({
+            dia: '',
+            discriminacao: 'Gratificação do Líder',
+            entrada: '-',
+            saida: `R$ ${truncateToTwoDecimals(gratificacao)}`,
+          });
+        }
+
+        if (includeDizimoGratificacao) {
+          formattedData.push({
+            dia: '',
+            discriminacao: 'Dízimo da Gratificação',
+            entrada: `R$ ${truncateToTwoDecimals(dizimoGratificacao)}`,
+            saida: '-',
+          });
+        }
+
+        if (includeDizimoIgreja) {
+          formattedData.push({
+            dia: '',
+            discriminacao: 'Dízimo da Igreja',
+            entrada: '-',
+            saida: `R$ ${truncateToTwoDecimals(dizimoIgreja)}`,
+          });
+        }
+      }
       // Calcular totais do mês (incluindo transações extras)
       const totalEntradas = totalEntradasComGratificacao;
       const saldoMes = totalEntradas - totalSaidas; // Saldo do mês
@@ -481,7 +528,7 @@ formattedData.sort((a, b) => parseInt(a.dia) - parseInt(b.dia));
         formData.append('mes', mes);
         formData.append('ano', ano);
         formData.append('arquivo', pdfBlob); // O arquivo PDF gerado
-      
+
         try {
           const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/relatorios/salvar/`, formData, {
             headers: {
@@ -493,8 +540,8 @@ formattedData.sort((a, b) => parseInt(a.dia) - parseInt(b.dia));
           console.error('Erro ao salvar relatório:', error);
         }
       };
-      
-       // Gerar o PDF como Blob
+
+      // Gerar o PDF como Blob
       const pdfBlob = doc.output('blob');
       await saveRelatorio(`relatorio_${pdfMonth}_${pdfYear}.pdf`, pdfMonth, pdfYear, pdfBlob);
 
