@@ -34,7 +34,18 @@ const Login = () => {
       console.log('[DEBUG] Resposta do login:', response.data);
       localStorage.setItem('token', response.data.access);
       console.log('[DEBUG] Token salvo:', response.data.access);
-      navigate('/'); // Redirecionar para o dashboard
+      // Salva o usuário e tipo no localStorage
+      if (response.data.user) {
+        localStorage.setItem('user', JSON.stringify(response.data.user));
+        // Redireciona para o painel correto
+        if (response.data.user.is_superuser || response.data.user.is_igreja_admin) {
+          navigate('/admin');
+        } else {
+          navigate('/');
+        }
+      } else {
+        navigate('/');
+      }
     } catch (error) {
       console.error('Erro ao fazer login:', error.response ? error.response.data : error.message);
     }
