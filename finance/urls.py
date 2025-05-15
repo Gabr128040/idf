@@ -11,7 +11,10 @@ from .views import (
     listar_transacoes,
     RelatorioListView,
     SalvarRelatorioView,
-    DeletarRelatorioView
+    DeletarRelatorioView,
+    IgrejaListCreateView, IgrejaRetrieveUpdateDestroyView,
+    TransacoesPorIgrejaView, RelatoriosPorIgrejaView,
+    
 )
 
 urlpatterns = [
@@ -32,5 +35,13 @@ urlpatterns = [
     path('relatorios/', RelatorioListView.as_view(), name='relatorios-list'),
     path('relatorios/salvar/', SalvarRelatorioView.as_view(), name='salvar-relatorio'),
     path('relatorios/<int:relatorio_id>/deletar/', DeletarRelatorioView.as_view(), name='deletar-relatorio'),
+
+    # Igrejas
+    path('igrejas/', IgrejaListCreateView.as_view(), name='igreja-list-create'),
+    path('igrejas/<int:pk>/', IgrejaRetrieveUpdateDestroyView.as_view(), name='igreja-detail'),
+
+    # Transações e relatórios por igreja
+    path('igrejas/<int:igreja_id>/transacoes/', TransacoesPorIgrejaView.as_view(), name='transacoes-por-igreja'),
+    path('igrejas/<int:igreja_id>/relatorios/', RelatoriosPorIgrejaView.as_view(), name='relatorios-por-igreja'),
 
 ]

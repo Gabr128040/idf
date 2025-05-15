@@ -15,6 +15,37 @@ from .serializers import TransacaoSerializer, RelatorioSerializer
 # Configuração do logger
 logger = logging.getLogger('finance')
 
+
+from .models import Igreja
+from .serializers import IgrejaSerializer
+
+from rest_framework import generics
+
+# CRUD de Igrejas
+class IgrejaListCreateView(generics.ListCreateAPIView):
+    queryset = Igreja.objects.all()
+    serializer_class = IgrejaSerializer
+
+class IgrejaRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Igreja.objects.all()
+    serializer_class = IgrejaSerializer
+
+# Listar transações de uma igreja específica
+class TransacoesPorIgrejaView(generics.ListAPIView):
+    serializer_class = TransacaoSerializer
+
+    def get_queryset(self):
+        igreja_id = self.kwargs['igreja_id']
+        return Transacao.objects.filter(igreja_id=igreja_id)
+
+# Listar relatórios de uma igreja específica
+class RelatoriosPorIgrejaView(generics.ListAPIView):
+    serializer_class = RelatorioSerializer
+
+    def get_queryset(self):
+        igreja_id = self.kwargs['igreja_id']
+        return Relatorio.objects.filter(igreja_id=igreja_id)
+
 # -------------------------------
 # Views de CRUD Genéricas
 # -------------------------------
