@@ -7224,3 +7224,148 @@ WARNING 2025-05-15 12:09:40,771 log Unauthorized: /api/transacoes/
 WARNING 2025-05-15 12:09:41,730 log Unauthorized: /api/saldo/
 WARNING 2025-05-15 12:09:41,732 log Unauthorized: /api/transacoes/
 WARNING 2025-05-15 12:10:51,692 log Not Found: /favicon.ico
+INFO 2025-05-15 13:09:33,381 views Login bem-sucedido para: biel
+INFO 2025-05-15 13:09:33,381 views Login bem-sucedido para: biel
+INFO 2025-05-15 13:09:37,634 views Login bem-sucedido para: biel
+INFO 2025-05-15 13:09:38,601 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 13:09:39,137 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 13:09:39,646 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 13:09:39,767 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 13:09:53,608 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['5'], 'ano': ['2025']}>
+INFO 2025-05-15 13:09:54,085 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 13:10:04,361 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 13:10:04,477 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 13:11:04,024 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 13:11:04,148 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 13:11:04,535 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 13:11:04,693 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 13:13:33,029 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 13:13:33,129 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 13:13:33,520 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 13:13:33,722 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:31:47,020 autoreload C:\Users\gabr1\Desktop\projetos\backend\finance\views.py changed, reloading.
+INFO 2025-05-15 14:32:33,213 autoreload Watching for file changes with StatReloader
+INFO 2025-05-15 14:34:36,368 autoreload C:\Users\gabr1\Desktop\projetos\backend\finance\views.py changed, reloading.
+INFO 2025-05-15 14:35:17,732 autoreload Watching for file changes with StatReloader
+WARNING 2025-05-15 14:36:57,501 log Unauthorized: /api/saldo/
+WARNING 2025-05-15 14:36:57,502 log Unauthorized: /api/transacoes/
+WARNING 2025-05-15 14:36:57,512 log Unauthorized: /api/saldo/
+WARNING 2025-05-15 14:36:57,569 log Unauthorized: /api/transacoes/
+INFO 2025-05-15 14:37:00,906 views Login bem-sucedido para: biel
+INFO 2025-05-15 14:37:01,414 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:37:01,590 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:37:01,914 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:37:02,141 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+WARNING 2025-05-15 14:37:17,078 views Tentativa de login inválida para: silva
+WARNING 2025-05-15 14:37:17,127 log Bad Request: /api/login/
+WARNING 2025-05-15 14:37:20,506 views Tentativa de login inválida para: silva
+WARNING 2025-05-15 14:37:20,507 log Bad Request: /api/login/
+WARNING 2025-05-15 14:37:43,166 views Tentativa de login inválida para: silva
+WARNING 2025-05-15 14:37:43,167 log Bad Request: /api/login/
+INFO 2025-05-15 14:38:09,984 views Login bem-sucedido para: Silva
+INFO 2025-05-15 14:38:10,838 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:38:10,942 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:38:11,310 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:38:11,440 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:39:58,685 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:39:58,802 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:39:59,158 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:39:59,387 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:41:42,343 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:41:42,478 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:41:42,835 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:41:43,048 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:41:48,012 views Login bem-sucedido para: Silva
+INFO 2025-05-15 14:41:49,078 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:41:49,197 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:41:49,546 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:41:49,711 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:42:44,159 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:42:44,298 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:42:44,638 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:42:44,791 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:43:28,104 views Login bem-sucedido para: Silva
+INFO 2025-05-15 14:43:28,229 views Login bem-sucedido para: Silva
+INFO 2025-05-15 14:43:28,235 views Login bem-sucedido para: Silva
+INFO 2025-05-15 14:43:28,265 views Login bem-sucedido para: Silva
+INFO 2025-05-15 14:43:29,248 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:43:29,347 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:43:29,707 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:43:30,129 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:43:46,218 views Login bem-sucedido para: biel
+INFO 2025-05-15 14:43:46,686 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:43:46,815 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:43:47,123 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:43:47,315 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:50:20,836 views Login bem-sucedido para: Silva
+INFO 2025-05-15 14:50:21,257 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:50:21,338 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:50:21,611 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:50:21,752 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:59:49,294 views Login bem-sucedido para: Silva
+INFO 2025-05-15 14:59:49,897 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:59:50,052 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 14:59:50,337 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 14:59:50,516 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 15:02:31,114 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 15:02:31,209 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 15:02:31,496 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025']}>
+INFO 2025-05-15 15:02:31,633 views Saldo calculado: 105.65 (Entradas: 1621.70, Despesas: 1516.05)
+INFO 2025-05-15 15:02:38,908 views Login bem-sucedido para: Silva
+ERROR 2025-05-15 15:02:48,649 log Internal Server Error: /api/relatorios/
+Traceback (most recent call last):
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\finance\views.py", line 202, in get
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 1079, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 1175, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'igreja' was declared on serializer RelatorioSerializer, but has not been included in the 'fields' option.
+INFO 2025-05-15 15:04:43,060 autoreload C:\Users\gabr1\Desktop\projetos\backend\finance\serializers.py changed, reloading.
+INFO 2025-05-15 15:05:47,982 autoreload Watching for file changes with StatReloader
+INFO 2025-05-15 15:07:55,769 autoreload Watching for file changes with StatReloader
+WARNING 2025-05-15 16:09:12,902 log Unauthorized: /api/igrejas/2/
+WARNING 2025-05-15 16:09:38,970 log Unauthorized: /api/igrejas/2/
+WARNING 2025-05-15 16:09:59,016 log Unauthorized: /api/igrejas/2/
+INFO 2025-05-15 16:10:49,977 views Login bem-sucedido para: Silva

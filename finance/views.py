@@ -11,6 +11,7 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from .models import Transacao, Relatorio
 from .serializers import TransacaoSerializer, RelatorioSerializer
+from django.contrib.auth.models import Group
 
 # Configuração do logger
 logger = logging.getLogger('finance')
@@ -93,7 +94,7 @@ def user_register(request):
 
 @api_view(['POST'])
 def user_login(request):
-    """Faz login e retorna tokens JWT."""
+    """Faz login e retorna tokens JWT e tipo de usuário."""
     username = request.data.get('username')
     password = request.data.get('password')
 
@@ -105,9 +106,17 @@ def user_login(request):
     if user and user.check_password(password):
         refresh = RefreshToken.for_user(user)
         logger.info(f"Login bem-sucedido para: {username}")
+        # Verifica se o usuário é do grupo 'Cordenadores'
+        is_igreja_admin = user.groups.filter(name='Cordenadores').exists()
+        is_superuser = user.is_superuser
         return Response({
             'refresh': str(refresh),
             'access': str(refresh.access_token),
+            'user': {
+                'username': user.username,
+                'is_igreja_admin': is_igreja_admin,
+                'is_superuser': is_superuser
+            }
         }, status=status.HTTP_200_OK)
 
     logger.warning(f"Tentativa de login inválida para: {username}")

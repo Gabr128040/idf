@@ -32,9 +32,9 @@ class RelatorioSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Relatorio
-        fields = ['id', 'nome', 'mes', 'ano', 'data_geracao', 'url']
+        fields = ['id', 'nome', 'mes', 'ano', 'data_geracao', 'url', 'igreja', 'igreja_id']
 
     def get_url(self, obj):
         return obj.arquivo.url if obj.arquivo else None
-    
+
 
