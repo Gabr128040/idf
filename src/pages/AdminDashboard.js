@@ -18,19 +18,22 @@ const AdminDashboard = () => {
   const [notification, setNotification] = useState(null);
   const [refreshTransacoes, setRefreshTransacoes] = useState(false);
   const [showTransacaoModal, setShowTransacaoModal] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [actionLoading, setActionLoading] = useState(false); // Para criar/editar/deletar
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Corrige: aceita tanto superuser quanto is_igreja_admin
-    const localUser = JSON.parse(localStorage.getItem('user') || '{}');
-    if (!localUser || (!localUser.is_superuser && !localUser.is_igreja_admin)) {
-      navigate('/');
-    }
-    fetchIgrejas();
+    setLoading(true);
+    setError(null);
+    fetchIgrejas()
+      .catch(() => setError('Erro ao carregar igrejas.'))
+      .finally(() => setLoading(false));
   }, []);
 
   const fetchIgrejas = async () => {
     try {
+      setLoading(true);
       const res = await fetch(`${process.env.REACT_APP_API_URL}/api/igrejas/`);
       const data = await res.json();
       setIgrejas(data);
@@ -39,6 +42,8 @@ const AdminDashboard = () => {
       }
     } catch (err) {
       setNotification({ type: 'error', message: 'Erro ao carregar igrejas.' });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -69,7 +74,7 @@ const AdminDashboard = () => {
 
   const submitIgrejaForm = async (e) => {
     e.preventDefault();
-    console.log(igrejaFormData)
+    setActionLoading(true);
     try {
       const method = editIgrejaId ? 'PUT' : 'POST';
       const url = editIgrejaId
@@ -86,18 +91,32 @@ const AdminDashboard = () => {
       fetchIgrejas();
     } catch (err) {
       setNotification({ type: 'error', message: err.message });
+    } finally {
+      setActionLoading(false);
     }
   };
 
   const confirmDeleteIgreja = async () => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      setNotification({ type: 'error', message: 'Sessão expirada. Faça login novamente.' });
+      navigate('/login');
+      return;
+    }
+    setActionLoading(true);
     try {
-      const token = localStorage.getItem('token');
       const res = await fetch(`${process.env.REACT_APP_API_URL}/api/igrejas/${selectedIgreja.id}/`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
-        },
+          'Content-Type': 'application/json'
+        }
       });
+      if (res.status === 401) {
+        setNotification({ type: 'error', message: 'Sessão expirada. Faça login novamente.' });
+        navigate('/login');
+        return;
+      }
       if (!res.ok) throw new Error('Erro ao deletar igreja.');
       setNotification({ type: 'success', message: 'Igreja deletada.' });
       setShowDeleteModal(false);
@@ -105,6 +124,8 @@ const AdminDashboard = () => {
       fetchIgrejas();
     } catch (err) {
       setNotification({ type: 'error', message: 'Erro ao deletar igreja.' });
+    } finally {
+      setActionLoading(false);
     }
   };
 
@@ -112,8 +133,50 @@ const AdminDashboard = () => {
     setRefreshTransacoes(!refreshTransacoes);
   };
 
+  if (loading) {
+    return (
+      <div className="zz-spinner-absolute-center">
+        <div className="zz-spinner" />
+        <span style={{ color: '#4f8cff', fontWeight: 500, marginTop: 18 }}>Carregando igrejas...</span>
+        <style>{`
+          .zz-spinner-absolute-center {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #f7f8fa;
+            z-index: 3000;
+          }
+          .zz-spinner {
+            border: 4px solid #e3e9f7;
+            border-top: 4px solid #4f8cff;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            animation: zz-spin 0.9s linear infinite;
+          }
+          @keyframes zz-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        `}</style>
+      </div>
+    );
+  }
+  if (error) {
+    return <div style={{ color: '#e74c3c', textAlign: 'center', margin: '32px 0 18px 0', fontWeight: 500 }}>{error}</div>;
+  }
+  if (!igrejas.length) {
+    return <div style={{ textAlign: 'center', marginTop: 18 }}>Nenhuma igreja encontrada.</div>;
+  }
+
   return (
     <div className="admin-dashboard-zz">
+      {actionLoading && (
+        <div className="zz-action-overlay zz-spinner-absolute-center">
+          <div className="zz-spinner" />
+          <span style={{marginTop:18, color:'#4f8cff', fontWeight:600}}>Processando...</span>
+        </div>
+      )}
       {notification && (
         <Notification
           type={notification.type}

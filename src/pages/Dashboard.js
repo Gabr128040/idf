@@ -671,6 +671,30 @@ const openReportOptions = async () => {
   }
 };
 
+  if (isLoading) {
+    return (
+      <div style={{ textAlign: 'center', margin: '32px 0 18px 0', color: '#4f8cff', fontWeight: 500 }}>
+        Carregando dados...
+        <div className="zz-skeleton-list">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="zz-skeleton-item" />
+          ))}
+        </div>
+        <style>{`
+          .zz-skeleton-list { margin-top: 12px; }
+          .zz-skeleton-item { height: 38px; background: #e3e9f7; border-radius: 8px; margin-bottom: 8px; animation: zz-skel 1.2s infinite linear alternate; }
+          @keyframes zz-skel { 0% { opacity: 0.5; } 100% { opacity: 1; } }
+        `}</style>
+      </div>
+    );
+  }
+  if (error) {
+    return <div style={{ color: '#e74c3c', textAlign: 'center', margin: '32px 0 18px 0', fontWeight: 500 }}>{error}</div>;
+  }
+  if (!transactions.length) {
+    return <div style={{ textAlign: 'center', marginTop: 18 }}>Nenhuma transação encontrada.</div>;
+  }
+
   return (
     <motion.div className="dashboard" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
       <Navbar />

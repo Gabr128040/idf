@@ -12,13 +12,17 @@ const TransactionList = ({ igrejaId, onEdit, onDelete, onTransactionClick, setNo
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [transactionToDelete, setTransactionToDelete] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!igrejaId) return;
+    setLoading(true);
+    setError(null);
     // Busca transações filtradas por igreja
     axios.get(`${process.env.REACT_APP_API_URL}/api/igrejas/${igrejaId}/transacoes/?mes=${selectedMonth}&ano=${selectedYear}`)
       .then(res => setTransactions(res.data))
-      .catch(() => setError('Erro ao carregar transações.'));
+      .catch(() => setError('Erro ao carregar transações.'))
+      .finally(() => setLoading(false));
   }, [igrejaId, selectedMonth, selectedYear]);
 
   const handleDelete = (id) => {
@@ -59,8 +63,30 @@ const TransactionList = ({ igrejaId, onEdit, onDelete, onTransactionClick, setNo
     }
   };
 
+  if (loading) {
+    return (
+      <div style={{ textAlign: 'center', margin: '32px 0 18px 0', color: '#4f8cff', fontWeight: 500 }}>
+        Carregando transações...
+        <div className="zz-skeleton-list">
+          {[...Array(3)].map((_, i) => (
+            <div key={i} className="zz-skeleton-item" />
+          ))}
+        </div>
+        <style>{`
+          .zz-skeleton-list { margin-top: 12px; }
+          .zz-skeleton-item { height: 38px; background: #e3e9f7; border-radius: 8px; margin-bottom: 8px; animation: zz-skel 1.2s infinite linear alternate; }
+          @keyframes zz-skel { 0% { opacity: 0.5; } 100% { opacity: 1; } }
+        `}</style>
+      </div>
+    );
+  }
+
   if (error) {
-    return <div className="error-message">{error}</div>;
+    return (
+      <div style={{ color: '#e74c3c', textAlign: 'center', margin: '32px 0 18px 0', fontWeight: 500 }}>
+        {error}
+      </div>
+    );
   }
 
   if (!transactions || transactions.length === 0) {
