@@ -14,8 +14,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import axiosLocal from 'axios';
 import logo from '../assets/logo.png';
 import './Dashboard.css';
-import { getTipoDisplay, getCultoDisplay, getTipoDespesaDisplay, formatDate } from '../utils';
+import { getTipoDisplay, getCultoDisplay, getTipoDespesaDisplay, formatDate, getLastDayOfMonth } from '../utils';
 import { FaCalendarAlt, FaSearch } from 'react-icons/fa';
+import RelatorioPdfPreview from '../components/RelatorioPdfPreview';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -172,24 +173,186 @@ const Dashboard = () => {
     }
   };
 
-  const generateMonthlyReport = () => {
-    // Lógica para gerar o relatório mensal em PDF
-    const doc = new jsPDF();
-    doc.setFontSize(16);
-    doc.text('Relatório Mensal', 14, 22);
-    autoTable(doc, {
-      startY: 30,
-      head: [['Descrição', 'Valor']],
-      body: [
-        ['Total de Entradas', previewData.totalEntradas.toFixed(2)],
-        ['Total de Saídas', previewData.totalSaidas.toFixed(2)],
-        ['Saldo do Mês', previewData.saldoMes.toFixed(2)],
-        ['Saldo Anterior', previewData.saldoAnterior.toFixed(2)],
-        ['Saldo Final', previewData.saldoFinal.toFixed(2)],
-        ['Dízimo da Igreja', previewData.dizimoIgreja.toFixed(2)],
-      ],
-    });
-    doc.save(`relatorio_mensal_${selectedMonth}_${selectedYear}.pdf`);
+  const { truncateToTwoDecimals } = require('../utils');
+
+  // Função para formatar os dados da tabela do PDF
+  function getFormattedTableData(transacoes, currentMonth, currentYear) {
+    return transacoes
+      .filter(t => {
+        const [ano, mes] = t.data.split('-');
+        return parseInt(mes) === currentMonth && parseInt(ano) === currentYear;
+      })
+      .sort((a, b) => new Date(a.data) - new Date(b.data))
+      .map(t => ({
+        dia: t.data.split('-')[2],
+        discriminacao: t.descricao || '-',
+        entrada: (t.tipo === 'D' || t.tipo === 'O') ? truncateToTwoDecimals(t.quantia) : '-',
+        saida: t.tipo === 'S' ? truncateToTwoDecimals(t.quantia) : '-',
+      }));
+  }
+
+  // Função para gerar e salvar o PDF detalhado
+  const generateMonthlyReport = async () => {
+    setIsLoading(true);
+    try {
+      const pdfMonth = currentMonth;
+      const pdfYear = currentYear;
+      const lastDayOfMonth = getLastDayOfMonth(pdfYear, pdfMonth);
+      let extrasCriadas = [];
+      // Criar oficialmente no sistema as transações extras, se marcadas
+      if (includeGratificacao) {
+        const gratificacaoTransacao = {
+          tipo: 'S', tipo_despesa: 'OT', descricao: 'Gratificação do Líder', quantia: 900, data: lastDayOfMonth, igreja_id: igrejaUsuario?.id
+        };
+        await axiosLocal.post(`${process.env.REACT_APP_API_URL}/api/transacoes/nova/`, gratificacaoTransacao);
+        extrasCriadas.push(gratificacaoTransacao);
+      }
+      if (includeDizimoGratificacao) {
+        const dizimoGratificacaoTransacao = {
+          tipo: 'D', descricao: 'Dízimo da Gratificação', quantia: 90, data: lastDayOfMonth, igreja_id: igrejaUsuario?.id
+        };
+        await axiosLocal.post(`${process.env.REACT_APP_API_URL}/api/transacoes/nova/`, dizimoGratificacaoTransacao);
+        extrasCriadas.push(dizimoGratificacaoTransacao);
+      }
+      if (includeDizimoIgreja && previewData) {
+        const dizimoIgrejaTransacao = {
+          tipo: 'S',
+          tipo_despesa: 'OT',
+          descricao: 'Dízimo da Igreja',
+          quantia: Number(truncateToTwoDecimals(previewData.dizimoIgreja)),
+          data: lastDayOfMonth,
+          igreja_id: igrejaUsuario?.id ? Number(igrejaUsuario.id) : undefined
+        };
+        console.log('Enviando transação Dízimo da Igreja:', dizimoIgrejaTransacao);
+        try {
+          await axiosLocal.post(`${process.env.REACT_APP_API_URL}/api/transacoes/nova/`, dizimoIgrejaTransacao);
+          extrasCriadas.push(dizimoIgrejaTransacao);
+        } catch (err) {
+          console.error('Erro ao criar Dízimo da Igreja:', err?.response?.data || err);
+          setNotification({ message: 'Erro ao criar Dízimo da Igreja: ' + (err?.response?.data?.error || err.message), type: 'error' });
+        }
+      }
+      // Buscar transações atualizadas após criar extras
+      const transacoesAtualizadas = await fetchTransactions(pdfMonth, pdfYear, navigate, igrejaUsuario ? igrejaUsuario.id : null);
+      // Agrupar dízimos e ofertas por dia
+      const grouped = {};
+      transacoesAtualizadas.forEach(t => {
+        const [ano, mes, dia] = t.data.split('-');
+        if (!grouped[dia]) grouped[dia] = { D: 0, O: 0, outros: [] };
+        if (t.tipo === 'D') grouped[dia].D += parseFloat(t.quantia);
+        else if (t.tipo === 'O') grouped[dia].O += parseFloat(t.quantia);
+        else grouped[dia].outros.push(t);
+      });
+      // Montar formattedData agrupando D e O, mantendo outros
+      let formattedData = [];
+      Object.keys(grouped).sort((a, b) => parseInt(a) - parseInt(b)).forEach(dia => {
+        if (grouped[dia].D > 0) formattedData.push({ dia, discriminacao: 'Dízimo', entrada: `R$ ${truncateToTwoDecimals(grouped[dia].D)}`, saida: '-' });
+        if (grouped[dia].O > 0) formattedData.push({ dia, discriminacao: 'Oferta', entrada: `R$ ${truncateToTwoDecimals(grouped[dia].O)}`, saida: '-' });
+        grouped[dia].outros.forEach(t => {
+          let discriminacao = '';
+          if (t.tipo === 'S') {
+            const tipoDespesa = getTipoDespesaDisplay(t.tipo_despesa);
+            discriminacao = tipoDespesa === 'Outro' ? (t.descricao || 'Outro') : tipoDespesa;
+          }
+          formattedData.push({
+            dia,
+            discriminacao,
+            entrada: '-',
+            saida: t.tipo === 'S' ? `R$ ${truncateToTwoDecimals(parseFloat(t.quantia))}` : '-',
+          });
+        });
+      });
+      // Adicionar 5 linhas vazias ao final
+      for (let i = 0; i < 5; i++) {
+        formattedData.push({ dia: '', discriminacao: '', entrada: '', saida: '' });
+      }
+      // Gerar o PDF
+      const doc = new jsPDF({ format: 'a4', unit: 'mm' });
+      try {
+        doc.addImage(logo, 'PNG', 10, 10, 15, 15);
+      } catch (err) {
+        setNotification({ message: 'Erro ao adicionar o logotipo ao PDF. Verifique o arquivo da imagem.', type: 'error' });
+      }
+      doc.setFontSize(11);
+      doc.setFont('times', 'bold');
+      doc.text('IGREJA DE DEUS MISSIONÁRIA', 105, 15, { align: 'center' });
+      doc.setFontSize(9);
+      doc.setFont('times', 'normal');
+      doc.text('CNPJ: 05.869.914/0001-07', 105, 20, { align: 'center' });
+      doc.text('DEPARTAMENTO FINANCEIRO', 105, 25, { align: 'center' });
+      doc.setFontSize(10);
+      doc.text(`MÊS: ${new Date(0, pdfMonth - 1).toLocaleString('pt-BR', { month: 'long' }).toUpperCase()}`, 10, 35);
+      doc.text(`ANO: ${pdfYear}`, 105, 35, { align: 'center' });
+      doc.text('EBENÉZER', 200 - 10, 35, { align: 'right' });
+      autoTable(doc, {
+        startY: 40,
+        head: [['DIA', 'DISCRIMINAÇÃO', 'ENTRADA', 'SAÍDA']],
+        body: formattedData.map(row => [row.dia, row.discriminacao, row.entrada !== undefined ? row.entrada : '-', row.saida !== undefined ? row.saida : '-']),
+        theme: 'grid',
+        headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0], fontStyle: 'bold', fontSize: 8 },
+        styles: { fontSize: 7, cellPadding: 1, overflow: 'linebreak' },
+        columnStyles: { 0: { cellWidth: 15 }, 1: { cellWidth: 80 }, 2: { cellWidth: 40, halign: 'right' }, 3: { cellWidth: 40, halign: 'right' } },
+      });
+      const finalY = doc.lastAutoTable.finalY - 5;
+      const infoBoxX = 10;
+      const infoBoxY = finalY + 10;
+      const infoBoxWidth = 180;
+      const infoBoxHeight = 25;
+      doc.setDrawColor(0);
+      doc.setFillColor(240, 240, 240);
+      doc.rect(infoBoxX, infoBoxY, infoBoxWidth, infoBoxHeight, 'FD');
+      const infoStartX = infoBoxX + 5;
+      let infoStartY = infoBoxY + 4;
+      doc.setFontSize(9);
+      doc.setFont('times', 'bold');
+      doc.text('TOTAL DE ENTRADA:', infoStartX, infoStartY);
+      doc.text(`R$ ${truncateToTwoDecimals(previewData.totalEntradas)}`, infoStartX + 60, infoStartY);
+      infoStartY += 4;
+      doc.text('TOTAL DE SAÍDA DO MÊS:', infoStartX, infoStartY);
+      doc.text(`R$ ${truncateToTwoDecimals(previewData.totalSaidas)}`, infoStartX + 60, infoStartY);
+      infoStartY += 4;
+      doc.text('SALDO DO MÊS:', infoStartX, infoStartY);
+      doc.text(`R$ ${previewData.saldoMes.toFixed(2)}`, infoStartX + 60, infoStartY);
+      infoStartY += 4;
+      doc.text('SALDO ANTERIOR:', infoStartX, infoStartY);
+      doc.text(`R$ ${previewData.saldoAnterior.toFixed(2)}`, infoStartX + 60, infoStartY);
+      infoStartY += 4;
+      doc.text('TOTAL EM CAIXA:', infoStartX, infoStartY);
+      const totalEmCaixa = previewData.saldoFinal;
+      doc.text(`R$ ${truncateToTwoDecimals(totalEmCaixa)}`, infoStartX + 60, infoStartY);
+      const signatureY = infoBoxY + infoBoxHeight + 6;
+      doc.setFontSize(8);
+      doc.setFont('times', 'normal');
+      doc.text('TESOUREIRO: ______________________________', 10, signatureY);
+      doc.text('DIRIGENTE DA CONGREGAÇÃO: ______________________________', 10, signatureY + 5);
+      doc.text('DIRETOR FINANCEIRO IDM SEDE: ______________________________', 10, signatureY + 10);
+      doc.text('CONSELHO FISCAL: ______________________________', 10, signatureY + 15);
+      // Salvar PDF localmente
+      doc.save(`relatorio_financeiro_${pdfMonth}_${pdfYear}.pdf`);
+      // Enviar PDF para o backend
+      const saveRelatorio = async (nome, mes, ano, pdfBlob) => {
+        const formData = new FormData();
+        formData.append('nome', nome);
+        formData.append('mes', mes);
+        formData.append('ano', ano);
+        formData.append('arquivo', pdfBlob);
+        try {
+          const response = await axiosLocal.post(`${process.env.REACT_APP_API_URL}/api/relatorios/salvar/`, formData, {
+            headers: { 'Content-Type': 'multipart/form-data' },
+          });
+          setNotification({ message: 'Relatório salvo com sucesso!', type: 'success' });
+        } catch (error) {
+          setNotification({ message: 'Erro ao salvar relatório: ' + error.message, type: 'error' });
+        }
+      };
+      const pdfBlob = doc.output('blob');
+      await saveRelatorio(`relatorio_${pdfMonth}_${pdfYear}.pdf`, pdfMonth, pdfYear, pdfBlob);
+      await updateTransactions();
+    } catch (err) {
+      setNotification({ message: 'Erro ao gerar o relatório: ' + err.message, type: 'error' });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   // Buscar perfil do usuário autenticado ao montar o Dashboard
@@ -420,59 +583,66 @@ const Dashboard = () => {
             <h3 style={{ color: '#f39c12', marginBottom: 12 }}>
               Fechamento do Mês: {new Date(0, currentMonth - 1).toLocaleString('pt-BR', { month: 'long' }).toUpperCase()} de {currentYear}
             </h3>
-            <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <input
-                  type="checkbox"
-                  checked={includeGratificacao}
-                  onChange={e => handleGratificacaoChange(e.target.checked)}
-                  disabled={!isGratificacaoEnabled}
-                />
-                Incluir Gratificação do Pastor (R$ 900,00)
-              </label>
-              {!isGratificacaoEnabled && (
-                <p style={{ color: '#ffcc00', fontSize: '14px', marginTop: '5px' }}>
-                  Aviso: O saldo atual não é suficiente para incluir a gratificação do pastor.
-                </p>
-              )}
-            </div>
-            <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <input
-                  type="checkbox"
-                  checked={includeDizimoGratificacao}
-                  onChange={e => setIncludeDizimoGratificacao(e.target.checked)}
-                  disabled={!includeGratificacao}
-                />
-                Incluir Dízimo da Gratificação (10% da gratificação)
-              </label>
-            </div>
-            <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <input
-                  type="checkbox"
-                  checked={includeDizimoIgreja}
-                  onChange={e => setIncludeDizimoIgreja(e.target.checked)}
-                />
-                Incluir Dízimo da Igreja (10% das entradas)
-              </label>
-            </div>
-            <div className="preview-section" style={{background:'#f7fafc',borderRadius:8,padding:'12px 16px',marginBottom:18,marginTop:8}}>
-              <h4 style={{color:'#2c3e50',fontWeight:600,marginBottom:8}}>Prévia do Relatório</h4>
-              <p><b>Total de Entradas:</b> R$ {previewData ? previewData.totalEntradas.toFixed(2) : '0,00'}</p>
-              <p><b>Total de Saídas:</b> R$ {previewData ? previewData.totalSaidas.toFixed(2) : '0,00'}</p>
-              <p><b>Saldo do Mês:</b> R$ {previewData ? previewData.saldoMes.toFixed(2) : '0,00'}</p>
-              <p><b>Saldo Anterior:</b> R$ {previewData ? previewData.saldoAnterior.toFixed(2) : '0,00'}</p>
-              <p><b>Saldo Final:</b> R$ {previewData ? previewData.saldoFinal.toFixed(2) : '0,00'}</p>
-              <p><b>Dízimo da Igreja:</b> R$ {previewData ? previewData.dizimoIgreja.toFixed(2) : '0,00'}</p>
-            </div>
-            <div className="button-group">
-              <button className="edit" onClick={generateMonthlyReport}>
-                Gerar Relatório
-              </button>
-              <button className="close" onClick={() => setShowReportModal(false)}>
-                Cancelar
-              </button>
+            <div className="relatorio-modal-grid">
+              <div className="relatorio-modal-info">
+                <div className="preview-section" style={{background:'#f7fafc',borderRadius:8,padding:'12px 16px',marginBottom:18,marginTop:8}}>
+                  <h4 style={{color:'#2c3e50',fontWeight:600,marginBottom:8}}>Prévia do Relatório</h4>
+                  <p><b>Total de Entradas:</b> R$ {previewData ? previewData.totalEntradas.toFixed(2) : '0,00'}</p>
+                  <p><b>Total de Saídas:</b> R$ {previewData ? previewData.totalSaidas.toFixed(2) : '0,00'}</p>
+                  <p><b>Saldo do Mês:</b> R$ {previewData ? previewData.saldoMes.toFixed(2) : '0,00'}</p>
+                  <p><b>Saldo Anterior:</b> R$ {previewData ? previewData.saldoAnterior.toFixed(2) : '0,00'}</p>
+                  <p><b>Saldo Final:</b> R$ {previewData ? previewData.saldoFinal.toFixed(2) : '0,00'}</p>
+                  <p><b>Dízimo da Igreja:</b> R$ {previewData ? previewData.dizimoIgreja.toFixed(2) : '0,00'}</p>
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <input
+                      type="checkbox"
+                      checked={includeGratificacao}
+                      onChange={e => handleGratificacaoChange(e.target.checked)}
+                      disabled={!isGratificacaoEnabled}
+                    />
+                    Incluir Gratificação do Pastor (R$ 900,00)
+                  </label>
+                  {!isGratificacaoEnabled && (
+                    <p style={{ color: '#ffcc00', fontSize: '14px', marginTop: '5px' }}>
+                      Aviso: O saldo atual não é suficiente para incluir a gratificação do pastor.
+                    </p>
+                  )}
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <input
+                      type="checkbox"
+                      checked={includeDizimoGratificacao}
+                      onChange={e => setIncludeDizimoGratificacao(e.target.checked)}
+                      disabled={!includeGratificacao}
+                    />
+                    Incluir Dízimo da Gratificação (10% da gratificação)
+                  </label>
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <input
+                      type="checkbox"
+                      checked={includeDizimoIgreja}
+                      onChange={e => setIncludeDizimoIgreja(e.target.checked)}
+                    />
+                    Incluir Dízimo da Igreja (10% das entradas)
+                  </label>
+                </div>
+                <div className="button-group">
+                  <button className="edit" onClick={generateMonthlyReport}>
+                    Gerar Relatório
+                  </button>
+                  <button className="close" onClick={() => setShowReportModal(false)}>
+                    Cancelar
+                  </button>
+                </div>
+              </div>
+              <div className="relatorio-modal-pdf">
+                <RelatorioPdfPreview previewData={previewData} currentMonth={currentMonth} currentYear={currentYear} transactions={transactions} includeGratificacao={includeGratificacao} includeDizimoGratificacao={includeDizimoGratificacao} includeDizimoIgreja={includeDizimoIgreja} />
+              </div>
             </div>
           </motion.div>
         </div>

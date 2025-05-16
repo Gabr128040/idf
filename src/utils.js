@@ -51,3 +51,12 @@ export const formatDate = (dateString) => {
     const [, month, day] = dateString.split('-');
     return `${day.padStart(2, '0')}/${month.padStart(2, '0')}`; // Retorna "03/02"
 };
+
+export function truncateToTwoDecimals(value) {
+  return Number(value).toFixed(2);
+}
+
+export function getLastDayOfMonth(year, month) {
+  // month: 1-12
+  return new Date(year, month, 0).toISOString().split('T')[0];
+}
