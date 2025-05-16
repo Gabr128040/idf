@@ -52,6 +52,15 @@ class TransacaoListCreateView(generics.ListCreateAPIView):
     queryset = Transacao.objects.all()
     serializer_class = TransacaoSerializer
 
+    def create(self, request, *args, **kwargs):
+        logger.info(f"[TransacaoListCreateView] Dados recebidos para criação: {request.data}")
+        response = super().create(request, *args, **kwargs)
+        if response.status_code >= 400:
+            logger.error(f"[TransacaoListCreateView] Erro ao criar transação: {response.data}")
+        else:
+            logger.info(f"[TransacaoListCreateView] Transação criada com sucesso: {response.data}")
+        return response
+
 class TransacaoRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     """Recupera, atualiza ou deleta uma transação específica."""
     queryset = Transacao.objects.all()
