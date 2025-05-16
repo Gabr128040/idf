@@ -77,17 +77,17 @@ const TransactionList = ({ transactions, onEdit, onDelete, onTransactionClick, s
           <motion.li
             key={transaction.id}
             onClick={() => onEdit && onEdit(transaction)}
-            className={transaction.tipo === 'S' ? 'despesa zz-trans-despesa' : 'zz-trans-receita'}
+            className={transaction.tipo === 'S' ? 'despesa' : ''}
             variants={{
               hidden: { opacity: 0, x: -20 },
               visible: { opacity: 1, x: 0 },
             }}
             transition={{ duration: 0.3 }}
           >
-            <span className="zz-trans-tipo">{getTipoDisplay(transaction.tipo)}</span>
-            <span className="zz-trans-valor">R$ {transaction.quantia}</span>
-            <span className="zz-trans-desc" style={{ color: '#555' }}>{getCampoEspecifico(transaction)}</span>
-            <span className="zz-trans-data">{formatDate(transaction.data)}</span>
+            <span>{getTipoDisplay(transaction.tipo)}</span>
+            <span>R$ {transaction.quantia}</span>
+            <span>{getCampoEspecifico(transaction)}</span>
+            <span>{formatDate(transaction.data)}</span>
             <button
               className="zz-trans-delete-btn"
               title="Excluir transação"

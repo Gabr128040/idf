@@ -7,6 +7,7 @@ import ConfirmationModal from '../components/ConfirmationModal';
 import Notification from '../components/Notification';
 import RelatorioList from '../components/RelatorioList';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../pages/Dashboard.css';
 
 const AdminDashboard = () => {
@@ -24,7 +25,24 @@ const AdminDashboard = () => {
   const [error, setError] = useState(null);
   const [saldo, setSaldo] = useState(null);
   const [saldoLoading, setSaldoLoading] = useState(false);
+  const [transactions, setTransactions] = useState([]);
   const navigate = useNavigate();
+
+  const fetchIgrejas = async () => {
+    try {
+      setLoading(true);
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/igrejas/`);
+      const data = await res.json();
+      setIgrejas(data);
+      if (!selectedIgreja && data.length > 0) {
+        setSelectedIgreja(data[0]);
+      }
+    } catch (err) {
+      setNotification({ type: 'error', message: 'Erro ao carregar igrejas.' });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -32,7 +50,7 @@ const AdminDashboard = () => {
     fetchIgrejas()
       .catch(() => setError('Erro ao carregar igrejas.'))
       .finally(() => setLoading(false));
-  }, [fetchIgrejas]);
+  }, []);
 
   // Busca saldo da igreja selecionada
   useEffect(() => {
@@ -56,21 +74,24 @@ const AdminDashboard = () => {
     fetchSaldo();
   }, [selectedIgreja, refreshTransacoes]);
 
-  const fetchIgrejas = async () => {
-    try {
-      setLoading(true);
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/igrejas/`);
-      const data = await res.json();
-      setIgrejas(data);
-      if (!selectedIgreja && data.length > 0) {
-        setSelectedIgreja(data[0]);
-      }
-    } catch (err) {
-      setNotification({ type: 'error', message: 'Erro ao carregar igrejas.' });
-    } finally {
-      setLoading(false);
+  // Busca transações da igreja selecionada
+  useEffect(() => {
+    if (!selectedIgreja) {
+      setTransactions([]);
+      return;
     }
-  };
+    const fetchTransactions = async () => {
+      try {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/igrejas/${selectedIgreja.id}/transacoes/`);
+        // Ordenar do mais recente para o mais antigo
+        const sorted = res.data.sort((a, b) => new Date(b.data) - new Date(a.data));
+        setTransactions(sorted);
+      } catch (err) {
+        setTransactions([]);
+      }
+    };
+    fetchTransactions();
+  }, [selectedIgreja, refreshTransacoes]);
 
   const handleSelectIgreja = (igrejaId) => {
     const igreja = igrejas.find(i => i.id === parseInt(igrejaId));
@@ -157,6 +178,9 @@ const AdminDashboard = () => {
   const handleCreateTransacao = () => {
     setRefreshTransacoes(!refreshTransacoes);
   };
+
+  // Função para atualizar transações
+  const atualizarTransacoes = () => setRefreshTransacoes((v) => !v);
 
   if (loading) {
     return (
@@ -254,14 +278,18 @@ const AdminDashboard = () => {
                 <div onClick={e => e.stopPropagation()}>
                   <TransactionForm
                     igrejaId={selectedIgreja.id}
-                    onSuccess={() => { setShowTransacaoModal(false); handleCreateTransacao(); }}
+                    onSuccess={() => { setShowTransacaoModal(false); handleCreateTransacao(); atualizarTransacoes(); }}
                     onCancel={() => setShowTransacaoModal(false)}
                   />
                 </div>
               </div>
             )}
-            <div style={{marginTop: '10px', marginBottom: '10px'}}>
-              <TransactionList igrejaId={selectedIgreja.id} refresh={refreshTransacoes} />
+            <div style={{marginTop: '10px', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: 8}}>
+              <TransactionList
+                transactions={transactions}
+                onRefresh={atualizarTransacoes}
+                loadingRefresh={saldoLoading} // pode usar um estado próprio se quiser animação independente
+              />
             </div>
             <RelatorioList igrejaId={selectedIgreja.id} />
             <div className="zz-relatorio-erro-center">
@@ -496,6 +524,8 @@ const AdminDashboard = () => {
           font-weight: 600;
           color: #23272f;
         }
+        .zz-refresh-icon-btn:active { background: #e3e9f7; }
+        @keyframes zz-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .zz-relatorio-erro-center {
           width: 100%;
           display: flex;

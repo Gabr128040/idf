@@ -475,7 +475,7 @@ const Dashboard = () => {
         <main className="dashboard-main">
           <section className="dashboard-card">
             <div className="dashboard-header-row">
-              <span className="dashboard-title">Dashboard Financeiro</span>
+              <span className="dashboard-title">{igrejaUsuario ? igrejaUsuario.nome : 'Dashboard Financeiro'}</span>
               <div style={{ display: 'flex', gap: 10 }}>
                 <button className="dashboard-btn-primary" onClick={() => setShowForm(true)}>
                   Nova Transação
@@ -524,7 +524,6 @@ const Dashboard = () => {
           </section>
           <section className="dashboard-saldo-card">
             <SaldoIndicator saldo={saldo} />
-            {igrejaUsuario && <span className="igreja-info">{igrejaUsuario.nome}</span>}
           </section>
           <section className="dashboard-card">
             <TransactionList

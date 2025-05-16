@@ -6,13 +6,24 @@ const Relatorios = () => {
   const [relatorios, setRelatorios] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [igrejaId, setIgrejaId] = useState(null);
 
   useEffect(() => {
     const fetchRelatorios = async () => {
       setLoading(true);
       setError(null);
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/relatorios/`);
+        // Buscar perfil do usuário autenticado para obter igrejaId
+        const token = localStorage.getItem('token');
+        if (!token) throw new Error('Usuário não autenticado');
+        const meResponse = await axios.get(`${process.env.REACT_APP_API_URL}/api/me/`, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        const igreja = meResponse.data.igreja;
+        if (!igreja || !igreja.id) throw new Error('Igreja não encontrada no perfil');
+        setIgrejaId(igreja.id);
+        // Buscar relatórios apenas da igreja do usuário
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/igrejas/${igreja.id}/relatorios/`);
         setRelatorios(response.data);
       } catch (error) {
         setError('Erro ao buscar relatórios.');
