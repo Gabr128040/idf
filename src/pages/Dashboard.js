@@ -15,7 +15,7 @@ import axiosLocal from 'axios';
 import logo from '../assets/logo.png';
 import './Dashboard.css';
 import { getTipoDisplay, getCultoDisplay, getTipoDespesaDisplay, formatDate, getLastDayOfMonth } from '../utils';
-import { FaCalendarAlt, FaSearch } from 'react-icons/fa';
+import { FaCalendarAlt, FaSearch, FaPlus, FaFileAlt } from 'react-icons/fa';
 import RelatorioPdfPreview from '../components/RelatorioPdfPreview';
 
 const Dashboard = () => {
@@ -477,15 +477,22 @@ const Dashboard = () => {
             <div className="dashboard-header-row">
               <span className="dashboard-title">{igrejaUsuario ? igrejaUsuario.nome : 'Dashboard Financeiro'}</span>
               <div style={{ display: 'flex', gap: 10 }}>
-                <button className="dashboard-btn-primary" onClick={() => setShowForm(true)}>
-                  Nova Transação
+                <button
+                  className="dashboard-btn-primary dashboard-btn-mobile-icon"
+                  onClick={() => setShowForm(true)}
+                  aria-label="Nova Transação"
+                >
+                  <span className="dashboard-btn-text">Nova Transação</span>
+                  <span className="dashboard-btn-icon"><FaPlus /></span>
                 </button>
                 <button
-                  className="dashboard-btn-report"
+                  className="dashboard-btn-report dashboard-btn-mobile-icon"
                   onClick={() => setShowReportModal((v) => !v)}
                   title="Gerar/Fechar Relatório"
+                  aria-label={showReportModal ? 'Fechar Relatório' : 'Gerar Relatório'}
                 >
-                  {showReportModal ? 'Fechar Relatório' : 'Gerar Relatório'}
+                  <span className="dashboard-btn-text">{showReportModal ? 'Fechar Relatório' : 'Gerar Relatório'}</span>
+                  <span className="dashboard-btn-icon"><FaFileAlt /></span>
                 </button>
               </div>
             </div>
