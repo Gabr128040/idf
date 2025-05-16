@@ -121,9 +121,20 @@ const Login = () => {
           margin-bottom: 18px;
         }
         .login-landing-logo {
-          width: 54px;
-          height: 54px;
-          margin-bottom: 8px;
+          width: 110px;
+          height: 110px;
+          margin-bottom: 18px;
+          transition: width 0.2s, height 0.2s;
+        }
+        @media (max-width: 600px) {
+          .login-landing-bg {
+            margin-left: 0;
+            margin-right: 0;
+          }
+          .login-landing-card {
+            max-width: 92vw;
+            padding: 14px 3vw 10px 3vw;
+          }
         }
         .login-landing-title {
           font-size: 2rem;

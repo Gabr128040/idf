@@ -1,29 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { getTipoDisplay, getCultoDisplay, getTipoDespesaDisplay, formatDate } from '../utils';
 import { motion } from 'framer-motion';
 import './TransactionList.css';
 import ConfirmationModal from './ConfirmationModal';
 
-const TransactionList = ({ igrejaId, onEdit, onDelete, onTransactionClick, setNotification }) => {
-  const [transactions, setTransactions] = useState([]);
-  const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth() + 1);
-  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
+// Remover busca interna e filtros locais, usar props do Dashboard
+const TransactionList = ({ transactions, onEdit, onDelete, onTransactionClick, setNotification }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [transactionToDelete, setTransactionToDelete] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    if (!igrejaId) return;
-    setLoading(true);
-    setError(null);
-    // Busca transações filtradas por igreja
-    axios.get(`${process.env.REACT_APP_API_URL}/api/igrejas/${igrejaId}/transacoes/?mes=${selectedMonth}&ano=${selectedYear}`)
-      .then(res => setTransactions(res.data))
-      .catch(() => setError('Erro ao carregar transações.'))
-      .finally(() => setLoading(false));
-  }, [igrejaId, selectedMonth, selectedYear]);
 
   const handleDelete = (id) => {
     setTransactionToDelete(id);
@@ -63,39 +48,17 @@ const TransactionList = ({ igrejaId, onEdit, onDelete, onTransactionClick, setNo
     }
   };
 
-  if (loading) {
-    return (
-      <div style={{ textAlign: 'center', margin: '32px 0 18px 0', color: '#4f8cff', fontWeight: 500 }}>
-        Carregando transações...
-        <div className="zz-skeleton-list">
-          {[...Array(3)].map((_, i) => (
-            <div key={i} className="zz-skeleton-item" />
-          ))}
-        </div>
-        <style>{`
-          .zz-skeleton-list { margin-top: 12px; }
-          .zz-skeleton-item { height: 38px; background: #e3e9f7; border-radius: 8px; margin-bottom: 8px; animation: zz-skel 1.2s infinite linear alternate; }
-          @keyframes zz-skel { 0% { opacity: 0.5; } 100% { opacity: 1; } }
-        `}</style>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div style={{ color: '#e74c3c', textAlign: 'center', margin: '32px 0 18px 0', fontWeight: 500 }}>
-        {error}
-      </div>
-    );
-  }
-
-  if (!transactions || transactions.length === 0) {
-    return <div className="no-transactions">Nenhuma transação encontrada.</div>;
-  }
+  // Paginação local
+  const [currentPage, setCurrentPage] = useState(1);
+  const transactionsPerPage = 10;
+  const totalPages = Math.ceil(transactions.length / transactionsPerPage);
+  const indexOfLastTransaction = currentPage * transactionsPerPage;
+  const indexOfFirstTransaction = indexOfLastTransaction - transactionsPerPage;
+  const currentTransactions = transactions.slice(indexOfFirstTransaction, indexOfLastTransaction);
 
   return (
     <div className="transaction-list zz-transaction-list">
-      <h2 className="zz-trans-title">Transações</h2>
+      {/* Removido o título <h2>Transações</h2> para evitar duplicidade */}
       <motion.ul
         initial="hidden"
         animate="visible"
@@ -108,11 +71,12 @@ const TransactionList = ({ igrejaId, onEdit, onDelete, onTransactionClick, setNo
             },
           },
         }}
+        style={{ marginBottom: 24 }}
       >
-        {transactions.map((transaction) => (
+        {currentTransactions.map((transaction) => (
           <motion.li
             key={transaction.id}
-            onClick={() => onTransactionClick && onTransactionClick(transaction)}
+            onClick={() => onEdit && onEdit(transaction)}
             className={transaction.tipo === 'S' ? 'despesa zz-trans-despesa' : 'zz-trans-receita'}
             variants={{
               hidden: { opacity: 0, x: -20 },
@@ -122,11 +86,35 @@ const TransactionList = ({ igrejaId, onEdit, onDelete, onTransactionClick, setNo
           >
             <span className="zz-trans-tipo">{getTipoDisplay(transaction.tipo)}</span>
             <span className="zz-trans-valor">R$ {transaction.quantia}</span>
-            <span className="zz-trans-desc">{getCampoEspecifico(transaction)}</span>
+            <span className="zz-trans-desc" style={{ color: '#555' }}>{getCampoEspecifico(transaction)}</span>
             <span className="zz-trans-data">{formatDate(transaction.data)}</span>
+            <button
+              className="zz-trans-delete-btn"
+              title="Excluir transação"
+              onClick={e => { e.stopPropagation(); handleDelete(transaction.id); }}
+              style={{ marginLeft: 8, background: 'none', border: 'none', color: '#e74c3c', cursor: 'pointer', fontSize: 16 }}
+            >
+              &#128465;
+            </button>
           </motion.li>
         ))}
       </motion.ul>
+      {/* Paginação */}
+      {totalPages > 1 && (
+        <div className="zz-pagination">
+          <button onClick={() => setCurrentPage((p) => Math.max(1, p - 1))} disabled={currentPage === 1}>&lt;</button>
+          {Array.from({ length: totalPages }, (_, i) => (
+            <button
+              key={i + 1}
+              className={currentPage === i + 1 ? 'active' : ''}
+              onClick={() => setCurrentPage(i + 1)}
+            >
+              {i + 1}
+            </button>
+          ))}
+          <button onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages}>&gt;</button>
+        </div>
+      )}
       <ConfirmationModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
@@ -134,20 +122,11 @@ const TransactionList = ({ igrejaId, onEdit, onDelete, onTransactionClick, setNo
         message="Tem certeza que deseja excluir esta transação?"
       />
       <style>{`
-        .zz-transaction-list { padding: 0 0 18px 0; }
-        .zz-trans-title { font-size: 1.1rem; color: #4f8cff; font-weight: 600; margin-bottom: 8px; }
-        .zz-transaction-list ul { list-style: none; padding: 0; margin: 0; }
-        .zz-transaction-list li { display: flex; justify-content: space-between; align-items: center; background: #f7fafc; border-radius: 8px; margin-bottom: 8px; padding: 10px 14px; box-shadow: 0 1px 4px #0001; transition: box-shadow 0.2s, background 0.2s; cursor: pointer; }
-        .zz-transaction-list li:hover { background: #e3e9f7; box-shadow: 0 2px 8px #4f8cff22; }
-        .zz-trans-tipo { font-weight: 600; color: #4f8cff; min-width: 70px; }
-        .zz-trans-valor { font-weight: 700; color: #2ecc71; min-width: 90px; text-align: right; }
-        .zz-trans-despesa .zz-trans-valor { color: #e74c3c; }
-        .zz-trans-desc { color: #555; flex: 1; margin: 0 10px; min-width: 80px; }
-        .zz-trans-data { color: #888; font-size: 0.95em; min-width: 80px; text-align: right; }
-        @media (max-width: 600px) {
-          .zz-transaction-list li { flex-direction: column; align-items: flex-start; gap: 2px; padding: 10px 8px; }
-          .zz-trans-tipo, .zz-trans-valor, .zz-trans-desc, .zz-trans-data { min-width: 0; text-align: left; }
-        }
+        .zz-transaction-list { background: none; box-shadow: none; border-radius: 0; }
+        .zz-pagination { display: flex; gap: 6px; justify-content: center; margin-bottom: 10px; }
+        .zz-pagination button { background: #f7fafc; border: 1px solid #4f8cff; color: #4f8cff; border-radius: 6px; padding: 4px 10px; font-weight: 600; cursor: pointer; transition: background 0.18s; }
+        .zz-pagination button.active, .zz-pagination button:hover { background: #4f8cff; color: #fff; }
+        .zz-pagination button:disabled { background: #e3e9f7; color: #aaa; cursor: not-allowed; }
       `}</style>
     </div>
   );

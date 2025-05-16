@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Importação do axios
 import { useNavigate } from 'react-router-dom'; // Importação do useNavigate
 import './Register.css';
@@ -9,8 +9,22 @@ const Register = () => {
     email: '',
     password: '',
   });
+  const [igrejas, setIgrejas] = useState([]);
 
   const navigate = useNavigate(); // Hook para redirecionamento
+
+  useEffect(() => {
+    // Buscar lista de igrejas ao carregar a tela
+    const fetchIgrejas = async () => {
+      try {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/igrejas/`);
+        setIgrejas(res.data);
+      } catch (err) {
+        setIgrejas([]);
+      }
+    };
+    fetchIgrejas();
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -52,6 +66,17 @@ const Register = () => {
           value={formData.password}
           onChange={handleChange}
         />
+        <select
+          name="igreja_id"
+          value={formData.igreja_id || ''}
+          onChange={handleChange}
+          required
+        >
+          <option value="">Selecione a Igreja</option>
+          {igrejas.map((igreja) => (
+            <option key={igreja.id} value={igreja.id}>{igreja.nome}</option>
+          ))}
+        </select>
         <button type="submit">Cadastrar</button>
       </form>
     </div>

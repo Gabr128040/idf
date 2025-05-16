@@ -18,7 +18,7 @@ const setupAxiosInterceptors = (navigate) => {
   );
 };
 
-export const fetchTransactions = async (month, year, navigate) => {
+export const fetchTransactions = async (month, year, navigate, igrejaId = null) => {
   try {
     const token = localStorage.getItem('token');
     if (!token) {
@@ -28,6 +28,7 @@ export const fetchTransactions = async (month, year, navigate) => {
     const params = {};
     if (month) params.mes = month;
     if (year) params.ano = year;
+    if (igrejaId) params.igreja_id = igrejaId;
 
     const response = await axios.get(`${API_URL}/api/transacoes/`, {
       headers: {
@@ -41,17 +42,21 @@ export const fetchTransactions = async (month, year, navigate) => {
   }
 };
 
-export const fetchSaldo = async (navigate) => {
+export const fetchSaldo = async (navigate, igrejaId = null, mes = null, ano = null) => {
   try {
     const token = localStorage.getItem('token');
     if (!token) {
       throw new Error('Nenhum token encontrado. Por favor, faça login.');
     }
-
+    const params = {};
+    if (igrejaId) params.igreja_id = igrejaId;
+    if (mes) params.mes = mes;
+    if (ano) params.ano = ano;
     const response = await axios.get(`${API_URL}/api/saldo/`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
+      params,
     });
     return response.data.saldo;
   } catch (error) {

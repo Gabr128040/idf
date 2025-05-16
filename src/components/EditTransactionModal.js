@@ -13,6 +13,7 @@ const EditTransactionModal = ({ transaction, onClose, onSave }) => {
     tipo_despesa: transaction.tipo_despesa || '',
   });
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   // Função para atualizar os campos do formulário
   const handleChange = (e) => {
@@ -22,6 +23,7 @@ const EditTransactionModal = ({ transaction, onClose, onSave }) => {
   // Função para enviar o formulário
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const token = localStorage.getItem('token');
       const response = await axios.put(
@@ -33,17 +35,23 @@ const EditTransactionModal = ({ transaction, onClose, onSave }) => {
           },
         }
       );
-      console.log('Transação editada:', response.data);
-      onSave(); // Notifica o componente pai para recarregar as transações
-      onClose(); // Fecha o modal
+      onSave && onSave();
+      onClose && onClose();
     } catch (error) {
-      console.error('Erro ao editar transação:', error);
       setError('Erro ao editar transação. Tente novamente.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
     }
   };
 
   return (
-    <div className="modal-overlay">
+    <div className="modal-overlay" onClick={handleOverlayClick}>
       <div className="edit-transaction-modal">
         <h3>Editar Transação</h3>
         <form onSubmit={handleSubmit}>
@@ -120,8 +128,8 @@ const EditTransactionModal = ({ transaction, onClose, onSave }) => {
 
           {/* Botões do modal */}
           <div className="modal-buttons">
-            <button type="submit">Salvar</button>
-            <button type="button" onClick={onClose}>Cancelar</button>
+            <button type="submit" disabled={loading}>{loading ? 'Salvando...' : 'Salvar'}</button>
+            <button type="button" onClick={onClose} disabled={loading}>Cancelar</button>
           </div>
         </form>
 

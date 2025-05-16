@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import IgrejaSelector from '../components/IgrejaSelector';
 import TransactionList from '../components/TransactionList';
 import TransactionForm from '../components/TransactionForm';
@@ -21,6 +22,8 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(false);
   const [actionLoading, setActionLoading] = useState(false); // Para criar/editar/deletar
   const [error, setError] = useState(null);
+  const [saldo, setSaldo] = useState(null);
+  const [saldoLoading, setSaldoLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,7 +32,29 @@ const AdminDashboard = () => {
     fetchIgrejas()
       .catch(() => setError('Erro ao carregar igrejas.'))
       .finally(() => setLoading(false));
-  }, []);
+  }, [fetchIgrejas]);
+
+  // Busca saldo da igreja selecionada
+  useEffect(() => {
+    const fetchSaldo = async () => {
+      if (!selectedIgreja) {
+        setSaldo(null);
+        setSaldoLoading(false);
+        return;
+      }
+      setSaldoLoading(true);
+      try {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/saldo/?igreja_id=${selectedIgreja.id}`);
+        const data = await res.json();
+        setSaldo(data.saldo !== undefined ? data.saldo : null);
+      } catch (err) {
+        setSaldo(null);
+      } finally {
+        setSaldoLoading(false);
+      }
+    };
+    fetchSaldo();
+  }, [selectedIgreja, refreshTransacoes]);
 
   const fetchIgrejas = async () => {
     try {
@@ -207,23 +232,37 @@ const AdminDashboard = () => {
       </div>
       <div className="zz-main-content">
         {selectedIgreja && (
-          <div className="igreja-info zz-info-card">
-            <div className="zz-info-title">{selectedIgreja.nome}</div>
-            <div className="zz-info-lider">Líder: <b>{selectedIgreja.lider}</b></div>
+          <div className="igreja-info zz-info-card zz-info-flex">
+            <div className="zz-info-main">
+              <div className="zz-info-title">{selectedIgreja.nome}</div>
+              <div className="zz-info-lider">Líder: <b>{selectedIgreja.lider}</b></div>
+            </div>
+            <div className="zz-info-saldo">
+              <span className="zz-saldo-label">Saldo</span>
+              <span className="zz-saldo-value">{saldoLoading ? <span className="zz-saldo-loading" /> : saldo === null ? <span className="zz-saldo-loading" /> : `R$ ${Number(saldo).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}</span>
+            </div>
           </div>
         )}
         {selectedIgreja && (
-          <div className="transacoes-section zz-transacoes">
+          <div className="transacoes-section zz-transacoes" style={{padding: '18px 18px 0 18px'}}>
             <div className="zz-transacoes-header">
               <span className="zz-transacoes-title">Transações</span>
               <button className="zz-btn zz-btn-primary" onClick={() => setShowTransacaoModal(true)}>Nova Transação</button>
             </div>
             {showTransacaoModal && (
-              <div className="zz-modal-bg">
-                <TransactionForm igrejaId={selectedIgreja.id} onSuccess={() => { setShowTransacaoModal(false); handleCreateTransacao(); }} onCancel={() => setShowTransacaoModal(false)} />
+              <div className="zz-modal-bg" onClick={e => e.target === e.currentTarget && setShowTransacaoModal(false)}>
+                <div onClick={e => e.stopPropagation()}>
+                  <TransactionForm
+                    igrejaId={selectedIgreja.id}
+                    onSuccess={() => { setShowTransacaoModal(false); handleCreateTransacao(); }}
+                    onCancel={() => setShowTransacaoModal(false)}
+                  />
+                </div>
               </div>
             )}
-            <TransactionList igrejaId={selectedIgreja.id} refresh={refreshTransacoes} />
+            <div style={{marginTop: '10px', marginBottom: '10px'}}>
+              <TransactionList igrejaId={selectedIgreja.id} refresh={refreshTransacoes} />
+            </div>
             <RelatorioList igrejaId={selectedIgreja.id} />
             <div className="zz-relatorio-erro-center">
               {/* O TransactionList e RelatorioList devem exibir mensagens de erro dentro deste div se necessário */}
@@ -237,23 +276,39 @@ const AdminDashboard = () => {
           <button className="zz-btn zz-btn-danger" onClick={handleDeleteIgreja}>Deletar Igreja</button>
         </div>
       )}
-      {showIgrejaForm && (
-        <div className="zz-modal-bg">
-          <form className="zz-modal-form" onSubmit={submitIgrejaForm}>
-            <h3>{editIgrejaId ? 'Editar Igreja' : 'Nova Igreja'}</h3>
-            <label>Nome:
-              <input name="nome" value={igrejaFormData.nome} onChange={handleIgrejaFormChange} required />
-            </label>
-            <label>Líder:
-              <input name="lider" value={igrejaFormData.lider} onChange={handleIgrejaFormChange} required />
-            </label>
-            <div className="zz-form-actions">
-              <button type="submit" className="zz-btn zz-btn-primary">Salvar</button>
-              <button type="button" className="zz-btn zz-btn-secondary" onClick={() => setShowIgrejaForm(false)}>Cancelar</button>
-            </div>
-          </form>
-        </div>
-      )}
+      <AnimatePresence>
+        {showIgrejaForm && (
+          <motion.div
+            className="zz-modal-bg"
+            onClick={e => e.target === e.currentTarget && setShowIgrejaForm(false)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.18 }}
+          >
+            <motion.form
+              className="zz-modal-form"
+              onSubmit={submitIgrejaForm}
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.18 }}
+            >
+              <h3>{editIgrejaId ? 'Editar Igreja' : 'Nova Igreja'}</h3>
+              <label>Nome:
+                <input name="nome" value={igrejaFormData.nome} onChange={handleIgrejaFormChange} required />
+              </label>
+              <label>Líder:
+                <input name="lider" value={igrejaFormData.lider} onChange={handleIgrejaFormChange} required />
+              </label>
+              <div className="zz-form-actions">
+                <button type="submit" className="zz-btn zz-btn-primary">Salvar</button>
+                <button type="button" className="zz-btn zz-btn-secondary" onClick={() => setShowIgrejaForm(false)}>Cancelar</button>
+              </div>
+            </motion.form>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <ConfirmationModal
         isOpen={showDeleteModal}
         title="Deletar Igreja"
@@ -365,6 +420,18 @@ const AdminDashboard = () => {
           word-break: break-word;
           overflow-x: auto;
         }
+        .zz-info-flex {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          gap: 18px;
+        }
+        .zz-info-main {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+        }
         .zz-info-title {
           font-size: 1.2rem;
           font-weight: 700;
@@ -374,6 +441,37 @@ const AdminDashboard = () => {
         .zz-info-lider {
           font-size: 1rem;
           color: #444;
+        }
+        .zz-info-saldo {
+          background: #f7fafc;
+          border-radius: 10px;
+          box-shadow: 0 1px 6px #4f8cff11;
+          padding: 12px 22px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          min-width: 120px;
+        }
+        .zz-saldo-label {
+          color: #4f8cff;
+          font-size: 0.98rem;
+          font-weight: 600;
+          margin-bottom: 2px;
+        }
+        .zz-saldo-value {
+          color: #23272f;
+          font-size: 1.18rem;
+          font-weight: 700;
+          letter-spacing: 0.5px;
+        }
+        .zz-saldo-loading {
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          border: 3px solid #e3e9f7;
+          border-top: 3px solid #4f8cff;
+          border-radius: 50%;
+          animation: zz-spin 0.9s linear infinite;
         }
         .zz-transacoes {
           background: #fff;
@@ -404,48 +502,24 @@ const AdminDashboard = () => {
           justify-content: center;
           align-items: center;
         }
-        @media (max-width: 600px) {
-          .admin-dashboard-zz {
-            padding: 80px 0 12px 0;
-          }
-          .zz-bar, .zz-main-content, .zz-info-card, .zz-transacoes {
-            max-width: 100vw;
-            min-width: 0;
-            border-radius: 0;
-            box-shadow: none;
-            padding-left: 22px;
-            padding-right: 22px;
-          }
-          .zz-bar {
-            padding-left: 18px;
-            padding-right: 18px;
+        @media (max-width: 1000px) {
+          .zz-dashboard-split {
             flex-direction: column;
-            align-items: stretch;
-            gap: 8px;
+            gap: 18px;
+            max-width: 98vw;
           }
-          .zz-actions-desktop {
-            display: none !important;
+          .zz-dashboard-panel, .zz-dashboard-transacoes {
+            min-width: 0;
+            max-width: 100vw;
+            border-radius: 12px;
+            box-shadow: 0 1px 8px #0001;
+            padding-left: 10px;
+            padding-right: 10px;
           }
-          .zz-edit-mobile {
-            display: inline-block;
-            margin-left: 8px;
-            margin-top: 0;
-            vertical-align: middle;
-          }
-          .zz-delete-mobile {
-            display: flex;
-            width: 100vw;
-            justify-content: center;
-            margin: 24px 0 12px 0;
-            padding-left: 22px;
-            padding-right: 22px;
-          }
-          .zz-delete-mobile .zz-btn-danger {
-            width: 100%;
-            max-width: 500px;
-            font-size: 1.08rem;
-            padding: 12px 0;
-          }
+        }
+        @keyframes zz-fadein {
+          from { opacity: 0; transform: translateY(24px); }
+          to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
     </div>

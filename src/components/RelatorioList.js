@@ -6,10 +6,17 @@ const RelatorioList = ({ igrejaId }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!igrejaId) return;
+    if (!igrejaId) {
+      setRelatorios([]);
+      return;
+    }
     setLoading(true);
-    fetch(`/api/igrejas/${igrejaId}/relatorios/`)
-      .then(res => res.json())
+    setError(null);
+    fetch(`${process.env.REACT_APP_API_URL}/api/igrejas/${igrejaId}/relatorios/`)
+      .then(res => {
+        if (!res.ok) throw new Error('Erro ao buscar relatórios');
+        return res.json();
+      })
       .then(data => {
         setRelatorios(data);
         setLoading(false);
@@ -43,7 +50,12 @@ const RelatorioList = ({ igrejaId }) => {
       <h3 className="zz-relatorio-title">Relatórios</h3>
       <ul className="zz-relatorio-ul">
         {relatorios.map(r => (
-          <li className="zz-relatorio-li" key={r.id}>{r.titulo || r.nome || `Relatório #${r.id}`}</li>
+          <li className="zz-relatorio-li" key={r.id}>
+            {r.titulo || r.nome || `Relatório #${r.id}`}
+            {r.url && (
+              <a href={r.url} target="_blank" rel="noopener noreferrer" style={{marginLeft: 12, color: '#4f8cff', textDecoration: 'underline'}}>Download</a>
+            )}
+          </li>
         ))}
       </ul>
       <style>{`
