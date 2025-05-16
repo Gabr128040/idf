@@ -14,7 +14,7 @@ from .views import (
     DeletarRelatorioView,
     IgrejaListCreateView, IgrejaRetrieveUpdateDestroyView,
     TransacoesPorIgrejaView, RelatoriosPorIgrejaView,
-    
+    me,  # Importando a view me
 )
 
 urlpatterns = [
@@ -44,4 +44,7 @@ urlpatterns = [
     path('igrejas/<int:igreja_id>/transacoes/', TransacoesPorIgrejaView.as_view(), name='transacoes-por-igreja'),
     path('igrejas/<int:igreja_id>/relatorios/', RelatoriosPorIgrejaView.as_view(), name='relatorios-por-igreja'),
 
+    # Perfil do usuário
+    path('me/', me, name='me'),
+    path('api/me/', me, name='me-api'),  # Endpoint para o perfil do usuário autenticado
 ]

@@ -1,4 +1,22 @@
 from django.db import models
+from django.contrib.auth.models import User
+from cloudinary_storage.storage import MediaCloudinaryStorage
+
+class Igreja(models.Model):
+    nome = models.CharField(max_length=255)
+    lider = models.CharField(max_length=255)
+    criado_em = models.DateTimeField(auto_now_add=True)
+    atualizado_em = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.nome
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    igreja = models.ForeignKey(Igreja, on_delete=models.CASCADE, related_name='usuarios')
+
+    def __str__(self):
+        return f"{self.user.username} - {self.igreja.nome}"
 
 class Transacao(models.Model):
     TIPO_CHOICES = [
@@ -47,9 +65,6 @@ class Transacao(models.Model):
         return f"{self.get_tipo_display()} - {self.quantia}"
     
 
-from cloudinary_storage.storage import MediaCloudinaryStorage
-from django.db import models
-
 class Relatorio(models.Model):
     nome = models.CharField(max_length=255)  # Nome do arquivo
     mes = models.IntegerField()  # Mês do relatório
@@ -60,14 +75,3 @@ class Relatorio(models.Model):
 
     def __str__(self):
         return f"{self.nome} ({self.mes}/{self.ano})"
-
-
-class Igreja(models.Model):
-    nome = models.CharField(max_length=255)
-    lider = models.CharField(max_length=255)
-    criado_em = models.DateTimeField(auto_now_add=True)
-    atualizado_em = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.nome
-      
