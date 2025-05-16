@@ -178,8 +178,79 @@ const RelatorioPdfPreview = ({ previewData, currentMonth, currentYear, transacti
     return () => URL.revokeObjectURL(url);
   }, [previewData, currentMonth, currentYear, transactions]);
 
+  const handleFullScreen = () => {
+    if (!previewData) return;
+    // Gera o PDF novamente e abre em nova aba
+    const pdfMonth = currentMonth;
+    const pdfYear = currentYear;
+    const formattedData = getFormattedTableData(transactions || [], pdfMonth, pdfYear, previewData, includeGratificacao, includeDizimoGratificacao, includeDizimoIgreja);
+    const doc = new jsPDF({ format: 'a4', unit: 'mm' });
+    try {
+      doc.addImage(logo, 'PNG', 10, 10, 15, 15);
+    } catch {}
+    doc.setFontSize(11);
+    doc.setFont('times', 'bold');
+    doc.text('IGREJA DE DEUS MISSIONÁRIA', 105, 15, { align: 'center' });
+    doc.setFontSize(9);
+    doc.setFont('times', 'normal');
+    doc.text('CNPJ: 05.869.914/0001-07', 105, 20, { align: 'center' });
+    doc.text('DEPARTAMENTO FINANCEIRO', 105, 25, { align: 'center' });
+    doc.setFontSize(10);
+    doc.text(`MÊS: ${new Date(0, pdfMonth - 1).toLocaleString('pt-BR', { month: 'long' }).toUpperCase()}`, 10, 35);
+    doc.text(`ANO: ${pdfYear}`, 105, 35, { align: 'center' });
+    doc.text('EBENÉZER', 200 - 10, 35, { align: 'right' });
+    autoTable(doc, {
+      startY: 40,
+      head: [['DIA', 'DISCRIMINAÇÃO', 'ENTRADA', 'SAÍDA']],
+      body: formattedData.map(row => [row.dia, row.discriminacao, row.entrada !== undefined ? row.entrada : '-', row.saida !== undefined ? row.saida : '-']),
+      theme: 'grid',
+      headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0], fontStyle: 'bold', fontSize: 8 },
+      styles: { fontSize: 7, cellPadding: 1, overflow: 'linebreak' },
+      columnStyles: { 0: { cellWidth: 15 }, 1: { cellWidth: 80 }, 2: { cellWidth: 40, halign: 'right' }, 3: { cellWidth: 40, halign: 'right' } },
+    });
+    const finalY = doc.lastAutoTable.finalY - 5;
+    const infoBoxX = 10;
+    const infoBoxY = finalY + 10;
+    const infoBoxWidth = 180;
+    const infoBoxHeight = 25;
+    doc.setDrawColor(0);
+    doc.setFillColor(240, 240, 240);
+    doc.rect(infoBoxX, infoBoxY, infoBoxWidth, infoBoxHeight, 'FD');
+    const infoStartX = infoBoxX + 5;
+    let infoStartY = infoBoxY + 4;
+    doc.setFontSize(9);
+    doc.setFont('times', 'bold');
+    doc.text('TOTAL DE ENTRADA:', infoStartX, infoStartY);
+    doc.text(`R$ ${truncateToTwoDecimals(previewData.totalEntradas)}`, infoStartX + 60, infoStartY);
+    infoStartY += 4;
+    doc.text('TOTAL DE SAÍDA DO MÊS:', infoStartX, infoStartY);
+    doc.text(`R$ ${truncateToTwoDecimals(previewData.totalSaidas)}`, infoStartX + 60, infoStartY);
+    infoStartY += 4;
+    doc.text('SALDO DO MÊS:', infoStartX, infoStartY);
+    doc.text(`R$ ${previewData.saldoMes.toFixed(2)}`, infoStartX + 60, infoStartY);
+    infoStartY += 4;
+    doc.text('SALDO ANTERIOR:', infoStartX, infoStartY);
+    doc.text(`R$ ${previewData.saldoAnterior.toFixed(2)}`, infoStartX + 60, infoStartY);
+    infoStartY += 4;
+    doc.text('TOTAL EM CAIXA:', infoStartX, infoStartY);
+    const totalEmCaixa = previewData.saldoFinal;
+    doc.text(`R$ ${truncateToTwoDecimals(totalEmCaixa)}`, infoStartX + 60, infoStartY);
+    const signatureY = infoBoxY + infoBoxHeight + 6;
+    doc.setFontSize(8);
+    doc.setFont('times', 'normal');
+    doc.text('TESOUREIRO: ______________________________', 10, signatureY);
+    doc.text('DIRIGENTE DA CONGREGAÇÃO: ______________________________', 10, signatureY + 5);
+    doc.text('DIRETOR FINANCEIRO IDM SEDE: ______________________________', 10, signatureY + 10);
+    doc.text('CONSELHO FISCAL: ______________________________', 10, signatureY + 15);
+    // Exibe o PDF em nova aba
+    window.open(doc.output('bloburl'), '_blank');
+  };
+
   return (
-    <div style={{ width: '100%', height: 500, border: '1px solid #ddd', borderRadius: 8, overflow: 'hidden', background: '#fff' }}>
+    <div
+      className="relatorio-pdf-preview-responsive"
+      style={{ width: '100%', height: 500, border: '1px solid #ddd', borderRadius: 8, overflow: 'hidden', background: '#fff', position: 'relative' }}
+    >
       <iframe
         ref={iframeRef}
         title="Prévia do PDF do Relatório"
@@ -187,6 +258,24 @@ const RelatorioPdfPreview = ({ previewData, currentMonth, currentYear, transacti
         height="100%"
         style={{ border: 'none' }}
       />
+      <button
+        className="btn-fullscreen-pdf"
+        onClick={handleFullScreen}
+        style={{ display: 'none', position: 'absolute', top: 8, right: 8, zIndex: 10 }}
+        aria-label="Abrir em tela cheia"
+        type="button"
+      >
+        &#x26F6; Tela cheia
+      </button>
+      <style>{`
+        @media (max-width: 600px) {
+          .relatorio-pdf-preview-responsive {
+            height: 210px !important;
+            max-width: 99vw;
+            border-radius: 6px;
+          }
+        }
+      `}</style>
     </div>
   );
 };

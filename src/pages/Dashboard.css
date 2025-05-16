@@ -516,6 +516,19 @@
   .dashboard-report-modal {
     padding: 18px 6vw 18px 6vw;
     max-width: 98vw;
+    max-height: 96vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  .relatorio-modal-grid {
+    max-height: 80vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  .relatorio-modal-pdf {
+    min-width: 0;
+    max-width: 100%;
+    padding: 8px 2px;
   }
   .dashboard-btn-mobile-icon {
     padding: 10px 12px !important;
