@@ -16,6 +16,9 @@ const TransactionList = ({ transactions, onEdit, onDelete, onTransactionClick, s
   };
 
   const getCampoEspecifico = (transaction) => {
+    if (transaction.manual && transaction.discriminacao) {
+      return transaction.discriminacao;
+    }
     switch (transaction.tipo) {
       case 'D':
         return transaction.nome;

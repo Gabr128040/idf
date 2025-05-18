@@ -17,6 +17,8 @@ import './Dashboard.css';
 import { getTipoDisplay, getCultoDisplay, getTipoDespesaDisplay, formatDate, getLastDayOfMonth } from '../utils';
 import { FaCalendarAlt, FaSearch, FaPlus, FaFileAlt } from 'react-icons/fa';
 import RelatorioPdfPreview from '../components/RelatorioPdfPreview';
+import RelatorioPdfSimulado from '../components/RelatorioPdfSimulado';
+import RelatorioPdfInterativo from '../components/RelatorioPdfInterativo';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -44,6 +46,7 @@ const Dashboard = () => {
   const [includeDizimoIgreja, setIncludeDizimoIgreja] = useState(false);
   const [previewData, setPreviewData] = useState(null);
   const [isGratificacaoEnabled, setIsGratificacaoEnabled] = useState(true);
+  const [viewMode, setViewMode] = useState('lista'); // 'lista', 'pdf', 'interativo'
   // Estado para loading de ações
   const [actionLoading, setActionLoading] = useState(false);
   // Estado para saldo do mês anterior
@@ -496,6 +499,29 @@ const Dashboard = () => {
                 </button>
               </div>
             </div>
+            <div style={{ display: 'flex', gap: 10, marginBottom: 12 }}>
+              <button
+                className={viewMode === 'lista' ? 'dashboard-btn-primary' : 'dashboard-btn-secondary'}
+                onClick={() => setViewMode('lista')}
+                style={{ minWidth: 120 }}
+              >
+                Visualizar em Lista
+              </button>
+              <button
+                className={viewMode === 'pdf' ? 'dashboard-btn-primary' : 'dashboard-btn-secondary'}
+                onClick={() => setViewMode('pdf')}
+                style={{ minWidth: 120 }}
+              >
+                Visualizar como PDF
+              </button>
+              <button
+                className={viewMode === 'interativo' ? 'dashboard-btn-primary' : 'dashboard-btn-secondary'}
+                onClick={() => setViewMode('interativo')}
+                style={{ minWidth: 160 }}
+              >
+                Preencher PDF Interativo
+              </button>
+            </div>
             <div className="dashboard-filtros-row">
               <div className="dashboard-filtro-item">
                 <label>Mês</label>
@@ -533,15 +559,33 @@ const Dashboard = () => {
             <SaldoIndicator saldo={saldo} />
           </section>
           <section className="dashboard-card">
-            <TransactionList
-              transactions={filteredTransactions}
-              onEdit={setEditingTransaction}
-              onDelete={setSelectedTransaction}
-              onTransactionClick={setSelectedTransaction}
-              setTransactions={setTransactions}
-              setNotification={setNotification}
-              igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
-            />
+            {viewMode === 'lista' ? (
+              <TransactionList
+                transactions={filteredTransactions}
+                onEdit={setEditingTransaction}
+                onDelete={setSelectedTransaction}
+                onTransactionClick={setSelectedTransaction}
+                setTransactions={setTransactions}
+                setNotification={setNotification}
+                igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
+              />
+            ) : viewMode === 'pdf' ? (
+              <RelatorioPdfSimulado
+                transactions={transactions}
+                currentMonth={currentMonth}
+                currentYear={currentYear}
+                previewData={previewData}
+                includeGratificacao={includeGratificacao}
+                includeDizimoGratificacao={includeDizimoGratificacao}
+                includeDizimoIgreja={includeDizimoIgreja}
+              />
+            ) : (
+              <RelatorioPdfInterativo
+                igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
+                setNotification={setNotification}
+                onSuccess={() => { updateTransactions(); updateSaldo(); }}
+              />
+            )}
           </section>
         </main>
       )}

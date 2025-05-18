@@ -81,5 +81,21 @@ export const deleteTransaction = async (id, navigate) => {
   }
 };
 
+export const createManualTransaction = async (transacao, navigate) => {
+  try {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('Nenhum token encontrado. Por favor, faça login.');
+    }
+    await axios.post(`${API_URL}/api/transacoes/nova/`, transacao, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  } catch (error) {
+    throw new Error(error.response?.data?.detail || error.message);
+  }
+};
+
 // Exporta a função para configurar os interceptors
 export { setupAxiosInterceptors };
