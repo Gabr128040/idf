@@ -582,6 +582,8 @@ const Dashboard = () => {
             ) : (
               <RelatorioPdfInterativo
                 igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
+                igrejaNome={igrejaUsuario ? igrejaUsuario.nome : ''}
+                mes={new Date(0, currentMonth - 1).toLocaleString('pt-BR', { month: 'long' })}
                 setNotification={setNotification}
                 onSuccess={() => { updateTransactions(); updateSaldo(); }}
               />

@@ -14,7 +14,7 @@ function formatCurrency(value) {
   return 'R$ ' + Number(value).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
 }
 
-const RelatorioPdfInterativo = ({ linhasIniciais = 20, onTransacoesChange, igrejaId, onSuccess, setNotification }) => {
+const RelatorioPdfInterativo = ({ linhasIniciais = 20, onTransacoesChange, igrejaId, igrejaNome, mes, onSuccess, setNotification }) => {
   const [linhas, setLinhas] = useState(
     Array.from({ length: linhasIniciais }, () => ({ dia: '', discriminacao: '', entrada: '', saida: '' }))
   );
@@ -116,16 +116,12 @@ const RelatorioPdfInterativo = ({ linhasIniciais = 20, onTransacoesChange, igrej
 
   return (
     <div className="pdf-simulado-container">
-      <div className="pdf-simulado-header">
-        <div className="pdf-simulado-title">IGREJA DE DEUS MISSIONÁRIA</div>
-        <div className="pdf-simulado-sub">CNPJ: 05.869.914/0001-07</div>
-        <div className="pdf-simulado-sub">DEPARTAMENTO FINANCEIRO</div>
-        <div className="pdf-simulado-meta">
-          <span>MÊS: __________</span>
-          <span>ANO: ________</span>
-          <span style={{ float: 'right' }}>EBENÉZER</span>
+      {(igrejaNome || mes) && (
+        <div style={{ marginBottom: 10, fontWeight: 500, color: '#2c3e50', fontSize: '1.08rem', display: 'flex', gap: 18 }}>
+          {igrejaNome && <span>Igreja: {igrejaNome}</span>}
+          {mes && <span>Mês: {mes}</span>}
         </div>
-      </div>
+      )}
       <table className="pdf-simulado-table">
         <thead>
           <tr>
@@ -166,14 +162,6 @@ const RelatorioPdfInterativo = ({ linhasIniciais = 20, onTransacoesChange, igrej
           ))}
         </tbody>
       </table>
-      <div className="pdf-simulado-footer">
-        <div className="assinaturas">
-          <div>TESOUREIRO: ______________________________</div>
-          <div>DIRIGENTE DA CONGREGAÇÃO: ______________________________</div>
-          <div>DIRETOR FINANCEIRO IDM SEDE: ______________________________</div>
-          <div>CONSELHO FISCAL: ______________________________</div>
-        </div>
-      </div>
       <button
         className="dashboard-btn-primary"
         style={{ marginTop: 18, minWidth: 180 }}
