@@ -67,6 +67,25 @@
   box-shadow: 0 4px 16px #3498db33;
 }
 
+.dashboard-btn-secondary {
+  background: #f7fafc;
+  color: #3498db;
+  border: 1.5px solid #c7d6ee;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #3498db11;
+  transition: background 0.18s, color 0.18s, border 0.18s, box-shadow 0.18s;
+}
+.dashboard-btn-secondary:hover, .dashboard-btn-secondary:focus {
+  background: #e3e9f7;
+  color: #2176b6;
+  border-color: #a5c3e8;
+  box-shadow: 0 4px 16px #3498db22;
+}
+
 .dashboard-btn-report {
   background: linear-gradient(90deg, #f39c12 60%, #f7b731 100%);
   color: #fff;

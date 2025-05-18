@@ -64,3 +64,47 @@
 .assinaturas > div {
   margin-bottom: 4px;
 }
+@media (max-width: 700px) {
+  .pdf-simulado-container {
+    max-width: 99vw;
+    padding: 10px 2vw 16px 2vw;
+    border-radius: 8px;
+    box-shadow: 0 1px 8px #0001;
+  }
+  .pdf-simulado-table {
+    font-size: 1.08rem;
+    min-width: 340px;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .pdf-simulado-table th, .pdf-simulado-table td {
+    padding: 12px 8px;
+    font-size: 1.08rem;
+    min-width: 70px;
+    /* Facilita o toque */
+  }
+  .pdf-simulado-table th {
+    font-size: 1.1rem;
+  }
+  .pdf-simulado-table input {
+    font-size: 1.08rem;
+    padding: 6px 8px;
+    min-width: 0;
+    width: 95%;
+  }
+}
+@media (max-width: 480px) {
+  .pdf-simulado-container {
+    padding: 6px 0 12px 0;
+    border-radius: 6px;
+  }
+  .pdf-simulado-table th, .pdf-simulado-table td {
+    padding: 14px 4px;
+    font-size: 1.13rem;
+    min-width: 80px;
+  }
+  .pdf-simulado-table {
+    min-width: 320px;
+    width: 100%;
+  }
+}
