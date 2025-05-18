@@ -51,6 +51,8 @@ class Transacao(models.Model):
     mes = models.IntegerField(default=1)  # Valor padrão para mês (ex: janeiro)
     ano = models.IntegerField(default=2025)  # Valor padrão para ano campo
     igreja = models.ForeignKey('Igreja', on_delete=models.CASCADE, related_name='transacoes', null=True, blank=True)
+    manual = models.BooleanField(default=False, help_text='Transação preenchida manualmente pelo PDF interativo')
+    discriminacao = models.CharField(max_length=255, blank=True, null=True, help_text='Discriminação digitada no PDF interativo')
     
     class Meta:
         db_table = 'transacoes'  # Nome da tabela no banco de dados

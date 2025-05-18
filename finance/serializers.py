@@ -7,7 +7,6 @@ class IgrejaSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class TransacaoSerializer(serializers.ModelSerializer):
-
     igreja = IgrejaSerializer(read_only=True)
     igreja_id = serializers.PrimaryKeyRelatedField(
         queryset=Igreja.objects.all(), source='igreja', write_only=True

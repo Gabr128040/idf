@@ -8091,3 +8091,524 @@ INFO 2025-05-16 11:41:13,398 views Saldo calculado: 8.00 (Entradas: 10.00, Despe
 WARNING 2025-05-16 11:42:01,354 views Tentativa de login inválida para: Silva
 WARNING 2025-05-16 11:42:01,356 log Bad Request: /api/login/
 INFO 2025-05-16 11:42:11,377 views Login bem-sucedido para: Silva
+INFO 2025-05-16 11:42:38,065 views Login bem-sucedido para: Frank
+INFO 2025-05-16 11:42:39,245 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-16 11:42:39,357 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 11:42:39,891 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 11:42:41,464 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-16 11:42:57,019 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-16 11:42:57,139 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 11:42:57,687 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 11:42:59,341 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-16 11:56:27,895 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-16 11:56:28,480 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 11:56:29,043 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 11:56:30,329 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-16 11:58:45,379 views Login bem-sucedido para: teste
+INFO 2025-05-16 11:58:46,627 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 11:58:46,802 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 11:58:47,222 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 11:58:47,328 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+WARNING 2025-05-16 13:02:27,022 log Unauthorized: /api/me/
+WARNING 2025-05-16 13:02:27,077 log Unauthorized: /api/me/
+INFO 2025-05-16 13:02:31,177 views Login bem-sucedido para: teste
+INFO 2025-05-16 13:02:32,158 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 13:02:32,298 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:02:32,866 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 13:02:32,999 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:03:07,232 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 4, Mês: 4, Ano: 2025)
+INFO 2025-05-16 13:07:14,276 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 13:07:14,866 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:07:15,087 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 13:07:15,396 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:07:58,737 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 13:07:58,797 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:07:59,283 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 13:07:59,356 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:09:06,770 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 4, Mês: 4, Ano: 2025)
+INFO 2025-05-16 13:09:43,854 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['3'], 'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 13:09:43,968 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:09:46,657 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:09:47,722 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['4'], 'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 13:09:50,751 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['5'], 'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 13:09:50,926 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:09:55,018 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['1'], 'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 13:09:55,132 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:09:56,714 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 4, Mês: 4, Ano: 2025)
+INFO 2025-05-16 13:09:59,774 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 13:09:59,898 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:10:30,902 views Login bem-sucedido para: Silva
+INFO 2025-05-16 13:11:39,099 views Login bem-sucedido para: Silva
+INFO 2025-05-16 13:14:20,326 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:14:20,862 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:14:21,381 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:14:41,525 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:14:42,022 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:14:42,515 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:15:07,680 views Login bem-sucedido para: Silva
+INFO 2025-05-16 13:15:08,591 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:15:08,946 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 13:15:09,302 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+ERROR 2025-05-16 13:22:27,080 log Internal Server Error: /api/igrejas/4/relatorios/
+Traceback (most recent call last):
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\psycopg2\__init__.py", line 135, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "aws-0-sa-east-1.pooler.supabase.com" (15.229.150.166), port 6543 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\generics.py", line 203, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+                                                   ^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\psycopg2\__init__.py", line 135, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: connection to server at "aws-0-sa-east-1.pooler.supabase.com" (15.229.150.166), port 6543 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+ERROR 2025-05-16 13:53:38,653 log Internal Server Error: /api/igrejas/
+Traceback (most recent call last):
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\psycopg2\__init__.py", line 135, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "aws-0-sa-east-1.pooler.supabase.com" (52.67.1.88), port 6543 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\generics.py", line 243, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+                                                   ^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\psycopg2\__init__.py", line 135, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: connection to server at "aws-0-sa-east-1.pooler.supabase.com" (52.67.1.88), port 6543 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+ERROR 2025-05-16 13:57:58,199 log Internal Server Error: /api/igrejas/4/relatorios/
+Traceback (most recent call last):
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\psycopg2\__init__.py", line 135, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "aws-0-sa-east-1.pooler.supabase.com" (54.94.90.106), port 6543 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\generics.py", line 203, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+                                                   ^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "C:\Users\gabr1\Desktop\projetos\backend\venv\Lib\site-packages\psycopg2\__init__.py", line 135, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: connection to server at "aws-0-sa-east-1.pooler.supabase.com" (54.94.90.106), port 6543 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+INFO 2025-05-16 14:12:24,836 views Login bem-sucedido para: Silva
+INFO 2025-05-16 14:12:26,746 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:12:27,192 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:13:02,673 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 14:13:10,936 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 5, Mês: None, Ano: None)
+INFO 2025-05-16 14:13:14,872 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 14:16:04,586 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'quantia': 1, 'data': '2025-05-16', 'nome': 'sdsdsdsd', 'culto': None, 'tipo_despesa': None, 'descricao': None, 'igreja': 1, 'igreja_id': 1}
+INFO 2025-05-16 14:16:04,838 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 133, 'igreja': {'id': 1, 'nome': 'Ebenezer', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-05-15T19:20:09.402758-03:00'}, 'tipo': 'D', 'quantia': '1.00', 'data': '2025-05-16', 'descricao': None, 'nome': 'sdsdsdsd', 'culto': None, 'tipo_despesa': None, 'mes': 5, 'ano': 2025}
+INFO 2025-05-16 14:16:19,556 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:16:20,001 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:16:29,839 views Saldo calculado: 106.64 (Entradas: 1622.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+WARNING 2025-05-16 14:17:50,954 log Not Found: /api/transacoes/133/
+INFO 2025-05-16 14:18:20,328 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:18:20,786 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:18:33,690 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 14:20:17,540 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:20:17,932 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:20:52,322 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 14:21:46,043 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'quantia': 1, 'data': '2025-05-16', 'nome': 'dfdf', 'culto': None, 'tipo_despesa': None, 'descricao': 'fggg', 'igreja': 1, 'igreja_id': 1}
+INFO 2025-05-16 14:21:46,144 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 134, 'igreja': {'id': 1, 'nome': 'Ebenezer', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-05-15T19:20:09.402758-03:00'}, 'tipo': 'D', 'quantia': '1.00', 'data': '2025-05-16', 'descricao': 'fggg', 'nome': 'dfdf', 'culto': None, 'tipo_despesa': None, 'mes': 5, 'ano': 2025}
+INFO 2025-05-16 14:26:44,873 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:26:45,327 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:28:30,011 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:28:30,472 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:29:46,350 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:29:46,820 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:31:51,348 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:31:51,818 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:32:22,537 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:32:23,085 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:33:43,430 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:33:43,994 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:35:02,795 views Saldo calculado: 106.64 (Entradas: 1622.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 14:42:21,751 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:42:22,181 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:42:32,700 views Saldo calculado: 106.64 (Entradas: 1622.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 14:49:08,990 views Login bem-sucedido para: Frank
+INFO 2025-05-16 14:49:12,918 views Saldo calculado: 106.64 (Entradas: 1622.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 14:49:12,972 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-16 14:49:14,132 views Saldo calculado: 106.64 (Entradas: 1622.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 14:49:16,107 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-16 14:51:57,887 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-16 14:51:58,006 views Saldo calculado: 1062.67 (Entradas: 1532.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 14:51:58,404 views Saldo calculado: 1062.67 (Entradas: 1532.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 14:51:59,479 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-16 14:52:40,013 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-16 14:52:40,114 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 14:52:40,653 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-16 14:52:41,893 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-16 14:53:16,239 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 4, Ano: 2025)
+INFO 2025-05-16 14:54:15,935 views Login bem-sucedido para: teste
+INFO 2025-05-16 14:54:16,904 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 14:54:17,017 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:54:17,356 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 14:54:17,423 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:54:22,811 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 4, Mês: 4, Ano: 2025)
+INFO 2025-05-16 14:56:50,687 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 14:56:50,771 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 14:56:51,175 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 14:56:51,175 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 15:08:33,539 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 15:08:33,674 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 15:08:34,363 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 15:08:34,425 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 15:08:57,919 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 4, Mês: 4, Ano: 2025)
+INFO 2025-05-16 15:09:03,929 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 4, Mês: 4, Ano: 2025)
+INFO 2025-05-16 15:38:51,665 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 15:38:53,666 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 15:39:22,901 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 15:39:23,614 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 15:39:24,088 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 15:39:24,188 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 15:40:35,990 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 15:40:36,144 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 15:40:36,593 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 15:40:36,750 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 15:41:12,943 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 15:41:13,033 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 15:41:13,480 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 15:41:13,538 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 15:49:34,910 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 15:49:35,316 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 15:49:35,466 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 15:49:36,248 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 15:52:57,868 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 15:52:57,992 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 15:52:58,472 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 15:52:58,501 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+WARNING 2025-05-16 15:57:40,793 log Unauthorized: /api/me/
+WARNING 2025-05-16 15:57:40,824 log Unauthorized: /api/me/
+INFO 2025-05-16 15:57:45,057 views Login bem-sucedido para: teste
+INFO 2025-05-16 15:57:46,295 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 15:57:46,398 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 15:57:46,785 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 15:57:46,815 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 16:09:27,218 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 4, Mês: 4, Ano: 2025)
+INFO 2025-05-16 16:09:40,223 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 4, Mês: 4, Ano: 2025)
+INFO 2025-05-16 16:09:50,998 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 4, Mês: 4, Ano: 2025)
+INFO 2025-05-16 16:13:46,258 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 4, Mês: 4, Ano: 2025)
+INFO 2025-05-16 16:14:10,283 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 16:14:10,284 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 16:14:11,701 views Saldo calculado: 8.00 (Entradas: 10.00, Despesas: 2.00, Igreja: 4, Mês: None, Ano: None)
+INFO 2025-05-16 16:14:11,995 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['4']}>
+INFO 2025-05-16 16:14:48,745 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 4, Mês: 4, Ano: 2025)
+INFO 2025-05-16 16:17:52,964 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 4, Mês: 4, Ano: 2025)
+INFO 2025-05-17 13:58:38,065 autoreload Watching for file changes with StatReloader
+WARNING 2025-05-17 14:02:45,567 log Not Found: /favicon.ico
+INFO 2025-05-18 14:34:25,472 autoreload Watching for file changes with StatReloader
+INFO 2025-05-18 15:33:37,348 autoreload Watching for file changes with StatReloader
+WARNING 2025-05-18 15:37:02,520 log Unauthorized: /api/me/
+WARNING 2025-05-18 15:37:02,524 log Unauthorized: /api/me/
+INFO 2025-05-18 15:37:39,735 views Login bem-sucedido para: Frank
+INFO 2025-05-18 15:37:41,193 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-18 15:37:41,442 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 15:37:42,110 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 15:37:43,389 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-18 15:40:02,100 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'quantia': 10, 'data': '2025-05-18', 'nome': 'sdsdsdsd', 'culto': None, 'tipo_despesa': None, 'descricao': 'sda', 'igreja': 1, 'igreja_id': 1}
+INFO 2025-05-18 15:40:02,381 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 135, 'igreja': {'id': 1, 'nome': 'Ebenezer', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-05-15T19:20:09.402758-03:00'}, 'tipo': 'D', 'quantia': '10.00', 'data': '2025-05-18', 'descricao': 'sda', 'nome': 'sdsdsdsd', 'culto': None, 'tipo_despesa': None, 'mes': 5, 'ano': 2025}
+INFO 2025-05-18 15:40:02,770 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-18 15:40:04,793 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 15:41:44,759 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-18 15:41:44,876 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 15:41:45,378 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 15:41:46,717 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-18 15:42:18,199 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'quantia': 1000, 'data': '2025-05-31', 'nome': 'babla', 'culto': None, 'tipo_despesa': None, 'descricao': '1000', 'igreja': 1, 'igreja_id': 1}
+INFO 2025-05-18 15:42:18,293 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 136, 'igreja': {'id': 1, 'nome': 'Ebenezer', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-05-15T19:20:09.402758-03:00'}, 'tipo': 'D', 'quantia': '1000.00', 'data': '2025-05-31', 'descricao': '1000', 'nome': 'babla', 'culto': None, 'tipo_despesa': None, 'mes': 5, 'ano': 2025}
+INFO 2025-05-18 15:42:18,600 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-18 15:42:20,241 views Saldo calculado: 2061.67 (Entradas: 2531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 16:01:56,569 views Login bem-sucedido para: Frank
+INFO 2025-05-18 16:01:57,810 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-18 16:01:58,236 views Saldo calculado: 2061.67 (Entradas: 2531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 16:01:58,745 views Saldo calculado: 2061.67 (Entradas: 2531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 16:01:59,733 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-18 16:02:10,038 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-18 16:02:10,189 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 16:02:10,790 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 16:02:11,919 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-18 16:29:34,177 autoreload C:\Users\gabr1\Desktop\projetos\backend\finance\models.py changed, reloading.
+INFO 2025-05-18 16:29:57,365 autoreload Watching for file changes with StatReloader
+INFO 2025-05-18 16:30:55,981 autoreload C:\Users\gabr1\Desktop\projetos\backend\finance\admin.py changed, reloading.
+INFO 2025-05-18 16:30:57,643 autoreload Watching for file changes with StatReloader
+INFO 2025-05-18 16:31:02,462 autoreload C:\Users\gabr1\Desktop\projetos\backend\finance\serializers.py changed, reloading.
+INFO 2025-05-18 16:31:04,267 autoreload Watching for file changes with StatReloader
+INFO 2025-05-18 16:33:24,281 autoreload C:\Users\gabr1\Desktop\projetos\backend\finance\admin.py changed, reloading.
+INFO 2025-05-18 16:33:26,113 autoreload Watching for file changes with StatReloader
+INFO 2025-05-18 16:37:02,278 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'O', 'quantia': 27, 'data': '2025-05-31', 'discriminacao': 'testemanual', 'manual': True, 'igreja_id': 1}
+INFO 2025-05-18 16:37:02,488 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 137, 'igreja': {'id': 1, 'nome': 'Ebenezer', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-05-15T19:20:09.402758-03:00'}, 'tipo': 'O', 'quantia': '27.00', 'data': '2025-05-31', 'descricao': None, 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 5, 'ano': 2025, 'manual': True, 'discriminacao': 'testemanual'}
+INFO 2025-05-18 16:37:02,925 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-18 16:37:03,019 views Saldo calculado: 1088.67 (Entradas: 1558.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 16:38:22,866 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-18 16:38:23,229 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 16:38:23,744 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 16:38:24,795 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-18 16:47:13,017 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'quantia': 27, 'data': '2025-05-31', 'discriminacao': 'dizimo do biel', 'manual': True, 'igreja_id': 1}
+INFO 2025-05-18 16:47:13,141 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 138, 'igreja': {'id': 1, 'nome': 'Ebenezer', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-05-15T19:20:09.402758-03:00'}, 'tipo': 'D', 'quantia': '27.00', 'data': '2025-05-31', 'descricao': None, 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 5, 'ano': 2025, 'manual': True, 'discriminacao': 'dizimo do biel'}
+INFO 2025-05-18 16:47:13,556 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'O', 'quantia': 27, 'data': '2025-05-31', 'discriminacao': 'oferta culto de ceia', 'manual': True, 'igreja_id': 1}
+INFO 2025-05-18 16:47:13,676 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 139, 'igreja': {'id': 1, 'nome': 'Ebenezer', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-05-15T19:20:09.402758-03:00'}, 'tipo': 'O', 'quantia': '27.00', 'data': '2025-05-31', 'descricao': None, 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 5, 'ano': 2025, 'manual': True, 'discriminacao': 'oferta culto de ceia'}
+INFO 2025-05-18 16:47:14,081 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-18 16:47:14,211 views Saldo calculado: 1115.67 (Entradas: 1585.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 16:47:57,004 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-05-18 16:47:57,435 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 16:47:58,134 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-05-18 16:47:59,093 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
