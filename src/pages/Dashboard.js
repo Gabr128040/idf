@@ -920,21 +920,7 @@ const Dashboard = () => {
                 Cancelar
               </button>
             </div>
-            <div className="modal-preview-mobile">
-              <div className="pdf-miniatura-mobile" style={{height: '600px', minHeight: '520px', maxHeight: '800px'}}>
-                <RelatorioPdfPreview previewData={previewData} currentMonth={currentMonth} currentYear={currentYear} transactions={transactions} includeGratificacao={includeGratificacao} includeDizimoGratificacao={includeDizimoGratificacao} includeDizimoIgreja={includeDizimoIgreja} />
-                <button className="expand-btn-mobile" title="Expandir PDF" style={{position:'absolute',top:10,right:10,zIndex:2}} onClick={() => {
-                  const iframe = document.querySelector('.pdf-miniatura-mobile iframe');
-                  if (iframe && iframe.src) {
-                    window.open(`https://drive.google.com/viewerng/viewer?embedded=true&url=${encodeURIComponent(iframe.src)}`, '_blank');
-                  } else {
-                    window.open('/pdf-preview', '_blank');
-                  }
-                }}>
-                  <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 00-2 2v3m0 8v3a2 2 0 002 2h3m8-18h3a2 2 0 012 2v3m0 8v3a2 2 0 01-2 2h-3" stroke="#4f8cff" strokeWidth="2" strokeLinecap="round"/></svg>
-                </button>
-              </div>
-            </div>
+            <div className="modal-preview-mobile" style={{display:'none'}}></div>
           </motion.div>
         </div>
       )}
