@@ -51,6 +51,10 @@ const Dashboard = () => {
   const [actionLoading, setActionLoading] = useState(false);
   // Estado para saldo do mês anterior
   const [saldoAnterior, setSaldoAnterior] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [showFiltroModal, setShowFiltroModal] = useState(false);
+  // Adicione um estado para loading da tabela
+  const [tableLoading, setTableLoading] = useState(false);
 
   useEffect(() => {
     setupAxiosInterceptors(navigate);
@@ -445,6 +449,15 @@ const Dashboard = () => {
     });
   }, [transactions, includeGratificacao, includeDizimoGratificacao, includeDizimoIgreja, saldoAnterior, currentMonth, currentYear]);
 
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 600);
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div>
       <Navbar />
@@ -475,120 +488,335 @@ const Dashboard = () => {
           `}</style>
         </div>
       ) : (
-        <main className="dashboard-main">
-          <section className="dashboard-card">
-            <div className="dashboard-header-row">
-              <span className="dashboard-title">{igrejaUsuario ? igrejaUsuario.nome : 'Dashboard Financeiro'}</span>
-              <div style={{ display: 'flex', gap: 10 }}>
-                <button
-                  className="dashboard-btn-primary dashboard-btn-mobile-icon"
-                  onClick={() => setShowForm(true)}
-                  aria-label="Nova Transação"
-                >
-                  <span className="dashboard-btn-text">Nova Transação</span>
-                  <span className="dashboard-btn-icon"><FaPlus /></span>
+        <main className={isMobile ? 'dashboard-main dashboard-main-mobile' : 'dashboard-main'}>
+          {isMobile ? (
+            // MOBILE: layout moderno, cores, fontes, interações reais
+            <>
+              {/* AppBar fixa */}
+              <header style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: 56, display: 'flex', alignItems: 'center', justifyContent: 'space-between', zIndex: 100, background: '#4f8cff', boxShadow: '0 2px 8px #0001', borderBottom: 'none', padding: '0 8px' }}>
+                <button onClick={() => navigate('/menu')} style={{ background: 'none', border: 'none', fontSize: 0, padding: 8, display: 'flex', alignItems: 'center' }} aria-label="Menu">
+                  <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><rect y="5" width="24" height="2" rx="1" fill="#fff"/><rect y="11" width="24" height="2" rx="1" fill="#fff"/><rect y="17" width="24" height="2" rx="1" fill="#fff"/></svg>
                 </button>
-                <button
-                  className="dashboard-btn-report dashboard-btn-mobile-icon"
-                  onClick={() => setShowReportModal((v) => !v)}
-                  title="Gerar/Fechar Relatório"
-                  aria-label={showReportModal ? 'Fechar Relatório' : 'Gerar Relatório'}
-                >
-                  <span className="dashboard-btn-text">{showReportModal ? 'Fechar Relatório' : 'Gerar Relatório'}</span>
-                  <span className="dashboard-btn-icon"><FaFileAlt /></span>
+                <span style={{ fontWeight: 700, fontSize: 17, color: '#fff', letterSpacing: 0.2 }}>Dashboard</span>
+                <button onClick={() => navigate('/perfil')} style={{ background: 'none', border: 'none', fontSize: 0, padding: 8, display: 'flex', alignItems: 'center' }} aria-label="Perfil">
+                  <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4" stroke="#fff" strokeWidth="2"/><path d="M4 20c0-2.761 3.582-5 8-5s8 2.239 8 5" stroke="#fff" strokeWidth="2"/></svg>
+                </button>
+              </header>
+
+              {/* Espaço para AppBar */}
+              <div style={{ height: 56 }} />
+
+              {/* Bloco info igreja/mês */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '18px 16px 8px 16px' }}>
+                <span style={{ fontWeight: 700, fontSize: 15, color: '#4f8cff', letterSpacing: 0.1 }}>{igrejaUsuario ? igrejaUsuario.nome : 'Igreja'}</span>
+                <span style={{ fontWeight: 500, fontSize: 14, color: '#222' }}>{new Date(0, selectedMonth ? selectedMonth-1 : currentMonth-1).toLocaleString('pt-BR', { month: 'long' })} {selectedYear}</span>
+              </div>
+
+              {/* Saldo centralizado */}
+              <div style={{ textAlign: 'center', fontSize: 30, fontWeight: 800, margin: '0 0 18px 0', color: saldo >= 0 ? '#27ae60' : '#e74c3c', fontFamily: 'Inter, Arial, sans-serif', letterSpacing: 0.2 }}>
+                R$ {saldo?.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+              </div>
+
+              {/* Botões principais (circulares) */}
+              <div style={{ display: 'flex', justifyContent: 'center', gap: 24, marginBottom: 18 }}>
+                {/* Nova transação */}
+                <button onClick={() => setShowForm(true)} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#4f8cff', boxShadow: '0 2px 8px #4f8cff33', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Nova transação">
+                  <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#4f8cff"/><path d="M12 7v10M7 12h10" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
+                </button>
+                {/* Relatório */}
+                <button onClick={() => setShowReportModal(true)} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#fff', boxShadow: '0 2px 8px #4f8cff22', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4f8cff', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Relatório">
+                  <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#4f8cff" strokeWidth="2"/><path d="M8 8h8M8 12h8M8 16h4" stroke="#4f8cff" strokeWidth="2" strokeLinecap="round"/></svg>
+                </button>
+                {/* Histórico (volta para hoje) */}
+                <button onClick={() => { setSelectedMonth(currentMonth); setSelectedYear(currentYear); }} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#fff', boxShadow: '0 2px 8px #4f8cff22', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4f8cff', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Ir para mês atual">
+                  <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#4f8cff" strokeWidth="2"/><path d="M12 8v4l3 3" stroke="#4f8cff" strokeWidth="2" strokeLinecap="round"/></svg>
                 </button>
               </div>
-            </div>
-            <div style={{ display: 'flex', gap: 10, marginBottom: 12 }}>
-              <button
-                className={viewMode === 'lista' ? 'dashboard-btn-primary' : 'dashboard-btn-secondary'}
-                onClick={() => setViewMode('lista')}
-                style={{ minWidth: 120 }}
-              >
-                Visualizar em Lista
-              </button>
-              <button
-                className={viewMode === 'pdf' ? 'dashboard-btn-primary' : 'dashboard-btn-secondary'}
-                onClick={() => setViewMode('pdf')}
-                style={{ minWidth: 120 }}
-              >
-                Visualizar como PDF
-              </button>
-              <button
-                className={viewMode === 'interativo' ? 'dashboard-btn-primary' : 'dashboard-btn-secondary'}
-                onClick={() => setViewMode('interativo')}
-                style={{ minWidth: 160 }}
-              >
-                Preencher PDF Interativo
-              </button>
-            </div>
-            <div className="dashboard-filtros-row">
-              <div className="dashboard-filtro-item">
-                <label>Mês</label>
-                <select value={selectedMonth} onChange={e => setSelectedMonth(e.target.value)}>
-                  <option value="">Todos</option>
-                  {[...Array(12)].map((_, i) => (
-                    <option key={i+1} value={i+1}>{new Date(0, i).toLocaleString('pt-BR', { month: 'long' })}</option>
-                  ))}
-                </select>
+
+              {/* Barra de ferramentas (modos, refresh, filtros) */}
+              <div className="dashboard-toolbar-mobile">
+                <div className="toolbar-modos-group">
+                  <button
+                    className={`toolbar-modo-btn${viewMode==='lista' ? ' active' : ''}`}
+                    style={{ minWidth: 48, maxWidth: 80, flex: 1 }}
+                    onClick={() => setViewMode('lista')}
+                  >
+                    {viewMode==='lista' && <span className="toolbar-modo-check">✔</span>}
+                    Lista
+                  </button>
+                  <button
+                    className={`toolbar-modo-btn${viewMode==='pdf' ? ' active' : ''}`}
+                    style={{ minWidth: 48, maxWidth: 80, flex: 1 }}
+                    onClick={() => setViewMode('pdf')}
+                  >
+                    {viewMode==='pdf' && <span className="toolbar-modo-check">✔</span>}
+                    PDF
+                  </button>
+                  <button
+                    className={`toolbar-modo-btn${viewMode==='interativo' ? ' active' : ''}`}
+                    style={{ minWidth: 60, maxWidth: 100, flex: 1 }}
+                    onClick={() => setViewMode('interativo')}
+                  >
+                    {viewMode==='interativo' && <span className="toolbar-modo-check">✔</span>}
+                    Interativo
+                  </button>
+                </div>
+                <div className="toolbar-actions-group">
+                  <button
+                    className={`toolbar-btn-refresh${tableLoading ? ' spinning' : ''}`}
+                    onClick={async () => {
+                      if (tableLoading) return;
+                      setTableLoading(true);
+                      await updateTransactions();
+                      setTableLoading(false);
+                    }}
+                    title="Atualizar lista"
+                  >
+                    <span className="toolbar-btn-icon">
+                      {/* Seta circular estilo Material/Google */}
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5V2L7 6.5L12 11V8C15.31 8 18 10.69 18 14C18 17.31 15.31 20 12 20C8.69 20 6 17.31 6 14H4C4 18.42 7.58 22 12 22C16.42 22 20 18.42 20 14C20 9.58 16.42 6 12 6V5Z" fill="#fff"/></svg>
+                    </span>
+                  </button>
+                  <button
+                    className="toolbar-btn-filtros"
+                    onClick={() => setShowFiltroModal(true)}
+                    title="Filtros"
+                  >
+                    <span className="toolbar-btn-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 17V15H13V17H3ZM3 13V11H9V13H3ZM3 9V7H17V9H3ZM15 21V19H21V21H15ZM11 5V3H21V5H11Z" fill="#fff"/></svg>
+                    </span>
+                  </button>
+                </div>
               </div>
-              <div className="dashboard-filtro-item">
-                <label>Ano</label>
-                <input type="number" value={selectedYear} onChange={e => setSelectedYear(e.target.value)} min="2020" max={new Date().getFullYear()} />
+              {/* Modal de filtros */}
+              {showFiltroModal && (
+                <div className="modal-overlay" onClick={e => e.target.classList.contains('modal-overlay') && setShowFiltroModal(false)}>
+                  <div className="modal-content" style={{ maxWidth: 340, width: '96vw', padding: 24 }}>
+                    <h3 style={{ color: '#6c4fcf', marginBottom: 16 }}>Filtros</h3>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                      <label>
+                        Mês
+                        <select value={selectedMonth} onChange={e => setSelectedMonth(e.target.value)}>
+                          <option value="">Todos</option>
+                          {[...Array(12)].map((_, i) => (
+                            <option key={i+1} value={i+1}>{new Date(0, i).toLocaleString('pt-BR', { month: 'long' })}</option>
+                          ))}
+                        </select>
+                      </label>
+                      <label>
+                        Ano
+                        <input type="number" value={selectedYear} onChange={e => setSelectedYear(e.target.value)} min="2020" max={new Date().getFullYear()} />
+                      </label>
+                      <label>
+                        Dia
+                        <input type="text" value={searchDay} onChange={e => setSearchDay(e.target.value)} placeholder="Ex: 15" />
+                      </label>
+                      <label>
+                        Descrição
+                        <input type="text" value={searchDescription} onChange={e => setSearchDescription(e.target.value)} placeholder="Buscar..." />
+                      </label>
+                      <label>
+                        Tipo
+                        <select value={searchType} onChange={e => setSearchType(e.target.value)}>
+                          <option value="">Todos</option>
+                          <option value="D">Dízimo</option>
+                          <option value="O">Oferta</option>
+                          <option value="S">Despesa</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10, marginTop: 18 }}>
+                      <button className="dashboard-btn-primary" onClick={() => setShowFiltroModal(false)} style={{ minWidth: 90 }}>Buscar</button>
+                      <button className="dashboard-btn-secondary" onClick={() => setShowFiltroModal(false)} style={{ minWidth: 90 }}>Fechar</button>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {/* Conteúdo dinâmico conforme modo de visualização */}
+              <div style={{ minHeight: 200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                {tableLoading ? (
+                  <div style={{ width: 48, height: 48, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <svg className="toolbar-spinner" width="48" height="48" viewBox="0 0 50 50"><circle className="path" cx="25" cy="25" r="20" fill="none" stroke="#b18cff" strokeWidth="5"/></svg>
+                  </div>
+                ) : (
+                  viewMode === 'lista' ? (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 14, padding: '0 8px 24px 8px', width: '100%' }}>
+                      {filteredTransactions.length === 0 ? (
+                        <div style={{ textAlign: 'center', color: '#aaa', fontSize: 16, marginTop: 32 }}>Nenhuma transação encontrada.</div>
+                      ) : (
+                        filteredTransactions.map((t, idx) => {
+                          const isEntrada = t.tipo === 'D' || t.tipo === 'O';
+                          const cor = isEntrada ? '#27ae60' : '#e74c3c';
+                          const icone = isEntrada ? (
+                            <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#eafaf1"/><path d="M12 7v10M7 12h10" stroke="#27ae60" strokeWidth="2" strokeLinecap="round"/></svg>
+                          ) : (
+                            <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fbeaea"/><path d="M7 12h10" stroke="#e74c3c" strokeWidth="2" strokeLinecap="round"/></svg>
+                          );
+                          return (
+                            <div key={t.id || idx} onClick={() => handleEdit(t)} style={{ display: 'flex', alignItems: 'center', borderRadius: 16, border: '1px solid #e3e9f7', padding: '10px 10px', minHeight: 60, background: '#fff', boxShadow: '0 2px 8px #4f8cff0a', cursor: 'pointer', transition: 'box-shadow 0.15s' }}>
+                              <div style={{ width: 38, height: 38, borderRadius: '50%', border: `2px solid ${cor}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginRight: 10, background: isEntrada ? '#eafaf1' : '#fbeaea' }}>
+                                {icone}
+                              </div>
+                              <div style={{ flex: 1 }}>
+                                <div style={{ fontWeight: 700, fontSize: 15, color: '#222', marginBottom: 2 }}>{t.tipo === 'D' ? 'Dízimo' : t.tipo === 'O' ? 'Oferta' : t.tipo_despesa ? getTipoDespesaDisplay(t.tipo_despesa) : 'Despesa'}</div>
+                                <div style={{ fontSize: 14, color: cor, fontWeight: 600 }}>R$ {Number(t.quantia).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</div>
+                                <div style={{ fontSize: 12, color: '#888', marginTop: 1 }}>{t.descricao || '-'}</div>
+                              </div>
+                              <div style={{ textAlign: 'right', minWidth: 38 }}>
+                                <div style={{ fontSize: 13, fontWeight: 500, color: '#4f8cff' }}>{t.data ? `${parseInt(t.data.split('-')[2])}/${parseInt(t.data.split('-')[1])}` : ''}</div>
+                              </div>
+                              <div style={{ fontSize: 22, marginLeft: 8, color: '#bbb' }}>&gt;</div>
+                            </div>
+                          );
+                        })
+                      )}
+                    </div>
+                  ) : viewMode === 'pdf' ? (
+                    <div style={{ padding: '0 8px 24px 8px', width: '100%' }}>
+                      <RelatorioPdfSimulado
+                        transactions={transactions}
+                        currentMonth={currentMonth}
+                        currentYear={currentYear}
+                        previewData={previewData}
+                        includeGratificacao={includeGratificacao}
+                        includeDizimoGratificacao={includeDizimoGratificacao}
+                        includeDizimoIgreja={includeDizimoIgreja}
+                        isMobile={true}
+                      />
+                    </div>
+                  ) : (
+                    <div style={{ padding: '0 8px 24px 8px', width: '100%' }}>
+                      <RelatorioPdfInterativo
+                        igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
+                        igrejaNome={igrejaUsuario ? igrejaUsuario.nome : ''}
+                        mes={new Date(0, currentMonth - 1).toLocaleString('pt-BR', { month: 'long' })}
+                        setNotification={setNotification}
+                        onSuccess={() => { updateTransactions(); updateSaldo(); }}
+                        isMobile={true}
+                      />
+                    </div>
+                  )
+                )}
               </div>
-              <div className="dashboard-filtro-item">
-                <label>Dia</label>
-                <input type="text" value={searchDay} onChange={e => setSearchDay(e.target.value)} placeholder="Ex: 15" />
-              </div>
-              <div className="dashboard-filtro-item">
-                <label>Descrição</label>
-                <input type="text" value={searchDescription} onChange={e => setSearchDescription(e.target.value)} placeholder="Buscar..." />
-              </div>
-              <div className="dashboard-filtro-item">
-                <label>Tipo</label>
-                <select value={searchType} onChange={e => setSearchType(e.target.value)}>
-                  <option value="">Todos</option>
-                  <option value="D">Dízimo</option>
-                  <option value="O">Oferta</option>
-                  <option value="S">Despesa</option>
-                </select>
-              </div>
-            </div>
-          </section>
-          <section className="dashboard-saldo-card">
-            <SaldoIndicator saldo={saldo} />
-          </section>
-          <section className="dashboard-card">
-            {viewMode === 'lista' ? (
-              <TransactionList
-                transactions={filteredTransactions}
-                onEdit={setEditingTransaction}
-                onDelete={setSelectedTransaction}
-                onTransactionClick={setSelectedTransaction}
-                setTransactions={setTransactions}
-                setNotification={setNotification}
-                igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
-              />
-            ) : viewMode === 'pdf' ? (
-              <RelatorioPdfSimulado
-                transactions={transactions}
-                currentMonth={currentMonth}
-                currentYear={currentYear}
-                previewData={previewData}
-                includeGratificacao={includeGratificacao}
-                includeDizimoGratificacao={includeDizimoGratificacao}
-                includeDizimoIgreja={includeDizimoIgreja}
-              />
-            ) : (
-              <RelatorioPdfInterativo
-                igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
-                igrejaNome={igrejaUsuario ? igrejaUsuario.nome : ''}
-                mes={new Date(0, currentMonth - 1).toLocaleString('pt-BR', { month: 'long' })}
-                setNotification={setNotification}
-                onSuccess={() => { updateTransactions(); updateSaldo(); }}
-              />
-            )}
-          </section>
+            </>
+          ) : (
+            // DESKTOP: layout original com CSS
+            <>
+              <section className="dashboard-card">
+                <div className="dashboard-header-row">
+                  <span className="dashboard-title">{igrejaUsuario ? igrejaUsuario.nome : 'Dashboard Financeiro'}</span>
+                  <div style={{ display: 'flex', gap: 10 }}>
+                    <button
+                      className="dashboard-btn-primary dashboard-btn-mobile-icon"
+                      onClick={() => setShowForm(true)}
+                      aria-label="Nova Transação"
+                    >
+                      <span className="dashboard-btn-text">Nova Transação</span>
+                      <span className="dashboard-btn-icon"><FaPlus /></span>
+                    </button>
+                    <button
+                      className="dashboard-btn-report dashboard-btn-mobile-icon"
+                      onClick={() => setShowReportModal((v) => !v)}
+                      title="Gerar/Fechar Relatório"
+                      aria-label={showReportModal ? 'Fechar Relatório' : 'Gerar Relatório'}
+                    >
+                      <span className="dashboard-btn-text">{showReportModal ? 'Fechar Relatório' : 'Gerar Relatório'}</span>
+                      <span className="dashboard-btn-icon"><FaFileAlt /></span>
+                    </button>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: 10, marginBottom: 12 }}>
+                  <button
+                    className={viewMode === 'lista' ? 'dashboard-btn-primary' : 'dashboard-btn-secondary'}
+                    onClick={() => setViewMode('lista')}
+                    style={{ minWidth: 120 }}
+                  >
+                    Visualizar em Lista
+                  </button>
+                  <button
+                    className={viewMode === 'pdf' ? 'dashboard-btn-primary' : 'dashboard-btn-secondary'}
+                    onClick={() => setViewMode('pdf')}
+                    style={{ minWidth: 120 }}
+                  >
+                    Visualizar como PDF
+                  </button>
+                  <button
+                    className={viewMode === 'interativo' ? 'dashboard-btn-primary' : 'dashboard-btn-secondary'}
+                    onClick={() => setViewMode('interativo')}
+                    style={{ minWidth: 160 }}
+                  >
+                    Preencher PDF Interativo
+                  </button>
+                </div>
+                <div className="dashboard-filtros-row">
+                  <div className="dashboard-filtro-item">
+                    <label>Mês</label>
+                    <select value={selectedMonth} onChange={e => setSelectedMonth(e.target.value)}>
+                      <option value="">Todos</option>
+                      {[...Array(12)].map((_, i) => (
+                        <option key={i+1} value={i+1}>{new Date(0, i).toLocaleString('pt-BR', { month: 'long' })}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="dashboard-filtro-item">
+                    <label>Ano</label>
+                    <input type="number" value={selectedYear} onChange={e => setSelectedYear(e.target.value)} min="2020" max={new Date().getFullYear()} />
+                  </div>
+                  <div className="dashboard-filtro-item">
+                    <label>Dia</label>
+                    <input type="text" value={searchDay} onChange={e => setSearchDay(e.target.value)} placeholder="Ex: 15" />
+                  </div>
+                  <div className="dashboard-filtro-item">
+                    <label>Descrição</label>
+                    <input type="text" value={searchDescription} onChange={e => setSearchDescription(e.target.value)} placeholder="Buscar..." />
+                  </div>
+                  <div className="dashboard-filtro-item">
+                    <label>Tipo</label>
+                    <select value={searchType} onChange={e => setSearchType(e.target.value)}>
+                      <option value="">Todos</option>
+                      <option value="D">Dízimo</option>
+                      <option value="O">Oferta</option>
+                      <option value="S">Despesa</option>
+                    </select>
+                  </div>
+                </div>
+              </section>
+              <section className="dashboard-saldo-card">
+                <SaldoIndicator saldo={saldo} />
+              </section>
+              <section className="dashboard-card">
+                {viewMode === 'lista' ? (
+                  <TransactionList
+                    transactions={filteredTransactions}
+                    onEdit={setEditingTransaction}
+                    onDelete={setSelectedTransaction}
+                    onTransactionClick={setSelectedTransaction}
+                    setTransactions={setTransactions}
+                    setNotification={setNotification}
+                    igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
+                  />
+                ) : viewMode === 'pdf' ? (
+                  <RelatorioPdfSimulado
+                    transactions={transactions}
+                    currentMonth={currentMonth}
+                    currentYear={currentYear}
+                    previewData={previewData}
+                    includeGratificacao={includeGratificacao}
+                    includeDizimoGratificacao={includeDizimoGratificacao}
+                    includeDizimoIgreja={includeDizimoIgreja}
+                  />
+                ) : (
+                  <RelatorioPdfInterativo
+                    igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
+                    igrejaNome={igrejaUsuario ? igrejaUsuario.nome : ''}
+                    mes={new Date(0, currentMonth - 1).toLocaleString('pt-BR', { month: 'long' })}
+                    setNotification={setNotification}
+                    onSuccess={() => { updateTransactions(); updateSaldo(); }}
+                  />
+                )}
+              </section>
+            </>
+          )}
         </main>
       )}
       {showForm && (

@@ -140,17 +140,31 @@ const RelatorioPdfInterativo = ({ linhasIniciais = 20, onTransacoesChange, igrej
                   style={{ cursor: 'pointer' }}
                 >
                   {editCell.idx === idx && editCell.col === col.key ? (
-                    <input
-                      name={col.key}
-                      value={editValue}
-                      onChange={handleInputChange}
-                      onBlur={handleInputBlur}
-                      onKeyDown={handleInputKeyDown}
-                      autoFocus
-                      style={{ width: '90%', fontSize: 14 }}
-                      type={col.key === 'dia' ? 'text' : 'text'}
-                      placeholder={col.label}
-                    />
+                    col.key === 'discriminacao' ? (
+                      <textarea
+                        name={col.key}
+                        value={editValue}
+                        onChange={handleInputChange}
+                        onBlur={handleInputBlur}
+                        onKeyDown={handleInputKeyDown}
+                        autoFocus
+                        style={{ width: '100%', fontSize: 14, minHeight: 32, resize: 'vertical', padding: '7px 4px', borderRadius: 6, boxSizing: 'border-box', lineHeight: 1.3 }}
+                        placeholder={col.label}
+                        rows={1}
+                      />
+                    ) : (
+                      <input
+                        name={col.key}
+                        value={editValue}
+                        onChange={handleInputChange}
+                        onBlur={handleInputBlur}
+                        onKeyDown={handleInputKeyDown}
+                        autoFocus
+                        style={{ width: '90%', fontSize: 14 }}
+                        type={col.key === 'dia' ? 'text' : 'text'}
+                        placeholder={col.label}
+                      />
+                    )
                   ) : col.key === 'entrada' || col.key === 'saida' ? (
                     formatCurrency(linha[col.key])
                   ) : (
