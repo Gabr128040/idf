@@ -897,12 +897,25 @@ const Dashboard = () => {
                 <div className="modal-warning-mobile">Saldo insuficiente para gratificação do pastor.</div>
               )}
             </div>
-            <div className="modal-actions-mobile">
-              <button className="btn-mobile-primary" onClick={generateMonthlyReport} disabled={isLoading}>
+            <div className="modal-actions-mobile" style={{display:'flex',flexDirection:'row',justifyContent:'center',alignItems:'center',gap:12,marginTop:10}}>
+              <button className="btn-mobile-primary" style={{background:'#2563eb',color:'#fff',fontWeight:700,padding:'10px 18px',borderRadius:8,border:'none',fontSize:'1.08rem',display:'flex',alignItems:'center',gap:6,boxShadow:'0 2px 8px #0001',cursor:'pointer'}} onClick={generateMonthlyReport} disabled={isLoading}>
                 <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#fff" strokeWidth="2"/><path d="M8 8h8M8 12h8M8 16h4" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
                 Gerar
               </button>
-              <button className="btn-mobile-secondary" onClick={() => setShowReportModal(false)}>
+              <button className="btn-mobile-pdf-full" style={{background:'#fff',color:'#2563eb',fontWeight:600,padding:'10px 14px',borderRadius:8,border:'1.5px solid #2563eb',fontSize:'1.08rem',display:'flex',alignItems:'center',gap:6,boxShadow:'0 2px 8px #0001',cursor:'pointer'}}
+                onClick={() => {
+                  const iframe = document.querySelector('.pdf-miniatura-mobile iframe');
+                  if (iframe && iframe.src) {
+                    window.open(iframe.src, '_blank');
+                  } else {
+                    window.open('/pdf-preview', '_blank');
+                  }
+                }}
+                title="Ver PDF por inteiro">
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 00-2 2v3m0 8v3a2 2 0 002 2h3m8-18h3a2 2 0 012 2v3m0 8v3a2 2 0 01-2 2h-3" stroke="#2563eb" strokeWidth="2" strokeLinecap="round"/></svg>
+                Ver PDF
+              </button>
+              <button className="btn-mobile-secondary" style={{background:'#fff',color:'#888',fontWeight:600,padding:'10px 14px',borderRadius:8,border:'1.5px solid #ccc',fontSize:'1.08rem',display:'flex',alignItems:'center',gap:6,boxShadow:'0 2px 8px #0001',cursor:'pointer'}} onClick={() => setShowReportModal(false)}>
                 <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke="#888" strokeWidth="2" strokeLinecap="round"/></svg>
                 Cancelar
               </button>

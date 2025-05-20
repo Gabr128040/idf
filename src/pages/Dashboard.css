@@ -825,3 +825,14 @@
     height: 20px;
   }
 }
+
+.dashboard-report-modal,
+.dashboard-report-modal-mobile {
+  padding: 18px 8px 18px 8px !important;
+}
+@media (max-width: 600px) {
+  .dashboard-report-modal,
+  .dashboard-report-modal-mobile {
+    padding: 14px 4vw 14px 4vw !important;
+  }
+}
