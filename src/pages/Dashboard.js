@@ -527,9 +527,9 @@ const Dashboard = () => {
                 <button onClick={() => setShowReportModal(true)} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#fff', boxShadow: '0 2px 8px #4f8cff22', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4f8cff', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Relatório">
                   <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#4f8cff" strokeWidth="2"/><path d="M8 8h8M8 12h8M8 16h4" stroke="#4f8cff" strokeWidth="2" strokeLinecap="round"/></svg>
                 </button>
-                {/* Histórico (volta para hoje) */}
-                <button onClick={() => { setSelectedMonth(currentMonth); setSelectedYear(currentYear); }} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#fff', boxShadow: '0 2px 8px #4f8cff22', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4f8cff', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Ir para mês atual">
-                  <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#4f8cff" strokeWidth="2"/><path d="M12 8v4l3 3" stroke="#4f8cff" strokeWidth="2" strokeLinecap="round"/></svg>
+                {/* Relatórios antigos */}
+                <button onClick={() => navigate('/relatorios')} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#fff', boxShadow: '0 2px 8px #b18cff22', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#6c4fcf', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Ver Relatórios Antigos">
+                  <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#b18cff" strokeWidth="2"/><path d="M12 8v4l3 3" stroke="#b18cff" strokeWidth="2" strokeLinecap="round"/><path d="M12 6v6l4 2" stroke="#b18cff" strokeWidth="2" strokeLinecap="round"/></svg>
                 </button>
               </div>
 
@@ -853,75 +853,73 @@ const Dashboard = () => {
       {showReportModal && (
         <div className="modal-overlay" style={{ zIndex: 3000 }} onClick={e => e.target === e.currentTarget && setShowReportModal(false)}>
           <motion.div
-            className="modal-content dashboard-report-modal"
+            className="modal-content dashboard-report-modal dashboard-report-modal-mobile"
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.3 }}
             onClick={e => e.stopPropagation()}
           >
-            <h3 style={{ color: '#f39c12', marginBottom: 12 }}>
-              Fechamento do Mês: {new Date(0, currentMonth - 1).toLocaleString('pt-BR', { month: 'long' }).toUpperCase()} de {currentYear}
-            </h3>
-            <div className="relatorio-modal-grid">
-              <div className="relatorio-modal-info">
-                <div className="preview-section" style={{background:'#f7fafc',borderRadius:8,padding:'12px 16px',marginBottom:18,marginTop:8}}>
-                  <h4 style={{color:'#2c3e50',fontWeight:600,marginBottom:8}}>Prévia do Relatório</h4>
-                  <p><b>Total de Entradas:</b> R$ {previewData ? previewData.totalEntradas.toFixed(2) : '0,00'}</p>
-                  <p><b>Total de Saídas:</b> R$ {previewData ? previewData.totalSaidas.toFixed(2) : '0,00'}</p>
-                  <p><b>Saldo do Mês:</b> R$ {previewData ? previewData.saldoMes.toFixed(2) : '0,00'}</p>
-                  <p><b>Saldo Anterior:</b> R$ {previewData ? previewData.saldoAnterior.toFixed(2) : '0,00'}</p>
-                  <p><b>Saldo Final:</b> R$ {previewData ? previewData.saldoFinal.toFixed(2) : '0,00'}</p>
-                  <p><b>Dízimo da Igreja:</b> R$ {previewData ? previewData.dizimoIgreja.toFixed(2) : '0,00'}</p>
-                </div>
-                <div style={{ marginBottom: '15px' }}>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <input
-                      type="checkbox"
-                      checked={includeGratificacao}
-                      onChange={e => handleGratificacaoChange(e.target.checked)}
-                      disabled={!isGratificacaoEnabled}
-                    />
-                    Incluir Gratificação do Pastor (R$ 900,00)
-                  </label>
-                  {!isGratificacaoEnabled && (
-                    <p style={{ color: '#ffcc00', fontSize: '14px', marginTop: '5px' }}>
-                      Aviso: O saldo atual não é suficiente para incluir a gratificação do pastor.
-                    </p>
-                  )}
-                </div>
-                <div style={{ marginBottom: '15px' }}>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <input
-                      type="checkbox"
-                      checked={includeDizimoGratificacao}
-                      onChange={e => setIncludeDizimoGratificacao(e.target.checked)}
-                      disabled={!includeGratificacao}
-                    />
-                    Incluir Dízimo da Gratificação (10% da gratificação)
-                  </label>
-                </div>
-                <div style={{ marginBottom: '15px' }}>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <input
-                      type="checkbox"
-                      checked={includeDizimoIgreja}
-                      onChange={e => setIncludeDizimoIgreja(e.target.checked)}
-                    />
-                    Incluir Dízimo da Igreja (10% das entradas)
-                  </label>
-                </div>
-                <div className="button-group">
-                  <button className="edit" onClick={generateMonthlyReport}>
-                    Gerar Relatório
-                  </button>
-                  <button className="close" onClick={() => setShowReportModal(false)}>
-                    Cancelar
-                  </button>
-                </div>
-              </div>
-              <div className="relatorio-modal-pdf">
+            <div className="modal-header-mobile">
+              <span className="modal-title-mobile">
+                <svg width="20" height="20" style={{marginRight:6,verticalAlign:'middle'}} fill="none" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="4" stroke="#f39c12" strokeWidth="2"/><path d="M8 2v4M16 2v4M3 10h18" stroke="#f39c12" strokeWidth="2" strokeLinecap="round"/></svg>
+                Fechamento: {new Date(0, currentMonth - 1).toLocaleString('pt-BR', { month: 'long' }).toUpperCase()} {currentYear}
+              </span>
+              <button className="modal-close-btn-mobile" onClick={() => setShowReportModal(false)} aria-label="Fechar">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#888" strokeWidth="2" strokeLinecap="round"/></svg>
+              </button>
+            </div>
+            <div className="modal-cards-row-mobile" style={{ flexWrap: 'wrap', justifyContent: 'space-between', gap: 8, marginBottom: 8 }}>
+              <div className="modal-card-mobile entradas"><svg width="18" height="18" style={{marginRight:4}} fill="none" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7 7 7-7" stroke="#27ae60" strokeWidth="2" strokeLinecap="round"/></svg>R$ {previewData ? previewData.totalEntradas.toFixed(2) : '0,00'}<span>Entradas</span></div>
+              <div className="modal-card-mobile saidas"><svg width="18" height="18" style={{marginRight:4}} fill="none" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7-7-7 7" stroke="#e74c3c" strokeWidth="2" strokeLinecap="round"/></svg>R$ {previewData ? previewData.totalSaidas.toFixed(2) : '0,00'}<span>Saídas</span></div>
+              <div className="modal-card-mobile saldo"><svg width="18" height="18" style={{marginRight:4}} fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#3498db" strokeWidth="2"/><path d="M8 12h8M12 8v8" stroke="#3498db" strokeWidth="2"/></svg>R$ {previewData ? previewData.saldoMes.toFixed(2) : '0,00'}<span>Saldo</span></div>
+              <div className="modal-card-mobile final"><svg width="18" height="18" style={{marginRight:4}} fill="none" viewBox="0 0 24 24"><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="#b18cff" strokeWidth="2"/><path d="M12 3v12" stroke="#b18cff" strokeWidth="2" strokeLinecap="round"/></svg>R$ {previewData ? previewData.saldoFinal.toFixed(2) : '0,00'}<span>Final</span></div>
+              <div className="modal-card-mobile saldo-anterior"><svg width="18" height="18" style={{marginRight:4}} fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#888" strokeWidth="2"/><path d="M6 12h12" stroke="#888" strokeWidth="2"/></svg>R$ {previewData ? previewData.saldoAnterior.toFixed(2) : '0,00'}<span>Saldo Anterior</span></div>
+              <div className="modal-card-mobile dizimo-igreja"><svg width="18" height="18" style={{marginRight:4}} fill="none" viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7z" stroke="#27ae60" strokeWidth="2"/></svg>R$ {previewData ? (previewData.dizimoIgreja || 0).toFixed(2) : '0,00'}<span>Dízimo Igreja</span></div>
+            </div>
+            <div className="modal-options-mobile" style={{display:'flex',flexDirection:'column',gap:4,alignItems:'flex-start',margin:'10px 0 8px 0'}}>
+              <label className="modal-checkbox-mobile">
+                <input type="checkbox" checked={includeGratificacao} onChange={e => handleGratificacaoChange(e.target.checked)} disabled={!isGratificacaoEnabled} />
+                <span className="icon"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2l2.09 6.26L20 9.27l-5 3.64L16.18 20 12 16.77 7.82 20 9 12.91l-5-3.64 5.91-.91z" stroke="#f39c12" strokeWidth="1.5"/></svg></span>
+                Gratificação do Pastor
+              </label>
+              <label className="modal-checkbox-mobile">
+                <input type="checkbox" checked={includeDizimoGratificacao} onChange={e => setIncludeDizimoGratificacao(e.target.checked)} disabled={!includeGratificacao} />
+                <span className="icon"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20" stroke="#6c4fcf" strokeWidth="1.5"/></svg></span>
+                Dízimo da Gratificação
+              </label>
+              <label className="modal-checkbox-mobile">
+                <input type="checkbox" checked={includeDizimoIgreja} onChange={e => setIncludeDizimoIgreja(e.target.checked)} />
+                <span className="icon"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7z" stroke="#27ae60" strokeWidth="1.5"/></svg></span>
+                Dízimo da Igreja
+              </label>
+              {!isGratificacaoEnabled && (
+                <div className="modal-warning-mobile">Saldo insuficiente para gratificação do pastor.</div>
+              )}
+            </div>
+            <div className="modal-actions-mobile">
+              <button className="btn-mobile-primary" onClick={generateMonthlyReport} disabled={isLoading}>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#fff" strokeWidth="2"/><path d="M8 8h8M8 12h8M8 16h4" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
+                Gerar
+              </button>
+              <button className="btn-mobile-secondary" onClick={() => setShowReportModal(false)}>
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke="#888" strokeWidth="2" strokeLinecap="round"/></svg>
+                Cancelar
+              </button>
+            </div>
+            <div className="modal-preview-mobile">
+              <div className="pdf-miniatura-mobile" style={{height: '600px', minHeight: '520px', maxHeight: '800px'}}>
                 <RelatorioPdfPreview previewData={previewData} currentMonth={currentMonth} currentYear={currentYear} transactions={transactions} includeGratificacao={includeGratificacao} includeDizimoGratificacao={includeDizimoGratificacao} includeDizimoIgreja={includeDizimoIgreja} />
+                <button className="expand-btn-mobile" title="Expandir PDF" style={{position:'absolute',top:10,right:10,zIndex:2}} onClick={() => {
+                  const iframe = document.querySelector('.pdf-miniatura-mobile iframe');
+                  if (iframe && iframe.src) {
+                    window.open(`https://drive.google.com/viewerng/viewer?embedded=true&url=${encodeURIComponent(iframe.src)}`, '_blank');
+                  } else {
+                    window.open('/pdf-preview', '_blank');
+                  }
+                }}>
+                  <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 00-2 2v3m0 8v3a2 2 0 002 2h3m8-18h3a2 2 0 012 2v3m0 8v3a2 2 0 01-2 2h-3" stroke="#4f8cff" strokeWidth="2" strokeLinecap="round"/></svg>
+                </button>
               </div>
             </div>
           </motion.div>

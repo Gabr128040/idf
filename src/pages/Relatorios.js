@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './Relatorios.css';
 
 const Relatorios = () => {
+  const navigate = useNavigate();
   const [relatorios, setRelatorios] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -68,6 +70,27 @@ const Relatorios = () => {
 
   return (
     <div className="relatorios">
+      <button
+        onClick={() => navigate('/')}
+        style={{
+          background: 'none',
+          border: 'none',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 8,
+          fontSize: 16,
+          color: '#4f8cff',
+          fontWeight: 600,
+          margin: '32px 0 18px 0',
+          cursor: 'pointer',
+          padding: '6px 0 6px 0'
+        }}
+        aria-label="Voltar para Dashboard"
+        type="button"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style={{ pointerEvents: 'none' }}><path d="M15 18l-6-6 6-6" stroke="#4f8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        <span style={{ pointerEvents: 'none' }}>Voltar para Dashboard</span>
+      </button>
       <h2>Relatórios Antigos</h2>
       <ul>
         {relatorios.map((relatorio) => (
