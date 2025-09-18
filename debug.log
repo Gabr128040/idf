@@ -8612,3 +8612,9 @@ INFO 2025-05-18 16:47:57,004 views Requisição recebida - Parâmetros: <QueryDict:
 INFO 2025-05-18 16:47:57,435 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
 INFO 2025-05-18 16:47:58,134 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
 INFO 2025-05-18 16:47:59,093 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-17 15:51:03,857 autoreload Watching for file changes with StatReloader
+WARNING 2025-09-17 15:51:14,046 log Not Found: /
+WARNING 2025-09-17 15:51:14,131 log Not Found: /favicon.ico
+WARNING 2025-09-17 15:51:16,896 log Not Found: /
+INFO 2025-09-18 13:20:12,617 autoreload Watching for file changes with StatReloader
+INFO 2025-09-18 13:42:27,502 autoreload Watching for file changes with StatReloader
