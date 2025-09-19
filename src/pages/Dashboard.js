@@ -23,8 +23,8 @@ import RelatorioPdfInterativo from '../components/RelatorioPdfInterativo';
 const Dashboard = () => {
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [transactionToDelete, setTransactionToDelete] = useState(null);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [transactionToDelete, setTransactionToDelete] = useState(null);
   const [transactions, setTransactions] = useState([]);
   const [filteredTransactions, setFilteredTransactions] = useState([]);
   const [selectedMonth, setSelectedMonth] = useState('');
@@ -149,24 +149,23 @@ const Dashboard = () => {
     setNotification({ message: 'Transação editada com sucesso!', type: 'success' });
   };
 
-  const handleDelete = (transaction) => {
-    setTransactionToDelete(transaction);
-    setIsModalOpen(true);
-  };
+  // const handleDelete = (transaction) => {
+  //   setTransactionToDelete(transaction);
+  //   setIsModalOpen(true);
+  // };
 
   const confirmDelete = async () => {
+    if (!selectedTransaction) return;
     setActionLoading(true);
     try {
-      await deleteTransaction(transactionToDelete.id, navigate);
+      await deleteTransaction(selectedTransaction.id, navigate);
       setNotification({ message: 'Transação excluída com sucesso!', type: 'success' });
       setSelectedTransaction(null);
       await updateTransactions();
       await updateSaldo();
-      setIsModalOpen(false);
-      setTransactionToDelete(null);
     } catch (err) {
       setNotification({ message: 'Erro ao excluir transação: ' + err.message, type: 'error' });
-      setIsModalOpen(false);
+      setSelectedTransaction(null);
     } finally {
       setActionLoading(false);
     }
@@ -653,19 +652,41 @@ const Dashboard = () => {
                             <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fbeaea"/><path d="M7 12h10" stroke="#e74c3c" strokeWidth="2" strokeLinecap="round"/></svg>
                           );
                           return (
-                            <div key={t.id || idx} onClick={() => handleEdit(t)} style={{ display: 'flex', alignItems: 'center', borderRadius: 16, border: '1px solid #e3e9f7', padding: '10px 10px', minHeight: 60, background: '#fff', boxShadow: '0 2px 8px #4f8cff0a', cursor: 'pointer', transition: 'box-shadow 0.15s' }}>
-                              <div style={{ width: 38, height: 38, borderRadius: '50%', border: `2px solid ${cor}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginRight: 10, background: isEntrada ? '#eafaf1' : '#fbeaea' }}>
-                                {icone}
+                            <div key={t.id || idx} style={{ display: 'flex', alignItems: 'center', borderRadius: 16, border: '1px solid #e3e9f7', padding: '10px 10px', minHeight: 60, background: '#fff', boxShadow: '0 2px 8px #4f8cff0a', cursor: 'pointer', transition: 'box-shadow 0.15s' }}>
+                              <div onClick={() => handleEdit(t)} style={{ display: 'flex', alignItems: 'center', flex: 1 }}>
+                                <div style={{ width: 38, height: 38, borderRadius: '50%', border: `2px solid ${cor}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginRight: 10, background: isEntrada ? '#eafaf1' : '#fbeaea' }}>
+                                  {icone}
+                                </div>
+                                <div style={{ flex: 1 }}>
+                                  <div style={{ fontWeight: 700, fontSize: 15, color: '#222', marginBottom: 2 }}>{t.tipo === 'D' ? 'Dízimo' : t.tipo === 'O' ? 'Oferta' : t.tipo_despesa ? getTipoDespesaDisplay(t.tipo_despesa) : 'Despesa'}</div>
+                                  <div style={{ fontSize: 14, color: cor, fontWeight: 600 }}>R$ {Number(t.quantia).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</div>
+                                  <div style={{ fontSize: 12, color: '#888', marginTop: 1 }}>{t.descricao || '-'}</div>
+                                </div>
+                                <div style={{ textAlign: 'right', minWidth: 38 }}>
+                                  <div style={{ fontSize: 13, fontWeight: 500, color: '#4f8cff' }}>{t.data ? `${parseInt(t.data.split('-')[2])}/${parseInt(t.data.split('-')[1])}` : ''}</div>
+                                </div>
+                                <div style={{ fontSize: 22, marginLeft: 8, color: '#bbb' }}>&gt;</div>
                               </div>
-                              <div style={{ flex: 1 }}>
-                                <div style={{ fontWeight: 700, fontSize: 15, color: '#222', marginBottom: 2 }}>{t.tipo === 'D' ? 'Dízimo' : t.tipo === 'O' ? 'Oferta' : t.tipo_despesa ? getTipoDespesaDisplay(t.tipo_despesa) : 'Despesa'}</div>
-                                <div style={{ fontSize: 14, color: cor, fontWeight: 600 }}>R$ {Number(t.quantia).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</div>
-                                <div style={{ fontSize: 12, color: '#888', marginTop: 1 }}>{t.descricao || '-'}</div>
-                              </div>
-                              <div style={{ textAlign: 'right', minWidth: 38 }}>
-                                <div style={{ fontSize: 13, fontWeight: 500, color: '#4f8cff' }}>{t.data ? `${parseInt(t.data.split('-')[2])}/${parseInt(t.data.split('-')[1])}` : ''}</div>
-                              </div>
-                              <div style={{ fontSize: 22, marginLeft: 8, color: '#bbb' }}>&gt;</div>
+                              {/* Botão deletar mobile */}
+                              <button
+                                onClick={() => setSelectedTransaction(t)}
+                                style={{
+                                  background: 'none',
+                                  border: 'none',
+                                  marginLeft: 8,
+                                  padding: 6,
+                                  borderRadius: '50%',
+                                  cursor: 'pointer',
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  justifyContent: 'center',
+                                  color: '#e74c3c',
+                                  transition: 'background 0.2s',
+                                }}
+                                title="Deletar transação"
+                              >
+                                <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><rect x="5" y="7" width="14" height="12" rx="2" stroke="#e74c3c" strokeWidth="2"/><path d="M10 11v4M14 11v4" stroke="#e74c3c" strokeWidth="2" strokeLinecap="round"/><path d="M9 7V5a3 3 0 0 1 6 0v2" stroke="#e74c3c" strokeWidth="2"/></svg>
+                              </button>
                             </div>
                           );
                         })
@@ -693,6 +714,8 @@ const Dashboard = () => {
                         setNotification={setNotification}
                         onSuccess={() => { updateTransactions(); updateSaldo(); }}
                         isMobile={true}
+                        transactions={filteredTransactions}
+                        getTipoDespesaDisplay={getTipoDespesaDisplay}
                       />
                     </div>
                   )
@@ -786,15 +809,80 @@ const Dashboard = () => {
               </section>
               <section className="dashboard-card">
                 {viewMode === 'lista' ? (
-                  <TransactionList
-                    transactions={filteredTransactions}
-                    onEdit={setEditingTransaction}
-                    onDelete={setSelectedTransaction}
-                    onTransactionClick={setSelectedTransaction}
-                    setTransactions={setTransactions}
-                    setNotification={setNotification}
-                    igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
-                  />
+                  <div style={{ position: 'relative', width: '100%' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+                      <span style={{ fontWeight: 600, fontSize: 17, color: '#4f8cff' }}>Transações</span>
+                      <button
+                        className="dashboard-btn-refresh"
+                        onClick={async () => {
+                          setTableLoading(true);
+                          await updateTransactions();
+                          await updateSaldo();
+                          setTableLoading(false);
+                        }}
+                        style={{
+                          background: '#fff',
+                          border: '1.5px solid #4f8cff',
+                          borderRadius: '50%',
+                          width: 38,
+                          height: 38,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          cursor: 'pointer',
+                          boxShadow: '0 2px 8px #4f8cff11',
+                          transition: 'box-shadow 0.2s',
+                          marginLeft: 8
+                        }}
+                        title="Atualizar lista de transações"
+                        disabled={tableLoading}
+                      >
+                        <svg
+                          width="22" height="22" viewBox="0 0 24 24" fill="none"
+                          style={{
+                            animation: tableLoading ? 'spin 0.8s linear infinite' : 'none',
+                            opacity: tableLoading ? 0.5 : 1
+                          }}
+                        >
+                          <path d="M12 4V2L7 6.5L12 11V9C15.31 9 18 11.69 18 15C18 18.31 15.31 21 12 21C8.69 21 6 18.31 6 15H4C4 19.42 7.58 23 12 23C16.42 23 20 19.42 20 15C20 10.58 16.42 7 12 7V4Z" fill="#4f8cff"/>
+                        </svg>
+                        <style>{`@keyframes spin { 100% { transform: rotate(360deg); } }`}</style>
+                      </button>
+                    </div>
+                    {tableLoading && (
+                      <div style={{
+                        position: 'absolute',
+                        top: 0, left: 0, right: 0, bottom: 0,
+                        background: 'rgba(255,255,255,0.7)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        zIndex: 10
+                      }}>
+                        <div className="zz-spinner" style={{ width: 40, height: 40, borderWidth: 4 }} />
+                        <style>{`
+                          .zz-spinner {
+                            border: 4px solid #e3e9f7;
+                            border-top: 4px solid #4f8cff;
+                            border-radius: 50%;
+                            width: 40px;
+                            height: 40px;
+                            animation: zz-spin 0.9s linear infinite;
+                          }
+                          @keyframes zz-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                        `}</style>
+                      </div>
+                    )}
+                    <TransactionList
+                      transactions={filteredTransactions}
+                      onEdit={setEditingTransaction}
+                      onDelete={setSelectedTransaction}
+                      onTransactionClick={setSelectedTransaction}
+                      setTransactions={setTransactions}
+                      setNotification={setNotification}
+                      igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
+                    />
+                  </div>
                 ) : viewMode === 'pdf' ? (
                   <RelatorioPdfSimulado
                     transactions={transactions}
@@ -833,6 +921,10 @@ const Dashboard = () => {
           onClose={() => setEditingTransaction(null)}
           onSave={handleSave}
           setNotification={setNotification}
+          onDelete={() => {
+            setSelectedTransaction(editingTransaction);
+            setEditingTransaction(null);
+          }}
         />
       )}
       {selectedTransaction && (

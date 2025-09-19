@@ -86,21 +86,7 @@ const TransactionList = ({ transactions, onEdit, onDelete, onTransactionClick, s
               visible: { opacity: 1, x: 0 },
             }}
             transition={{ duration: 0.3 }}
-            onTouchStart={e => {
-              if (window.innerWidth <= 700) {
-                transaction._touchStart = Date.now();
-              }
-            }}
-            onTouchEnd={e => {
-              if (window.innerWidth <= 700 && transaction._touchStart) {
-                const duration = Date.now() - transaction._touchStart;
-                if (duration > 500) {
-                  e.stopPropagation();
-                  handleDelete(transaction.id);
-                }
-                transaction._touchStart = null;
-              }
-            }}
+            // ...sem touch para deletar, só clique no botão
           >
             <span>{getTipoDisplay(transaction.tipo)}</span>
             <span>R$ {transaction.quantia}</span>

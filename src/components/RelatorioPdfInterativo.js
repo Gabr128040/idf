@@ -14,10 +14,66 @@ function formatCurrency(value) {
   return 'R$ ' + Number(value).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
 }
 
-const RelatorioPdfInterativo = ({ linhasIniciais = 20, onTransacoesChange, igrejaId, igrejaNome, mes, onSuccess, setNotification }) => {
+const RelatorioPdfInterativo = ({
+  linhasIniciais = 20,
+  onTransacoesChange,
+  igrejaId,
+  igrejaNome,
+  mes,
+  onSuccess,
+  setNotification,
+  transactions = [], // Receber as transações do Dashboard
+  getTipoDespesaDisplay
+}) => {
   const [linhas, setLinhas] = useState(
     Array.from({ length: linhasIniciais }, () => ({ dia: '', discriminacao: '', entrada: '', saida: '' }))
   );
+  // Função para agrupar e formatar as transações igual ao PDF
+  function agruparTransacoes(transacoes) {
+    // Agrupar dízimos e ofertas por dia
+    const grouped = {};
+    transacoes.forEach(t => {
+      const [ano, mes, dia] = t.data.split('-');
+      if (!grouped[dia]) grouped[dia] = { D: 0, O: 0, outros: [] };
+      if (t.tipo === 'D') grouped[dia].D += parseFloat(t.quantia);
+      else if (t.tipo === 'O') grouped[dia].O += parseFloat(t.quantia);
+      else grouped[dia].outros.push(t);
+    });
+    // Montar formattedData agrupando D e O, mantendo outros
+    let formattedData = [];
+    Object.keys(grouped).sort((a, b) => parseInt(a) - parseInt(b)).forEach(dia => {
+      if (grouped[dia].D > 0) formattedData.push({ dia, discriminacao: 'Dízimo', entrada: grouped[dia].D, saida: '' });
+      if (grouped[dia].O > 0) formattedData.push({ dia, discriminacao: 'Oferta', entrada: grouped[dia].O, saida: '' });
+      grouped[dia].outros.forEach(t => {
+        let discriminacao = '';
+        if (t.tipo === 'S') {
+          if (getTipoDespesaDisplay) {
+            const tipoDespesa = getTipoDespesaDisplay(t.tipo_despesa);
+            discriminacao = tipoDespesa === 'Outro' ? (t.descricao || 'Outro') : tipoDespesa;
+          } else {
+            discriminacao = t.descricao || 'Despesa';
+          }
+        }
+        formattedData.push({
+          dia,
+          discriminacao,
+          entrada: '',
+          saida: t.tipo === 'S' ? t.quantia : '',
+        });
+      });
+    });
+    return formattedData;
+  }
+
+  // Handler do botão de importar
+  const handleImportarTransacoes = () => {
+    if (!transactions || transactions.length === 0) return;
+    const agrupadas = agruparTransacoes(transactions);
+    // Adiciona 2 linhas extras vazias
+    const extras = Array.from({ length: 2 }, () => ({ dia: '', discriminacao: '', entrada: '', saida: '' }));
+    setLinhas([...agrupadas, ...extras]);
+    if (onTransacoesChange) onTransacoesChange([...agrupadas, ...extras]);
+  };
   const [editCell, setEditCell] = useState({ idx: null, col: null });
   const [editValue, setEditValue] = useState('');
   const [salvando, setSalvando] = useState(false);
@@ -122,6 +178,16 @@ const RelatorioPdfInterativo = ({ linhasIniciais = 20, onTransacoesChange, igrej
           {mes && <span>Mês: {mes}</span>}
         </div>
       )}
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 10 }}>
+        <button
+          className="dashboard-btn-secondary"
+          style={{ minWidth: 180, marginRight: 8 }}
+          onClick={handleImportarTransacoes}
+          disabled={!transactions || transactions.length === 0}
+        >
+          Importar transações do mês
+        </button>
+      </div>
       <table className="pdf-simulado-table">
         <thead>
           <tr>
