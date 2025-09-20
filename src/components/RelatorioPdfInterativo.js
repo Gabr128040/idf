@@ -65,14 +65,44 @@ const RelatorioPdfInterativo = ({
     return formattedData;
   }
 
-  // Handler do botão de importar
+  // Handler do botão de importar - filtra apenas transações do mês atual
   const handleImportarTransacoes = () => {
     if (!transactions || transactions.length === 0) return;
-    const agrupadas = agruparTransacoes(transactions);
+    
+    // Filtrar transações apenas do mês atual
+    const currentYear = new Date().getFullYear();
+    const monthNames = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+                       'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+    const currentMonthNumber = monthNames.indexOf(mes.toLowerCase()) + 1;
+    
+    const currentMonthTransactions = transactions.filter(t => {
+      if (!t.data) return false;
+      const [ano, mesTransacao] = t.data.split('-');
+      return parseInt(ano) === currentYear && parseInt(mesTransacao) === currentMonthNumber;
+    });
+    
+    if (currentMonthTransactions.length === 0) {
+      if (setNotification) {
+        setNotification({
+          type: 'warning',
+          message: `Nenhuma transação encontrada para o mês de ${mes} de ${currentYear}.`
+        });
+      }
+      return;
+    }
+    
+    const agrupadas = agruparTransacoes(currentMonthTransactions);
     // Adiciona 2 linhas extras vazias
     const extras = Array.from({ length: 2 }, () => ({ dia: '', discriminacao: '', entrada: '', saida: '' }));
     setLinhas([...agrupadas, ...extras]);
     if (onTransacoesChange) onTransacoesChange([...agrupadas, ...extras]);
+    
+    if (setNotification) {
+      setNotification({
+        type: 'success',
+        message: `${currentMonthTransactions.length} transação${currentMonthTransactions.length > 1 ? 'ões' : ''} de ${mes} importada${currentMonthTransactions.length > 1 ? 's' : ''} com sucesso!`
+      });
+    }
   };
   const [editCell, setEditCell] = useState({ idx: null, col: null });
   const [editValue, setEditValue] = useState('');
