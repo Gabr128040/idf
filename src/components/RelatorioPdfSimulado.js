@@ -131,33 +131,8 @@ const RelatorioPdfSimulado = ({ transactions, currentMonth, currentYear, preview
     // Ordenar por data
     formattedData.sort((a, b) => new Date(a.data) - new Date(b.data));
     
-    return formattedData.map(row => [row.dia, row.discriminacao, row.entrada, row.saida]);tra: false });
-    });
-    baseTransacoes.filter(t => t.tipo !== 'D').forEach(transaction => {
-      const day = transaction.data ? transaction.data.split('-')[2] : '';
-      let discriminacao = '';
-      if (transaction.tipo === 'O') {
-        discriminacao = 'Oferta';
-      } else if (transaction.tipo === 'S') {
-        const tipoDespesa = getTipoDespesaDisplay(transaction.tipo_despesa);
-        discriminacao = tipoDespesa === 'Outro' ? (transaction.descricao || 'Outro') : tipoDespesa;
-      }
-      formattedData.push({ dia: day.padStart(2, '0'), discriminacao, entrada: transaction.tipo === 'O' ? `R$ ${truncateToTwoDecimals(parseFloat(transaction.quantia))}` : '-', saida: transaction.tipo === 'S' ? `R$ ${truncateToTwoDecimals(parseFloat(transaction.quantia))}` : '-', isExtra: false });
-    });
-    formattedData.sort((a, b) => parseInt(a.dia) - parseInt(b.dia));
-    transacoesExtras.forEach(transaction => {
-      let discriminacao = '';
-      if (transaction.tipo === 'D') {
-        discriminacao = 'Dízimo da Gratificação';
-      } else if (transaction.tipo === 'S') {
-        discriminacao = transaction.descricao || 'Despesa';
-      }
-      formattedData.push({ dia: transaction.data ? transaction.data.split('-')[2] : '', discriminacao, entrada: transaction.tipo === 'D' ? `R$ ${truncateToTwoDecimals(parseFloat(transaction.quantia))}` : '-', saida: transaction.tipo === 'S' ? `R$ ${truncateToTwoDecimals(parseFloat(transaction.quantia))}` : '-', isExtra: true });
-    });
-    for (let i = 0; i < 5; i++) {
-      formattedData.push({ dia: '', discriminacao: '', entrada: '', saida: '', isExtra: false });
-    }
-    return formattedData;
+    return formattedData.map(row => [row.dia, row.discriminacao, row.entrada, row.saida]);
+  }
   }
 
   return (
