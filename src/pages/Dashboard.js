@@ -237,6 +237,197 @@ const Dashboard = () => {
       }));
   }
 
+  // Função para gerar PDF de prévia simulada (sem salvar no sistema)
+  const generatePdfPreview = () => {
+    if (!previewData) return;
+
+    const pdfMonth = currentMonth;
+    const pdfYear = currentYear;
+    const lastDayOfMonth = getLastDayOfMonth(pdfYear, pdfMonth);
+    
+    // Filtrar transações do mês/ano atual
+    let baseTransacoes = transactions.filter(t => {
+      const [ano, mes] = t.data.split('-');
+      return parseInt(mes) === currentMonth && parseInt(ano) === currentYear;
+    });
+
+    // Simular transações extras (apenas para prévia - NÃO criar no sistema)
+    let transacoesExtras = [];
+    if (includeGratificacao) {
+      transacoesExtras.push({
+        tipo: 'S', descricao: 'Gratificação do Líder', quantia: 900, data: lastDayOfMonth, nao_agrupar: true
+      });
+    }
+    if (includeDizimoGratificacao) {
+      transacoesExtras.push({
+        tipo: 'D', descricao: 'Dízimo da Gratificação', quantia: 90, data: lastDayOfMonth, nao_agrupar: false
+      });
+    }
+    if (includeDizimoIgreja && previewData) {
+      transacoesExtras.push({
+        tipo: 'S', descricao: 'Dízimo da Igreja', quantia: previewData.dizimoIgreja, data: lastDayOfMonth, nao_agrupar: true
+      });
+    }
+
+    // Combinar transações reais com simuladas
+    const todasTransacoes = [...baseTransacoes, ...transacoesExtras];
+    
+    // Separar agrupadas e individuais (mesma lógica do relatório oficial)
+    const grouped = {};
+    const individuais = [];
+    
+    todasTransacoes.forEach(t => {
+      const day = t.data ? t.data.split('-')[2] : '';
+      
+      // Saídas sempre individuais
+      if (t.tipo === 'S') {
+        individuais.push({
+          dia: day.padStart(2, '0'),
+          discriminacao: t.descricao || 'Despesa',
+          entrada: '-',
+          saida: `R$ ${truncateToTwoDecimals(parseFloat(t.quantia) || 0)}`,
+          data: t.data
+        });
+      }
+      // Entradas marcadas com nao_agrupar também individuais
+      else if (t.nao_agrupar === true) {
+        const tipoNome = t.tipo === 'D' ? 'Dízimo' : 'Oferta';
+        const discriminacao = t.descricao || tipoNome;
+        individuais.push({
+          dia: day.padStart(2, '0'),
+          discriminacao,
+          entrada: `R$ ${truncateToTwoDecimals(parseFloat(t.quantia) || 0)}`,
+          saida: '-',
+          data: t.data
+        });
+      }
+      // Entradas normais agrupadas
+      else {
+        if (!grouped[day]) grouped[day] = { D: 0, O: 0 };
+        if (t.tipo === 'D') grouped[day].D += parseFloat(t.quantia) || 0;
+        else if (t.tipo === 'O') grouped[day].O += parseFloat(t.quantia) || 0;
+      }
+    });
+    
+    let formattedData = [];
+    
+    // Adicionar agrupadas
+    Object.keys(grouped).forEach(day => {
+      if (grouped[day].D > 0) {
+        formattedData.push({ 
+          dia: day.padStart(2, '0'), 
+          discriminacao: 'Dízimo', 
+          entrada: `R$ ${truncateToTwoDecimals(grouped[day].D)}`, 
+          saida: '-',
+          data: `${currentYear}-${currentMonth.toString().padStart(2, '0')}-${day}`
+        });
+      }
+      if (grouped[day].O > 0) {
+        formattedData.push({ 
+          dia: day.padStart(2, '0'), 
+          discriminacao: 'Oferta', 
+          entrada: `R$ ${truncateToTwoDecimals(grouped[day].O)}`, 
+          saida: '-',
+          data: `${currentYear}-${currentMonth.toString().padStart(2, '0')}-${day}`
+        });
+      }
+    });
+    
+    // Adicionar individuais
+    formattedData = formattedData.concat(individuais);
+    
+    // Ordenar por data
+    formattedData.sort((a, b) => new Date(a.data) - new Date(b.data));
+    
+    // Adicionar 5 linhas vazias ao final
+    for (let i = 0; i < 5; i++) {
+      formattedData.push({ dia: '', discriminacao: '', entrada: '', saida: '' });
+    }
+
+    // Gerar o PDF
+    const doc = new jsPDF({ format: 'a4', unit: 'mm' });
+    
+    // Adicionar logo
+    try {
+      doc.addImage(logo, 'PNG', 10, 10, 15, 15);
+    } catch (err) {
+      console.warn('Erro ao adicionar logotipo:', err);
+    }
+    
+    // Cabeçalho
+    doc.setFontSize(11);
+    doc.setFont('times', 'bold');
+    doc.text('IGREJA DE DEUS MISSIONÁRIA', 105, 15, { align: 'center' });
+    doc.setFontSize(9);
+    doc.setFont('times', 'normal');
+    doc.text('CNPJ: 05.869.914/0001-07', 105, 20, { align: 'center' });
+    doc.text('DEPARTAMENTO FINANCEIRO', 105, 25, { align: 'center' });
+    doc.setFontSize(10);
+    doc.text(`MÊS: ${new Date(0, pdfMonth - 1).toLocaleString('pt-BR', { month: 'long' }).toUpperCase()}`, 10, 35);
+    doc.text(`ANO: ${pdfYear}`, 105, 35, { align: 'center' });
+    doc.text('EBENÉZER', 200 - 10, 35, { align: 'right' });
+    
+    // Adicionar marca d'água "PRÉVIA"
+    doc.setFont('times', 'bold');
+    doc.setFontSize(60);
+    doc.setTextColor(220, 220, 220);
+    doc.text('PRÉVIA', 105, 150, { align: 'center', angle: 45 });
+    doc.setTextColor(0, 0, 0);
+    
+    // Tabela
+    autoTable(doc, {
+      startY: 40,
+      head: [['DIA', 'DISCRIMINAÇÃO', 'ENTRADA', 'SAÍDA']],
+      body: formattedData.map(row => [row.dia, row.discriminacao, row.entrada !== undefined ? row.entrada : '-', row.saida !== undefined ? row.saida : '-']),
+      theme: 'grid',
+      headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0], fontStyle: 'bold', fontSize: 8 },
+      styles: { fontSize: 7, cellPadding: 1, overflow: 'linebreak' },
+      columnStyles: { 0: { cellWidth: 15 }, 1: { cellWidth: 80 }, 2: { cellWidth: 40, halign: 'right' }, 3: { cellWidth: 40, halign: 'right' } },
+    });
+    
+    // Caixa de informações
+    const finalY = doc.lastAutoTable.finalY - 5;
+    const infoBoxX = 10;
+    const infoBoxY = finalY + 10;
+    const infoBoxWidth = 180;
+    const infoBoxHeight = 25;
+    doc.setDrawColor(0);
+    doc.setFillColor(240, 240, 240);
+    doc.rect(infoBoxX, infoBoxY, infoBoxWidth, infoBoxHeight, 'FD');
+    
+    const infoStartX = infoBoxX + 5;
+    let infoStartY = infoBoxY + 4;
+    doc.setFontSize(9);
+    doc.setFont('times', 'bold');
+    doc.text('TOTAL DE ENTRADA:', infoStartX, infoStartY);
+    doc.text(`R$ ${truncateToTwoDecimals(previewData.totalEntradas)}`, infoStartX + 60, infoStartY);
+    infoStartY += 4;
+    doc.text('TOTAL DE SAÍDA DO MÊS:', infoStartX, infoStartY);
+    doc.text(`R$ ${truncateToTwoDecimals(previewData.totalSaidas)}`, infoStartX + 60, infoStartY);
+    infoStartY += 4;
+    doc.text('SALDO DO MÊS:', infoStartX, infoStartY);
+    doc.text(`R$ ${previewData.saldoMes.toFixed(2)}`, infoStartX + 60, infoStartY);
+    infoStartY += 4;
+    doc.text('SALDO ANTERIOR:', infoStartX, infoStartY);
+    doc.text(`R$ ${previewData.saldoAnterior.toFixed(2)}`, infoStartX + 60, infoStartY);
+    infoStartY += 4;
+    doc.text('TOTAL EM CAIXA:', infoStartX, infoStartY);
+    const totalEmCaixa = previewData.saldoFinal;
+    doc.text(`R$ ${truncateToTwoDecimals(totalEmCaixa)}`, infoStartX + 60, infoStartY);
+    
+    // Linhas de assinatura
+    const signatureY = infoBoxY + infoBoxHeight + 6;
+    doc.setFontSize(8);
+    doc.setFont('times', 'normal');
+    doc.text('TESOUREIRO: ______________________________', 10, signatureY);
+    doc.text('DIRIGENTE DA CONGREGAÇÃO: ______________________________', 10, signatureY + 5);
+    doc.text('DIRETOR FINANCEIRO IDM SEDE: ______________________________', 10, signatureY + 10);
+    doc.text('CONSELHO FISCAL: ______________________________', 10, signatureY + 15);
+    
+    // Baixar o PDF
+    doc.save(`previa_relatorio_${pdfMonth}_${pdfYear}.pdf`);
+  };
+
   // Função para gerar e salvar o PDF detalhado
   const generateMonthlyReport = async () => {
     setIsLoading(true);
@@ -1277,15 +1468,8 @@ const Dashboard = () => {
                 Gerar
               </button>
               <button className="btn-mobile-pdf-full" style={{background:'#fff',color:'#2563eb',fontWeight:600,padding:'10px 14px',borderRadius:8,border:'1.5px solid #2563eb',fontSize:'1.08rem',display:'flex',alignItems:'center',gap:6,boxShadow:'0 2px 8px #0001',cursor:'pointer'}}
-                onClick={() => {
-                  const iframe = document.querySelector('.pdf-miniatura-mobile iframe');
-                  if (iframe && iframe.src) {
-                    window.open(iframe.src, '_blank');
-                  } else {
-                    window.open('/pdf-preview', '_blank');
-                  }
-                }}
-                title="Ver PDF por inteiro">
+                onClick={generatePdfPreview}
+                title="Baixar PDF de Prévia">
                 <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 00-2 2v3m0 8v3a2 2 0 002 2h3m8-18h3a2 2 0 012 2v3m0 8v3a2 2 0 01-2 2h-3" stroke="#2563eb" strokeWidth="2" strokeLinecap="round"/></svg>
                 Ver PDF
               </button>
