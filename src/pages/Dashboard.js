@@ -51,7 +51,7 @@ const Dashboard = () => {
   const [includeDizimoIgreja, setIncludeDizimoIgreja] = useState(false);
   const [previewData, setPreviewData] = useState(null);
   const [isGratificacaoEnabled, setIsGratificacaoEnabled] = useState(true);
-  const [viewMode, setViewMode] = useState('lista'); // 'lista', 'pdf', 'interativo'
+  const [viewMode, setViewMode] = useState('lista'); // 'lista', 'pdf'
   // Estado para loading de ações
   const [actionLoading, setActionLoading] = useState(false);
   // Estado para saldo do mês anterior
@@ -616,7 +616,7 @@ const Dashboard = () => {
                 <div className="toolbar-modos-group">
                   <button
                     className={`toolbar-modo-btn${viewMode==='lista' ? ' active' : ''}`}
-                    style={{ minWidth: 48, maxWidth: 80, flex: 1 }}
+                    style={{ minWidth: 60, maxWidth: 100, flex: 1 }}
                     onClick={() => setViewMode('lista')}
                   >
                     {viewMode==='lista' && <span className="toolbar-modo-check">✔</span>}
@@ -624,19 +624,11 @@ const Dashboard = () => {
                   </button>
                   <button
                     className={`toolbar-modo-btn${viewMode==='pdf' ? ' active' : ''}`}
-                    style={{ minWidth: 48, maxWidth: 80, flex: 1 }}
+                    style={{ minWidth: 60, maxWidth: 100, flex: 1 }}
                     onClick={() => setViewMode('pdf')}
                   >
                     {viewMode==='pdf' && <span className="toolbar-modo-check">✔</span>}
                     PDF
-                  </button>
-                  <button
-                    className={`toolbar-modo-btn${viewMode==='interativo' ? ' active' : ''}`}
-                    style={{ minWidth: 60, maxWidth: 100, flex: 1 }}
-                    onClick={() => setViewMode('interativo')}
-                  >
-                    {viewMode==='interativo' && <span className="toolbar-modo-check">✔</span>}
-                    Interativo
                   </button>
                 </div>
                 <div className="toolbar-actions-group">
@@ -771,30 +763,16 @@ const Dashboard = () => {
                         })
                       )}
                     </div>
-                  ) : viewMode === 'pdf' ? (
-                    <div style={{ padding: '0 8px 24px 8px', width: '100%' }}>
-                      <RelatorioPdfSimulado
-                        transactions={transactions}
-                        currentMonth={currentMonth}
-                        currentYear={currentYear}
-                        previewData={previewData}
-                        includeGratificacao={includeGratificacao}
-                        includeDizimoGratificacao={includeDizimoGratificacao}
-                        includeDizimoIgreja={includeDizimoIgreja}
-                        isMobile={true}
-                      />
-                    </div>
                   ) : (
                     <div style={{ padding: '0 8px 24px 8px', width: '100%' }}>
                       <RelatorioPdfInterativo
                         igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
                         igrejaNome={igrejaUsuario ? igrejaUsuario.nome : ''}
                         mes={new Date(0, currentMonth - 1).toLocaleString('pt-BR', { month: 'long' })}
-                        setNotification={setNotification}
-                        onSuccess={() => { updateTransactions(); updateSaldo(); }}
-                        isMobile={true}
                         transactions={filteredTransactions}
                         getTipoDespesaDisplay={getTipoDespesaDisplay}
+                        currentMonth={currentMonth}
+                        currentYear={currentYear}
                       />
                     </div>
                   )
@@ -831,23 +809,16 @@ const Dashboard = () => {
                   <button
                     className={viewMode === 'lista' ? 'dashboard-btn-primary' : 'dashboard-btn-secondary'}
                     onClick={() => setViewMode('lista')}
-                    style={{ minWidth: 120 }}
+                    style={{ minWidth: 140 }}
                   >
-                    Visualizar em Lista
+                    Visualização em Lista
                   </button>
                   <button
                     className={viewMode === 'pdf' ? 'dashboard-btn-primary' : 'dashboard-btn-secondary'}
                     onClick={() => setViewMode('pdf')}
-                    style={{ minWidth: 120 }}
+                    style={{ minWidth: 140 }}
                   >
-                    Visualizar como PDF
-                  </button>
-                  <button
-                    className={viewMode === 'interativo' ? 'dashboard-btn-primary' : 'dashboard-btn-secondary'}
-                    onClick={() => setViewMode('interativo')}
-                    style={{ minWidth: 160 }}
-                  >
-                    Preencher PDF Interativo
+                    Visualização em PDF
                   </button>
                 </div>
                 {/* Modern Advanced Filters */}
@@ -876,12 +847,38 @@ const Dashboard = () => {
                     <button 
                       className={`advanced-filters-toggle ${showAdvancedFilters ? 'active' : ''}`}
                       onClick={() => setShowAdvancedFilters(!showAdvancedFilters)}
+                      style={{
+                        background: showAdvancedFilters ? '#4f8cff' : '#fff',
+                        color: showAdvancedFilters ? '#fff' : '#4f8cff',
+                        border: '2px solid #4f8cff',
+                        borderRadius: 12,
+                        padding: '12px 20px',
+                        fontSize: 14,
+                        fontWeight: 600,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 8,
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease',
+                        boxShadow: showAdvancedFilters ? '0 4px 12px rgba(79, 140, 255, 0.3)' : '0 2px 8px rgba(0,0,0,0.1)',
+                        transform: showAdvancedFilters ? 'translateY(-1px)' : 'translateY(0)'
+                      }}
                     >
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                       Filtros Avançados
-                      <svg className={`chevron ${showAdvancedFilters ? 'rotated' : ''}`} width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg 
+                        className={`chevron ${showAdvancedFilters ? 'rotated' : ''}`} 
+                        width="14" height="14" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        xmlns="http://www.w3.org/2000/svg"
+                        style={{
+                          transform: showAdvancedFilters ? 'rotate(180deg)' : 'rotate(0deg)',
+                          transition: 'transform 0.3s ease'
+                        }}
+                      >
                         <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </button>
@@ -889,40 +886,110 @@ const Dashboard = () => {
 
                   {/* Advanced Filters Panel */}
                   {showAdvancedFilters && (
-                    <div className="advanced-filters-panel">
-                      <div className="filters-grid">
+                    <div className="advanced-filters-panel" style={{
+                      background: '#fff',
+                      border: '2px solid #e3e9f7',
+                      borderRadius: 16,
+                      padding: 24,
+                      marginTop: 16,
+                      boxShadow: '0 8px 32px rgba(79, 140, 255, 0.1)',
+                      animation: 'slideDown 0.3s ease-out'
+                    }}>
+                      <div className="filters-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
                         {/* Date Range Filters */}
-                        <div className="filter-group">
-                          <h4 className="filter-group-title">Período</h4>
-                          <div className="date-range-inputs">
+                        <div className="filter-group" style={{
+                          background: '#f8fafc',
+                          padding: 20,
+                          borderRadius: 12,
+                          border: '1px solid #e3e9f7'
+                        }}>
+                          <h4 className="filter-group-title" style={{
+                            color: '#4f8cff',
+                            fontSize: 16,
+                            fontWeight: 700,
+                            marginBottom: 16,
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 8
+                          }}>
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+                              <rect x="3" y="4" width="18" height="18" rx="2" stroke="#4f8cff" strokeWidth="2"/>
+                              <path d="M16 2v4M8 2v4M3 10h18" stroke="#4f8cff" strokeWidth="2" strokeLinecap="round"/>
+                            </svg>
+                            Período
+                          </h4>
+                          <div className="date-range-inputs" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                             <div className="date-input-wrapper">
-                              <label className="filter-label">Data Inicial</label>
+                              <label className="filter-label" style={{ fontSize: 14, fontWeight: 600, color: '#666', marginBottom: 6, display: 'block' }}>Data Inicial</label>
                               <input
                                 type="date"
                                 className="modern-filter-input"
                                 value={dateRangeStart}
                                 onChange={e => setDateRangeStart(e.target.value)}
+                                style={{
+                                  width: '100%',
+                                  padding: '12px 16px',
+                                  border: '2px solid #e3e9f7',
+                                  borderRadius: 8,
+                                  fontSize: 14,
+                                  outline: 'none',
+                                  transition: 'border-color 0.3s ease'
+                                }}
                               />
                             </div>
                             <div className="date-input-wrapper">
-                              <label className="filter-label">Data Final</label>
+                              <label className="filter-label" style={{ fontSize: 14, fontWeight: 600, color: '#666', marginBottom: 6, display: 'block' }}>Data Final</label>
                               <input
                                 type="date"
                                 className="modern-filter-input"
                                 value={dateRangeEnd}
                                 onChange={e => setDateRangeEnd(e.target.value)}
+                                style={{
+                                  width: '100%',
+                                  padding: '12px 16px',
+                                  border: '2px solid #e3e9f7',
+                                  borderRadius: 8,
+                                  fontSize: 14,
+                                  outline: 'none',
+                                  transition: 'border-color 0.3s ease'
+                                }}
                               />
                             </div>
                           </div>
                         </div>
 
                         {/* Legacy Filters Enhanced */}
-                        <div className="filter-group">
-                          <h4 className="filter-group-title">Filtros Específicos</h4>
-                          <div className="specific-filters-grid">
+                        <div className="filter-group" style={{
+                          background: '#f8fafc',
+                          padding: 20,
+                          borderRadius: 12,
+                          border: '1px solid #e3e9f7'
+                        }}>
+                          <h4 className="filter-group-title" style={{
+                            color: '#8e44ad',
+                            fontSize: 16,
+                            fontWeight: 700,
+                            marginBottom: 16,
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 8
+                          }}>
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+                              <path d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" stroke="#8e44ad" strokeWidth="2"/>
+                            </svg>
+                            Filtros Específicos
+                          </h4>
+                          <div className="specific-filters-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                             <div className="filter-item">
-                              <label className="filter-label">Mês</label>
-                              <select className="modern-filter-input" value={selectedMonth} onChange={e => setSelectedMonth(e.target.value)}>
+                              <label className="filter-label" style={{ fontSize: 14, fontWeight: 600, color: '#666', marginBottom: 6, display: 'block' }}>Mês</label>
+                              <select className="modern-filter-input" value={selectedMonth} onChange={e => setSelectedMonth(e.target.value)} style={{
+                                width: '100%',
+                                padding: '12px 16px',
+                                border: '2px solid #e3e9f7',
+                                borderRadius: 8,
+                                fontSize: 14,
+                                outline: 'none'
+                              }}>
                                 <option value="">Todos</option>
                                 {[...Array(12)].map((_, i) => (
                                   <option key={i+1} value={i+1}>{new Date(0, i).toLocaleString('pt-BR', { month: 'long' })}</option>
@@ -930,32 +997,60 @@ const Dashboard = () => {
                               </select>
                             </div>
                             <div className="filter-item">
-                              <label className="filter-label">Ano</label>
-                              <input className="modern-filter-input" type="number" value={selectedYear} onChange={e => setSelectedYear(e.target.value)} min="2020" max={new Date().getFullYear()} />
+                              <label className="filter-label" style={{ fontSize: 14, fontWeight: 600, color: '#666', marginBottom: 6, display: 'block' }}>Ano</label>
+                              <input className="modern-filter-input" type="number" value={selectedYear} onChange={e => setSelectedYear(e.target.value)} min="2020" max={new Date().getFullYear()} style={{
+                                width: '100%',
+                                padding: '12px 16px',
+                                border: '2px solid #e3e9f7',
+                                borderRadius: 8,
+                                fontSize: 14,
+                                outline: 'none'
+                              }} />
                             </div>
                             <div className="filter-item">
-                              <label className="filter-label">Dia</label>
-                              <input className="modern-filter-input" type="text" value={searchDay} onChange={e => setSearchDay(e.target.value)} placeholder="Ex: 15" />
+                              <label className="filter-label" style={{ fontSize: 14, fontWeight: 600, color: '#666', marginBottom: 6, display: 'block' }}>Dia</label>
+                              <input className="modern-filter-input" type="text" value={searchDay} onChange={e => setSearchDay(e.target.value)} placeholder="Ex: 15" style={{
+                                width: '100%',
+                                padding: '12px 16px',
+                                border: '2px solid #e3e9f7',
+                                borderRadius: 8,
+                                fontSize: 14,
+                                outline: 'none'
+                              }} />
                             </div>
                             <div className="filter-item">
-                              <label className="filter-label">Descrição</label>
-                              <input className="modern-filter-input" type="text" value={searchDescription} onChange={e => setSearchDescription(e.target.value)} placeholder="Buscar por descrição..." />
-                            </div>
-                            <div className="filter-item">
-                              <label className="filter-label">Tipo</label>
-                              <select className="modern-filter-input" value={searchType} onChange={e => setSearchType(e.target.value)}>
+                              <label className="filter-label" style={{ fontSize: 14, fontWeight: 600, color: '#666', marginBottom: 6, display: 'block' }}>Tipo</label>
+                              <select className="modern-filter-input" value={searchType} onChange={e => setSearchType(e.target.value)} style={{
+                                width: '100%',
+                                padding: '12px 16px',
+                                border: '2px solid #e3e9f7',
+                                borderRadius: 8,
+                                fontSize: 14,
+                                outline: 'none'
+                              }}>
                                 <option value="">Todos</option>
                                 <option value="D">Dízimo</option>
                                 <option value="O">Oferta</option>
                                 <option value="S">Despesa</option>
                               </select>
                             </div>
+                            <div className="filter-item" style={{ gridColumn: '1 / -1' }}>
+                              <label className="filter-label" style={{ fontSize: 14, fontWeight: 600, color: '#666', marginBottom: 6, display: 'block' }}>Descrição</label>
+                              <input className="modern-filter-input" type="text" value={searchDescription} onChange={e => setSearchDescription(e.target.value)} placeholder="Buscar por descrição..." style={{
+                                width: '100%',
+                                padding: '12px 16px',
+                                border: '2px solid #e3e9f7',
+                                borderRadius: 8,
+                                fontSize: 14,
+                                outline: 'none'
+                              }} />
+                            </div>
                           </div>
                         </div>
                       </div>
                       
                       {/* Filter Actions */}
-                      <div className="filter-actions">
+                      <div className="filter-actions" style={{ display: 'flex', justifyContent: 'center', marginTop: 24 }}>
                         <button 
                           className="clear-filters-btn"
                           onClick={() => {
@@ -968,10 +1063,33 @@ const Dashboard = () => {
                             setSelectedMonth('');
                             setSelectedYear(new Date().getFullYear());
                           }}
+                          style={{
+                            background: '#e74c3c',
+                            color: '#fff',
+                            border: 'none',
+                            borderRadius: 10,
+                            padding: '12px 24px',
+                            fontSize: 14,
+                            fontWeight: 600,
+                            cursor: 'pointer',
+                            transition: 'all 0.3s ease',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 8
+                          }}
                         >
+                          <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+                            <path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6h14zM10 11v6M14 11v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                          </svg>
                           Limpar Filtros
                         </button>
                       </div>
+                      <style>{`
+                        @keyframes slideDown {
+                          from { opacity: 0; transform: translateY(-20px); }
+                          to { opacity: 1; transform: translateY(0); }
+                        }
+                      `}</style>
                     </div>
                   )}
                 </div>
@@ -1055,23 +1173,15 @@ const Dashboard = () => {
                       igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
                     />
                   </div>
-                ) : viewMode === 'pdf' ? (
-                  <RelatorioPdfSimulado
-                    transactions={transactions}
-                    currentMonth={currentMonth}
-                    currentYear={currentYear}
-                    previewData={previewData}
-                    includeGratificacao={includeGratificacao}
-                    includeDizimoGratificacao={includeDizimoGratificacao}
-                    includeDizimoIgreja={includeDizimoIgreja}
-                  />
                 ) : (
                   <RelatorioPdfInterativo
                     igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
                     igrejaNome={igrejaUsuario ? igrejaUsuario.nome : ''}
                     mes={new Date(0, currentMonth - 1).toLocaleString('pt-BR', { month: 'long' })}
-                    setNotification={setNotification}
-                    onSuccess={() => { updateTransactions(); updateSaldo(); }}
+                    transactions={filteredTransactions}
+                    getTipoDespesaDisplay={getTipoDespesaDisplay}
+                    currentMonth={currentMonth}
+                    currentYear={currentYear}
                   />
                 )}
               </section>
