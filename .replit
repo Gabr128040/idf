@@ -1,0 +1,34 @@
+modules = ["nodejs-20", "python-3.12"]
+
+[nix]
+channel = "stable-25_05"
+
+[agent]
+expertMode = true
+
+[workflows]
+
+[[workflows.workflow]]
+name = "Iniciar Frontend"
+mode = "sequential"
+author = 4700843
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm start"
+
+[[workflows.workflow]]
+name = "Iniciar Backend"
+mode = "sequential"
+author = 4700843
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "git checkout frontend"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python manage.py runserver"
+
+[[ports]]
+localPort = 3000
