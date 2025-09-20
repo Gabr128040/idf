@@ -10,8 +10,10 @@ const COLS = [
 ];
 
 function formatCurrency(value) {
-  if (value === '' || value === undefined) return '';
-  return 'R$ ' + Number(value).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+  if (value === '' || value === undefined || value === null) return '';
+  const numValue = typeof value === 'string' ? parseFloat(value) : Number(value);
+  if (isNaN(numValue)) return '';
+  return 'R$ ' + numValue.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 const RelatorioPdfInterativo = ({
@@ -28,25 +30,20 @@ const RelatorioPdfInterativo = ({
   const [linhas, setLinhas] = useState(
     Array.from({ length: linhasIniciais }, () => ({ dia: '', discriminacao: '', entrada: '', saida: '' }))
   );
-  // Função para agrupar e formatar as transações igual ao PDF
-  function agruparTransacoes(transacoes) {
-    // Agrupar dízimos e ofertas por dia
-    const grouped = {};
-    transacoes.forEach(t => {
-      const [ano, mes, dia] = t.data.split('-');
-      if (!grouped[dia]) grouped[dia] = { D: 0, O: 0, outros: [] };
-      if (t.tipo === 'D') grouped[dia].D += parseFloat(t.quantia);
-      else if (t.tipo === 'O') grouped[dia].O += parseFloat(t.quantia);
-      else grouped[dia].outros.push(t);
-    });
-    // Montar formattedData agrupando D e O, mantendo outros
-    let formattedData = [];
-    Object.keys(grouped).sort((a, b) => parseInt(a) - parseInt(b)).forEach(dia => {
-      if (grouped[dia].D > 0) formattedData.push({ dia, discriminacao: 'Dízimo', entrada: grouped[dia].D, saida: '' });
-      if (grouped[dia].O > 0) formattedData.push({ dia, discriminacao: 'Oferta', entrada: grouped[dia].O, saida: '' });
-      grouped[dia].outros.forEach(t => {
+  const [modoAgrupado, setModoAgrupado] = useState(true);
+  // Função para agrupar e formatar as transações igual ao gerador de PDF
+  function agruparTransacoes(transacoes, modoAgrupado = true) {
+    if (!modoAgrupado) {
+      // Modo não agrupado: cada transação vira uma linha
+      const formattedData = transacoes.map(t => {
+        const dia = t.data ? t.data.split('-')[2] : '';
         let discriminacao = '';
-        if (t.tipo === 'S') {
+        
+        if (t.tipo === 'D') {
+          discriminacao = t.descricao || 'Dízimo';
+        } else if (t.tipo === 'O') {
+          discriminacao = t.descricao || 'Oferta';
+        } else if (t.tipo === 'S') {
           if (getTipoDespesaDisplay) {
             const tipoDespesa = getTipoDespesaDisplay(t.tipo_despesa);
             discriminacao = tipoDespesa === 'Outro' ? (t.descricao || 'Outro') : tipoDespesa;
@@ -54,14 +51,96 @@ const RelatorioPdfInterativo = ({
             discriminacao = t.descricao || 'Despesa';
           }
         }
-        formattedData.push({
-          dia,
+        
+        return {
+          dia: dia.padStart(2, '0'),
+          discriminacao,
+          entrada: (t.tipo === 'D' || t.tipo === 'O') ? parseFloat(t.quantia || 0).toFixed(2) : '',
+          saida: t.tipo === 'S' ? parseFloat(t.quantia || 0).toFixed(2) : '',
+          data: t.data
+        };
+      });
+      
+      // Ordenar por data crescente
+      formattedData.sort((a, b) => new Date(a.data) - new Date(b.data));
+      return formattedData;
+    }
+    
+    // Modo agrupado (igual ao gerador de PDF)
+    const grouped = {};
+    const individuais = [];
+    
+    transacoes.forEach(t => {
+      const dia = t.data ? t.data.split('-')[2] : '';
+      
+      // Saídas sempre individuais
+      if (t.tipo === 'S') {
+        let discriminacao = '';
+        if (getTipoDespesaDisplay) {
+          const tipoDespesa = getTipoDespesaDisplay(t.tipo_despesa);
+          discriminacao = tipoDespesa === 'Outro' ? (t.descricao || 'Outro') : tipoDespesa;
+        } else {
+          discriminacao = t.descricao || 'Despesa';
+        }
+        
+        individuais.push({
+          dia: dia.padStart(2, '0'),
           discriminacao,
           entrada: '',
-          saida: t.tipo === 'S' ? t.quantia : '',
+          saida: parseFloat(t.quantia || 0).toFixed(2),
+          data: t.data
         });
-      });
+      }
+      // Entradas marcadas com nao_agrupar também individuais
+      else if (t.nao_agrupar === true) {
+        const tipoNome = t.tipo === 'D' ? 'Dízimo' : 'Oferta';
+        const discriminacao = t.descricao || tipoNome;
+        individuais.push({
+          dia: dia.padStart(2, '0'),
+          discriminacao,
+          entrada: parseFloat(t.quantia || 0).toFixed(2),
+          saida: '',
+          data: t.data
+        });
+      }
+      // Entradas normais agrupadas
+      else {
+        if (!grouped[dia]) grouped[dia] = { D: 0, O: 0 };
+        if (t.tipo === 'D') grouped[dia].D += parseFloat(t.quantia || 0);
+        else if (t.tipo === 'O') grouped[dia].O += parseFloat(t.quantia || 0);
+      }
     });
+    
+    let formattedData = [];
+    
+    // Adicionar transações agrupadas
+    Object.keys(grouped).forEach(dia => {
+      if (grouped[dia].D > 0) {
+        formattedData.push({ 
+          dia: dia.padStart(2, '0'), 
+          discriminacao: 'Dízimo', 
+          entrada: grouped[dia].D.toFixed(2), 
+          saida: '',
+          data: `${new Date().getFullYear()}-${(new Date().getMonth() + 1).toString().padStart(2, '0')}-${dia}`
+        });
+      }
+      if (grouped[dia].O > 0) {
+        formattedData.push({ 
+          dia: dia.padStart(2, '0'), 
+          discriminacao: 'Oferta', 
+          entrada: grouped[dia].O.toFixed(2), 
+          saida: '',
+          data: `${new Date().getFullYear()}-${(new Date().getMonth() + 1).toString().padStart(2, '0')}-${dia}`
+        });
+      }
+    });
+    
+    // Adicionar transações individuais
+    formattedData = formattedData.concat(individuais);
+    
+    // Ordenar por data crescente
+    formattedData.sort((a, b) => new Date(a.data) - new Date(b.data));
+    
     return formattedData;
   }
 
@@ -91,8 +170,8 @@ const RelatorioPdfInterativo = ({
       return;
     }
     
-    const agrupadas = agruparTransacoes(currentMonthTransactions);
-    // Adiciona 2 linhas extras vazias
+    const agrupadas = agruparTransacoes(currentMonthTransactions, modoAgrupado);
+    // Adiciona apenas 2 linhas extras vazias
     const extras = Array.from({ length: 2 }, () => ({ dia: '', discriminacao: '', entrada: '', saida: '' }));
     setLinhas([...agrupadas, ...extras]);
     if (onTransacoesChange) onTransacoesChange([...agrupadas, ...extras]);
@@ -147,22 +226,31 @@ const RelatorioPdfInterativo = ({
         erros.push(`Linha ${i + 1}: Preencha apenas entrada OU saída.`);
         continue;
       }
-      // Inferir tipo e valor
+      // Inferir tipo e valor com lógica melhorada
       let tipo = 'S';
       let quantia = null;
+      let tipo_despesa = null;
+      
       if (l.entrada && !l.saida) {
-        const discrim = l.discriminacao.toLowerCase();
-        if (discrim.includes('dizimo') || discrim.includes('dízimo')) {
+        const discrim = l.discriminacao.toLowerCase().trim();
+        
+        // Lógica mais precisa para determinar o tipo
+        if (discrim === 'dízimo' || discrim === 'dizimo' || 
+            discrim.includes('dízimo da') || discrim.includes('dizimo da')) {
           tipo = 'D';
-        } else if (discrim.includes('oferta')) {
+        } else if (discrim === 'oferta' || discrim.includes('oferta')) {
           tipo = 'O';
         } else {
-          tipo = 'O'; // padrão para entrada
+          // Para outras discriminações em entrada, assumir como oferta
+          tipo = 'O';
         }
-        quantia = parseFloat(l.entrada.replace(/[^0-9,\.]/g, '').replace(',', '.'));
+        
+        quantia = parseFloat(l.entrada.toString().replace(/[^0-9,\.]/g, '').replace(',', '.'));
       } else if (l.saida && !l.entrada) {
         tipo = 'S';
-        quantia = parseFloat(l.saida.replace(/[^0-9,\.]/g, '').replace(',', '.'));
+        // Para saídas, definir tipo_despesa como 'OT' (Outro) por padrão
+        tipo_despesa = 'OT';
+        quantia = parseFloat(l.saida.toString().replace(/[^0-9,\.]/g, '').replace(',', '.'));
       }
       if (!quantia || isNaN(quantia)) {
         erros.push(`Linha ${i + 1}: Valor inválido.`);
@@ -179,10 +267,15 @@ const RelatorioPdfInterativo = ({
         tipo,
         quantia,
         data,
-        discriminacao: l.discriminacao,
+        descricao: l.discriminacao, // Usar descricao em vez de discriminacao
         manual: true,
         igreja_id: igrejaId,
       };
+      
+      // Adicionar tipo_despesa se for saída
+      if (tipo === 'S' && tipo_despesa) {
+        transacao.tipo_despesa = tipo_despesa;
+      }
       try {
         await createManualTransaction(transacao);
         salvos++;
@@ -208,10 +301,21 @@ const RelatorioPdfInterativo = ({
           {mes && <span>Mês: {mes}</span>}
         </div>
       )}
-      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 10 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10, flexWrap: 'wrap', gap: 10 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 500, color: '#4f8cff' }}>
+            <input
+              type="checkbox"
+              checked={modoAgrupado}
+              onChange={e => setModoAgrupado(e.target.checked)}
+              style={{ transform: 'scale(1.1)' }}
+            />
+            Agrupar dízimos e ofertas por dia
+          </label>
+        </div>
         <button
           className="dashboard-btn-secondary"
-          style={{ minWidth: 180, marginRight: 8 }}
+          style={{ minWidth: 180 }}
           onClick={handleImportarTransacoes}
           disabled={!transactions || transactions.length === 0}
         >
