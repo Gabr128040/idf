@@ -15,6 +15,36 @@ const TransactionList = ({ transactions, onEdit, onDelete, onTransactionClick, s
     setIsModalOpen(true);
   };
 
+  // Função para obter o título conforme as novas regras
+  const getTituloTransacao = (transaction) => {
+    // Para despesas (S): usar discriminação como título
+    if (transaction.tipo === 'S') {
+      // Tentar discriminação primeiro (independente de ser manual ou não)
+      if (transaction.discriminacao && transaction.discriminacao.trim()) {
+        return transaction.discriminacao;
+      }
+      // Fallback: descrição
+      if (transaction.descricao && transaction.descricao.trim()) {
+        return transaction.descricao;
+      }
+      // Se não tem discriminação, usar o tipo de despesa
+      return getTipoDespesaDisplay(transaction.tipo_despesa);
+    }
+    
+    // Para dízimos/ofertas (D/O): usar discriminação se tiver, senão apenas o tipo
+    if (transaction.tipo === 'D' || transaction.tipo === 'O') {
+      // Verificar se tem discriminação (independente de ser manual ou não)
+      if (transaction.discriminacao && transaction.discriminacao.trim()) {
+        return transaction.discriminacao;
+      }
+      // Se não tem discriminação, retornar apenas o tipo
+      return getTipoDisplay(transaction.tipo);
+    }
+    
+    // Fallback para outros tipos
+    return getTipoDisplay(transaction.tipo);
+  };
+
   const getCampoEspecifico = (transaction) => {
     if (transaction.manual && transaction.discriminacao) {
       return transaction.discriminacao;
@@ -88,7 +118,7 @@ const TransactionList = ({ transactions, onEdit, onDelete, onTransactionClick, s
             transition={{ duration: 0.3 }}
             // ...sem touch para deletar, só clique no botão
           >
-            <span>{getTipoDisplay(transaction.tipo)}</span>
+            <span>{getTituloTransacao(transaction)}</span>
             <span>R$ {transaction.quantia}</span>
             <span>{getCampoEspecifico(transaction)}</span>
             <span>{formatDate(transaction.data)}</span>
