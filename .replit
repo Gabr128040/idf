@@ -32,3 +32,4 @@ args = "python manage.py runserver"
 
 [[ports]]
 localPort = 3000
+externalPort = 3000
