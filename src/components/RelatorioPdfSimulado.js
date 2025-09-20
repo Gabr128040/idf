@@ -43,32 +43,95 @@ const RelatorioPdfSimulado = ({ transactions, currentMonth, currentYear, preview
     return () => URL.revokeObjectURL(url);
   }, [transactions, currentMonth, currentYear, previewData, includeGratificacao, includeDizimoGratificacao, includeDizimoIgreja]);
 
-  // Função igual à do RelatorioPdfPreview
+  // Função atualizada para considerar nao_agrupar
   function getFormattedTableData(transactions, currentMonth, currentYear, previewData, includeGratificacao, includeDizimoGratificacao, includeDizimoIgreja) {
     let baseTransacoes = transactions.filter(t => {
       const [ano, mes] = t.data.split('-');
       return parseInt(mes) === currentMonth && parseInt(ano) === currentYear;
     });
+    
     const lastDayOfMonth = getLastDayOfMonth(currentYear, currentMonth);
     let transacoesExtras = [];
     if (includeGratificacao) {
-      transacoesExtras.push({ tipo: 'S', tipo_despesa: 'OT', descricao: 'Gratificação do Líder', quantia: 900, data: lastDayOfMonth });
+      transacoesExtras.push({ tipo: 'S', descricao: 'Gratificação do Líder', quantia: 900, data: lastDayOfMonth, nao_agrupar: true });
     }
     if (includeDizimoGratificacao) {
-      transacoesExtras.push({ tipo: 'D', descricao: 'Dízimo da Gratificação', quantia: 90, data: lastDayOfMonth });
+      transacoesExtras.push({ tipo: 'D', descricao: 'Dízimo da Gratificação', quantia: 90, data: lastDayOfMonth, nao_agrupar: false });
     }
     if (includeDizimoIgreja && previewData) {
-      transacoesExtras.push({ tipo: 'S', tipo_despesa: 'OT', descricao: 'Dízimo da Igreja', quantia: previewData.dizimoIgreja, data: lastDayOfMonth });
+      transacoesExtras.push({ tipo: 'S', descricao: 'Dízimo da Igreja', quantia: previewData.dizimoIgreja, data: lastDayOfMonth, nao_agrupar: true });
     }
-    const groupedDizimos = baseTransacoes.filter(t => t.tipo === 'D').reduce((acc, t) => {
+    
+    const todasTransacoes = [...baseTransacoes, ...transacoesExtras];
+    
+    // Separar agrupadas e individuais
+    const grouped = {};
+    const individuais = [];
+    
+    todasTransacoes.forEach(t => {
       const day = t.data ? t.data.split('-')[2] : '';
-      if (!acc[day]) acc[day] = 0;
-      acc[day] += parseFloat(t.quantia) || 0;
-      return acc;
-    }, {});
+      
+      // Saídas sempre individuais
+      if (t.tipo === 'S') {
+        individuais.push({
+          dia: day.padStart(2, '0'),
+          discriminacao: t.descricao || 'Despesa',
+          entrada: '-',
+          saida: `R$ ${truncateToTwoDecimals(parseFloat(t.quantia) || 0)}`,
+          data: t.data
+        });
+      }
+      // Entradas marcadas com nao_agrupar também individuais
+      else if (t.nao_agrupar === true) {
+        const tipoNome = t.tipo === 'D' ? 'Dízimo' : 'Oferta';
+        const discriminacao = t.descricao || tipoNome;
+        individuais.push({
+          dia: day.padStart(2, '0'),
+          discriminacao,
+          entrada: `R$ ${truncateToTwoDecimals(parseFloat(t.quantia) || 0)}`,
+          saida: '-',
+          data: t.data
+        });
+      }
+      // Entradas normais agrupadas
+      else {
+        if (!grouped[day]) grouped[day] = { D: 0, O: 0 };
+        if (t.tipo === 'D') grouped[day].D += parseFloat(t.quantia) || 0;
+        else if (t.tipo === 'O') grouped[day].O += parseFloat(t.quantia) || 0;
+      }
+    });
+    
     let formattedData = [];
-    Object.keys(groupedDizimos).forEach(day => {
-      formattedData.push({ dia: day.padStart(2, '0'), discriminacao: 'Dízimo', entrada: `R$ ${truncateToTwoDecimals(groupedDizimos[day])}`, saida: '-', isExtra: false });
+    
+    // Adicionar agrupadas
+    Object.keys(grouped).forEach(day => {
+      if (grouped[day].D > 0) {
+        formattedData.push({ 
+          dia: day.padStart(2, '0'), 
+          discriminacao: 'Dízimo', 
+          entrada: `R$ ${truncateToTwoDecimals(grouped[day].D)}`, 
+          saida: '-',
+          data: `${currentYear}-${currentMonth.toString().padStart(2, '0')}-${day}`
+        });
+      }
+      if (grouped[day].O > 0) {
+        formattedData.push({ 
+          dia: day.padStart(2, '0'), 
+          discriminacao: 'Oferta', 
+          entrada: `R$ ${truncateToTwoDecimals(grouped[day].O)}`, 
+          saida: '-',
+          data: `${currentYear}-${currentMonth.toString().padStart(2, '0')}-${day}`
+        });
+      }
+    });
+    
+    // Adicionar individuais
+    formattedData = formattedData.concat(individuais);
+    
+    // Ordenar por data
+    formattedData.sort((a, b) => new Date(a.data) - new Date(b.data));
+    
+    return formattedData.map(row => [row.dia, row.discriminacao, row.entrada, row.saida]);tra: false });
     });
     baseTransacoes.filter(t => t.tipo !== 'D').forEach(transaction => {
       const day = transaction.data ? transaction.data.split('-')[2] : '';

@@ -28,7 +28,6 @@ const TransactionForm = ({ igrejaId, onTransactionAdded, setNotification, onCanc
     discriminacao: '',
     tipoEntrada: '', // 'oferta', 'dizimo', 'outro'
     naoAgrupar: false,
-    tipo_despesa: '',
   });
   const [loading, setLoading] = useState(false);
 
@@ -62,7 +61,6 @@ const TransactionForm = ({ igrejaId, onTransactionAdded, setNotification, onCanc
       discriminacao: '',
       tipoEntrada: type === 'entrada' ? 'dizimo' : '',
       naoAgrupar: false,
-      tipo_despesa: type === 'saida' ? 'CT' : '',
     });
   };
 
@@ -75,7 +73,6 @@ const TransactionForm = ({ igrejaId, onTransactionAdded, setNotification, onCanc
       discriminacao: '',
       tipoEntrada: '',
       naoAgrupar: false,
-      tipo_despesa: '',
     });
   };
 
@@ -86,6 +83,14 @@ const TransactionForm = ({ igrejaId, onTransactionAdded, setNotification, onCanc
     if (transactionType === 'entrada' && formData.tipoEntrada === 'outro' && !formData.discriminacao.trim()) {
       setNotification && setNotification({ 
         message: 'Discriminação é obrigatória para transações do tipo "Outro"', 
+        type: 'error' 
+      });
+      return;
+    }
+    
+    if (transactionType === 'saida' && !formData.discriminacao.trim()) {
+      setNotification && setNotification({ 
+        message: 'Discriminação é obrigatória para saídas', 
         type: 'error' 
       });
       return;
@@ -120,8 +125,7 @@ const TransactionForm = ({ igrejaId, onTransactionAdded, setNotification, onCanc
         }
       } else {
         backendData.tipo = 'S';
-        backendData.tipo_despesa = formData.tipo_despesa;
-        backendData.nao_agrupar = false; // Despesas não têm agrupamento
+        backendData.nao_agrupar = true; // Saídas nunca são agrupadas
       }
 
       await axios.post(
@@ -148,7 +152,6 @@ const TransactionForm = ({ igrejaId, onTransactionAdded, setNotification, onCanc
         discriminacao: '',
         tipoEntrada: '',
         naoAgrupar: false,
-        tipo_despesa: '',
       });
       onCancel && onCancel();
     } catch (error) {
@@ -243,7 +246,7 @@ const TransactionForm = ({ igrejaId, onTransactionAdded, setNotification, onCanc
           <div className="form-group">
             <label>
               Discriminação
-              {transactionType === 'entrada' && formData.tipoEntrada === 'outro' && (
+              {((transactionType === 'entrada' && formData.tipoEntrada === 'outro') || transactionType === 'saida') && (
                 <span className="required-indicator"> *</span>
               )}
             </label>
@@ -254,7 +257,7 @@ const TransactionForm = ({ igrejaId, onTransactionAdded, setNotification, onCanc
               value={formData.discriminacao}
               onChange={handleChange}
               className="form-input"
-              required={transactionType === 'entrada' && formData.tipoEntrada === 'outro'}
+              required={(transactionType === 'entrada' && formData.tipoEntrada === 'outro') || transactionType === 'saida'}
             />
           </div>
 
@@ -295,23 +298,7 @@ const TransactionForm = ({ igrejaId, onTransactionAdded, setNotification, onCanc
             </div>
           )}
 
-          {/* Tipo de despesa para saídas */}
-          {transactionType === 'saida' && (
-            <div className="form-group">
-              <label>Tipo de Despesa</label>
-              <select 
-                name="tipo_despesa" 
-                value={formData.tipo_despesa} 
-                onChange={handleChange} 
-                className="form-input"
-                required
-              >
-                <option value="CT">Conta</option>
-                <option value="IN">Insumo</option>
-                <option value="OT">Outro</option>
-              </select>
-            </div>
-          )}
+          
         </div>
         
         <div className="modal-actions">

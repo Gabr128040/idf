@@ -240,34 +240,73 @@ const Dashboard = () => {
       }
       // Buscar transações atualizadas após criar extras
       const transacoesAtualizadas = await fetchTransactions(pdfMonth, pdfYear, navigate, igrejaUsuario ? igrejaUsuario.id : null);
-      // Agrupar dízimos e ofertas por dia
+      // Agrupar dízimos e ofertas por dia (apenas os que não têm nao_agrupar = true)
       const grouped = {};
+      const individuais = [];
+      
       transacoesAtualizadas.forEach(t => {
         const [ano, mes, dia] = t.data.split('-');
-        if (!grouped[dia]) grouped[dia] = { D: 0, O: 0, outros: [] };
-        if (t.tipo === 'D') grouped[dia].D += parseFloat(t.quantia);
-        else if (t.tipo === 'O') grouped[dia].O += parseFloat(t.quantia);
-        else grouped[dia].outros.push(t);
-      });
-      // Montar formattedData agrupando D e O, mantendo outros
-      let formattedData = [];
-      Object.keys(grouped).sort((a, b) => parseInt(a) - parseInt(b)).forEach(dia => {
-        if (grouped[dia].D > 0) formattedData.push({ dia, discriminacao: 'Dízimo', entrada: `R$ ${truncateToTwoDecimals(grouped[dia].D)}`, saida: '-' });
-        if (grouped[dia].O > 0) formattedData.push({ dia, discriminacao: 'Oferta', entrada: `R$ ${truncateToTwoDecimals(grouped[dia].O)}`, saida: '-' });
-        grouped[dia].outros.forEach(t => {
-          let discriminacao = '';
-          if (t.tipo === 'S') {
-            const tipoDespesa = getTipoDespesaDisplay(t.tipo_despesa);
-            discriminacao = tipoDespesa === 'Outro' ? (t.descricao || 'Outro') : tipoDespesa;
-          }
-          formattedData.push({
+        
+        // Saídas sempre vão para individuais
+        if (t.tipo === 'S') {
+          individuais.push({
+            dia,
+            discriminacao: t.descricao || 'Despesa',
+            entrada: '-',
+            saida: `R$ ${truncateToTwoDecimals(parseFloat(t.quantia))}`,
+            data: t.data
+          });
+        }
+        // Entradas marcadas com nao_agrupar também vão para individuais
+        else if (t.nao_agrupar === true) {
+          const tipoNome = t.tipo === 'D' ? 'Dízimo' : 'Oferta';
+          const discriminacao = t.descricao || tipoNome;
+          individuais.push({
             dia,
             discriminacao,
-            entrada: '-',
-            saida: t.tipo === 'S' ? `R$ ${truncateToTwoDecimals(parseFloat(t.quantia))}` : '-',
+            entrada: `R$ ${truncateToTwoDecimals(parseFloat(t.quantia))}`,
+            saida: '-',
+            data: t.data
           });
-        });
+        }
+        // Entradas normais (sem nao_agrupar) são agrupadas
+        else {
+          if (!grouped[dia]) grouped[dia] = { D: 0, O: 0 };
+          if (t.tipo === 'D') grouped[dia].D += parseFloat(t.quantia);
+          else if (t.tipo === 'O') grouped[dia].O += parseFloat(t.quantia);
+        }
       });
+      
+      // Montar formattedData com agrupados + individuais
+      let formattedData = [];
+      
+      // Adicionar transações agrupadas
+      Object.keys(grouped).sort((a, b) => parseInt(a) - parseInt(b)).forEach(dia => {
+        if (grouped[dia].D > 0) {
+          formattedData.push({ 
+            dia, 
+            discriminacao: 'Dízimo', 
+            entrada: `R$ ${truncateToTwoDecimals(grouped[dia].D)}`, 
+            saida: '-',
+            data: `${currentYear}-${currentMonth.toString().padStart(2, '0')}-${dia}`
+          });
+        }
+        if (grouped[dia].O > 0) {
+          formattedData.push({ 
+            dia, 
+            discriminacao: 'Oferta', 
+            entrada: `R$ ${truncateToTwoDecimals(grouped[dia].O)}`, 
+            saida: '-',
+            data: `${currentYear}-${currentMonth.toString().padStart(2, '0')}-${dia}`
+          });
+        }
+      });
+      
+      // Adicionar transações individuais
+      formattedData = formattedData.concat(individuais);
+      
+      // Ordenar por data
+      formattedData.sort((a, b) => new Date(a.data) - new Date(b.data));
       // Adicionar 5 linhas vazias ao final
       for (let i = 0; i < 5; i++) {
         formattedData.push({ dia: '', discriminacao: '', entrada: '', saida: '' });
