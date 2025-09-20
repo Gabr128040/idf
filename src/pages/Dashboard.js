@@ -32,6 +32,11 @@ const Dashboard = () => {
   const [searchDay, setSearchDay] = useState('');
   const [searchDescription, setSearchDescription] = useState('');
   const [searchType, setSearchType] = useState('');
+  // Advanced filter states
+  const [generalSearch, setGeneralSearch] = useState('');
+  const [dateRangeStart, setDateRangeStart] = useState('');
+  const [dateRangeEnd, setDateRangeEnd] = useState('');
+  const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [editingTransaction, setEditingTransaction] = useState(null);
   const [selectedTransaction, setSelectedTransaction] = useState(null);
@@ -106,9 +111,43 @@ const Dashboard = () => {
     // eslint-disable-next-line
   }, [selectedMonth, selectedYear, igrejaUsuario]);
 
+  // Enhanced filtering logic with advanced filters
   useEffect(() => {
     let filtered = [...transactions];
 
+    // General search - searches across multiple fields
+    if (generalSearch) {
+      const searchTerm = generalSearch.toLowerCase();
+      filtered = filtered.filter((t) => {
+        const description = (t.descricao || '').toLowerCase();
+        const discriminacao = (t.discriminacao || '').toLowerCase();
+        const nome = (t.nome || '').toLowerCase();
+        const amount = (t.quantia || '').toString();
+        const day = t.data ? t.data.split('-')[2] : '';
+        
+        return description.includes(searchTerm) ||
+               discriminacao.includes(searchTerm) ||
+               nome.includes(searchTerm) ||
+               amount.includes(searchTerm) ||
+               day.includes(searchTerm);
+      });
+    }
+    
+    // Date range filter
+    if (dateRangeStart) {
+      filtered = filtered.filter((t) => {
+        if (!t.data) return false;
+        return new Date(t.data) >= new Date(dateRangeStart);
+      });
+    }
+    if (dateRangeEnd) {
+      filtered = filtered.filter((t) => {
+        if (!t.data) return false;
+        return new Date(t.data) <= new Date(dateRangeEnd);
+      });
+    }
+    
+    // Legacy filters (keep for backward compatibility)
     if (searchDay) {
       filtered = filtered.filter((t) => {
         if (!t.data) return false;
@@ -122,10 +161,11 @@ const Dashboard = () => {
     if (searchType) {
       filtered = filtered.filter((t) => t.tipo === searchType);
     }
+    
     // Ordenar do mais recente para o mais antigo
     filtered.sort((a, b) => new Date(b.data) - new Date(a.data));
     setFilteredTransactions(filtered);
-  }, [searchDay, searchDescription, searchType, transactions]);
+  }, [generalSearch, dateRangeStart, dateRangeEnd, searchDay, searchDescription, searchType, transactions]);
 
   // Atualiza transações e saldo, fecha modais após ações
   const handleTransactionAdded = async () => {
@@ -810,37 +850,130 @@ const Dashboard = () => {
                     Preencher PDF Interativo
                   </button>
                 </div>
-                <div className="dashboard-filtros-row">
-                  <div className="dashboard-filtro-item">
-                    <label>Mês</label>
-                    <select value={selectedMonth} onChange={e => setSelectedMonth(e.target.value)}>
-                      <option value="">Todos</option>
-                      {[...Array(12)].map((_, i) => (
-                        <option key={i+1} value={i+1}>{new Date(0, i).toLocaleString('pt-BR', { month: 'long' })}</option>
-                      ))}
-                    </select>
+                {/* Modern Advanced Filters */}
+                <div className="modern-filters-container">
+                  {/* Primary Search Bar */}
+                  <div className="primary-search-bar">
+                    <div className="search-input-container">
+                      <svg className="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      <input
+                        type="text"
+                        className="general-search-input"
+                        placeholder="Buscar em todas as transações..."
+                        value={generalSearch}
+                        onChange={e => setGeneralSearch(e.target.value)}
+                      />
+                      {generalSearch && (
+                        <button className="clear-search-btn" onClick={() => setGeneralSearch('')}>
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </button>
+                      )}
+                    </div>
+                    <button 
+                      className={`advanced-filters-toggle ${showAdvancedFilters ? 'active' : ''}`}
+                      onClick={() => setShowAdvancedFilters(!showAdvancedFilters)}
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      Filtros Avançados
+                      <svg className={`chevron ${showAdvancedFilters ? 'rotated' : ''}`} width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
                   </div>
-                  <div className="dashboard-filtro-item">
-                    <label>Ano</label>
-                    <input type="number" value={selectedYear} onChange={e => setSelectedYear(e.target.value)} min="2020" max={new Date().getFullYear()} />
-                  </div>
-                  <div className="dashboard-filtro-item">
-                    <label>Dia</label>
-                    <input type="text" value={searchDay} onChange={e => setSearchDay(e.target.value)} placeholder="Ex: 15" />
-                  </div>
-                  <div className="dashboard-filtro-item">
-                    <label>Descrição</label>
-                    <input type="text" value={searchDescription} onChange={e => setSearchDescription(e.target.value)} placeholder="Buscar..." />
-                  </div>
-                  <div className="dashboard-filtro-item">
-                    <label>Tipo</label>
-                    <select value={searchType} onChange={e => setSearchType(e.target.value)}>
-                      <option value="">Todos</option>
-                      <option value="D">Dízimo</option>
-                      <option value="O">Oferta</option>
-                      <option value="S">Despesa</option>
-                    </select>
-                  </div>
+
+                  {/* Advanced Filters Panel */}
+                  {showAdvancedFilters && (
+                    <div className="advanced-filters-panel">
+                      <div className="filters-grid">
+                        {/* Date Range Filters */}
+                        <div className="filter-group">
+                          <h4 className="filter-group-title">Período</h4>
+                          <div className="date-range-inputs">
+                            <div className="date-input-wrapper">
+                              <label className="filter-label">Data Inicial</label>
+                              <input
+                                type="date"
+                                className="modern-filter-input"
+                                value={dateRangeStart}
+                                onChange={e => setDateRangeStart(e.target.value)}
+                              />
+                            </div>
+                            <div className="date-input-wrapper">
+                              <label className="filter-label">Data Final</label>
+                              <input
+                                type="date"
+                                className="modern-filter-input"
+                                value={dateRangeEnd}
+                                onChange={e => setDateRangeEnd(e.target.value)}
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Legacy Filters Enhanced */}
+                        <div className="filter-group">
+                          <h4 className="filter-group-title">Filtros Específicos</h4>
+                          <div className="specific-filters-grid">
+                            <div className="filter-item">
+                              <label className="filter-label">Mês</label>
+                              <select className="modern-filter-input" value={selectedMonth} onChange={e => setSelectedMonth(e.target.value)}>
+                                <option value="">Todos</option>
+                                {[...Array(12)].map((_, i) => (
+                                  <option key={i+1} value={i+1}>{new Date(0, i).toLocaleString('pt-BR', { month: 'long' })}</option>
+                                ))}
+                              </select>
+                            </div>
+                            <div className="filter-item">
+                              <label className="filter-label">Ano</label>
+                              <input className="modern-filter-input" type="number" value={selectedYear} onChange={e => setSelectedYear(e.target.value)} min="2020" max={new Date().getFullYear()} />
+                            </div>
+                            <div className="filter-item">
+                              <label className="filter-label">Dia</label>
+                              <input className="modern-filter-input" type="text" value={searchDay} onChange={e => setSearchDay(e.target.value)} placeholder="Ex: 15" />
+                            </div>
+                            <div className="filter-item">
+                              <label className="filter-label">Descrição</label>
+                              <input className="modern-filter-input" type="text" value={searchDescription} onChange={e => setSearchDescription(e.target.value)} placeholder="Buscar por descrição..." />
+                            </div>
+                            <div className="filter-item">
+                              <label className="filter-label">Tipo</label>
+                              <select className="modern-filter-input" value={searchType} onChange={e => setSearchType(e.target.value)}>
+                                <option value="">Todos</option>
+                                <option value="D">Dízimo</option>
+                                <option value="O">Oferta</option>
+                                <option value="S">Despesa</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Filter Actions */}
+                      <div className="filter-actions">
+                        <button 
+                          className="clear-filters-btn"
+                          onClick={() => {
+                            setGeneralSearch('');
+                            setDateRangeStart('');
+                            setDateRangeEnd('');
+                            setSearchDay('');
+                            setSearchDescription('');
+                            setSearchType('');
+                            setSelectedMonth('');
+                            setSelectedYear(new Date().getFullYear());
+                          }}
+                        >
+                          Limpar Filtros
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </section>
               <section className="dashboard-saldo-card">
