@@ -133,7 +133,6 @@ const RelatorioPdfSimulado = ({ transactions, currentMonth, currentYear, preview
     
     return formattedData.map(row => [row.dia, row.discriminacao, row.entrada, row.saida]);
   }
-  }
 
   return (
     <div className="relatorio-pdf-preview-responsive" style={{ width: '100%', height: 500, border: '1px solid #ddd', borderRadius: 8, overflow: 'hidden', background: '#fff', position: 'relative' }}>
