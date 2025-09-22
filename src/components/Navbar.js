@@ -45,6 +45,9 @@ const Navbar = () => {
                 <a href="/relatorios">Relatórios</a>
               </li>
               <li>
+                <a href="/admin-panel">Painel Admin</a>
+              </li>
+              <li>
                 <a href="/login" onClick={() => setShowMenu(false)}>
                   Login
                 </a>
