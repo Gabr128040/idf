@@ -301,7 +301,17 @@ const Dashboard = () => {
           data: t.data
         });
       }
-      // Entradas normais agrupadas
+      // Transações tipo "outro" sempre individuais (culto = 'OT')
+      else if (t.culto === 'OT' || t.tipo_despesa === 'OT') {
+        individuais.push({
+          dia: day.padStart(2, '0'),
+          discriminacao: t.descricao || 'Outro',
+          entrada: (t.tipo === 'D' || t.tipo === 'O') ? `R$ ${truncateToTwoDecimals(parseFloat(t.quantia) || 0)}` : '-',
+          saida: t.tipo === 'S' ? `R$ ${truncateToTwoDecimals(parseFloat(t.quantia) || 0)}` : '-',
+          data: t.data
+        });
+      }
+      // Entradas normais agrupadas (apenas dízimos e ofertas padrão)
       else {
         if (!grouped[day]) grouped[day] = { D: 0, O: 0 };
         if (t.tipo === 'D') grouped[day].D += parseFloat(t.quantia) || 0;
@@ -497,6 +507,16 @@ const Dashboard = () => {
             discriminacao,
             entrada: `R$ ${truncateToTwoDecimals(parseFloat(t.quantia))}`,
             saida: '-',
+            data: t.data
+          });
+        }
+        // Transações tipo "outro" sempre individuais (culto = 'OT')
+        else if (t.culto === 'OT' || t.tipo_despesa === 'OT') {
+          individuais.push({
+            dia,
+            discriminacao: t.descricao || 'Outro',
+            entrada: (t.tipo === 'D' || t.tipo === 'O') ? `R$ ${truncateToTwoDecimals(parseFloat(t.quantia))}` : '-',
+            saida: t.tipo === 'S' ? `R$ ${truncateToTwoDecimals(parseFloat(t.quantia))}` : '-',
             data: t.data
           });
         }

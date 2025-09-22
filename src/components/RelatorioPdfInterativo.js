@@ -98,6 +98,16 @@ const RelatorioPdfInterativo = ({
           data: t.data
         });
       }
+      // Transações tipo "outro" sempre individuais (culto = 'OT')
+      else if (t.culto === 'OT' || t.tipo_despesa === 'OT') {
+        individuais.push({
+          dia: dia.padStart(2, '0'),
+          discriminacao: t.descricao || 'Outro',
+          entrada: (t.tipo === 'D' || t.tipo === 'O') ? formatCurrency(t.quantia) : '',
+          saida: t.tipo === 'S' ? formatCurrency(t.quantia) : '',
+          data: t.data
+        });
+      }
       // Entradas normais agrupadas
       else {
         if (!grouped[dia]) grouped[dia] = { D: 0, O: 0 };
