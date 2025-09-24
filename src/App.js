@@ -8,7 +8,6 @@ import React from 'react';
      import './App.css';
      import Relatorios from './pages/Relatorios';
      import AdminDashboard from './pages/AdminDashboard';
-     import AdminPanel from './pages/AdminPanel';
 
      const App = () => {
        return (
@@ -20,7 +19,6 @@ import React from 'react';
              <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
              <Route path="/relatorios" element={<Relatorios />} />
              <Route path="/admin" element={<PrivateRoute adminOnly={true}><AdminDashboard /></PrivateRoute>} />
-             <Route path="/admin-panel" element={<PrivateRoute adminOnly={true}><AdminPanel /></PrivateRoute>} />
            </Routes>
          </Router>
        );

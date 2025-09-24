@@ -10,7 +10,7 @@
 .relatorios-container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 100px 20px 60px 20px; /* Aumentado padding-top para 100px */
+  padding: 32px 20px 60px 20px;
   position: relative;
 }
 
