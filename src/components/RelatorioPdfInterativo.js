@@ -108,7 +108,17 @@ const RelatorioPdfInterativo = ({
           data: t.data
         });
       }
-      // Entradas normais agrupadas
+      // Dízimos e ofertas com discriminação sempre individuais
+      else if ((t.tipo === 'D' || t.tipo === 'O') && t.descricao && t.descricao.trim()) {
+        individuais.push({
+          dia: dia.padStart(2, '0'),
+          discriminacao: t.descricao,
+          entrada: formatCurrency(t.quantia),
+          saida: '',
+          data: t.data
+        });
+      }
+      // Entradas normais SEM discriminação - podem ser agrupadas
       else {
         if (!grouped[dia]) grouped[dia] = { D: 0, O: 0 };
         if (t.tipo === 'D') grouped[dia].D += parseFloat(t.quantia || 0);
@@ -118,7 +128,7 @@ const RelatorioPdfInterativo = ({
     
     let formattedData = [];
     
-    // Adicionar transações agrupadas
+    // Adicionar transações agrupadas (apenas as sem discriminação)
     Object.keys(grouped).forEach(dia => {
       if (grouped[dia].D > 0) {
         formattedData.push({ 

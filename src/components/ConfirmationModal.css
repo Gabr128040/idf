@@ -1,244 +1,146 @@
-/* Modern Confirmation Modal Styles */
+
 .confirmation-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(15, 23, 42, 0.7);
+  background: var(--bg-modal);
   backdrop-filter: blur(4px);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   z-index: 1000;
-  padding: 16px;
+  padding: 1rem;
 }
 
 .confirmation-modal {
   background: white;
-  border-radius: 16px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  max-width: 400px;
   width: 100%;
-  max-width: 420px;
-  padding: 0;
-  overflow: hidden;
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .confirmation-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--warning-light), var(--warning));
+  border-radius: 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 24px 24px 16px;
-  color: #f59e0b;
-  background: linear-gradient(135deg, #fef3c7 0%, #fef9e7 100%);
+  justify-content: center;
+  color: var(--warning);
+  animation: pulse 2s infinite;
 }
 
 .confirmation-icon svg {
-  width: 48px;
-  height: 48px;
+  width: 2rem;
+  height: 2rem;
 }
 
 .confirmation-content {
-  padding: 0 24px 20px;
-  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .confirmation-title {
   font-size: 1.25rem;
-  font-weight: 600;
-  color: #1f2937;
-  margin: 0 0 12px 0;
-  line-height: 1.4;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 0.75rem;
 }
 
 .confirmation-message {
-  font-size: 0.95rem;
-  color: #6b7280;
-  margin: 0;
-  line-height: 1.5;
+  font-size: 0.9375rem;
+  color: var(--gray-600);
+  line-height: 1.6;
 }
 
 .confirmation-actions {
   display: flex;
-  gap: 12px;
-  padding: 20px 24px 24px;
-  background: #fafbfc;
-  border-top: 1px solid #e5e7eb;
-}
-
-.btn-cancel,
-.btn-confirm {
-  flex: 1;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border: none;
-  outline: none;
-  position: relative;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .btn-cancel {
   background: white;
-  color: #6b7280;
-  border: 2px solid #e5e7eb;
+  color: var(--gray-700);
+  border: 2px solid var(--gray-300);
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: var(--transition);
+  min-width: 100px;
 }
 
 .btn-cancel:hover {
-  background: #f9fafb;
-  border-color: #d1d5db;
-  color: #374151;
+  background: var(--gray-50);
+  border-color: var(--gray-400);
   transform: translateY(-1px);
-}
-
-.btn-cancel:active {
-  transform: translateY(0);
 }
 
 .btn-confirm {
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  background: linear-gradient(135deg, var(--danger), #dc2626);
   color: white;
-  border: 2px solid transparent;
-  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: var(--transition);
+  min-width: 100px;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3);
 }
 
 .btn-confirm:hover {
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
   transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
 }
 
-.btn-confirm:active {
-  transform: translateY(0);
-}
-
-/* Focus states for accessibility */
-.btn-cancel:focus,
-.btn-confirm:focus {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-/* Animation enhancements */
-.confirmation-modal-overlay {
-  animation: fadeInBackdrop 0.2s ease-out;
-}
-
-.confirmation-modal {
-  animation: slideInModal 0.2s ease-out;
-}
-
-@keyframes fadeInBackdrop {
-  from { 
-    opacity: 0;
-    backdrop-filter: blur(0px);
-  }
-  to { 
-    opacity: 1;
-    backdrop-filter: blur(4px);
-  }
-}
-
-@keyframes slideInModal {
-  from {
-    opacity: 0;
-    transform: scale(0.95) translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0px);
-  }
-}
-
-/* Responsive Design */
+/* Responsividade */
 @media (max-width: 480px) {
-  .confirmation-modal-overlay {
-    padding: 12px;
-  }
-  
   .confirmation-modal {
-    max-width: none;
-    margin: 0;
-  }
-  
-  .confirmation-icon {
-    padding: 20px 20px 12px;
-  }
-  
-  .confirmation-icon svg {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .confirmation-content {
-    padding: 0 20px 16px;
+    padding: 1.5rem;
+    border-radius: var(--radius-xl);
+    margin: 0.5rem;
   }
   
   .confirmation-title {
-    font-size: 1.1rem;
+    font-size: 1.125rem;
   }
   
   .confirmation-message {
-    font-size: 0.9rem;
+    font-size: 0.875rem;
   }
   
   .confirmation-actions {
     flex-direction: column;
-    padding: 16px 20px 20px;
-    gap: 8px;
   }
   
   .btn-cancel,
   .btn-confirm {
-    padding: 14px 20px;
-    font-size: 1rem;
+    width: 100%;
+    padding: 1rem;
   }
 }
 
-@media (max-width: 360px) {
-  .confirmation-actions {
-    gap: 6px;
+/* Animação de pulse para o ícone */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  .btn-cancel,
-  .btn-confirm {
-    padding: 12px 16px;
-    font-size: 0.9rem;
-  }
-}
-
-/* Dark mode support (if needed) */
-@media (prefers-color-scheme: dark) {
-  .confirmation-modal {
-    background: #1f2937;
-    border-color: #374151;
-  }
-  
-  .confirmation-title {
-    color: #f9fafb;
-  }
-  
-  .confirmation-message {
-    color: #d1d5db;
-  }
-  
-  .confirmation-actions {
-    background: #111827;
-    border-color: #374151;
-  }
-  
-  .btn-cancel {
-    background: #374151;
-    color: #d1d5db;
-    border-color: #4b5563;
-  }
-  
-  .btn-cancel:hover {
-    background: #4b5563;
-    border-color: #6b7280;
-    color: #f3f4f6;
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
   }
 }

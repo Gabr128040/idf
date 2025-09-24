@@ -311,7 +311,17 @@ const Dashboard = () => {
           data: t.data
         });
       }
-      // Entradas normais agrupadas (apenas dízimos e ofertas padrão)
+      // Dízimos e ofertas com discriminação sempre individuais
+      else if ((t.tipo === 'D' || t.tipo === 'O') && t.descricao && t.descricao.trim()) {
+        individuais.push({
+          dia: day.padStart(2, '0'),
+          discriminacao: t.descricao,
+          entrada: `R$ ${truncateToTwoDecimals(parseFloat(t.quantia) || 0)}`,
+          saida: '-',
+          data: t.data
+        });
+      }
+      // Entradas normais SEM discriminação - podem ser agrupadas
       else {
         if (!grouped[day]) grouped[day] = { D: 0, O: 0 };
         if (t.tipo === 'D') grouped[day].D += parseFloat(t.quantia) || 0;
@@ -520,7 +530,17 @@ const Dashboard = () => {
             data: t.data
           });
         }
-        // Entradas normais (sem nao_agrupar) são agrupadas
+        // Dízimos e ofertas com discriminação sempre individuais
+        else if ((t.tipo === 'D' || t.tipo === 'O') && t.descricao && t.descricao.trim()) {
+          individuais.push({
+            dia,
+            discriminacao: t.descricao,
+            entrada: `R$ ${truncateToTwoDecimals(parseFloat(t.quantia))}`,
+            saida: '-',
+            data: t.data
+          });
+        }
+        // Entradas normais SEM discriminação - podem ser agrupadas
         else {
           if (!grouped[dia]) grouped[dia] = { D: 0, O: 0 };
           if (t.tipo === 'D') grouped[dia].D += parseFloat(t.quantia);
