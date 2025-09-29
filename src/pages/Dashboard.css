@@ -414,6 +414,49 @@
   .dashboard-preset-btn { flex: 1; text-align: center; }
 }
 
+/* Inputs dentro do modal (mobile e desktop) */
+.modalbase-small input,
+.modalbase-small select,
+.modalbase-small .modern-filter-input,
+.modalbase-small textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #e6eef8;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(11,22,39,0.04);
+  font-size: 0.95rem;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+.modalbase-small input:focus,
+.modalbase-small select:focus,
+.modalbase-small textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 8px 28px rgba(79,140,255,0.08);
+}
+
+/* Top alignment tweaks */
+#dashboard-top { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+#dashboard-top .igreja-name { font-weight: 800; color: var(--primary); font-size: 1rem; }
+#dashboard-top .mes-atual { color: #222; font-weight: 600; }
+
+/* Saldo card e mini-cards */
+.saldo-panel { display:flex; flex-direction:column; align-items:center; gap:12px; }
+.saldo-value { font-size: 34px; font-weight:900; color: var(--success); letter-spacing: 0.3px; }
+.saldo-value.negative { color: var(--danger); }
+.mini-cards { display:flex; gap:12px; margin-top:6px; }
+.mini-card { background: #fff; border-radius: 12px; padding: 10px 12px; box-shadow: 0 8px 24px rgba(11,22,39,0.06); min-width: 110px; display:flex; flex-direction:column; gap:6px; align-items:flex-start; }
+.mini-card .label { font-size: 0.85rem; color: #64748b; font-weight:700; }
+.mini-card .value { font-weight:800; font-size: 1.05rem; }
+.mini-card.entrada { border-left: 4px solid #10b981; }
+.mini-card.saida { border-left: 4px solid #ef4444; }
+
+@media (max-width: 600px) {
+  .mini-cards { width: 100%; justify-content: center; }
+  .mini-card { align-items:center; text-align:center; }
+}
+
 /* Modal de relatório moderno */
 .dashboard-report-modal {
   background: #fff;

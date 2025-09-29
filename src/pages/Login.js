@@ -60,8 +60,6 @@ const Login = () => {
       <div className="login-landing-card">
         <div className="login-landing-header">
           <img src={logo} alt="Logo IDM" className="login-landing-logo" />
-          <h1 className="login-landing-title">Financeiro IDM</h1>
-          <p className="login-landing-desc">Acesse o painel financeiro da sua igreja com segurança e praticidade.</p>
         </div>
         <form className="login-landing-form" onSubmit={handleSubmit} autoComplete="off">
           <input
@@ -118,7 +116,7 @@ const Login = () => {
           display: flex;
           flex-direction: column;
           align-items: center;
-          margin-bottom: 18px;
+          margin-bottom: 8px;
         }
         .login-landing-logo {
           width: 110px;

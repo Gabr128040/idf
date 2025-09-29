@@ -66,6 +66,19 @@ const Dashboard = () => {
     setupAxiosInterceptors(navigate);
   }, [navigate]);
 
+  // Totais rápidos para mini-cards (baseado nas transações filtradas)
+  const calculateTotals = (list) => {
+    let entradas = 0;
+    let saidas = 0;
+    (list || []).forEach(t => {
+      const q = Number(t.quantia || 0);
+      if (t.tipo === 'D' || t.tipo === 'O') entradas += q;
+      else saidas += q;
+    });
+    return { entradas, saidas };
+  };
+  const { entradas: totalEntradas, saidas: totalSaidas } = calculateTotals(filteredTransactions);
+
   // Efeito visual: aplicar pulso no dashboard-top quando pulseKey mudar
   useEffect(() => {
     if (!pulseKey) return;
@@ -832,9 +845,24 @@ const Dashboard = () => {
                 <span style={{ fontWeight: 500, fontSize: 14, color: '#222' }}>{new Date(0, selectedMonth ? selectedMonth-1 : currentMonth-1).toLocaleString('pt-BR', { month: 'long' })} {selectedYear}</span>
               </div>
 
-              {/* Saldo centralizado */}
-              <div style={{ textAlign: 'center', fontSize: 30, fontWeight: 800, margin: '0 0 18px 0', color: saldo >= 0 ? '#27ae60' : '#e74c3c', fontFamily: 'Inter, Arial, sans-serif', letterSpacing: 0.2 }}>
-                R$ {saldo?.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+              {/* Saldo centralizado com mini-cards */}
+              <div className="saldo-panel">
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <div className={`saldo-value ${saldo < 0 ? 'negative' : ''}`}>R$ {saldo?.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</div>
+                    <div style={{ fontSize: 13, color: '#64748b', fontWeight: 600 }}>Saldo atual</div>
+                  </div>
+                </div>
+                <div className="mini-cards">
+                  <div className="mini-card entrada">
+                    <div className="label">Entradas</div>
+                    <div className="value">R$ {totalEntradas.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</div>
+                  </div>
+                  <div className="mini-card saida">
+                    <div className="label">Saídas</div>
+                    <div className="value">R$ {totalSaidas.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</div>
+                  </div>
+                </div>
               </div>
 
               {/* Botões principais (circulares) */}
