@@ -1,71 +1,86 @@
 .transaction-form {
-  background-color: #FFFFFF;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-}
-
-.transaction-form select,
-.transaction-form input,
-.transaction-form textarea {
-  padding: 12px;
-  font-size: 1rem;
-  border: 1px solid #D3DCE6;
-  border-radius: 8px;
+  background: transparent; /* container is styled by ModalBase */
   width: 100%;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
 }
 
-.transaction-form select:focus,
-.transaction-form input:focus,
-.transaction-form textarea:focus {
-  border-color: #4A90E2;
-  outline: none;
-  box-shadow: 0 0 3px rgba(74, 144, 226, 0.3);
+.transaction-form .transaction-form-content {
+  background: white;
+  border-radius: 0.9rem;
+  padding: 16px;
+  box-shadow: 0 8px 28px rgba(11,22,39,0.08);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
 
-.transaction-form textarea {
-  resize: vertical;
-  min-height: 100px;
+.transaction-form .form-header {
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
-.transaction-form button {
-  background-color: #4A90E2;
-  color: #FFFFFF;
+.transaction-form .back-btn {
+  background:#eef6ff;
+  color:#2b6cb0;
   border: none;
-  padding: 12px;
-  font-size: 1rem;
-  border-radius: 8px;
-  transition: background-color 0.3s;
+  padding:8px 10px;
+  border-radius:8px;
+  font-weight:600;
 }
 
-.transaction-form button:hover {
-  background-color: #3A78C2;
+.transaction-form h3 {
+  margin:0;
+  font-size:1.125rem;
+  color:#0b2540;
 }
 
-.transaction-form .error-message {
-  color: #F5A623;
-  font-size: 0.9rem;
-  margin-top: 15px;
-  text-align: center;
+.transaction-type-selection {
+  padding: 6px 0 0 0;
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
-  .transaction-form {
-    padding: 15px;
-  }
 
-  .transaction-form select,
-  .transaction-form input,
-  .transaction-form textarea {
-    padding: 10px;
-    font-size: 0.9rem;
-  }
+.type-buttons {
+  display:flex;
+  gap:12px;
+  justify-content:space-between;
+}
 
-  .transaction-form button {
-    padding: 10px;
-  }
+.type-btn {
+  flex:1;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid rgba(11,22,39,0.06);
+  background:linear-gradient(180deg,#fbfeff,#ffffff);
+  cursor:pointer;
+}
+
+.type-btn .type-icon { font-size:18px; width:36px; height:36px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; color:white; flex-shrink:0; }
+.entrada-btn .type-icon { background: linear-gradient(180deg,#34d399,#10b981); }
+.saida-btn .type-icon { background: linear-gradient(180deg,#f87171,#ef4444); }
+
+.type-btn .type-text { display:flex; flex-direction:column; align-items:flex-start; text-align:left; }
+.type-btn .type-label { font-weight:700; color:#0b2540; }
+.type-btn .type-desc { font-size:0.85rem; color:#64748b; }
+
+.form-content { display:flex; flex-direction:column; gap:12px; }
+.form-group { display:flex; flex-direction:column; gap:6px; }
+.form-input { padding:10px 12px; border-radius:8px; border:1px solid #E6EEF8; }
+
+.checkbox-group { display:flex; align-items:center; gap:8px; }
+.checkbox-input { width:18px; height:18px; accent-color:#2563eb; }
+.checkbox-text { color:#475569; font-weight:600; font-size:0.95rem; }
+
+.modal-actions { display:flex; justify-content:space-between; gap:12px; align-items:center; padding-top:8px; }
+.modal-actions .btn-primary { background: linear-gradient(180deg,#3b82f6,#2563eb); color:white; border:none; padding:10px 14px; border-radius:8px; font-weight:700; }
+.modal-actions .btn-outline { background:white; border:1px solid rgba(11,22,39,0.06); padding:8px 12px; border-radius:8px; }
+
+@media (max-width: 480px) {
+  .type-buttons { flex-direction:column; }
+  .type-btn { flex-direction:column; align-items:center; text-align:center; }
+  .type-btn .type-text { align-items:center; }
+  .modal-actions { flex-direction:row; }
 }

@@ -1,0 +1,84 @@
+.modalbase-overlay {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.5));
+  z-index: 10001;
+  -webkit-overflow-scrolling: touch;
+  padding: 1.25rem;
+}
+
+.modalbase-content {
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  border-radius: 1rem;
+  box-shadow: 0 12px 40px rgba(11, 22, 39, 0.2);
+  width: 96vw;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10002;
+  border: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+@media (min-width: 600px) {
+  .modalbase-content {
+    width: 88vw;
+    max-width: 680px;
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .modalbase-content {
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0.75rem;
+    border-radius: 0.9rem;
+  }
+}
+
+/* Utility classes so specific modals can apply small variants */
+.modalbase-small { max-width: 460px; }
+.modalbase-no-padding { padding: 0; }
+
+/* Header and content helpers */
+.modalbase-header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:8px;
+}
+.modalbase-title {
+  font-size:1.125rem;
+  font-weight:700;
+  color: #0b2540;
+}
+.modalbase-subtitle {
+  font-size:0.95rem;
+  color:#334155; /* slightly darker for contrast */
+}
+.modalbase-body {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.modalbase-actions {
+  display:flex;
+  gap:10px;
+  justify-content:flex-end;
+  margin-top:8px;
+}
+.modalbase-center {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}

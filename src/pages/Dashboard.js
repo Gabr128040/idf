@@ -10,15 +10,14 @@ import Notification from '../components/Notification';
 import Navbar from '../components/Navbar';
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import axiosLocal from 'axios';
 import logo from '../assets/logo.png';
 import './Dashboard.css';
-import { getTipoDisplay, getCultoDisplay, getTipoDespesaDisplay, formatDate, getLastDayOfMonth } from '../utils';
-import { FaCalendarAlt, FaSearch, FaPlus, FaFileAlt } from 'react-icons/fa';
-import RelatorioPdfPreview from '../components/RelatorioPdfPreview';
-import RelatorioPdfSimulado from '../components/RelatorioPdfSimulado';
+import { getTipoDespesaDisplay, getLastDayOfMonth } from '../utils';
+import { FaPlus, FaFileAlt } from 'react-icons/fa';
 import RelatorioPdfInterativo from '../components/RelatorioPdfInterativo';
+import ModalBase from '../components/ModalBase';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -889,49 +888,47 @@ const Dashboard = () => {
                   </button>
                 </div>
               </div>
-              {/* Modal de filtros */}
+              {/* Modal de filtros (usando ModalBase) */}
               {showFiltroModal && (
-                <div className="modal-overlay" onClick={e => e.target.classList.contains('modal-overlay') && setShowFiltroModal(false)}>
-                  <div className="modal-content" style={{ maxWidth: 340, width: '96vw', padding: 24 }}>
-                    <h3 style={{ color: '#6c4fcf', marginBottom: 16 }}>Filtros</h3>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-                      <label>
-                        Mês
-                        <select value={selectedMonth} onChange={e => setSelectedMonth(e.target.value)}>
-                          <option value="">Todos</option>
-                          {[...Array(12)].map((_, i) => (
-                            <option key={i+1} value={i+1}>{new Date(0, i).toLocaleString('pt-BR', { month: 'long' })}</option>
-                          ))}
-                        </select>
-                      </label>
-                      <label>
-                        Ano
-                        <input type="number" value={selectedYear} onChange={e => setSelectedYear(e.target.value)} min="2020" max={new Date().getFullYear()} />
-                      </label>
-                      <label>
-                        Dia
-                        <input type="text" value={searchDay} onChange={e => setSearchDay(e.target.value)} placeholder="Ex: 15" />
-                      </label>
-                      <label>
-                        Descrição
-                        <input type="text" value={searchDescription} onChange={e => setSearchDescription(e.target.value)} placeholder="Buscar..." />
-                      </label>
-                      <label>
-                        Tipo
-                        <select value={searchType} onChange={e => setSearchType(e.target.value)}>
-                          <option value="">Todos</option>
-                          <option value="D">Dízimo</option>
-                          <option value="O">Oferta</option>
-                          <option value="S">Despesa</option>
-                        </select>
-                      </label>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10, marginTop: 18 }}>
-                      <button className="dashboard-btn-primary" onClick={() => setShowFiltroModal(false)} style={{ minWidth: 90 }}>Buscar</button>
-                      <button className="dashboard-btn-secondary" onClick={() => setShowFiltroModal(false)} style={{ minWidth: 90 }}>Fechar</button>
-                    </div>
+                <ModalBase isOpen={showFiltroModal} onClose={() => setShowFiltroModal(false)} contentClassName="modalbase-small">
+                  <h3 style={{ color: '#6c4fcf', marginBottom: 16 }}>Filtros</h3>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                    <label>
+                      Mês
+                      <select value={selectedMonth} onChange={e => setSelectedMonth(e.target.value)}>
+                        <option value="">Todos</option>
+                        {[...Array(12)].map((_, i) => (
+                          <option key={i+1} value={i+1}>{new Date(0, i).toLocaleString('pt-BR', { month: 'long' })}</option>
+                        ))}
+                      </select>
+                    </label>
+                    <label>
+                      Ano
+                      <input type="number" value={selectedYear} onChange={e => setSelectedYear(e.target.value)} min="2020" max={new Date().getFullYear()} />
+                    </label>
+                    <label>
+                      Dia
+                      <input type="text" value={searchDay} onChange={e => setSearchDay(e.target.value)} placeholder="Ex: 15" />
+                    </label>
+                    <label>
+                      Descrição
+                      <input type="text" value={searchDescription} onChange={e => setSearchDescription(e.target.value)} placeholder="Buscar..." />
+                    </label>
+                    <label>
+                      Tipo
+                      <select value={searchType} onChange={e => setSearchType(e.target.value)}>
+                        <option value="">Todos</option>
+                        <option value="D">Dízimo</option>
+                        <option value="O">Oferta</option>
+                        <option value="S">Despesa</option>
+                      </select>
+                    </label>
                   </div>
-                </div>
+                  <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10, marginTop: 18 }}>
+                    <button className="dashboard-btn-primary" onClick={() => setShowFiltroModal(false)} style={{ minWidth: 90 }}>Buscar</button>
+                    <button className="dashboard-btn-secondary" onClick={() => setShowFiltroModal(false)} style={{ minWidth: 90 }}>Fechar</button>
+                  </div>
+                </ModalBase>
               )}
               {/* Conteúdo dinâmico conforme modo de visualização */}
               <div style={{ minHeight: 200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -1422,6 +1419,7 @@ const Dashboard = () => {
       )}
       {showForm && (
         <TransactionForm
+          isOpen={showForm}
           onCancel={() => setShowForm(false)}
           onTransactionAdded={handleTransactionAdded}
           setNotification={setNotification}
@@ -1456,15 +1454,8 @@ const Dashboard = () => {
         />
       )}
       {showReportModal && (
-        <div className="modal-overlay" style={{ zIndex: 3000 }} onClick={e => e.target === e.currentTarget && setShowReportModal(false)}>
-          <motion.div
-            className="modal-content dashboard-report-modal dashboard-report-modal-mobile"
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            onClick={e => e.stopPropagation()}
-          >
+        <ModalBase isOpen={showReportModal} onClose={() => setShowReportModal(false)} contentClassName="dashboard-report-modal dashboard-report-modal-mobile modalbase-no-padding">
+          <div style={{ padding: 16 }}>
             <div className="modal-header-mobile">
               <span className="modal-title-mobile">
                 <svg width="20" height="20" style={{marginRight:6,verticalAlign:'middle'}} fill="none" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="4" stroke="#f39c12" strokeWidth="2"/><path d="M8 2v4M16 2v4M3 10h18" stroke="#f39c12" strokeWidth="2" strokeLinecap="round"/></svg>
@@ -1475,27 +1466,27 @@ const Dashboard = () => {
               </button>
             </div>
             <div className="modal-cards-row-mobile" style={{ flexWrap: 'wrap', justifyContent: 'space-between', gap: 8, marginBottom: 8 }}>
-              <div className="modal-card-mobile entradas"><svg width="18" height="18" style={{marginRight:4}} fill="none" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7 7 7-7" stroke="#27ae60" strokeWidth="2" strokeLinecap="round"/></svg>R$ {previewData ? previewData.totalEntradas.toFixed(2) : '0,00'}<span>Entradas</span></div>
-              <div className="modal-card-mobile saidas"><svg width="18" height="18" style={{marginRight:4}} fill="none" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7-7-7 7" stroke="#e74c3c" strokeWidth="2" strokeLinecap="round"/></svg>R$ {previewData ? previewData.totalSaidas.toFixed(2) : '0,00'}<span>Saídas</span></div>
-              <div className="modal-card-mobile saldo"><svg width="18" height="18" style={{marginRight:4}} fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#3498db" strokeWidth="2"/><path d="M8 12h8M12 8v8" stroke="#3498db" strokeWidth="2"/></svg>R$ {previewData ? previewData.saldoMes.toFixed(2) : '0,00'}<span>Saldo</span></div>
-              <div className="modal-card-mobile final"><svg width="18" height="18" style={{marginRight:4}} fill="none" viewBox="0 0 24 24"><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="#b18cff" strokeWidth="2"/><path d="M12 3v12" stroke="#b18cff" strokeWidth="2" strokeLinecap="round"/></svg>R$ {previewData ? previewData.saldoFinal.toFixed(2) : '0,00'}<span>Final</span></div>
-              <div className="modal-card-mobile saldo-anterior"><svg width="18" height="18" style={{marginRight:4}} fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#888" strokeWidth="2"/><path d="M6 12h12" stroke="#888" strokeWidth="2"/></svg>R$ {previewData ? previewData.saldoAnterior.toFixed(2) : '0,00'}<span>Saldo Anterior</span></div>
-              <div className="modal-card-mobile dizimo-igreja"><svg width="18" height="18" style={{marginRight:4}} fill="none" viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7z" stroke="#27ae60" strokeWidth="2"/></svg>R$ {previewData ? (previewData.dizimoIgreja || 0).toFixed(2) : '0,00'}<span>Dízimo Igreja</span></div>
+              <div className="modal-card-mobile entradas">R$ {previewData ? previewData.totalEntradas.toFixed(2) : '0,00'}<span>Entradas</span></div>
+              <div className="modal-card-mobile saidas">R$ {previewData ? previewData.totalSaidas.toFixed(2) : '0,00'}<span>Saídas</span></div>
+              <div className="modal-card-mobile saldo">R$ {previewData ? previewData.saldoMes.toFixed(2) : '0,00'}<span>Saldo</span></div>
+              <div className="modal-card-mobile final">R$ {previewData ? previewData.saldoFinal.toFixed(2) : '0,00'}<span>Final</span></div>
+              <div className="modal-card-mobile saldo-anterior">R$ {previewData ? previewData.saldoAnterior.toFixed(2) : '0,00'}<span>Saldo Anterior</span></div>
+              <div className="modal-card-mobile dizimo-igreja">R$ {previewData ? (previewData.dizimoIgreja || 0).toFixed(2) : '0,00'}<span>Dízimo Igreja</span></div>
             </div>
             <div className="modal-options-mobile" style={{display:'flex',flexDirection:'column',gap:4,alignItems:'flex-start',margin:'10px 0 8px 0'}}>
               <label className="modal-checkbox-mobile">
                 <input type="checkbox" checked={includeGratificacao} onChange={e => handleGratificacaoChange(e.target.checked)} disabled={!isGratificacaoEnabled} />
-                <span className="icon"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2l2.09 6.26L20 9.27l-5 3.64L16.18 20 12 16.77 7.82 20 9 12.91l-5-3.64 5.91-.91z" stroke="#f39c12" strokeWidth="1.5"/></svg></span>
+                <span className="icon"></span>
                 Gratificação do Pastor
               </label>
               <label className="modal-checkbox-mobile">
                 <input type="checkbox" checked={includeDizimoGratificacao} onChange={e => setIncludeDizimoGratificacao(e.target.checked)} disabled={!includeGratificacao} />
-                <span className="icon"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20" stroke="#6c4fcf" strokeWidth="1.5"/></svg></span>
+                <span className="icon"></span>
                 Dízimo da Gratificação
               </label>
               <label className="modal-checkbox-mobile">
                 <input type="checkbox" checked={includeDizimoIgreja} onChange={e => setIncludeDizimoIgreja(e.target.checked)} />
-                <span className="icon"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7z" stroke="#27ae60" strokeWidth="1.5"/></svg></span>
+                <span className="icon"></span>
                 Dízimo da Igreja
               </label>
               {!isGratificacaoEnabled && (
@@ -1504,23 +1495,19 @@ const Dashboard = () => {
             </div>
             <div className="modal-actions-mobile" style={{display:'flex',flexDirection:'row',justifyContent:'center',alignItems:'center',gap:12,marginTop:10}}>
               <button className="btn-mobile-primary" style={{background:'#2563eb',color:'#fff',fontWeight:700,padding:'10px 18px',borderRadius:8,border:'none',fontSize:'1.08rem',display:'flex',alignItems:'center',gap:6,boxShadow:'0 2px 8px #0001',cursor:'pointer'}} onClick={generateMonthlyReport} disabled={isLoading}>
-                <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#fff" strokeWidth="2"/><path d="M8 8h8M8 12h8M8 16h4" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
                 Gerar
               </button>
               <button className="btn-mobile-pdf-full" style={{background:'#fff',color:'#2563eb',fontWeight:600,padding:'10px 14px',borderRadius:8,border:'1.5px solid #2563eb',fontSize:'1.08rem',display:'flex',alignItems:'center',gap:6,boxShadow:'0 2px 8px #0001',cursor:'pointer'}}
                 onClick={generatePdfPreview}
                 title="Baixar PDF de Prévia">
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 00-2 2v3m0 8v3a2 2 0 002 2h3m8-18h3a2 2 0 012 2v3m0 8v3a2 2 0 01-2 2h-3" stroke="#2563eb" strokeWidth="2" strokeLinecap="round"/></svg>
                 Ver PDF
               </button>
               <button className="btn-mobile-secondary" style={{background:'#fff',color:'#888',fontWeight:600,padding:'10px 14px',borderRadius:8,border:'1.5px solid #ccc',fontSize:'1.08rem',display:'flex',alignItems:'center',gap:6,boxShadow:'0 2px 8px #0001',cursor:'pointer'}} onClick={() => setShowReportModal(false)}>
-                <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke="#888" strokeWidth="2" strokeLinecap="round"/></svg>
                 Cancelar
               </button>
             </div>
-            <div className="modal-preview-mobile" style={{display:'none'}}></div>
-          </motion.div>
-        </div>
+          </div>
+        </ModalBase>
       )}
     </div>
   );

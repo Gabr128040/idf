@@ -44,6 +44,7 @@ const Navbar = () => {
               <li>
                 <a href="/relatorios">Relatórios</a>
               </li>
+              {/* Admin link removed to restore previous navigation */}
               <li>
                 <a href="/login" onClick={() => setShowMenu(false)}>
                   Login
