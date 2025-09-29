@@ -18,6 +18,7 @@ import { getTipoDespesaDisplay, getLastDayOfMonth } from '../utils';
 import { FaPlus, FaFileAlt } from 'react-icons/fa';
 import RelatorioPdfInterativo from '../components/RelatorioPdfInterativo';
 import ModalBase from '../components/ModalBase';
+import Tooltip from '../components/Tooltip';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -59,10 +60,21 @@ const Dashboard = () => {
   const [showFiltroModal, setShowFiltroModal] = useState(false);
   // Adicione um estado para loading da tabela
   const [tableLoading, setTableLoading] = useState(false);
+  const [pulseKey, setPulseKey] = useState(0);
 
   useEffect(() => {
     setupAxiosInterceptors(navigate);
   }, [navigate]);
+
+  // Efeito visual: aplicar pulso no dashboard-top quando pulseKey mudar
+  useEffect(() => {
+    if (!pulseKey) return;
+    const el = document.getElementById('dashboard-top');
+    if (!el) return;
+    el.classList.add('pulse-highlight');
+    const t = setTimeout(() => el.classList.remove('pulse-highlight'), 950);
+    return () => clearTimeout(t);
+  }, [pulseKey]);
 
   const updateTransactions = async () => {
     try {
@@ -815,7 +827,7 @@ const Dashboard = () => {
               <div style={{ height: 56 }} />
 
               {/* Bloco info igreja/mês */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '18px 16px 8px 16px' }}>
+              <div id="dashboard-top" data-pulse={pulseKey} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '18px 16px 8px 16px' }}>
                 <span style={{ fontWeight: 700, fontSize: 15, color: '#4f8cff', letterSpacing: 0.1 }}>{igrejaUsuario ? igrejaUsuario.nome : 'Igreja'}</span>
                 <span style={{ fontWeight: 500, fontSize: 14, color: '#222' }}>{new Date(0, selectedMonth ? selectedMonth-1 : currentMonth-1).toLocaleString('pt-BR', { month: 'long' })} {selectedYear}</span>
               </div>
@@ -828,9 +840,11 @@ const Dashboard = () => {
               {/* Botões principais (circulares) */}
               <div style={{ display: 'flex', justifyContent: 'center', gap: 24, marginBottom: 18 }}>
                 {/* Nova transação */}
-                <button onClick={() => setShowForm(true)} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#4f8cff', boxShadow: '0 2px 8px #4f8cff33', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Nova transação">
-                  <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#4f8cff"/><path d="M12 7v10M7 12h10" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
-                </button>
+                <Tooltip text="Nova transação" position="top">
+                  <button onClick={() => setShowForm(true)} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#4f8cff', boxShadow: '0 2px 8px #4f8cff33', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Nova transação">
+                    <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#4f8cff"/><path d="M12 7v10M7 12h10" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
+                  </button>
+                </Tooltip>
                 {/* Relatório */}
                 <button onClick={() => setShowReportModal(true)} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#fff', boxShadow: '0 2px 8px #4f8cff22', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4f8cff', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Relatório">
                   <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#4f8cff" strokeWidth="2"/><path d="M8 8h8M8 12h8M8 16h4" stroke="#4f8cff" strokeWidth="2" strokeLinecap="round"/></svg>
@@ -862,37 +876,89 @@ const Dashboard = () => {
                   </button>
                 </div>
                 <div className="toolbar-actions-group">
-                  <button
-                    className={`toolbar-btn-refresh${tableLoading ? ' spinning' : ''}`}
-                    onClick={async () => {
-                      if (tableLoading) return;
-                      setTableLoading(true);
-                      await updateTransactions();
-                      setTableLoading(false);
-                    }}
-                    title="Atualizar lista"
-                  >
-                    <span className="toolbar-btn-icon">
-                      {/* Seta circular estilo Material/Google */}
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5V2L7 6.5L12 11V8C15.31 8 18 10.69 18 14C18 17.31 15.31 20 12 20C8.69 20 6 17.31 6 14H4C4 18.42 7.58 22 12 22C16.42 22 20 18.42 20 14C20 9.58 16.42 6 12 6V5Z" fill="#fff"/></svg>
-                    </span>
-                  </button>
-                  <button
-                    className="toolbar-btn-filtros"
-                    onClick={() => setShowFiltroModal(true)}
-                    title="Filtros"
-                  >
-                    <span className="toolbar-btn-icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 17V15H13V17H3ZM3 13V11H9V13H3ZM3 9V7H17V9H3ZM15 21V19H21V21H15ZM11 5V3H21V5H11Z" fill="#fff"/></svg>
-                    </span>
-                  </button>
+                  <Tooltip text="Atualizar lista" position="top">
+                    <button
+                      className={`toolbar-btn-refresh${tableLoading ? ' spinning' : ''}`}
+                      onClick={async () => {
+                        if (tableLoading) return;
+                        setTableLoading(true);
+                        await updateTransactions();
+                        setTableLoading(false);
+                        setPulseKey(k => k + 1);
+                      }}
+                      title="Atualizar lista"
+                    >
+                      <span className="toolbar-btn-icon">
+                        {/* Seta circular estilo Material/Google */}
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5V2L7 6.5L12 11V8C15.31 8 18 10.69 18 14C18 17.31 15.31 20 12 20C8.69 20 6 17.31 6 14H4C4 18.42 7.58 22 12 22C16.42 22 20 18.42 20 14C20 9.58 16.42 6 12 6V5Z" fill="#fff"/></svg>
+                      </span>
+                    </button>
+                  </Tooltip>
+                  <Tooltip text="Abrir filtros" position="top">
+                    <button
+                      className="toolbar-btn-filtros"
+                      onClick={() => setShowFiltroModal(true)}
+                      title="Filtros"
+                    >
+                      <span className="toolbar-btn-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 17V15H13V17H3ZM3 13V11H9V13H3ZM3 9V7H17V9H3ZM15 21V19H21V21H15ZM11 5V3H21V5H11Z" fill="#fff"/></svg>
+                      </span>
+                    </button>
+                  </Tooltip>
                 </div>
               </div>
               {/* Modal de filtros (usando ModalBase) */}
               {showFiltroModal && (
                 <ModalBase isOpen={showFiltroModal} onClose={() => setShowFiltroModal(false)} contentClassName="modalbase-small">
-                  <h3 style={{ color: '#6c4fcf', marginBottom: 16 }}>Filtros</h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                  <h3 style={{ color: '#6c4fcf', marginBottom: 12 }}>Filtros</h3>
+                  {/* Presets rápidos */}
+                  <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
+                    <button
+                      type="button"
+                      className="dashboard-preset-btn"
+                      onClick={() => {
+                        const today = new Date();
+                        setSelectedMonth(String(today.getMonth() + 1));
+                        setSelectedYear(today.getFullYear());
+                        setDateRangeStart('');
+                        setDateRangeEnd('');
+                        setSearchDay('');
+                        setSearchDescription('');
+                        setSearchType('');
+                      }}
+                    >Hoje</button>
+                    <button
+                      type="button"
+                      className="dashboard-preset-btn"
+                      onClick={() => {
+                        const today = new Date();
+                        const past = new Date(); past.setDate(today.getDate() - 6);
+                        setDateRangeStart(past.toISOString().slice(0,10));
+                        setDateRangeEnd(today.toISOString().slice(0,10));
+                        setSelectedMonth('');
+                        setSelectedYear(new Date().getFullYear());
+                        setSearchDay('');
+                        setSearchDescription('');
+                        setSearchType('');
+                      }}
+                    >Últimos 7 dias</button>
+                    <button
+                      type="button"
+                      className="dashboard-preset-btn"
+                      onClick={() => {
+                        const today = new Date();
+                        setSelectedMonth(String(today.getMonth() + 1));
+                        setSelectedYear(today.getFullYear());
+                        setDateRangeStart('');
+                        setDateRangeEnd('');
+                        setSearchDay('');
+                        setSearchDescription('');
+                        setSearchType('');
+                      }}
+                    >Mês atual</button>
+                  </div>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                     <label>
                       Mês
                       <select value={selectedMonth} onChange={e => setSelectedMonth(e.target.value)}>
@@ -924,8 +990,18 @@ const Dashboard = () => {
                       </select>
                     </label>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10, marginTop: 18 }}>
-                    <button className="dashboard-btn-primary" onClick={() => setShowFiltroModal(false)} style={{ minWidth: 90 }}>Buscar</button>
+                  <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10, marginTop: 12 }}>
+                    <button className="dashboard-btn-primary" onClick={() => { setShowFiltroModal(false); /* aplicar filtros já reflete via estados */ setPulseKey(k => k + 1); }} style={{ minWidth: 90 }}>Aplicar</button>
+                    <button className="dashboard-btn-secondary" onClick={() => {
+                      setGeneralSearch('');
+                      setDateRangeStart('');
+                      setDateRangeEnd('');
+                      setSearchDay('');
+                      setSearchDescription('');
+                      setSearchType('');
+                      setSelectedMonth('');
+                      setSelectedYear(new Date().getFullYear());
+                    }} style={{ minWidth: 90 }}>Limpar</button>
                     <button className="dashboard-btn-secondary" onClick={() => setShowFiltroModal(false)} style={{ minWidth: 90 }}>Fechar</button>
                   </div>
                 </ModalBase>

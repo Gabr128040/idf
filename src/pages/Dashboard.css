@@ -396,6 +396,24 @@
   box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
 }
 
+/* Presets rápidos no modal de filtros */
+.dashboard-preset-btn {
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--gray-700);
+}
+.dashboard-preset-btn:hover { background: var(--gray-100); transform: translateY(-1px); }
+
+/* Ajustes para modal mobile */
+@media (max-width: 600px) {
+  .dashboard-modal-base { width: 98vw; max-width: 98vw; padding: 1rem; }
+  .dashboard-preset-btn { flex: 1; text-align: center; }
+}
+
 /* Modal de relatório moderno */
 .dashboard-report-modal {
   background: #fff;

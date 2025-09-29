@@ -6,8 +6,7 @@ import React from 'react';
      import Register from './pages/Register';
      import PrivateRoute from './components/PrivateRoute';
      import './App.css';
-     import Relatorios from './pages/Relatorios';
-     import AdminDashboard from './pages/AdminDashboard';
+  import Relatorios from './pages/Relatorios';
 
      const App = () => {
        return (
@@ -18,7 +17,6 @@ import React from 'react';
              <Route path="/register" element={<Register />} />
              <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
              <Route path="/relatorios" element={<Relatorios />} />
-             <Route path="/admin" element={<PrivateRoute adminOnly={true}><AdminDashboard /></PrivateRoute>} />
            </Routes>
          </Router>
        );

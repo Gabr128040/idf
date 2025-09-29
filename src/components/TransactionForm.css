@@ -68,6 +68,31 @@
 
 .form-content { display:flex; flex-direction:column; gap:12px; }
 .form-group { display:flex; flex-direction:column; gap:6px; }
+.date-input-group { display:flex; gap:8px; align-items:center; }
+.current-date-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background: linear-gradient(180deg, #ffffff, #f1f5f9);
+  border: 1px solid rgba(11,22,39,0.06);
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #0b2540;
+  min-width: 72px;
+  justify-content: center;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+.current-date-btn:active { transform: translateY(1px) scale(0.99); }
+.current-date-btn:focus { outline: 3px solid rgba(79,140,255,0.18); }
+.current-date-btn svg { opacity: 0.9; }
+.current-date-btn span { font-size: 0.95rem; }
+
+@media (max-width: 480px) {
+  .date-input-group { flex-direction: row; align-items:center; }
+  .current-date-btn { padding: 12px 14px; min-width: 84px; border-radius: 12px; }
+}
 .form-input { padding:10px 12px; border-radius:8px; border:1px solid #E6EEF8; }
 
 .checkbox-group { display:flex; align-items:center; gap:8px; }

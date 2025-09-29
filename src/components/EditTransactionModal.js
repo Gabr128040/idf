@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import ModalBase from './ModalBase';
+import Tooltip from './Tooltip';
 import './TransactionForm.css';
 
 const EditTransactionModal = ({ transaction, onClose, onSave, setNotification }) => {
@@ -155,7 +156,15 @@ const EditTransactionModal = ({ transaction, onClose, onSave, setNotification })
             <label>Data</label>
             <div className="date-input-group">
               <input type="date" name="data" value={formData.data} onChange={handleChange} required className="form-input" />
-              <button type="button" className="current-date-btn" onClick={handleSetCurrentDate} title="Usar data atual">Hoje</button>
+              <Tooltip text="Preencher com a data de hoje" position="top">
+                <button type="button" className="current-date-btn" onClick={handleSetCurrentDate} title="Usar data atual" aria-label="Usar data atual">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style={{ marginRight: 8 }}>
+                    <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M16 3v4M8 3v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                  <span>Hoje</span>
+                </button>
+              </Tooltip>
             </div>
           </div>
 

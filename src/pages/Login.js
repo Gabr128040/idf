@@ -35,7 +35,7 @@ const Login = () => {
       if (response.data.user) {
         localStorage.setItem('user', JSON.stringify(response.data.user));
         if (response.data.user.is_superuser || response.data.user.is_igreja_admin) {
-          navigate('/admin');
+          navigate('/');
         } else {
           navigate('/');
         }
