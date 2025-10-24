@@ -1,0 +1,156 @@
+.pdf-generation-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.98);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  animation: fadeIn 0.3s ease-out;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+}
+
+.pdf-generation-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.pdf-animation {
+  position: relative;
+  width: 120px;
+  height: 160px;
+}
+
+.pdf-page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  animation: float 3s ease-in-out infinite;
+}
+
+.math-symbols {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 12px;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.math-symbols span {
+  font-size: 14px;
+  color: #4F46E5;
+  opacity: 0;
+  animation: symbolFade 2s ease-out infinite;
+}
+
+.math-symbols span:nth-child(2) { animation-delay: 0.4s; }
+.math-symbols span:nth-child(3) { animation-delay: 0.8s; }
+.math-symbols span:nth-child(4) { animation-delay: 1.2s; }
+.math-symbols span:nth-child(5) { animation-delay: 1.6s; }
+.math-symbols span:nth-child(6) { animation-delay: 2.0s; }
+
+.lines {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.line {
+  height: 2px;
+  background: #E2E8F0;
+  width: 0;
+  animation: lineGrow 2s ease-out infinite;
+}
+
+.line:nth-child(2) { animation-delay: 0.5s; }
+.line:nth-child(3) { animation-delay: 1s; }
+
+.calculation-particles {
+  position: absolute;
+  inset: -20px;
+  pointer-events: none;
+}
+
+.calculation-particles span {
+  position: absolute;
+  font-size: 12px;
+  color: #4F46E5;
+  opacity: 0;
+  animation: particle 2s ease-out infinite;
+}
+
+.calculation-particles span:nth-child(1) { top: 20%; left: -20px; animation-delay: 0s; }
+.calculation-particles span:nth-child(2) { top: 40%; right: -20px; animation-delay: 0.4s; }
+.calculation-particles span:nth-child(3) { bottom: 30%; left: -15px; animation-delay: 0.8s; }
+.calculation-particles span:nth-child(4) { top: 10%; right: -15px; animation-delay: 1.2s; }
+.calculation-particles span:nth-child(5) { bottom: 20%; right: -20px; animation-delay: 1.6s; }
+
+.generation-text {
+  font-size: 1.125rem;
+  color: #1F2937;
+  font-weight: 500;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes symbolFade {
+  0% { opacity: 0; transform: translateY(10px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+@keyframes lineGrow {
+  0% { width: 0; opacity: 0.3; }
+  50% { width: 100%; opacity: 1; }
+  100% { width: 100%; opacity: 0; }
+}
+
+@keyframes particle {
+  0% { 
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(
+      calc(var(--particle-travel-distance, 40px) * var(--particle-direction-x, 1)),
+      calc(var(--particle-travel-distance, 40px) * var(--particle-direction-y, 1))
+    ) rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchTransactions, fetchSaldo, deleteTransaction, setupAxiosInterceptors } from '../api/transactions';
+import SmartCalculator from '../components/SmartCalculator';
 import TransactionForm from '../components/TransactionForm';
 import TransactionList from '../components/TransactionList';
 import EditTransactionModal from '../components/EditTransactionModal';
@@ -51,6 +52,7 @@ const Dashboard = () => {
   const [includeDizimoIgreja, setIncludeDizimoIgreja] = useState(false);
   const [previewData, setPreviewData] = useState(null);
   const [isGratificacaoEnabled, setIsGratificacaoEnabled] = useState(true);
+  const [valorGratificacao, setValorGratificacao] = useState(900);
   const [viewMode, setViewMode] = useState('lista'); // 'lista', 'pdf'
   // Estado para loading de ações
   const [actionLoading, setActionLoading] = useState(false);
@@ -61,6 +63,7 @@ const Dashboard = () => {
   // Adicione um estado para loading da tabela
   const [tableLoading, setTableLoading] = useState(false);
   const [pulseKey, setPulseKey] = useState(0);
+  const [showCalculator, setShowCalculator] = useState(false);
 
   useEffect(() => {
     setupAxiosInterceptors(navigate);
@@ -279,7 +282,7 @@ const Dashboard = () => {
     let transacoesExtras = [];
     if (includeGratificacao) {
       transacoesExtras.push({
-        tipo: 'S', descricao: 'Gratificação do Líder', quantia: 900, data: lastDayOfMonth, nao_agrupar: true
+        tipo: 'S', descricao: 'Gratificação do Líder', quantia: Number(valorGratificacao), data: lastDayOfMonth, nao_agrupar: true
       });
     }
     if (includeDizimoGratificacao) {
@@ -475,6 +478,30 @@ const Dashboard = () => {
   // Função para gerar e salvar o PDF detalhado
   const generateMonthlyReport = async () => {
     setIsLoading(true);
+    setShowReportModal(false); // Fecha o modal antes de mostrar a animação
+
+    // Mostra a animação de geração de PDF
+    const pdfAnimation = document.createElement('div');
+    pdfAnimation.className = 'pdf-generation-overlay';
+    pdfAnimation.innerHTML = `
+      <div class="pdf-generation-content">
+        <div class="pdf-animation">
+          <div class="pdf-page"></div>
+          <div class="math-symbols">
+            <span class="entrada">+</span>
+            <span class="saida">−</span>
+          </div>
+          <div class="lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <div class="status-text">Gerando relatório...</div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(pdfAnimation);
+
     try {
       const pdfMonth = currentMonth;
       const pdfYear = currentYear;
@@ -482,8 +509,12 @@ const Dashboard = () => {
       let extrasCriadas = [];
       // Criar oficialmente no sistema as transações extras, se marcadas
       if (includeGratificacao) {
+        if (!valorGratificacao) {
+          setNotification({ message: 'Por favor, insira um valor para a gratificação do líder.', type: 'error' });
+          return;
+        }
         const gratificacaoTransacao = {
-          tipo: 'S', tipo_despesa: 'OT', descricao: 'Gratificação do Líder', quantia: 900, data: lastDayOfMonth, igreja_id: igrejaUsuario?.id
+          tipo: 'S', tipo_despesa: 'OT', descricao: 'Gratificação do Líder', quantia: Number(valorGratificacao), data: lastDayOfMonth, igreja_id: igrejaUsuario?.id
         };
         await axiosLocal.post(`${process.env.REACT_APP_API_URL}/api/transacoes/nova/`, gratificacaoTransacao);
         extrasCriadas.push(gratificacaoTransacao);
@@ -692,6 +723,20 @@ const Dashboard = () => {
       setNotification({ message: 'Erro ao gerar o relatório: ' + err.message, type: 'error' });
     } finally {
       setIsLoading(false);
+      // Remove a animação após a geração do PDF
+      const overlay = document.querySelector('.pdf-generation-overlay');
+      if (overlay) {
+        overlay.classList.add('fade-out');
+        setTimeout(async () => {
+          overlay.remove();
+          // Atualiza o dashboard após remover a animação
+          await Promise.all([
+            updateTransactions(),
+            updateSaldo()
+          ]);
+          setPulseKey(k => k + 1); // Pulso visual para indicar atualização
+        }, 300);
+      }
     }
   };
 
@@ -746,29 +791,33 @@ const Dashboard = () => {
       return parseInt(mes) === currentMonth && parseInt(ano) === currentYear;
     });
 
-    // 1. totalEntradasBase = ofertas + dizimos
-    let totalEntradasBase = transacoesMes.filter(t => t.tipo === 'D' || t.tipo === 'O').reduce((acc, t) => acc + Number(t.quantia), 0);
+    // 1. Entradas regulares do mês (ofertas + dízimos)
+    let entradasRegulares = transacoesMes.filter(t => t.tipo === 'D' || t.tipo === 'O').reduce((acc, t) => acc + Number(t.quantia), 0);
 
-    // 2. dizimoGratificacao = 90 se marcado, senão 0
-    let dizimoGratificacao = includeDizimoGratificacao ? 90 : 0;
+    // 2. Saídas regulares do mês
+    let saidasRegulares = transacoesMes.filter(t => t.tipo === 'S').reduce((acc, t) => acc + Number(t.quantia), 0);
 
-    // 3. totalEntradas = totalEntradasBase + dizimoGratificacao (se marcado)
-    let totalEntradas = totalEntradasBase + dizimoGratificacao;
+    // 3. Dízimo da gratificação (se marcado)
+    let dizimoGratificacao = includeDizimoGratificacao ? Number(valorGratificacao) * 0.1 : 0;
 
-    // 4. dizimoIgreja = 10% do total de entradas (se marcado)
+    // 4. Gratificação (se marcada)
+    let gratificacao = includeGratificacao ? Number(valorGratificacao) : 0;
+
+    // 5. Total de entradas do mês (regulares + dízimo da gratificação se marcado)
+    let totalEntradas = entradasRegulares + dizimoGratificacao;
+
+    // 6. Dízimo da igreja (se marcado)
     let dizimoIgreja = includeDizimoIgreja ? totalEntradas * 0.1 : 0;
 
-    // 5. gratificacao = 900 se marcado, senão 0
-    let gratificacao = includeGratificacao ? 900 : 0;
+    // 7. Total de saídas do mês (regulares + gratificação + dízimo da igreja se marcados)
+    let totalSaidas = saidasRegulares + gratificacao + dizimoIgreja;
 
-    // 6. totalSaidas = despesas + dizimoIgreja (se marcado) + gratificacao (se marcada)
-    let totalSaidas = transacoesMes.filter(t => t.tipo === 'S').reduce((acc, t) => acc + Number(t.quantia), 0) + dizimoIgreja + gratificacao;
-
-    // 7. saldoMes = totalEntradas - totalSaidas
+    // 8. Saldo do mês (apenas entradas - saídas atuais)
     let saldoMes = totalEntradas - totalSaidas;
 
-    // 8. saldoFinal = saldoAnterior + saldoMes
-    let saldoFinal = saldoAnterior + saldoMes;
+    // 9. Saldo final (simulação do caixa após todas as operações)
+    // Não inclui saldo anterior, apenas transações do mês + extras
+    let saldoFinal = saldoMes;
 
     setPreviewData({
       totalEntradas,
@@ -780,7 +829,7 @@ const Dashboard = () => {
       dizimoGratificacao,
       gratificacao,
     });
-  }, [transactions, includeGratificacao, includeDizimoGratificacao, includeDizimoIgreja, saldoAnterior, currentMonth, currentYear]);
+  }, [transactions, includeGratificacao, includeDizimoGratificacao, includeDizimoIgreja, saldoAnterior, currentMonth, currentYear, valorGratificacao]);
 
   useEffect(() => {
     function handleResize() {
@@ -825,19 +874,8 @@ const Dashboard = () => {
           {isMobile ? (
             // MOBILE: layout moderno, cores, fontes, interações reais
             <>
-              {/* AppBar fixa */}
-              <header style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: 56, display: 'flex', alignItems: 'center', justifyContent: 'space-between', zIndex: 100, background: '#4f8cff', boxShadow: '0 2px 8px #0001', borderBottom: 'none', padding: '0 8px' }}>
-                <button onClick={() => navigate('/menu')} style={{ background: 'none', border: 'none', fontSize: 0, padding: 8, display: 'flex', alignItems: 'center' }} aria-label="Menu">
-                  <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><rect y="5" width="24" height="2" rx="1" fill="#fff"/><rect y="11" width="24" height="2" rx="1" fill="#fff"/><rect y="17" width="24" height="2" rx="1" fill="#fff"/></svg>
-                </button>
-                <span style={{ fontWeight: 700, fontSize: 17, color: '#fff', letterSpacing: 0.2 }}>Dashboard</span>
-                <button onClick={() => navigate('/perfil')} style={{ background: 'none', border: 'none', fontSize: 0, padding: 8, display: 'flex', alignItems: 'center' }} aria-label="Perfil">
-                  <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4" stroke="#fff" strokeWidth="2"/><path d="M4 20c0-2.761 3.582-5 8-5s8 2.239 8 5" stroke="#fff" strokeWidth="2"/></svg>
-                </button>
-              </header>
-
-              {/* Espaço para AppBar */}
-              <div style={{ height: 56 }} />
+              {/* Espaço superior reduzido (apenas padding, botão flutuante controla menu) */}
+              <div style={{ height: 12 }} />
 
               {/* Bloco info igreja/mês */}
               <div id="dashboard-top" data-pulse={pulseKey} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '18px 16px 8px 16px' }}>
@@ -846,41 +884,109 @@ const Dashboard = () => {
               </div>
 
               {/* Saldo centralizado com mini-cards */}
-              <div className="saldo-panel">
+                <div className="saldo-panel">
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <div className={`saldo-value ${saldo < 0 ? 'negative' : ''}`}>R$ {saldo?.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</div>
                     <div style={{ fontSize: 13, color: '#64748b', fontWeight: 600 }}>Saldo atual</div>
                   </div>
                 </div>
-                <div className="mini-cards">
-                  <div className="mini-card entrada">
-                    <div className="label">Entradas</div>
-                    <div className="value">R$ {totalEntradas.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</div>
-                  </div>
-                  <div className="mini-card saida">
-                    <div className="label">Saídas</div>
-                    <div className="value">R$ {totalSaidas.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Botões principais (circulares) */}
-              <div style={{ display: 'flex', justifyContent: 'center', gap: 24, marginBottom: 18 }}>
-                {/* Nova transação */}
-                <Tooltip text="Nova transação" position="top">
-                  <button onClick={() => setShowForm(true)} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#4f8cff', boxShadow: '0 2px 8px #4f8cff33', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Nova transação">
-                    <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#4f8cff"/><path d="M12 7v10M7 12h10" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
+              </div>              {/* Botões principais (circulares) */}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24 }}>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: 24 }}>
+                  {/* Nova transação */}
+                  <Tooltip text="Nova transação" position="top">
+                    <button onClick={() => setShowForm(true)} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#4f8cff', boxShadow: '0 2px 8px #4f8cff33', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Nova transação">
+                      <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#4f8cff"/><path d="M12 7v10M7 12h10" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
+                    </button>
+                  </Tooltip>
+                  {/* Relatório */}
+                  <button onClick={() => setShowReportModal(true)} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#fff', boxShadow: '0 2px 8px #4f8cff22', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4f8cff', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Relatório">
+                    <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#4f8cff" strokeWidth="2"/><path d="M8 8h8M8 12h8M8 16h4" stroke="#4f8cff" strokeWidth="2" strokeLinecap="round"/></svg>
                   </button>
-                </Tooltip>
-                {/* Relatório */}
-                <button onClick={() => setShowReportModal(true)} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#fff', boxShadow: '0 2px 8px #4f8cff22', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4f8cff', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Relatório">
-                  <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#4f8cff" strokeWidth="2"/><path d="M8 8h8M8 12h8M8 16h4" stroke="#4f8cff" strokeWidth="2" strokeLinecap="round"/></svg>
-                </button>
-                {/* Relatórios antigos */}
-                <button onClick={() => navigate('/relatorios')} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#fff', boxShadow: '0 2px 8px #b18cff22', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#6c4fcf', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Ver Relatórios Antigos">
-                  <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#b18cff" strokeWidth="2"/><path d="M12 8v4l3 3" stroke="#b18cff" strokeWidth="2" strokeLinecap="round"/><path d="M12 6v6l4 2" stroke="#b18cff" strokeWidth="2" strokeLinecap="round"/></svg>
-                </button>
+                  {/* Relatórios antigos */}
+                  <button onClick={() => navigate('/relatorios')} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#fff', boxShadow: '0 2px 8px #b18cff22', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#6c4fcf', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Ver Relatórios Antigos">
+                    <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#b18cff" strokeWidth="2"/><path d="M12 8v4l3 3" stroke="#b18cff" strokeWidth="2" strokeLinecap="round"/><path d="M12 6v6l4 2" stroke="#b18cff" strokeWidth="2" strokeLinecap="round"/></svg>
+                  </button>
+                  {/* Calculadora */}
+                  <button onClick={() => setShowCalculator(true)} style={{ width: 54, height: 54, borderRadius: '50%', border: 'none', background: '#fff', boxShadow: '0 2px 8px #f9731622', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#f97316', fontSize: 0, transition: 'box-shadow 0.2s' }} aria-label="Abrir Calculadora">
+                    <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
+                      <rect x="3" y="3" width="18" height="18" rx="2" stroke="#f97316" strokeWidth="2"/>
+                      <path d="M7 8h10M7 12h10M7 16h6" stroke="#f97316" strokeWidth="2" strokeLinecap="round"/>
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Seletor de mês horizontal */}
+                <div style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: '12px',
+                  background: '#fff',
+                  padding: '12px 20px',
+                  borderRadius: '12px',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                }}>
+                  <button 
+                    onClick={() => {
+                      const newMonth = selectedMonth ? parseInt(selectedMonth) - 1 : currentMonth - 1;
+                      if (newMonth >= 1) {
+                        setSelectedMonth(String(newMonth));
+                      } else {
+                        setSelectedMonth('12');
+                        setSelectedYear(prev => prev - 1);
+                      }
+                    }}
+                    style={{
+                      border: 'none',
+                      background: 'none',
+                      cursor: 'pointer',
+                      padding: '8px',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path d="M15 18l-6-6 6-6" stroke="#4f8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
+                  <div style={{ 
+                    fontSize: '16px', 
+                    fontWeight: '600',
+                    color: '#4f8cff',
+                    minWidth: '140px',
+                    textAlign: 'center'
+                  }}>
+                    {new Date(selectedYear, (selectedMonth ? parseInt(selectedMonth) : currentMonth) - 1).toLocaleString('pt-BR', { month: 'long' }).toUpperCase()}
+                  </div>
+                  <button 
+                    onClick={() => {
+                      const newMonth = selectedMonth ? parseInt(selectedMonth) + 1 : currentMonth + 1;
+                      if (newMonth <= 12) {
+                        setSelectedMonth(String(newMonth));
+                      } else {
+                        setSelectedMonth('1');
+                        setSelectedYear(prev => prev + 1);
+                      }
+                    }}
+                    style={{
+                      border: 'none',
+                      background: 'none',
+                      cursor: 'pointer',
+                      padding: '8px',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path d="M9 18l6-6-6-6" stroke="#4f8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
               </div>
 
               {/* Barra de ferramentas (modos, refresh, filtros) */}
@@ -1550,6 +1656,12 @@ const Dashboard = () => {
           message="Tem certeza que deseja excluir esta transação?"
         />
       )}
+      {showCalculator && (
+        <SmartCalculator
+          isOpen={showCalculator}
+          onClose={() => setShowCalculator(false)}
+        />
+      )}
       {notification && (
         <Notification
           message={notification.message}
@@ -1557,6 +1669,129 @@ const Dashboard = () => {
           onClose={() => setNotification(null)}
         />
       )}
+      <style>{`
+        .pdf-generation-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background: rgba(255, 255, 255, 0.98);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10000;
+          animation: fadeIn 0.3s ease-out;
+        }
+
+        .pdf-generation-overlay.fade-out {
+          animation: fadeOut 0.3s ease-out forwards;
+        }
+
+        .pdf-generation-content {
+          text-align: center;
+          padding: 20px;
+        }
+
+        .pdf-animation {
+          position: relative;
+          width: 280px;
+          height: 380px;
+          margin: 0 auto;
+        }
+
+        .pdf-page {
+          width: 100%;
+          height: 100%;
+          background: white;
+          border-radius: 8px;
+          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+          position: relative;
+          overflow: hidden;
+          animation: pageGlow 2s ease-in-out infinite;
+        }
+
+        .status-text {
+          position: absolute;
+          bottom: 32px;
+          left: 0;
+          right: 0;
+          text-align: center;
+          color: #666;
+          font-size: 16px;
+          font-weight: 500;
+        }
+
+        .math-symbols {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          gap: 20px;
+        }
+
+        .math-symbols span {
+          font-size: 42px;
+          opacity: 0;
+          animation: symbolFloat 2s ease-in-out infinite;
+          font-weight: bold;
+        }
+
+        .math-symbols span.entrada {
+          color: #27ae60;
+        }
+
+        .math-symbols span.saida {
+          color: #e74c3c;
+        }
+
+        .lines {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          padding: 40px 20px;
+        }
+
+        .line {
+          height: 2px;
+          background: #e3e9f7;
+          width: 0;
+          animation: lineGrow 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+          from { opacity: 1; }
+          to { opacity: 0; }
+        }
+
+        @keyframes pageGlow {
+          0%, 100% { box-shadow: 0 4px 24px rgba(79, 140, 255, 0.1); }
+          50% { box-shadow: 0 4px 32px rgba(79, 140, 255, 0.3); }
+        }
+
+        @keyframes symbolFloat {
+          0% { opacity: 0; transform: translateY(20px); }
+          20% { opacity: 1; }
+          80% { opacity: 1; }
+          100% { opacity: 0; transform: translateY(-20px); }
+        }
+
+        @keyframes lineGrow {
+          from { width: 0; }
+          to { width: 100%; }
+        }
+      `}</style>
       {showReportModal && (
         <ModalBase isOpen={showReportModal} onClose={() => setShowReportModal(false)} contentClassName="dashboard-report-modal dashboard-report-modal-mobile modalbase-no-padding">
           <div style={{ padding: 16 }}>
@@ -1572,17 +1807,60 @@ const Dashboard = () => {
             <div className="modal-cards-row-mobile" style={{ flexWrap: 'wrap', justifyContent: 'space-between', gap: 8, marginBottom: 8 }}>
               <div className="modal-card-mobile entradas">R$ {previewData ? previewData.totalEntradas.toFixed(2) : '0,00'}<span>Entradas</span></div>
               <div className="modal-card-mobile saidas">R$ {previewData ? previewData.totalSaidas.toFixed(2) : '0,00'}<span>Saídas</span></div>
-              <div className="modal-card-mobile saldo">R$ {previewData ? previewData.saldoMes.toFixed(2) : '0,00'}<span>Saldo</span></div>
-              <div className="modal-card-mobile final">R$ {previewData ? previewData.saldoFinal.toFixed(2) : '0,00'}<span>Final</span></div>
+              <div className="modal-card-mobile saldo">R$ {previewData ? previewData.saldoMes.toFixed(2) : '0,00'}<span>Saldo do mês</span></div>
+              <div className="modal-card-mobile final">R$ {previewData ? previewData.saldoFinal.toFixed(2) : '0,00'}<span>Total em caixa</span></div>
               <div className="modal-card-mobile saldo-anterior">R$ {previewData ? previewData.saldoAnterior.toFixed(2) : '0,00'}<span>Saldo Anterior</span></div>
               <div className="modal-card-mobile dizimo-igreja">R$ {previewData ? (previewData.dizimoIgreja || 0).toFixed(2) : '0,00'}<span>Dízimo Igreja</span></div>
             </div>
             <div className="modal-options-mobile" style={{display:'flex',flexDirection:'column',gap:4,alignItems:'flex-start',margin:'10px 0 8px 0'}}>
-              <label className="modal-checkbox-mobile">
-                <input type="checkbox" checked={includeGratificacao} onChange={e => handleGratificacaoChange(e.target.checked)} disabled={!isGratificacaoEnabled} />
-                <span className="icon"></span>
-                Gratificação do Pastor
-              </label>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+                <label className="modal-checkbox-mobile">
+                  <input type="checkbox" checked={includeGratificacao} onChange={e => handleGratificacaoChange(e.target.checked)} disabled={!isGratificacaoEnabled} />
+                  <span className="icon"></span>
+                  Gratificação do Líder
+                </label>
+                {includeGratificacao && (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <input
+                      type="number"
+                      value={valorGratificacao}
+                      onChange={(e) => setValorGratificacao(e.target.value)}
+                      style={{
+                        padding: '8px',
+                        borderRadius: '8px',
+                        border: '1.5px solid #e3e9f7',
+                        width: '120px',
+                        fontSize: '14px'
+                      }}
+                      placeholder="Valor"
+                      required
+                      min="0"
+                      step="0.01"
+                    />
+                    <button
+                      onClick={() => {
+                        if (Number(valorGratificacao) >= 0) {
+                          setPreviewData(prev => ({
+                            ...prev,
+                            gratificacao: Number(valorGratificacao)
+                          }));
+                        }
+                      }}
+                      style={{
+                        padding: '8px 12px',
+                        borderRadius: '8px',
+                        border: 'none',
+                        background: '#4f8cff',
+                        color: 'white',
+                        cursor: 'pointer',
+                        fontSize: '14px'
+                      }}
+                    >
+                      Confirmar
+                    </button>
+                  </div>
+                )}
+              </div>
               <label className="modal-checkbox-mobile">
                 <input type="checkbox" checked={includeDizimoGratificacao} onChange={e => setIncludeDizimoGratificacao(e.target.checked)} disabled={!includeGratificacao} />
                 <span className="icon"></span>

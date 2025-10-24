@@ -15,16 +15,15 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar">
-        <h1>IMDB</h1>
-        <motion.button
-          onClick={() => setShowMenu(!showMenu)}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          {showMenu ? <FaTimes /> : <FaBars />}
-        </motion.button>
-      </div>
+      <motion.button
+        className="menu-button"
+        onClick={() => setShowMenu(!showMenu)}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        aria-label="Menu"
+      >
+        {showMenu ? <FaTimes /> : <FaBars />}
+      </motion.button>
 
       <AnimatePresence>
         {showMenu && (
@@ -43,6 +42,11 @@ const Navbar = () => {
               </li>
               <li>
                 <a href="/relatorios">Relatórios</a>
+              </li>
+              <li>
+                <a href="/monitoramento" onClick={() => setShowMenu(false)}>
+                  Monitoramento
+                </a>
               </li>
               {/* Admin link removed to restore previous navigation */}
               <li>

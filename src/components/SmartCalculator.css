@@ -1,0 +1,122 @@
+.calculator-modal {
+  max-width: 320px !important;
+  padding: 0 !important;
+  background: #f8fafc !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18) !important;
+  width: 96vw !important;
+  min-width: 300px !important;
+  position: relative !important;
+  z-index: 10002 !important;
+  overflow: hidden !important;
+  margin: auto !important;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.calc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #fff;
+  border-bottom: 1px solid #e3e9f7;
+}
+
+.calc-header span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4f8cff;
+}
+
+.calc-header .close-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.calc-header .close-btn:hover {
+  background: #f1f5f9;
+}
+
+.calc-display {
+  background: #fff;
+  padding: 16px;
+  text-align: right;
+  border-bottom: 1px solid #e3e9f7;
+}
+
+.previous-operation {
+  font-size: 14px;
+  color: #64748b;
+  min-height: 20px;
+}
+
+.current-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.calc-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #e3e9f7;
+  padding: 1px;
+}
+
+.calc-btn {
+  border: none;
+  background: #fff;
+  font-size: 20px;
+  padding: 20px;
+  cursor: pointer;
+  color: #1e293b;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.calc-btn:hover {
+  background: #f8fafc;
+}
+
+.calc-btn.operator {
+  color: #4f8cff;
+  font-weight: 600;
+}
+
+.calc-btn.equals {
+  background: #4f8cff;
+  color: white;
+  grid-row: span 2;
+}
+
+.calc-btn.equals:hover {
+  background: #3b7dff;
+}
+
+.calc-btn.clear {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.calc-btn.backspace {
+  color: #f97316;
+}
+
+.calc-btn.zero {
+  grid-column: span 2;
+}

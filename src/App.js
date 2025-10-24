@@ -7,6 +7,7 @@ import React from 'react';
      import PrivateRoute from './components/PrivateRoute';
      import './App.css';
   import Relatorios from './pages/Relatorios';
+import Monitoring from './pages/Monitoring';
 
      const App = () => {
        return (
@@ -17,6 +18,7 @@ import React from 'react';
              <Route path="/register" element={<Register />} />
              <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
              <Route path="/relatorios" element={<Relatorios />} />
+             <Route path="/monitoramento" element={<PrivateRoute><Monitoring /></PrivateRoute>} />
            </Routes>
          </Router>
        );

@@ -160,19 +160,42 @@ const RelatorioPdfInterativo = ({
   }
 
   // Função para calcular indicadores
-  function calcularIndicadores(transacoes) {
-    const entradas = transacoes.filter(t => t.tipo === 'D' || t.tipo === 'O');
-    const saidas = transacoes.filter(t => t.tipo === 'S');
+  function calcularIndicadores(transacoes, opcoesExtras = {}) {
+    // Filtrar transações do mês atual
+    const transacoesMesAtual = transacoes.filter(t => {
+      if (!t.data) return false;
+      const [ano, mesTransacao] = t.data.split('-');
+      return parseInt(ano) === currentYear && parseInt(mesTransacao) === currentMonth;
+    });
+
+    // Calcular entradas e saídas do mês atual
+    const entradas = transacoesMesAtual.filter(t => t.tipo === 'D' || t.tipo === 'O');
+    const saidas = transacoesMesAtual.filter(t => t.tipo === 'S');
     
-    const totalEntradas = entradas.reduce((acc, t) => acc + parseFloat(t.quantia || 0), 0);
-    const totalSaidas = saidas.reduce((acc, t) => acc + parseFloat(t.quantia || 0), 0);
+    let totalEntradas = entradas.reduce((acc, t) => acc + parseFloat(t.quantia || 0), 0);
+    let totalSaidas = saidas.reduce((acc, t) => acc + parseFloat(t.quantia || 0), 0);
+
+    // Calcular transações extras se estiverem marcadas
+    if (opcoesExtras.dizimoIgreja) {
+      totalSaidas += totalEntradas * 0.1; // 10% do total de entradas
+    }
+    if (opcoesExtras.gratificacao) {
+      const valorGratificacao = opcoesExtras.valorGratificacao || 0;
+      totalSaidas += valorGratificacao;
+    }
+    if (opcoesExtras.dizimoGratificacao) {
+      const valorGratificacao = opcoesExtras.valorGratificacao || 0;
+      totalSaidas += valorGratificacao * 0.1; // 10% da gratificação
+    }
+
+    // Calcular dízimo da igreja (10% das entradas)
     const dizimoIgreja = totalEntradas * 0.1;
     
     return {
       totalEntradas,
       totalSaidas,
       dizimoIgreja,
-      saldoAnterior: 0 // Placeholder - seria necessário buscar do backend
+      saldoMes: totalEntradas - totalSaidas // Saldo do mês atual
     };
   }
 
