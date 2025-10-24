@@ -8618,3 +8618,1564 @@ WARNING 2025-09-17 15:51:14,131 log Not Found: /favicon.ico
 WARNING 2025-09-17 15:51:16,896 log Not Found: /
 INFO 2025-09-18 13:20:12,617 autoreload Watching for file changes with StatReloader
 INFO 2025-09-18 13:42:27,502 autoreload Watching for file changes with StatReloader
+INFO 2025-09-18 13:47:28,536 views Login bem-sucedido para: Frank
+INFO 2025-09-18 13:47:29,811 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 13:47:30,232 views Saldo calculado: 242.67 (Entradas: 1621.70, Despesas: 1379.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 13:47:30,778 views Saldo calculado: 242.67 (Entradas: 1621.70, Despesas: 1379.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 13:47:32,223 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 13:47:41,760 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-18 13:58:01,720 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-18 14:04:00,942 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-18 14:04:12,150 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['4'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:04:12,284 views Saldo calculado: 242.67 (Entradas: 1621.70, Despesas: 1379.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:04:15,988 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['5'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:04:16,171 views Saldo calculado: 242.67 (Entradas: 1621.70, Despesas: 1379.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:15:53,657 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:15:54,094 views Saldo calculado: 242.67 (Entradas: 1621.70, Despesas: 1379.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:15:54,702 views Saldo calculado: 242.67 (Entradas: 1621.70, Despesas: 1379.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:15:55,962 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:17:00,547 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:17:00,712 views Saldo calculado: 1052.67 (Entradas: 1531.70, Despesas: 479.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:17:01,231 views Saldo calculado: 1052.67 (Entradas: 1531.70, Despesas: 479.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:17:02,684 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:18:15,501 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:18:15,927 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:18:17,482 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:18:18,594 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:20:00,025 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-18 14:22:25,098 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-18 14:23:19,635 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:23:20,047 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:23:20,566 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:23:21,735 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:23:23,205 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-18 14:29:07,149 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-18 14:30:24,202 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:30:24,598 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:30:26,123 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:30:26,394 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:30:56,376 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'quantia': 10, 'data': '2006-09-12', 'nome': 'biel', 'culto': None, 'tipo_despesa': None, 'descricao': None, 'igreja': 1, 'igreja_id': 1}
+INFO 2025-09-18 14:30:56,524 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 148, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'D', 'quantia': '10.00', 'data': '2006-09-12', 'descricao': None, 'nome': 'biel', 'culto': None, 'tipo_despesa': None, 'mes': 9, 'ano': 2006, 'manual': False, 'discriminacao': None}
+INFO 2025-09-18 14:30:56,925 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:30:59,414 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:31:34,652 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:31:34,749 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:31:36,920 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['20'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:31:37,054 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:31:39,671 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2020'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:31:39,795 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:31:43,569 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:31:43,710 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:31:46,559 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['20'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:31:46,696 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:31:48,731 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['200'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:31:48,813 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:31:50,486 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2006'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:31:50,593 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:32:23,470 views Transação editada com sucesso: ID 148
+INFO 2025-09-18 14:32:23,913 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2006'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:32:24,470 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:32:29,742 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['200'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:32:29,857 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:32:32,400 views Requisição recebida - Parâmetros: <QueryDict: {'igreja_id': ['1']}>
+INFO 2025-09-18 14:32:32,503 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:32:39,358 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:32:39,474 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:32:42,287 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['20'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:32:42,409 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:32:43,677 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['202'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:32:43,795 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:32:45,504 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:32:45,622 views Saldo calculado: 1071.67 (Entradas: 1541.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:36:35,634 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:36:39,583 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:36:42,585 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:36:47,565 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:37:12,137 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'quantia': 27, 'data': '2025-09-18', 'nome': None, 'culto': None, 'tipo_despesa': None, 'descricao': 'bb', 'igreja': 1, 'igreja_id': 1}
+INFO 2025-09-18 14:37:12,269 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 149, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'D', 'quantia': '27.00', 'data': '2025-09-18', 'descricao': 'bb', 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 9, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-09-18 14:37:12,692 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:37:14,906 views Saldo calculado: 1088.67 (Entradas: 1558.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:37:40,736 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:39:00,087 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:39:02,210 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+WARNING 2025-09-18 14:48:30,327 log Unauthorized: /api/transacoes/
+INFO 2025-09-18 14:48:40,001 views Login bem-sucedido para: Frank
+INFO 2025-09-18 14:48:41,835 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:48:42,448 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:48:42,995 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:48:44,914 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:48:52,823 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-18 14:49:33,129 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-18 14:53:16,961 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:53:17,383 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:53:17,902 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:53:18,799 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:54:38,085 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 14:54:38,519 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:54:39,022 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 14:54:40,357 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:21:58,327 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:21:58,768 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:21:59,322 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:22:00,209 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:23:14,959 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'quantia': 100, 'data': '2025-09-12', 'nome': None, 'culto': None, 'tipo_despesa': None, 'descricao': None, 'igreja': 1, 'igreja_id': 1}
+INFO 2025-09-18 15:23:15,109 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 150, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'D', 'quantia': '100.00', 'data': '2025-09-12', 'descricao': None, 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 9, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-09-18 15:23:15,533 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:23:18,717 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:24:40,915 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:24:41,059 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:25:05,099 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:25:05,538 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:25:06,177 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:25:07,413 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:27:23,928 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:27:24,473 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:27:25,190 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:27:29,565 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:27:45,533 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:27:45,652 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:27:53,959 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:27:54,083 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:27:54,736 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:27:55,968 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:28:24,583 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:28:54,650 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:28:55,066 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:28:55,603 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:28:56,650 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:29:20,724 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:29:22,806 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:29:56,639 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'quantia': 100, 'data': '2025-09-12', 'nome': None, 'culto': None, 'tipo_despesa': None, 'descricao': None, 'igreja': 1, 'igreja_id': 1}
+INFO 2025-09-18 15:29:56,771 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 151, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'D', 'quantia': '100.00', 'data': '2025-09-12', 'descricao': None, 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 9, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-09-18 15:29:57,176 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:29:59,204 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:32:46,358 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:32:46,463 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:32:47,004 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:32:48,496 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:35:48,541 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:35:49,182 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:35:49,524 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:35:51,416 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:36:26,495 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:36:26,600 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:36:27,118 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:36:28,374 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:37:28,887 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:37:31,014 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:37:37,874 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:37:38,017 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:37:38,513 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:37:39,740 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:38:09,770 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'quantia': 100, 'data': '2025-09-12', 'nome': None, 'culto': None, 'tipo_despesa': None, 'descricao': None, 'igreja': 1, 'igreja_id': 1}
+INFO 2025-09-18 15:38:09,899 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 152, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'D', 'quantia': '100.00', 'data': '2025-09-12', 'descricao': None, 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 9, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-09-18 15:38:10,314 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:38:12,588 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:39:05,786 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:39:06,243 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:39:06,752 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:39:07,661 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+WARNING 2025-09-18 15:48:56,218 log Unauthorized: /api/me/
+WARNING 2025-09-18 15:48:56,221 log Unauthorized: /api/me/
+INFO 2025-09-18 15:49:04,916 views Login bem-sucedido para: Frank
+INFO 2025-09-18 15:49:06,097 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:49:06,209 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:49:06,743 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:49:08,237 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:52:31,000 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:52:31,140 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:53:32,490 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:53:32,930 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:53:33,464 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 15:53:34,522 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:55:34,790 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 15:55:34,907 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+WARNING 2025-09-18 16:02:33,888 log Not Found: /api/transacoes/[object Object]/
+INFO 2025-09-18 16:02:42,473 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 16:02:42,900 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 16:02:43,492 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 16:02:44,659 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+WARNING 2025-09-18 16:02:48,900 log Not Found: /api/transacoes/[object Object]/
+INFO 2025-09-18 16:05:19,384 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 16:05:21,761 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 16:07:01,058 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'quantia': 100, 'data': '2025-09-18', 'nome': None, 'culto': None, 'tipo_despesa': None, 'descricao': None, 'igreja': 1, 'igreja_id': 1}
+INFO 2025-09-18 16:07:01,210 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 153, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'D', 'quantia': '100.00', 'data': '2025-09-18', 'descricao': None, 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 9, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-09-18 16:07:01,645 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 16:07:03,812 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 16:22:20,887 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 16:22:21,381 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 16:22:21,908 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 16:22:22,880 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 16:30:07,557 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-18 16:30:08,146 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 16:30:14,151 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 16:31:31,820 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 16:31:34,042 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 16:31:45,734 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 16:31:48,114 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 16:32:04,420 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-18 16:32:06,656 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-18 16:32:10,068 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-19 13:28:22,265 autoreload Watching for file changes with StatReloader
+INFO 2025-09-19 13:29:32,482 views Login bem-sucedido para: Frank
+INFO 2025-09-19 13:29:33,795 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-19 13:29:34,250 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-19 13:29:34,793 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-19 13:29:35,911 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-19 14:03:17,750 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-19 14:04:13,839 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-19 14:04:13,985 views Saldo calculado: 1161.67 (Entradas: 1631.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-19 14:04:32,963 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-19 14:04:34,932 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-19 14:05:42,711 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-24 14:15:27,310 autoreload Watching for file changes with StatReloader
+INFO 2025-09-24 14:16:23,487 autoreload Watching for file changes with StatReloader
+INFO 2025-09-24 14:17:04,065 views Login bem-sucedido para: Frank
+INFO 2025-09-24 14:17:05,336 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-24 14:17:05,985 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-24 14:17:06,486 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-24 14:17:07,583 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-24 14:25:52,212 autoreload Watching for file changes with StatReloader
+WARNING 2025-09-24 14:25:59,674 views Tentativa de login inválida para: Frank
+WARNING 2025-09-24 14:25:59,692 log Bad Request: /api/login/
+WARNING 2025-09-24 14:26:03,439 views Tentativa de login inválida para: Frank
+WARNING 2025-09-24 14:26:03,440 log Bad Request: /api/login/
+INFO 2025-09-24 14:26:07,974 views Login bem-sucedido para: Frank
+INFO 2025-09-24 14:26:09,428 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-24 14:26:09,838 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-24 14:26:10,371 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-24 14:26:11,630 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-24 14:26:25,370 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-24 14:26:28,574 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-24 14:26:31,771 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-24 14:26:34,441 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-24 14:26:38,957 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-24 14:52:37,882 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-24 14:52:38,004 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-24 14:52:49,677 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-24 14:52:49,789 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-24 14:52:50,371 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-24 14:52:52,153 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+WARNING 2025-09-24 16:38:39,892 log Unauthorized: /api/saldo/
+WARNING 2025-09-24 16:38:48,038 views Tentativa de login inválida para: Frank
+WARNING 2025-09-24 16:38:48,039 log Bad Request: /api/login/
+WARNING 2025-09-24 16:38:50,787 views Tentativa de login inválida para: Frank
+WARNING 2025-09-24 16:38:50,787 log Bad Request: /api/login/
+INFO 2025-09-24 16:39:02,312 views Login bem-sucedido para: Frank
+INFO 2025-09-24 16:39:03,561 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-24 16:39:04,059 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-24 16:39:04,582 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-24 16:39:05,715 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-24 16:39:31,372 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-24 16:39:44,335 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-24 16:39:44,829 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-24 16:39:45,350 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-24 16:39:46,715 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-24 16:41:45,486 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-25 14:15:26,605 autoreload Watching for file changes with StatReloader
+WARNING 2025-09-25 14:15:44,071 log Unauthorized: /api/me/
+WARNING 2025-09-25 14:15:44,083 log Unauthorized: /api/me/
+WARNING 2025-09-25 14:15:56,877 views Tentativa de login inválida para: Frank
+WARNING 2025-09-25 14:15:56,879 log Bad Request: /api/login/
+INFO 2025-09-25 14:16:01,711 views Login bem-sucedido para: Frank
+INFO 2025-09-25 14:16:02,948 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 14:16:03,343 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 14:16:03,867 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 14:16:04,896 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 14:16:35,733 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-25 14:18:58,572 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-25 14:20:47,860 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 14:27:38,916 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 14:27:39,374 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 14:27:39,893 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 14:27:41,093 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 14:27:54,168 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-25 14:33:27,142 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 14:33:27,556 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 14:33:28,071 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 14:33:29,048 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 14:36:13,457 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 14:36:13,872 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 14:36:14,447 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 14:36:15,786 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 14:38:00,964 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 14:38:01,362 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 14:38:01,857 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 14:38:02,922 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 14:38:21,209 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 14:38:21,602 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 14:38:22,122 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 14:38:23,122 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 14:39:05,195 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-25 14:42:15,649 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-25 14:42:18,497 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-25 14:46:35,354 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-25 14:48:29,547 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-25 14:49:41,505 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-25 14:49:50,191 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 14:49:50,416 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 14:49:50,926 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 14:49:52,994 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 14:50:00,250 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-25 14:50:07,616 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-25 14:50:45,978 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+WARNING 2025-09-25 15:18:46,266 log Unauthorized: /api/me/
+WARNING 2025-09-25 15:18:46,276 log Unauthorized: /api/me/
+INFO 2025-09-25 15:19:00,748 views Login bem-sucedido para: Frank
+INFO 2025-09-25 15:19:01,934 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 15:19:02,352 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 15:19:02,860 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 15:19:03,975 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 15:19:10,584 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-25 15:20:37,423 views Login bem-sucedido para: Frank
+INFO 2025-09-25 15:20:38,543 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 15:20:39,501 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 15:20:40,428 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-25 15:20:41,043 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-25 15:21:32,793 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-26 14:05:44,388 autoreload Watching for file changes with StatReloader
+INFO 2025-09-26 14:06:49,436 views Login bem-sucedido para: Frank
+INFO 2025-09-26 14:06:52,913 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 14:06:53,087 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 14:06:54,242 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 14:06:56,217 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 14:53:53,759 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+WARNING 2025-09-26 15:20:03,077 log Unauthorized: /api/me/
+WARNING 2025-09-26 15:20:03,090 log Unauthorized: /api/me/
+INFO 2025-09-26 15:20:12,820 views Login bem-sucedido para: Frank
+INFO 2025-09-26 15:20:14,432 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 15:20:14,879 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 15:20:15,434 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 15:20:16,756 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 15:20:55,169 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-26 15:55:29,942 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 15:55:30,382 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 15:55:30,950 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 15:55:31,997 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 15:55:40,109 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-26 15:55:48,643 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-26 15:55:54,050 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-26 16:03:24,771 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 16:03:25,183 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 16:03:25,708 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 16:03:26,873 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 16:05:59,125 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-26 16:06:58,257 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 16:06:58,694 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 16:06:59,261 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 16:07:00,402 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 16:07:43,438 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-26 16:07:52,756 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 16:07:53,176 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 16:07:53,697 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 16:07:54,754 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 16:08:19,849 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-26 16:09:00,339 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-26 16:11:41,330 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 16:11:41,747 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 16:11:42,282 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 16:11:44,368 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 16:11:55,192 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-26 16:12:49,029 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-26 16:14:13,812 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 16:14:13,948 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 16:14:14,508 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 16:14:16,118 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 16:14:20,462 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-26 16:17:03,356 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+WARNING 2025-09-26 16:23:13,054 log Unauthorized: /api/me/
+WARNING 2025-09-26 16:23:13,057 log Unauthorized: /api/me/
+INFO 2025-09-26 16:23:28,963 views Login bem-sucedido para: Frank
+INFO 2025-09-26 16:23:30,353 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 16:23:30,783 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 16:23:31,292 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-26 16:23:32,316 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-26 16:25:02,024 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-26 16:28:06,724 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-29 13:17:42,240 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 14:28:49,427 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-29 14:28:49,536 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-29 14:28:50,002 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-29 14:28:51,118 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-29 14:29:10,612 views Login bem-sucedido para: Frank
+INFO 2025-09-29 14:29:11,582 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-29 14:29:11,964 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-29 14:29:12,396 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-29 14:29:13,238 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-29 14:29:25,502 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\fb\settings.py changed, reloading.
+INFO 2025-09-29 14:29:27,495 autoreload Watching for file changes with StatReloader
+ERROR 2025-09-29 14:29:43,361 log Internal Server Error: /api/saldo/
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: auth_user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\views.py", line 414, in initial
+    self.perform_authentication(request)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\request.py", line 231, in user
+    self._authenticate()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\request.py", line 384, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework_simplejwt\authentication.py", line 51, in authenticate
+    return self.get_user(validated_token), validated_token
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework_simplejwt\authentication.py", line 130, in get_user
+    user = self.user_model.objects.get(**{api_settings.USER_ID_FIELD: user_id})
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: auth_user
+ERROR 2025-09-29 14:30:01,154 log Internal Server Error: /api/igrejas/
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: finance_igreja
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\generics.py", line 243, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+                                                   ^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: finance_igreja
+ERROR 2025-09-29 14:30:01,317 log Internal Server Error: /api/igrejas/
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: finance_igreja
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\generics.py", line 243, in get
+    return self.list(request, *args, **kwargs)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in to_representation
+    self.child.to_representation(item) for item in iterable
+                                                   ^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: finance_igreja
+INFO 2025-09-29 14:32:24,359 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 14:33:05,832 autoreload Watching for file changes with StatReloader
+WARNING 2025-09-29 14:33:22,988 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 14:33:23,012 log Bad Request: /api/login/
+WARNING 2025-09-29 14:33:37,336 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 14:33:37,338 log Bad Request: /api/login/
+WARNING 2025-09-29 14:33:42,045 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 14:33:42,046 log Bad Request: /api/login/
+WARNING 2025-09-29 14:34:11,197 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 14:34:11,198 log Bad Request: /api/login/
+WARNING 2025-09-29 14:34:20,536 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 14:34:20,536 log Bad Request: /api/login/
+WARNING 2025-09-29 14:34:22,922 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 14:34:22,922 log Bad Request: /api/login/
+WARNING 2025-09-29 14:36:05,075 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 14:36:05,076 log Bad Request: /api/login/
+INFO 2025-09-29 14:36:18,638 autoreload Watching for file changes with StatReloader
+WARNING 2025-09-29 14:36:41,069 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 14:36:41,071 log Bad Request: /api/login/
+WARNING 2025-09-29 14:36:41,800 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 14:36:41,801 log Bad Request: /api/login/
+WARNING 2025-09-29 14:36:42,810 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 14:36:42,810 log Bad Request: /api/login/
+INFO 2025-09-29 14:40:48,122 autoreload Watching for file changes with StatReloader
+WARNING 2025-09-29 14:41:05,746 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 14:41:05,748 log Bad Request: /api/login/
+INFO 2025-09-29 14:45:12,491 autoreload Watching for file changes with StatReloader
+WARNING 2025-09-29 14:45:50,200 log Unauthorized: /api/me/
+WARNING 2025-09-29 14:45:50,221 log Unauthorized: /api/me/
+WARNING 2025-09-29 14:45:58,691 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 14:45:58,693 log Bad Request: /api/login/
+WARNING 2025-09-29 14:47:04,457 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 14:47:04,459 log Bad Request: /api/login/
+WARNING 2025-09-29 15:18:41,179 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 15:18:41,185 log Bad Request: /api/login/
+INFO 2025-09-29 15:23:29,891 autoreload Watching for file changes with StatReloader
+WARNING 2025-09-29 15:23:33,140 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 15:23:33,144 log Bad Request: /api/login/
+WARNING 2025-09-29 15:23:33,776 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 15:23:33,777 log Bad Request: /api/login/
+WARNING 2025-09-29 15:23:34,393 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 15:23:34,394 log Bad Request: /api/login/
+WARNING 2025-09-29 15:24:43,071 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 15:24:43,073 log Bad Request: /api/login/
+INFO 2025-09-29 15:25:56,728 views Login bem-sucedido para: localadmin
+WARNING 2025-09-29 15:26:46,742 views Tentativa de login inválida para: localadmin
+WARNING 2025-09-29 15:26:46,742 log Bad Request: /api/login/
+WARNING 2025-09-29 15:27:39,603 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 15:27:39,604 log Bad Request: /api/login/
+WARNING 2025-09-29 15:27:42,142 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 15:27:42,143 log Bad Request: /api/login/
+WARNING 2025-09-29 15:27:42,789 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 15:27:42,790 log Bad Request: /api/login/
+INFO 2025-09-29 15:28:45,797 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-09-29 15:28:46,881 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 15:29:02,302 autoreload Watching for file changes with StatReloader
+WARNING 2025-09-29 15:29:42,714 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 15:29:42,717 log Bad Request: /api/login/
+WARNING 2025-09-29 15:29:55,234 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 15:29:55,235 log Bad Request: /api/login/
+INFO 2025-09-29 15:30:49,750 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\fb\settings.py changed, reloading.
+INFO 2025-09-29 15:30:50,672 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 15:31:06,993 autoreload Watching for file changes with StatReloader
+DEBUG 2025-09-29 15:31:35,257 views Login request CONTENT_TYPE: application/json
+DEBUG 2025-09-29 15:31:35,258 views Login request.body: b'{"username":"Frank","password":"frank"}'
+DEBUG 2025-09-29 15:31:35,259 views Login request.data: {'username': 'Frank', 'password': 'frank'}
+WARNING 2025-09-29 15:31:35,269 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 15:31:35,272 log Bad Request: /api/login/
+DEBUG 2025-09-29 15:31:42,328 views Login request CONTENT_TYPE: application/json
+DEBUG 2025-09-29 15:31:42,329 views Login request.body: b'{"username":"Frank","password":"Frank"}'
+DEBUG 2025-09-29 15:31:42,329 views Login request.data: {'username': 'Frank', 'password': 'Frank'}
+WARNING 2025-09-29 15:31:42,335 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 15:31:42,337 log Bad Request: /api/login/
+DEBUG 2025-09-29 15:31:50,876 views Login request CONTENT_TYPE: application/json
+DEBUG 2025-09-29 15:31:50,877 views Login request.body: b'{"username":"Frank","password":"frank"}'
+DEBUG 2025-09-29 15:31:50,877 views Login request.data: {'username': 'Frank', 'password': 'frank'}
+WARNING 2025-09-29 15:31:50,880 views Tentativa de login inválida para: Frank
+WARNING 2025-09-29 15:31:50,881 log Bad Request: /api/login/
+INFO 2025-09-29 15:49:31,544 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 15:49:47,811 views Login bem-sucedido para: Frank
+INFO 2025-09-29 15:49:49,341 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-29 15:49:49,838 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-29 15:49:50,380 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-29 15:49:51,606 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-29 15:50:27,133 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-29 15:51:03,848 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-29 15:55:23,106 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-29 15:55:23,394 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-29 15:55:23,911 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-29 15:55:25,239 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-29 16:24:54,656 autoreload Watching for file changes with StatReloader
+INFO 2025-09-29 16:29:58,710 views Login bem-sucedido para: Frank
+INFO 2025-09-29 16:29:59,904 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-29 16:30:00,464 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-29 16:30:00,988 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-29 16:30:02,216 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-29 16:33:12,223 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-29 16:33:12,375 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-29 16:35:25,494 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-29 16:35:25,648 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-09-29 16:37:19,366 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 8, Ano: 2025)
+INFO 2025-09-29 16:37:27,578 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-09-29 16:37:27,713 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-06 13:04:49,401 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-06 13:05:05,300 log Unauthorized: /api/me/
+WARNING 2025-10-06 13:05:05,309 log Unauthorized: /api/me/
+INFO 2025-10-06 13:05:54,265 views Login bem-sucedido para: Frank
+INFO 2025-10-06 13:05:55,450 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-06 13:05:55,855 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-06 13:05:56,381 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-06 13:05:57,349 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-06 13:06:18,387 views Saldo calculado: 900.22 (Entradas: 1370.25, Despesas: 470.03, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-06 13:06:41,219 views Saldo calculado: 900.22 (Entradas: 1370.25, Despesas: 470.03, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-06 13:07:01,649 views Saldo calculado: 900.22 (Entradas: 1370.25, Despesas: 470.03, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-06 13:20:27,358 views Saldo calculado: 900.22 (Entradas: 1370.25, Despesas: 470.03, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-06 13:21:51,121 views Login bem-sucedido para: Eben
+INFO 2025-10-06 13:21:52,313 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:21:52,734 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:21:53,271 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:21:54,423 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:41:37,749 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:41:37,901 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:41:44,394 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:41:44,503 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:43:27,817 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:43:28,418 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:43:28,523 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:43:29,071 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:44:07,433 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:44:07,855 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:44:07,945 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:44:08,960 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:45:07,489 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:45:07,616 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:45:08,022 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:45:08,131 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:46:24,357 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:46:24,462 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:49:15,404 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:49:16,471 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:49:16,498 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:49:17,015 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:49:27,669 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:49:27,816 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+WARNING 2025-10-06 13:50:02,941 views Tentativa de login inválida para: Eben
+WARNING 2025-10-06 13:50:02,949 log Bad Request: /api/login/
+INFO 2025-10-06 13:50:08,222 views Login bem-sucedido para: Eben
+INFO 2025-10-06 13:50:09,405 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:50:09,511 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:50:09,896 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:50:10,043 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:50:50,561 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:50:50,667 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:51:00,903 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:51:01,043 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:51:01,466 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:51:01,900 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:51:06,330 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:51:06,458 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:51:13,662 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:51:27,837 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:51:27,976 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:51:32,169 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:51:32,334 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:53:15,095 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:53:15,562 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:53:15,617 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:53:16,092 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:53:25,531 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:53:25,585 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:53:26,012 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:53:26,097 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:53:27,602 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-06 13:53:36,757 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-06 13:55:04,946 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:55:05,071 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:55:05,440 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:55:05,627 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:55:07,189 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-06 13:55:15,393 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:55:17,662 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:55:30,307 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:56:06,794 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-06 13:56:17,257 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-06 13:57:01,300 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:57:01,435 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:57:51,560 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:57:51,665 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:58:13,415 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:58:13,822 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:58:13,933 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:58:14,348 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:58:36,548 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:58:36,628 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:58:37,013 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:58:37,127 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:58:45,380 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:58:45,804 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:58:45,894 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:58:46,309 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:59:02,914 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:59:03,343 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:59:03,414 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:59:03,831 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:59:49,447 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:59:49,850 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 13:59:49,954 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 13:59:50,395 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:04:23,795 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:04:23,945 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:05:59,488 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:05:59,622 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:09:48,756 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:09:48,950 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:09:49,223 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:09:49,487 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:11:29,181 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-06 14:14:00,403 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:14:30,698 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:14:31,151 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:14:31,581 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:14:31,698 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:15:10,535 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:15:10,960 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:15:11,372 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:15:11,497 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:18:12,746 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:18:24,432 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:18:37,858 views Login bem-sucedido para: Frank
+INFO 2025-10-06 14:18:39,003 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-06 14:18:39,430 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-06 14:18:39,573 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-06 14:18:39,952 views Saldo calculado: 0 (Entradas: 0, Despesas: 0, Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-06 14:19:23,628 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-06 14:19:23,731 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-06 14:22:30,166 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-06 14:22:30,314 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-06 14:22:45,809 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-06 14:22:45,874 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['8'], 'ano': ['2025'], 'igreja_id': ['1']}>
+WARNING 2025-10-06 14:22:58,399 views Tentativa de login inválida para: Eben
+WARNING 2025-10-06 14:22:58,407 log Bad Request: /api/login/
+INFO 2025-10-06 14:23:04,018 views Login bem-sucedido para: Eben
+INFO 2025-10-06 14:23:05,229 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:23:05,350 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:23:06,008 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:23:07,573 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:23:11,026 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-06 14:23:16,027 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-06 14:23:27,294 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:23:27,683 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:23:28,207 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:23:29,667 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:25:26,924 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-06 14:25:55,359 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-06 14:30:11,685 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['8'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:30:11,811 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:30:22,980 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:30:23,066 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:31:06,543 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-06 14:32:18,064 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-06 14:32:26,225 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-06 14:47:13,389 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-06 14:47:13,819 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:47:14,361 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-06 14:47:15,530 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-21 13:16:40,225 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-21 13:18:45,880 log Unauthorized: /api/me/
+WARNING 2025-10-21 13:18:45,882 log Unauthorized: /api/me/
+INFO 2025-10-21 13:18:49,275 views Login bem-sucedido para: Frank
+INFO 2025-10-21 13:18:50,745 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-21 13:18:51,513 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-21 13:18:52,349 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-21 13:18:54,389 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-21 13:19:01,607 views Saldo calculado: 900.22 (Entradas: 1370.25, Despesas: 470.03, Igreja: 1, Mês: 9, Ano: 2025)
+WARNING 2025-10-21 13:19:26,847 views Tentativa de login inválida para: Eben
+WARNING 2025-10-21 13:19:26,848 log Bad Request: /api/login/
+WARNING 2025-10-21 13:19:31,589 views Tentativa de login inválida para: Eben
+WARNING 2025-10-21 13:19:31,590 log Bad Request: /api/login/
+INFO 2025-10-21 13:19:36,716 views Login bem-sucedido para: Eben
+INFO 2025-10-21 13:19:37,860 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-21 13:19:38,331 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-21 13:19:38,815 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-21 13:19:39,872 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-21 13:23:47,901 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-21 13:38:00,978 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-21 13:52:03,918 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-21 13:52:04,353 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-21 13:52:04,865 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-21 13:52:05,959 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-21 13:52:42,253 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-21 13:52:52,974 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-21 14:05:44,710 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+WARNING 2025-10-21 14:44:49,830 log Unauthorized: /api/saldo/
+INFO 2025-10-21 14:44:52,903 views Login bem-sucedido para: Eben
+INFO 2025-10-21 14:44:53,987 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-21 14:44:54,416 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-21 14:44:54,901 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-21 14:44:56,431 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-21 14:44:58,277 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-21 14:45:57,377 views Login bem-sucedido para: Frank
+INFO 2025-10-21 14:45:58,684 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-21 14:45:59,152 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-21 14:45:59,706 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-21 14:46:01,316 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-21 14:47:20,189 views Saldo calculado: 900.22 (Entradas: 1370.25, Despesas: 470.03, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 13:23:10,063 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-22 13:23:29,955 log Unauthorized: /api/me/
+WARNING 2025-10-22 13:23:29,962 log Unauthorized: /api/me/
+INFO 2025-10-22 13:23:37,569 views Login bem-sucedido para: Frank
+INFO 2025-10-22 13:23:39,462 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 13:23:39,560 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 13:23:40,123 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 13:23:43,387 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 13:23:45,733 views Saldo calculado: 900.22 (Entradas: 1370.25, Despesas: 470.03, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 13:23:47,417 views Saldo calculado: 900.22 (Entradas: 1370.25, Despesas: 470.03, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 13:32:45,375 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 13:32:45,824 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 13:32:46,353 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 13:32:47,476 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 13:35:19,775 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 13:35:38,588 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 13:35:40,586 views Saldo calculado: 1060.67 (Entradas: 1530.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 13:35:48,023 views Saldo calculado: 160.45 (Entradas: 160.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 13:36:15,769 views Saldo calculado: 160.45 (Entradas: 160.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 13:40:14,304 views Transação editada com sucesso: ID 103
+INFO 2025-10-22 13:40:14,824 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 13:40:17,073 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 13:40:37,665 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:04:04,996 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Gratificação do Líder', 'quantia': 900, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-22 14:04:05,790 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 189, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '900.00', 'data': '2025-10-31', 'descricao': 'Gratificação do Líder', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-22 14:04:05,805 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'descricao': 'Dízimo da Gratificação', 'quantia': 90, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-22 14:04:06,904 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 190, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'D', 'quantia': '90.00', 'data': '2025-10-31', 'descricao': 'Dízimo da Gratificação', 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-22 14:04:06,933 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Dízimo da Igreja', 'quantia': 146.03, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-22 14:04:07,412 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 191, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '146.03', 'data': '2025-10-31', 'descricao': 'Dízimo da Igreja', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-22 14:04:07,909 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:04:13,324 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:04:28,460 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:04:37,049 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:04:37,479 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:04:38,316 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:04:39,264 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:04:41,983 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:11:09,481 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:11:09,929 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:11:10,501 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:11:11,999 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:11:15,141 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:14:07,980 views Login bem-sucedido para: Frank
+INFO 2025-10-22 14:14:09,274 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:14:09,864 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:14:10,414 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:14:11,546 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:14:13,191 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:14:39,032 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:14:43,914 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:14:44,384 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:14:44,941 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:14:46,198 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:14:48,267 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:15:05,287 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:16:13,170 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:22:10,779 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:32:59,437 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:32:59,896 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:33:00,449 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:33:01,737 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:33:07,733 views Saldo calculado: -55.81 (Entradas: 1460.25, Despesas: 1516.06, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:33:42,571 views Saldo calculado: -55.81 (Entradas: 1460.25, Despesas: 1516.06, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:39:53,642 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:39:53,759 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:39:57,136 views Saldo calculado: -55.81 (Entradas: 1460.25, Despesas: 1516.06, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:40:08,313 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:40:08,439 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:40:14,654 views Saldo calculado: -55.81 (Entradas: 1460.25, Despesas: 1516.06, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:41:03,319 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:41:03,389 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:41:03,914 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:41:05,634 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:41:07,256 views Saldo calculado: -55.81 (Entradas: 1460.25, Despesas: 1516.06, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:42:18,966 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:42:19,394 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:42:19,937 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:42:21,339 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:42:27,400 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:42:29,803 views Saldo calculado: 1005.64 (Entradas: 1621.70, Despesas: 616.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:42:34,593 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:42:36,853 views Saldo calculado: 1151.67 (Entradas: 1621.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:42:41,504 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:42:43,706 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:43:04,775 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:43:19,243 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:43:19,361 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:43:19,966 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:43:21,332 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:43:29,034 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:43:35,860 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:48:54,847 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:49:27,505 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:49:28,016 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:49:41,236 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-22 14:52:52,026 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:52:52,471 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:52:53,014 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-22 14:52:54,031 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-22 14:53:31,868 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-23 13:14:02,500 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-23 13:14:15,012 log Unauthorized: /api/me/
+WARNING 2025-10-23 13:14:15,022 log Unauthorized: /api/me/
+INFO 2025-10-23 13:14:19,283 views Login bem-sucedido para: Frank
+INFO 2025-10-23 13:14:20,351 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 13:14:20,447 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 13:14:20,925 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 13:14:21,976 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 13:16:16,954 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-23 13:26:36,412 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['11'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 13:26:36,536 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 13:26:37,888 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 13:26:37,953 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 13:26:40,433 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 13:26:40,535 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 13:26:43,084 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['8'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 13:26:43,222 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 13:26:44,348 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 13:26:44,433 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 13:26:47,472 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-23 13:27:18,778 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 13:27:18,862 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 13:27:21,442 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-23 13:27:23,761 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 13:27:23,842 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 13:27:25,689 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-23 13:27:30,077 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-23 13:27:39,315 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 13:27:39,398 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 13:27:42,966 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-23 13:43:33,382 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 13:43:33,473 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 13:43:43,325 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 13:43:43,489 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 13:45:01,678 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 13:45:01,770 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 13:50:52,045 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 13:50:52,446 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 13:50:52,861 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 13:50:53,475 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 13:52:03,489 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+WARNING 2025-10-23 14:57:50,196 log Unauthorized: /api/me/
+WARNING 2025-10-23 14:57:50,359 log Unauthorized: /api/me/
+INFO 2025-10-23 15:34:56,433 views Login bem-sucedido para: Frank
+INFO 2025-10-23 15:34:57,817 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-23 15:34:57,968 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 15:34:58,435 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-23 15:34:59,446 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:23:22,246 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-24 13:29:35,454 log Unauthorized: /api/me/
+WARNING 2025-10-24 13:29:35,533 log Unauthorized: /api/me/
+INFO 2025-10-24 13:32:42,959 views Login bem-sucedido para: Frank
+INFO 2025-10-24 13:32:44,108 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:32:44,546 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:32:45,014 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:32:45,892 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+WARNING 2025-10-24 13:32:51,168 log Not Found: /api/health/
+WARNING 2025-10-24 13:32:51,176 log Not Found: /api/backup/status/
+WARNING 2025-10-24 13:32:51,185 log Not Found: /api/transacoes/estatisticas/
+WARNING 2025-10-24 13:32:51,195 log Not Found: /api/health/
+WARNING 2025-10-24 13:32:51,212 log Not Found: /api/backup/status/
+WARNING 2025-10-24 13:32:51,232 log Not Found: /api/transacoes/estatisticas/
+WARNING 2025-10-24 13:33:00,170 log Not Found: /api/backup/status/
+WARNING 2025-10-24 13:33:00,178 log Not Found: /api/health/
+WARNING 2025-10-24 13:33:00,179 log Not Found: /api/transacoes/estatisticas/
+WARNING 2025-10-24 13:33:00,211 log Not Found: /api/transacoes/estatisticas/
+WARNING 2025-10-24 13:33:00,214 log Not Found: /api/backup/status/
+WARNING 2025-10-24 13:33:00,219 log Not Found: /api/health/
+WARNING 2025-10-24 13:33:01,525 log Not Found: /api/backup/status/
+WARNING 2025-10-24 13:33:01,540 log Not Found: /api/health/
+WARNING 2025-10-24 13:33:01,542 log Not Found: /api/transacoes/estatisticas/
+WARNING 2025-10-24 13:33:01,560 log Not Found: /api/transacoes/estatisticas/
+WARNING 2025-10-24 13:33:01,565 log Not Found: /api/health/
+WARNING 2025-10-24 13:33:01,565 log Not Found: /api/backup/status/
+INFO 2025-10-24 13:33:05,152 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:33:05,271 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:33:05,759 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:33:06,969 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:33:16,964 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:33:17,057 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:33:17,545 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:33:18,790 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:33:42,624 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+WARNING 2025-10-24 13:33:45,999 log Not Found: /api/transacoes/estatisticas/
+WARNING 2025-10-24 13:33:46,007 log Not Found: /api/backup/status/
+WARNING 2025-10-24 13:33:46,016 log Not Found: /api/health/
+WARNING 2025-10-24 13:33:46,042 log Not Found: /api/transacoes/estatisticas/
+WARNING 2025-10-24 13:33:46,046 log Not Found: /api/backup/status/
+WARNING 2025-10-24 13:33:46,053 log Not Found: /api/health/
+WARNING 2025-10-24 13:34:16,262 log Not Found: /api/transacoes/estatisticas/
+WARNING 2025-10-24 13:34:16,268 log Not Found: /api/health/
+WARNING 2025-10-24 13:34:16,275 log Not Found: /api/backup/status/
+WARNING 2025-10-24 13:34:16,288 log Not Found: /api/health/
+WARNING 2025-10-24 13:34:16,295 log Not Found: /api/transacoes/estatisticas/
+WARNING 2025-10-24 13:34:16,303 log Not Found: /api/backup/status/
+INFO 2025-10-24 13:35:28,213 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:36:20,928 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-24 13:36:21,197 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-24 13:36:22,054 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:36:22,315 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:36:32,662 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-24 13:36:32,924 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-24 13:36:34,532 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:36:34,885 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:36:56,957 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-24 13:36:57,507 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-24 13:36:57,826 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:36:58,247 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:37:14,653 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:37:33,464 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-24 13:37:33,505 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-24 13:37:33,789 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-24 13:37:34,291 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:37:34,315 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:37:34,541 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:37:46,573 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-24 13:38:14,123 log Not Found: /api/backup/status/
+WARNING 2025-10-24 13:38:14,125 log Not Found: /api/health/
+WARNING 2025-10-24 13:38:14,134 log Not Found: /api/backup/status/
+WARNING 2025-10-24 13:38:14,144 log Not Found: /api/health/
+WARNING 2025-10-24 13:38:21,833 log Not Found: /api/health/
+WARNING 2025-10-24 13:38:25,550 log Not Found: /api/health/
+INFO 2025-10-24 13:39:05,162 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:39:05,576 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:39:06,039 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:39:07,026 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+WARNING 2025-10-24 13:39:08,941 log Not Found: /api/health/
+WARNING 2025-10-24 13:39:08,955 log Not Found: /api/backup/status/
+WARNING 2025-10-24 13:39:08,973 log Not Found: /api/health/
+WARNING 2025-10-24 13:39:08,984 log Not Found: /api/backup/status/
+WARNING 2025-10-24 13:39:37,352 log Not Found: /api/health/
+INFO 2025-10-24 13:42:15,133 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-24 13:42:18,540 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:42:31,663 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-24 13:42:35,329 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:43:04,027 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-24 13:43:04,892 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:44:12,723 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-24 13:44:15,490 log Unauthorized: /api/health/
+WARNING 2025-10-24 13:44:25,904 log Unauthorized: /api/health/
+WARNING 2025-10-24 13:44:25,918 log Unauthorized: /api/health/
+WARNING 2025-10-24 13:44:48,456 log Unauthorized: /api/health/
+WARNING 2025-10-24 13:44:50,607 log Unauthorized: /api/health/
+WARNING 2025-10-24 13:44:59,127 log Unauthorized: /api/health/
+WARNING 2025-10-24 13:44:59,142 log Unauthorized: /api/health/
+WARNING 2025-10-24 13:45:25,841 log Unauthorized: /api/health/
+INFO 2025-10-24 13:47:58,055 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-24 13:47:58,736 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-24 13:48:00,160 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:48:01,055 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:48:09,503 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-24 13:48:10,254 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-24 13:48:11,249 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:48:12,252 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:48:13,590 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:48:14,034 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:48:14,536 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:48:15,417 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:49:22,969 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:49:23,373 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:49:23,840 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:49:25,199 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:49:34,322 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:49:34,423 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:49:35,899 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:49:36,285 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:50:26,012 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:53:57,026 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-24 13:53:58,114 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:54:02,932 views Login bem-sucedido para: Frank
+INFO 2025-10-24 13:54:04,400 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:54:05,058 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:54:06,956 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:54:07,818 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:54:13,228 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-24 13:54:15,116 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:54:19,129 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:54:19,335 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:54:19,836 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:54:22,906 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:54:27,467 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 13:55:03,076 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:55:03,230 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:55:04,464 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:55:06,793 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:55:25,520 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:55:25,656 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:55:27,013 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:55:28,126 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:57:06,132 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:57:06,468 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:57:06,612 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:57:10,777 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:57:12,716 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 13:58:45,362 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 13:58:46,883 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:58:48,014 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 13:58:48,496 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 14:25:44,841 views Login bem-sucedido para: Frank
+INFO 2025-10-24 14:25:49,379 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 14:25:49,510 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 14:25:51,625 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 14:25:52,686 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 14:26:48,354 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-24 14:26:48,358 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-24 14:26:51,834 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 14:26:51,845 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 14:29:00,245 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 14:29:02,157 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 14:29:02,828 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 14:29:03,335 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 14:32:45,176 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 14:32:46,860 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 14:32:47,370 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 14:32:48,427 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 14:45:35,155 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-24 14:45:38,250 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 14:45:38,270 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 14:46:03,138 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-24 14:46:03,240 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-24 14:46:05,141 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 14:46:05,182 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 14:46:43,672 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-24 14:46:43,679 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-24 14:46:45,793 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 14:46:45,823 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 14:49:07,750 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-24 14:49:12,210 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 14:51:00,228 views Login bem-sucedido para: Eben
+INFO 2025-10-24 14:51:04,630 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-24 14:51:04,788 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-24 14:51:05,334 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-24 14:51:08,177 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+WARNING 2025-10-24 15:21:49,898 log Bad Request: /api/backup/list/
+WARNING 2025-10-24 15:21:58,351 drive_backup Google service account file not configurado
+ERROR 2025-10-24 15:21:58,352 drive_backup Erro backup relatorio id 13: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 96, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 41, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+WARNING 2025-10-24 15:21:59,523 drive_backup Google service account file not configurado
+ERROR 2025-10-24 15:21:59,524 drive_backup Erro backup relatorio id 12: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 96, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 41, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+WARNING 2025-10-24 15:22:01,734 drive_backup Google service account file not configurado
+ERROR 2025-10-24 15:22:01,735 drive_backup Erro backup relatorio id 11: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 96, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 41, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+WARNING 2025-10-24 15:22:04,426 drive_backup Google service account file not configurado
+ERROR 2025-10-24 15:22:04,427 drive_backup Erro backup relatorio id 7: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 96, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 41, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+WARNING 2025-10-24 15:22:05,588 drive_backup Google service account file not configurado
+ERROR 2025-10-24 15:22:05,589 drive_backup Erro backup relatorio id 10: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 96, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 41, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+WARNING 2025-10-24 15:22:06,936 drive_backup Google service account file not configurado
+ERROR 2025-10-24 15:22:06,936 drive_backup Erro backup relatorio id 9: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 96, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 41, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+WARNING 2025-10-24 15:22:09,532 drive_backup Google service account file not configurado
+ERROR 2025-10-24 15:22:09,533 drive_backup Erro backup relatorio id 8: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 96, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 41, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+WARNING 2025-10-24 15:22:11,568 log Bad Request: /api/backup/list/
+WARNING 2025-10-24 15:22:47,378 drive_backup Google service account file not configurado
+ERROR 2025-10-24 15:22:47,379 drive_backup Erro backup relatorio id 13: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 96, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 41, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+WARNING 2025-10-24 15:22:48,182 drive_backup Google service account file not configurado
+ERROR 2025-10-24 15:22:48,183 drive_backup Erro backup relatorio id 12: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 96, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 41, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+WARNING 2025-10-24 15:22:48,607 drive_backup Google service account file not configurado
+ERROR 2025-10-24 15:22:48,607 drive_backup Erro backup relatorio id 11: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 96, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 41, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+WARNING 2025-10-24 15:22:50,177 drive_backup Google service account file not configurado
+ERROR 2025-10-24 15:22:50,177 drive_backup Erro backup relatorio id 7: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 96, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 41, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+WARNING 2025-10-24 15:22:50,727 drive_backup Google service account file not configurado
+ERROR 2025-10-24 15:22:50,727 drive_backup Erro backup relatorio id 10: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 96, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 41, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+WARNING 2025-10-24 15:22:52,200 drive_backup Google service account file not configurado
+ERROR 2025-10-24 15:22:52,201 drive_backup Erro backup relatorio id 9: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 96, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 41, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+WARNING 2025-10-24 15:22:52,881 drive_backup Google service account file not configurado
+ERROR 2025-10-24 15:22:52,881 drive_backup Erro backup relatorio id 8: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 96, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 41, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+WARNING 2025-10-24 15:22:56,688 log Bad Request: /api/backup/list/
+INFO 2025-10-24 15:31:16,350 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-24 15:31:16,449 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-24 15:31:17,146 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-24 15:31:19,467 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-24 15:48:30,789 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-24 15:48:31,000 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-24 15:48:32,133 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-24 15:48:35,290 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-24 15:48:39,386 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-24 15:48:41,249 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-24 15:49:18,365 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['8'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-24 15:49:18,754 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-24 15:49:24,895 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-24 15:49:25,639 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-24 15:49:34,808 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-24 15:49:35,054 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-24 15:49:58,324 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-24 15:49:58,704 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-24 15:50:06,430 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-24 15:50:06,657 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-24 15:50:11,536 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+WARNING 2025-10-24 15:51:16,260 log Unauthorized: /api/transacoes/
+WARNING 2025-10-24 15:51:16,266 log Unauthorized: /api/saldo/
+INFO 2025-10-24 15:51:18,939 views Login bem-sucedido para: Eben
+INFO 2025-10-24 15:51:22,020 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-24 15:51:22,067 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-24 15:51:25,194 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-24 15:51:25,511 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-24 15:51:49,141 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-24 15:52:06,025 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-24 15:52:45,792 views Login bem-sucedido para: Frank
+INFO 2025-10-24 15:52:48,796 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 15:52:49,380 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 15:52:50,430 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 15:52:53,226 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 15:53:15,675 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 15:53:26,680 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 15:53:52,034 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Gratificação do Líder', 'quantia': 900, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-24 15:53:53,716 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 192, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '900.00', 'data': '2025-10-31', 'descricao': 'Gratificação do Líder', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-24 15:53:53,723 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'descricao': 'Dízimo da Gratificação', 'quantia': 90, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-24 15:53:56,619 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 193, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'D', 'quantia': '90.00', 'data': '2025-10-31', 'descricao': 'Dízimo da Gratificação', 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-24 15:53:56,638 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Dízimo da Igreja', 'quantia': 146.03, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-24 15:53:58,574 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 194, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '146.03', 'data': '2025-10-31', 'descricao': 'Dízimo da Igreja', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-24 15:53:59,518 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 15:54:10,294 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:03:30,633 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:03:36,099 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:03:36,559 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:03:37,068 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:03:38,263 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:04:04,837 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:04:06,994 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:04:07,933 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:04:08,643 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:04:42,718 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:04:48,872 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:04:51,147 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['11'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:04:51,208 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:04:53,869 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:05:08,298 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:06:07,843 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:06:08,251 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:06:08,722 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:06:09,669 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:07:08,189 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:07:14,135 views Saldo calculado: 15.64 (Entradas: 1531.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:07:17,605 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:07:20,731 views Saldo calculado: 915.64 (Entradas: 1531.70, Despesas: 616.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:07:25,116 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:07:27,394 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:08:00,090 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:08:08,530 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Gratificação do Líder', 'quantia': 900, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-24 16:08:09,149 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 195, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '900.00', 'data': '2025-10-31', 'descricao': 'Gratificação do Líder', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-24 16:08:09,162 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'descricao': 'Dízimo da Gratificação', 'quantia': 90, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-24 16:08:09,601 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 196, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'D', 'quantia': '90.00', 'data': '2025-10-31', 'descricao': 'Dízimo da Gratificação', 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-24 16:08:09,615 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Dízimo da Igreja', 'quantia': 146.03, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-24 16:08:10,048 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 197, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '146.03', 'data': '2025-10-31', 'descricao': 'Dízimo da Igreja', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-24 16:08:10,432 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:08:14,838 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:08:27,738 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:08:27,847 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:08:28,359 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:08:29,750 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:11:52,696 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:11:57,366 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:11:57,632 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['11'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:11:59,531 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:15:09,038 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:17:42,500 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:17:42,550 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:18:18,682 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:18:21,769 views Saldo calculado: 1005.64 (Entradas: 1621.70, Despesas: 616.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:18:27,978 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:18:32,272 views Saldo calculado: 915.64 (Entradas: 1531.70, Despesas: 616.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:18:37,105 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:18:40,246 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:21:39,684 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:21:40,573 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:21:41,530 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:21:42,780 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:21:45,283 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:21:50,157 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['11'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:21:50,444 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:21:52,564 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:22:13,236 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:22:13,351 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:24:24,490 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:24:25,917 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:24:27,008 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:24:29,055 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:24:31,812 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:24:42,986 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Gratificação do Líder', 'quantia': 900, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-24 16:24:44,586 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 198, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '900.00', 'data': '2025-10-31', 'descricao': 'Gratificação do Líder', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-24 16:24:44,599 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'descricao': 'Dízimo da Gratificação', 'quantia': 90, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-24 16:24:47,421 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 199, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'D', 'quantia': '90.00', 'data': '2025-10-31', 'descricao': 'Dízimo da Gratificação', 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-24 16:24:47,433 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Dízimo da Igreja', 'quantia': 146.03, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-24 16:24:49,870 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 200, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '146.03', 'data': '2025-10-31', 'descricao': 'Dízimo da Igreja', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-24 16:24:50,843 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:24:58,500 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:25:11,178 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:25:15,460 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:25:17,100 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:25:17,660 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:25:18,280 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:25:24,517 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:25:31,135 views Saldo calculado: 15.64 (Entradas: 1531.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:25:59,960 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:26:01,670 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:26:10,193 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:26:14,783 views Saldo calculado: 915.64 (Entradas: 1531.70, Despesas: 616.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:27:27,228 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:27:29,893 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:30:31,329 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:32:04,877 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:32:07,177 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:32:07,865 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:32:08,329 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:32:09,146 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:32:12,389 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:35:16,900 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Gratificação do Líder', 'quantia': 900, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-24 16:35:17,444 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 201, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '900.00', 'data': '2025-10-31', 'descricao': 'Gratificação do Líder', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-24 16:35:17,460 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'descricao': 'Dízimo da Gratificação', 'quantia': 90, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-24 16:35:17,885 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 202, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'D', 'quantia': '90.00', 'data': '2025-10-31', 'descricao': 'Dízimo da Gratificação', 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-24 16:35:17,918 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Dízimo da Igreja', 'quantia': 146.03, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-24 16:35:18,334 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 203, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '146.03', 'data': '2025-10-31', 'descricao': 'Dízimo da Igreja', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-24 16:35:18,715 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:35:24,029 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:35:36,028 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:35:36,445 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:35:36,920 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:35:37,836 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:36:05,539 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:36:07,119 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:36:10,044 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['11'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:36:10,148 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:36:12,367 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:40:54,063 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:40:54,471 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:41:19,835 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:41:25,574 views Saldo calculado: 1005.64 (Entradas: 1621.70, Despesas: 616.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:41:37,493 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:41:40,229 views Saldo calculado: 915.64 (Entradas: 1531.70, Despesas: 616.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:42:04,062 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-24 16:42:08,149 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-24 16:42:15,805 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-24 16:47:16,854 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py changed, reloading.
+INFO 2025-10-24 16:47:18,871 autoreload Watching for file changes with StatReloader

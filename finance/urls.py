@@ -15,7 +15,11 @@ from .views import (
     IgrejaListCreateView, IgrejaRetrieveUpdateDestroyView,
     TransacoesPorIgrejaView, RelatoriosPorIgrejaView,
     me,  # Importando a view me
+    estatisticas_transacoes,  # Nova view de estatísticas
+    verificar_saude_sistema,  # Views de monitoramento
+    verificar_status_backup,  # Views de monitoramento
 )
+from . import views as views_module
 
 urlpatterns = [
     # CRUD de Transações
@@ -29,8 +33,9 @@ urlpatterns = [
     path('register/', user_register, name='register'),
     path('login/', user_login, name='login'),
 
-    # Saldo
+    # Saldo e Estatísticas
     path('saldo/', calcular_saldo, name='calcular_saldo'),
+    path('transacoes/estatisticas/', estatisticas_transacoes, name='estatisticas-transacoes'),
     #relatorios
     path('relatorios/', RelatorioListView.as_view(), name='relatorios-list'),
     path('relatorios/salvar/', SalvarRelatorioView.as_view(), name='salvar-relatorio'),
@@ -47,4 +52,10 @@ urlpatterns = [
     # Perfil do usuário
     path('me/', me, name='me'),
     path('api/me/', me, name='me-api'),  # Endpoint para o perfil do usuário autenticado
+
+    # Monitoramento do sistema
+    path('health/', verificar_saude_sistema, name='health-check'),
+    path('backup/status/', verificar_status_backup, name='backup-status'),
+    path('backup/run/', views_module.run_backup, name='backup-run'),
+    path('backup/list/', views_module.list_backups, name='backup-list'),
 ]
