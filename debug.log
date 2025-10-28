@@ -10179,3 +10179,1673 @@ INFO 2025-10-24 16:42:08,149 views Saldo calculado: 1061.67 (Entradas: 1531.70, 
 INFO 2025-10-24 16:42:15,805 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
 INFO 2025-10-24 16:47:16,854 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py changed, reloading.
 INFO 2025-10-24 16:47:18,871 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 13:36:25,059 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 13:36:29,419 views Login bem-sucedido para: Frank
+INFO 2025-10-27 13:36:30,598 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 13:36:31,013 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 13:36:31,487 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 13:36:32,598 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 13:36:39,309 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 13:36:43,529 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 13:36:46,854 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['11'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 13:36:46,972 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 13:36:50,638 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 13:36:55,081 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 13:36:55,185 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 13:37:51,049 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 13:38:39,721 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['11'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 13:38:40,154 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 13:38:41,189 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 13:38:43,703 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 13:38:43,836 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 13:40:06,604 views Login bem-sucedido para: Frank
+INFO 2025-10-27 13:40:07,682 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 13:40:08,128 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 13:40:08,619 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 13:40:09,680 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 13:45:39,051 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 13:52:12,087 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 13:52:14,070 views Saldo calculado: 15.64 (Entradas: 1531.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 13:52:18,121 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 13:52:20,086 views Saldo calculado: 915.64 (Entradas: 1531.70, Despesas: 616.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 13:52:23,554 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 13:52:25,471 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 13:52:29,646 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 13:53:48,733 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:05:55,271 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:07:54,089 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:07:54,658 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:07:54,659 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 14:07:55,122 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:07:55,132 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 14:07:56,016 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:08:20,043 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['11'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:08:20,168 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 14:08:25,183 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:08:25,295 views Saldo calculado: 1061.67 (Entradas: 1531.70, Despesas: 470.03, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 14:08:48,622 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Gratificação do Líder', 'quantia': 900, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-27 14:08:49,139 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 207, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '900.00', 'data': '2025-10-31', 'descricao': 'Gratificação do Líder', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-27 14:08:49,145 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'descricao': 'Dízimo da Gratificação', 'quantia': 90, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-27 14:08:49,571 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 208, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'D', 'quantia': '90.00', 'data': '2025-10-31', 'descricao': 'Dízimo da Gratificação', 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-27 14:08:49,584 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Dízimo da Igreja', 'quantia': 146.03, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-27 14:08:50,011 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 209, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '146.03', 'data': '2025-10-31', 'descricao': 'Dízimo da Igreja', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-27 14:08:50,392 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:08:57,998 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:09:00,356 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:09:00,480 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 14:09:29,403 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['11'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:09:29,508 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 14:09:52,865 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:09:52,949 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:09:52,973 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 14:09:53,447 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:09:53,477 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 14:09:54,881 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:09:57,334 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['11'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:09:57,446 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 14:10:27,913 views Login bem-sucedido para: Eben
+INFO 2025-10-27 14:10:29,041 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-27 14:10:29,146 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:10:29,148 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-27 14:10:29,635 views Saldo calculado: 22.09 (Entradas: 1763.76, Despesas: 1741.67, Igreja: 10, Mês: None, Ano: None)
+INFO 2025-10-27 14:10:29,640 views Saldo calculado: -560.45 (Entradas: 1181.22, Despesas: 1741.67, Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:10:31,006 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-27 14:12:54,262 views Login bem-sucedido para: Frank
+INFO 2025-10-27 14:12:55,357 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:12:55,755 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 14:12:55,758 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:12:56,254 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 14:12:56,264 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:12:57,211 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:13:08,616 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['11'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:13:08,710 views Saldo calculado: 105.64 (Entradas: 1621.70, Despesas: 1516.06, Igreja: 1, Mês: None, Ano: None)
+INFO 2025-10-27 14:20:56,876 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\models.py changed, reloading.
+INFO 2025-10-27 14:20:58,745 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 14:21:23,081 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-27 14:21:23,919 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 14:21:34,616 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-27 14:21:35,326 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 14:25:11,567 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+ERROR 2025-10-27 14:25:11,948 views Erro ao calcular saldo: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 317, in calcular_saldo
+    ).first()
+      ~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1097, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+ERROR 2025-10-27 14:25:11,965 views Erro ao calcular saldo: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 317, in calcular_saldo
+    ).first()
+      ~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1097, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+ERROR 2025-10-27 14:25:11,996 log Internal Server Error: /api/saldo/
+ERROR 2025-10-27 14:25:12,006 log Internal Server Error: /api/saldo/
+ERROR 2025-10-27 14:25:12,508 views Erro ao calcular saldo: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 317, in calcular_saldo
+    ).first()
+      ~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1097, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+ERROR 2025-10-27 14:25:12,513 log Internal Server Error: /api/saldo/
+ERROR 2025-10-27 14:25:12,521 views Erro ao calcular saldo: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 317, in calcular_saldo
+    ).first()
+      ~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1097, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+ERROR 2025-10-27 14:25:12,537 log Internal Server Error: /api/saldo/
+INFO 2025-10-27 14:25:13,562 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:25:28,183 views Login bem-sucedido para: Frank
+INFO 2025-10-27 14:25:29,314 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+ERROR 2025-10-27 14:25:29,664 views Erro ao calcular saldo: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 317, in calcular_saldo
+    ).first()
+      ~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1097, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+ERROR 2025-10-27 14:25:29,674 views Erro ao calcular saldo: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 317, in calcular_saldo
+    ).first()
+      ~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1097, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+ERROR 2025-10-27 14:25:29,677 log Internal Server Error: /api/saldo/
+ERROR 2025-10-27 14:25:29,688 log Internal Server Error: /api/saldo/
+ERROR 2025-10-27 14:25:30,197 views Erro ao calcular saldo: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 317, in calcular_saldo
+    ).first()
+      ~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1097, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+ERROR 2025-10-27 14:25:30,200 views Erro ao calcular saldo: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 317, in calcular_saldo
+    ).first()
+      ~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1097, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "finance_saldomensal" does not exist
+LINE 1: ..._calculo", "finance_saldomensal"."igreja_id" FROM "finance_s...
+                                                             ^
+
+ERROR 2025-10-27 14:25:30,215 log Internal Server Error: /api/saldo/
+ERROR 2025-10-27 14:25:30,228 log Internal Server Error: /api/saldo/
+INFO 2025-10-27 14:25:31,309 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:28:43,307 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 14:29:25,161 views Login bem-sucedido para: Frank
+INFO 2025-10-27 14:29:26,330 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:29:27,228 views Saldo calculado: 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:29:27,232 views Saldo calculado: -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:29:27,632 views Saldo calculado: 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:29:27,643 views Saldo calculado: -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:29:28,179 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:29:51,934 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:29:53,952 views Saldo calculado: -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:30:25,478 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:30:27,376 views Saldo calculado: -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:30:30,655 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:30:32,502 views Saldo calculado: -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:30:38,137 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:30:38,177 views Saldo calculado: -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:30:38,180 views Saldo calculado: 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:30:38,675 views Saldo calculado: -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:30:38,682 views Saldo calculado: 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:30:39,955 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:30:49,381 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:30:49,424 views Saldo calculado: -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:30:53,668 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:30:53,705 views Saldo calculado: -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:36:35,033 views Saldo calculado: 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:36:41,494 views Saldo calculado: 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:37:58,645 views Saldo calculado: 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:37:58,913 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:37:58,976 views Saldo calculado: -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:37:59,110 views Saldo calculado: 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:37:59,421 views Saldo calculado: -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:38:01,660 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:43:10,917 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-27 14:43:12,606 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 14:44:31,123 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:44:31,569 views Saldo total calculado para igreja 1:
+INFO 2025-10-27 14:44:31,570 views Total entradas: 1531.70
+INFO 2025-10-27 14:44:31,571 views Saldo total calculado para igreja 1:
+INFO 2025-10-27 14:44:31,571 views Total saídas: 470.03
+INFO 2025-10-27 14:44:31,572 views Total entradas: 1531.70
+INFO 2025-10-27 14:44:31,574 views Saldo final: 1061.67
+INFO 2025-10-27 14:44:31,574 views Total saídas: 470.03
+INFO 2025-10-27 14:44:31,574 views Saldo calculado: 1061.67 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:44:31,577 views Saldo final: 1061.67
+INFO 2025-10-27 14:44:31,578 views Saldo calculado: 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:44:32,047 views Saldo total calculado para igreja 1:
+INFO 2025-10-27 14:44:32,047 views Total entradas: 1531.70
+INFO 2025-10-27 14:44:32,048 views Total saídas: 470.03
+INFO 2025-10-27 14:44:32,048 views Saldo final: 1061.67
+INFO 2025-10-27 14:44:32,048 views Saldo calculado: 1061.67 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 14:44:32,068 views Saldo total calculado para igreja 1:
+INFO 2025-10-27 14:44:32,068 views Total entradas: 1531.70
+INFO 2025-10-27 14:44:32,068 views Total saídas: 470.03
+INFO 2025-10-27 14:44:32,068 views Saldo final: 1061.67
+INFO 2025-10-27 14:44:32,069 views Saldo calculado: 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:44:32,908 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:45:16,124 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:45:16,232 views Saldo total calculado para igreja 1:
+INFO 2025-10-27 14:45:16,233 views Total entradas: 1531.70
+INFO 2025-10-27 14:45:16,234 views Total saídas: 470.03
+INFO 2025-10-27 14:45:16,235 views Saldo final: 1061.67
+INFO 2025-10-27 14:45:16,235 views Saldo calculado: 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:45:19,198 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:45:19,304 views Saldo total calculado para igreja 1:
+INFO 2025-10-27 14:45:19,305 views Total entradas: 1531.70
+INFO 2025-10-27 14:45:19,306 views Total saídas: 470.03
+INFO 2025-10-27 14:45:19,306 views Saldo final: 1061.67
+INFO 2025-10-27 14:45:19,307 views Saldo calculado: 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:45:36,232 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:45:36,338 views Saldo total calculado para igreja 1:
+INFO 2025-10-27 14:45:36,339 views Total entradas: 1531.70
+INFO 2025-10-27 14:45:36,340 views Total saídas: 470.03
+INFO 2025-10-27 14:45:36,341 views Saldo final: 1061.67
+INFO 2025-10-27 14:45:36,342 views Saldo calculado: 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:45:38,290 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:45:38,398 views Saldo total calculado para igreja 1:
+INFO 2025-10-27 14:45:38,399 views Total entradas: 1531.70
+INFO 2025-10-27 14:45:38,400 views Total saídas: 470.03
+INFO 2025-10-27 14:45:38,400 views Saldo final: 1061.67
+INFO 2025-10-27 14:45:38,401 views Saldo calculado: 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:49:36,207 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:49:36,323 views Saldo total calculado para igreja 1:
+INFO 2025-10-27 14:49:36,324 views Total entradas: 1531.70
+INFO 2025-10-27 14:49:36,325 views Total saídas: 470.03
+INFO 2025-10-27 14:49:36,326 views Saldo final: 1061.67
+INFO 2025-10-27 14:49:36,327 views Saldo calculado: 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:50:20,834 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:50:20,941 views Saldo total calculado para igreja 1:
+INFO 2025-10-27 14:50:20,943 views Total entradas: 1531.70
+INFO 2025-10-27 14:50:20,944 views Total saídas: 470.03
+INFO 2025-10-27 14:50:20,945 views Saldo final: 1061.67
+INFO 2025-10-27 14:50:20,946 views Saldo calculado: 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 14:51:24,766 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-27 14:51:25,834 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 14:52:59,888 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 14:53:19,786 views Login bem-sucedido para: Frank
+INFO 2025-10-27 14:53:20,846 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:53:21,247 views Saldo calculado para igreja 1:
+INFO 2025-10-27 14:53:21,248 views Período: até 10/2025
+INFO 2025-10-27 14:53:21,248 views Total entradas: 161.45
+INFO 2025-10-27 14:53:21,248 views Total saídas: 0
+INFO 2025-10-27 14:53:21,249 views Saldo final: 161.45
+INFO 2025-10-27 14:53:21,262 views Saldo calculado para igreja 1:
+INFO 2025-10-27 14:53:21,262 views Período: até 9/2025
+INFO 2025-10-27 14:53:21,263 views Total entradas: 0
+INFO 2025-10-27 14:53:21,263 views Total saídas: 0
+INFO 2025-10-27 14:53:21,263 views Saldo final: 0
+INFO 2025-10-27 14:53:21,711 views Saldo calculado para igreja 1:
+INFO 2025-10-27 14:53:21,712 views Período: até 10/2025
+INFO 2025-10-27 14:53:21,712 views Total entradas: 161.45
+INFO 2025-10-27 14:53:21,713 views Total saídas: 0
+INFO 2025-10-27 14:53:21,714 views Saldo final: 161.45
+INFO 2025-10-27 14:53:21,730 views Saldo calculado para igreja 1:
+INFO 2025-10-27 14:53:21,731 views Período: até 9/2025
+INFO 2025-10-27 14:53:21,732 views Total entradas: 0
+INFO 2025-10-27 14:53:21,733 views Total saídas: 0
+INFO 2025-10-27 14:53:21,734 views Saldo final: 0
+INFO 2025-10-27 14:53:22,493 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:53:35,446 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['11'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:53:35,574 views Saldo calculado para igreja 1:
+INFO 2025-10-27 14:53:35,575 views Período: até 10/2025
+INFO 2025-10-27 14:53:35,575 views Total entradas: 161.45
+INFO 2025-10-27 14:53:35,577 views Total saídas: 0
+INFO 2025-10-27 14:53:35,577 views Saldo final: 161.45
+INFO 2025-10-27 14:53:37,824 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 14:53:37,920 views Saldo calculado para igreja 1:
+INFO 2025-10-27 14:53:37,921 views Período: até 10/2025
+INFO 2025-10-27 14:53:37,922 views Total entradas: 161.45
+INFO 2025-10-27 14:53:37,923 views Total saídas: 0
+INFO 2025-10-27 14:53:37,924 views Saldo final: 161.45
+INFO 2025-10-27 14:55:05,949 views Saldo calculado para igreja 1:
+INFO 2025-10-27 14:55:05,950 views Período: até 9/2025
+INFO 2025-10-27 14:55:05,988 views Total entradas: 0
+INFO 2025-10-27 14:55:06,234 views Total saídas: 0
+INFO 2025-10-27 14:55:06,251 views Saldo final: 0
+INFO 2025-10-27 14:55:17,788 views Saldo calculado para igreja 1:
+INFO 2025-10-27 14:55:17,789 views Período: até 9/2025
+INFO 2025-10-27 14:55:17,790 views Total entradas: 0
+INFO 2025-10-27 14:55:17,790 views Total saídas: 0
+INFO 2025-10-27 14:55:17,791 views Saldo final: 0
+INFO 2025-10-27 15:23:07,998 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 15:23:08,425 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:23:08,425 views Período: até 9/2025
+INFO 2025-10-27 15:23:08,425 views Total entradas: 0
+INFO 2025-10-27 15:23:08,426 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:23:08,426 views Total saídas: 0
+INFO 2025-10-27 15:23:08,426 views Período: até None/atual
+INFO 2025-10-27 15:23:08,426 views Saldo final: 0
+INFO 2025-10-27 15:23:08,426 views Total entradas: 1531.70
+INFO 2025-10-27 15:23:08,427 views Total saídas: 470.03
+INFO 2025-10-27 15:23:08,427 views Saldo final: 1061.67
+INFO 2025-10-27 15:23:08,916 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:23:08,916 views Período: até None/atual
+INFO 2025-10-27 15:23:08,917 views Total entradas: 1531.70
+INFO 2025-10-27 15:23:08,917 views Total saídas: 470.03
+INFO 2025-10-27 15:23:08,917 views Saldo final: 1061.67
+INFO 2025-10-27 15:23:08,924 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:23:08,924 views Período: até 9/2025
+INFO 2025-10-27 15:23:08,924 views Total entradas: 0
+INFO 2025-10-27 15:23:08,924 views Total saídas: 0
+INFO 2025-10-27 15:23:08,925 views Saldo final: 0
+INFO 2025-10-27 15:23:09,833 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 15:25:24,868 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 15:25:28,473 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 15:25:28,921 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:25:28,921 views Período: até None/atual
+INFO 2025-10-27 15:25:28,921 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:25:28,922 views Total entradas: 1531.70
+INFO 2025-10-27 15:25:28,922 views Período: até 9/2025
+INFO 2025-10-27 15:25:28,922 views Total saídas: 470.03
+INFO 2025-10-27 15:25:28,923 views Total entradas: 0
+INFO 2025-10-27 15:25:28,923 views Saldo final: 1061.67
+INFO 2025-10-27 15:25:28,924 views Total saídas: 0
+INFO 2025-10-27 15:25:28,924 views Saldo final: 0
+INFO 2025-10-27 15:25:29,387 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:25:29,388 views Período: até None/atual
+INFO 2025-10-27 15:25:29,389 views Total entradas: 1531.70
+INFO 2025-10-27 15:25:29,390 views Total saídas: 470.03
+INFO 2025-10-27 15:25:29,391 views Saldo final: 1061.67
+INFO 2025-10-27 15:25:29,415 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:25:29,416 views Período: até 9/2025
+INFO 2025-10-27 15:25:29,417 views Total entradas: 0
+INFO 2025-10-27 15:25:29,418 views Total saídas: 0
+INFO 2025-10-27 15:25:29,418 views Saldo final: 0
+INFO 2025-10-27 15:25:30,237 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 15:25:31,779 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:25:31,780 views Período: até None/atual
+INFO 2025-10-27 15:25:31,781 views Total entradas: 1531.70
+INFO 2025-10-27 15:25:31,781 views Total saídas: 470.03
+INFO 2025-10-27 15:25:31,782 views Saldo final: 1061.67
+INFO 2025-10-27 15:25:31,806 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:25:31,807 views Período: até 9/2025
+INFO 2025-10-27 15:25:31,807 views Total entradas: 0
+INFO 2025-10-27 15:25:31,809 views Total saídas: 0
+INFO 2025-10-27 15:25:31,810 views Saldo final: 0
+INFO 2025-10-27 15:25:32,046 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 15:25:32,263 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:25:32,263 views Período: até None/atual
+INFO 2025-10-27 15:25:32,264 views Total entradas: 1531.70
+INFO 2025-10-27 15:25:32,264 views Total saídas: 470.03
+INFO 2025-10-27 15:25:32,265 views Saldo final: 1061.67
+INFO 2025-10-27 15:25:32,292 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:25:32,294 views Período: até 9/2025
+INFO 2025-10-27 15:25:32,295 views Total entradas: 0
+INFO 2025-10-27 15:25:32,296 views Total saídas: 0
+INFO 2025-10-27 15:25:32,297 views Saldo final: 0
+INFO 2025-10-27 15:25:33,803 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 15:28:32,101 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:28:32,105 views Período: até 9/2025
+INFO 2025-10-27 15:28:32,106 views Total entradas: 0
+INFO 2025-10-27 15:28:32,106 views Total saídas: 0
+INFO 2025-10-27 15:28:32,107 views Saldo final: 0
+INFO 2025-10-27 15:28:41,804 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:28:41,804 views Período: até 9/2025
+INFO 2025-10-27 15:28:41,804 views Total entradas: 0
+INFO 2025-10-27 15:28:41,804 views Total saídas: 0
+INFO 2025-10-27 15:28:41,805 views Saldo final: 0
+INFO 2025-10-27 15:30:46,692 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 15:30:47,109 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:30:47,110 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:30:47,110 views Período: até 9/2025
+INFO 2025-10-27 15:30:47,111 views Período: até None/atual
+INFO 2025-10-27 15:30:47,111 views Total entradas: 0
+INFO 2025-10-27 15:30:47,112 views Total entradas: 1531.70
+INFO 2025-10-27 15:30:47,113 views Total saídas: 470.03
+INFO 2025-10-27 15:30:47,113 views Total saídas: 0
+INFO 2025-10-27 15:30:47,114 views Saldo final: 1061.67
+INFO 2025-10-27 15:30:47,115 views Saldo final: 0
+INFO 2025-10-27 15:30:47,623 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:30:47,623 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:30:47,624 views Período: até None/atual
+INFO 2025-10-27 15:30:47,625 views Período: até 9/2025
+INFO 2025-10-27 15:30:47,625 views Total entradas: 1531.70
+INFO 2025-10-27 15:30:47,626 views Total entradas: 0
+INFO 2025-10-27 15:30:47,627 views Total saídas: 470.03
+INFO 2025-10-27 15:30:47,627 views Total saídas: 0
+INFO 2025-10-27 15:30:47,628 views Saldo final: 1061.67
+INFO 2025-10-27 15:30:47,629 views Saldo final: 0
+INFO 2025-10-27 15:30:48,697 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 15:41:15,462 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-27 15:41:17,117 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 15:42:04,996 views Saldo calculado para igreja 1:
+INFO 2025-10-27 15:42:04,996 views Período: até 9/2025
+INFO 2025-10-27 15:42:04,996 views Total entradas: 1531.70
+INFO 2025-10-27 15:42:04,996 views Total saídas: 470.03
+INFO 2025-10-27 15:42:04,997 views Saldo final: 1061.67
+ERROR 2025-10-27 15:42:18,819 views Erro ao calcular saldo: name 'getLastDayOfMonth' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 322, in calcular_saldo
+    data__lte=datetime(year=ano, month=mes, day=getLastDayOfMonth(ano, mes))
+                                                ^^^^^^^^^^^^^^^^^
+NameError: name 'getLastDayOfMonth' is not defined
+ERROR 2025-10-27 15:42:18,827 log Internal Server Error: /api/saldo/
+INFO 2025-10-27 15:49:46,002 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-27 16:05:16,803 log Unauthorized: /api/me/
+WARNING 2025-10-27 16:05:16,816 log Unauthorized: /api/me/
+INFO 2025-10-27 16:06:27,749 views Login bem-sucedido para: Frank
+ERROR 2025-10-27 16:06:28,855 views Erro ao calcular saldo: cannot access local variable 'transacoes' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 322, in calcular_saldo
+    transacoes = transacoes.filter(
+                 ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'transacoes' where it is not associated with a value
+ERROR 2025-10-27 16:06:28,861 log Internal Server Error: /api/saldo/
+ERROR 2025-10-27 16:06:29,155 views Erro ao calcular saldo: cannot access local variable 'transacoes' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 316, in calcular_saldo
+    transacoes = transacoes.filter(
+                 ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'transacoes' where it is not associated with a value
+ERROR 2025-10-27 16:06:29,157 log Internal Server Error: /api/saldo/
+ERROR 2025-10-27 16:06:29,159 views Erro ao calcular saldo: cannot access local variable 'transacoes' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 332, in calcular_saldo
+    entradas = transacoes.filter(tipo__in=['D', 'O']).aggregate(Sum('quantia'))['quantia__sum'] or 0
+               ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'transacoes' where it is not associated with a value
+ERROR 2025-10-27 16:06:29,170 log Internal Server Error: /api/saldo/
+INFO 2025-10-27 16:06:29,197 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+ERROR 2025-10-27 16:06:29,356 views Erro ao calcular saldo: cannot access local variable 'transacoes' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 322, in calcular_saldo
+    transacoes = transacoes.filter(
+                 ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'transacoes' where it is not associated with a value
+ERROR 2025-10-27 16:06:29,357 log Internal Server Error: /api/saldo/
+ERROR 2025-10-27 16:06:29,520 views Erro ao calcular saldo: cannot access local variable 'transacoes' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 316, in calcular_saldo
+    transacoes = transacoes.filter(
+                 ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'transacoes' where it is not associated with a value
+ERROR 2025-10-27 16:06:29,525 log Internal Server Error: /api/saldo/
+ERROR 2025-10-27 16:06:29,534 views Erro ao calcular saldo: cannot access local variable 'transacoes' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 332, in calcular_saldo
+    entradas = transacoes.filter(tipo__in=['D', 'O']).aggregate(Sum('quantia'))['quantia__sum'] or 0
+               ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'transacoes' where it is not associated with a value
+ERROR 2025-10-27 16:06:29,537 log Internal Server Error: /api/saldo/
+INFO 2025-10-27 16:06:30,894 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:07:30,667 views Login bem-sucedido para: Frank
+INFO 2025-10-27 16:07:31,674 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+ERROR 2025-10-27 16:07:31,986 views Erro ao calcular saldo: cannot access local variable 'transacoes' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 332, in calcular_saldo
+    entradas = transacoes.filter(tipo__in=['D', 'O']).aggregate(Sum('quantia'))['quantia__sum'] or 0
+               ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'transacoes' where it is not associated with a value
+ERROR 2025-10-27 16:07:31,989 log Internal Server Error: /api/saldo/
+ERROR 2025-10-27 16:07:31,992 views Erro ao calcular saldo: cannot access local variable 'transacoes' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 316, in calcular_saldo
+    transacoes = transacoes.filter(
+                 ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'transacoes' where it is not associated with a value
+ERROR 2025-10-27 16:07:31,998 views Erro ao calcular saldo: cannot access local variable 'transacoes' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 322, in calcular_saldo
+    transacoes = transacoes.filter(
+                 ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'transacoes' where it is not associated with a value
+ERROR 2025-10-27 16:07:32,000 log Internal Server Error: /api/saldo/
+ERROR 2025-10-27 16:07:32,002 log Internal Server Error: /api/saldo/
+ERROR 2025-10-27 16:07:32,352 views Erro ao calcular saldo: cannot access local variable 'transacoes' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 332, in calcular_saldo
+    entradas = transacoes.filter(tipo__in=['D', 'O']).aggregate(Sum('quantia'))['quantia__sum'] or 0
+               ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'transacoes' where it is not associated with a value
+ERROR 2025-10-27 16:07:32,354 log Internal Server Error: /api/saldo/
+ERROR 2025-10-27 16:07:32,362 views Erro ao calcular saldo: cannot access local variable 'transacoes' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 322, in calcular_saldo
+    transacoes = transacoes.filter(
+                 ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'transacoes' where it is not associated with a value
+ERROR 2025-10-27 16:07:32,364 log Internal Server Error: /api/saldo/
+ERROR 2025-10-27 16:07:32,380 views Erro ao calcular saldo: cannot access local variable 'transacoes' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 316, in calcular_saldo
+    transacoes = transacoes.filter(
+                 ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'transacoes' where it is not associated with a value
+ERROR 2025-10-27 16:07:32,383 log Internal Server Error: /api/saldo/
+INFO 2025-10-27 16:07:33,323 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:13:20,180 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-27 16:13:23,982 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 16:16:13,482 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:16:13,887 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:16:13,888 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:16:13,888 views Tipo: mes_atual
+INFO 2025-10-27 16:16:13,889 views Tipo: total
+INFO 2025-10-27 16:16:13,889 views Período: None/atual
+INFO 2025-10-27 16:16:13,889 views Período: 10/2025
+INFO 2025-10-27 16:16:13,891 views Entradas: 1531.7
+INFO 2025-10-27 16:16:13,891 views Entradas: 1370.25
+INFO 2025-10-27 16:16:13,892 views Saídas: 470.03
+INFO 2025-10-27 16:16:13,892 views Saídas: 470.03
+INFO 2025-10-27 16:16:13,893 views Saldo: 1061.67
+INFO 2025-10-27 16:16:13,893 views Saldo: 900.22
+INFO 2025-10-27 16:16:13,895 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:16:13,896 views Tipo: ate_mes
+INFO 2025-10-27 16:16:13,896 views Período: 9/2025
+INFO 2025-10-27 16:16:13,897 views Entradas: 161.45
+INFO 2025-10-27 16:16:13,898 views Saídas: 0.0
+INFO 2025-10-27 16:16:13,898 views Saldo: 161.45
+INFO 2025-10-27 16:16:14,359 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:16:14,360 views Tipo: total
+INFO 2025-10-27 16:16:14,360 views Período: None/atual
+INFO 2025-10-27 16:16:14,361 views Entradas: 1531.7
+INFO 2025-10-27 16:16:14,362 views Saídas: 470.03
+INFO 2025-10-27 16:16:14,362 views Saldo: 1061.67
+INFO 2025-10-27 16:16:14,372 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:16:14,373 views Tipo: ate_mes
+INFO 2025-10-27 16:16:14,373 views Período: 9/2025
+INFO 2025-10-27 16:16:14,374 views Entradas: 161.45
+INFO 2025-10-27 16:16:14,374 views Saídas: 0.0
+INFO 2025-10-27 16:16:14,375 views Saldo: 161.45
+INFO 2025-10-27 16:16:14,376 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:16:14,377 views Tipo: mes_atual
+INFO 2025-10-27 16:16:14,378 views Período: 10/2025
+INFO 2025-10-27 16:16:14,378 views Entradas: 1370.25
+INFO 2025-10-27 16:16:14,379 views Saídas: 470.03
+INFO 2025-10-27 16:16:14,379 views Saldo: 900.22
+INFO 2025-10-27 16:16:14,847 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:16:14,848 views Tipo: mes_atual
+INFO 2025-10-27 16:16:14,849 views Período: 10/2025
+INFO 2025-10-27 16:16:14,850 views Entradas: 1370.25
+INFO 2025-10-27 16:16:14,850 views Saídas: 470.03
+INFO 2025-10-27 16:16:14,851 views Saldo: 900.22
+INFO 2025-10-27 16:16:15,168 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:19:18,372 views Login bem-sucedido para: Frank
+INFO 2025-10-27 16:19:19,492 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:19:19,919 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:19,920 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:19,920 views Tipo: mes_atual
+INFO 2025-10-27 16:19:19,921 views Tipo: ate_mes
+INFO 2025-10-27 16:19:19,921 views Período: 10/2025
+INFO 2025-10-27 16:19:19,922 views Período: 9/2025
+INFO 2025-10-27 16:19:19,923 views Entradas: 1370.25
+INFO 2025-10-27 16:19:19,923 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:19,924 views Entradas: 161.45
+INFO 2025-10-27 16:19:19,924 views Saídas: 470.03
+INFO 2025-10-27 16:19:19,925 views Tipo: total
+INFO 2025-10-27 16:19:19,926 views Saídas: 0.0
+INFO 2025-10-27 16:19:19,926 views Saldo: 900.22
+INFO 2025-10-27 16:19:19,927 views Período: None/atual
+INFO 2025-10-27 16:19:19,927 views Saldo: 161.45
+INFO 2025-10-27 16:19:19,930 views Entradas: 1531.7
+INFO 2025-10-27 16:19:19,933 views Saídas: 470.03
+INFO 2025-10-27 16:19:19,934 views Saldo: 1061.67
+INFO 2025-10-27 16:19:20,409 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:20,410 views Tipo: mes_atual
+INFO 2025-10-27 16:19:20,410 views Período: 10/2025
+INFO 2025-10-27 16:19:20,411 views Entradas: 1370.25
+INFO 2025-10-27 16:19:20,411 views Saídas: 470.03
+INFO 2025-10-27 16:19:20,411 views Saldo: 900.22
+INFO 2025-10-27 16:19:20,420 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:20,421 views Tipo: ate_mes
+INFO 2025-10-27 16:19:20,421 views Período: 9/2025
+INFO 2025-10-27 16:19:20,421 views Entradas: 161.45
+INFO 2025-10-27 16:19:20,421 views Saídas: 0.0
+INFO 2025-10-27 16:19:20,421 views Saldo: 161.45
+INFO 2025-10-27 16:19:20,448 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:20,449 views Tipo: total
+INFO 2025-10-27 16:19:20,449 views Período: None/atual
+INFO 2025-10-27 16:19:20,449 views Entradas: 1531.7
+INFO 2025-10-27 16:19:20,450 views Saídas: 470.03
+INFO 2025-10-27 16:19:20,450 views Saldo: 1061.67
+INFO 2025-10-27 16:19:20,866 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:20,867 views Tipo: mes_atual
+INFO 2025-10-27 16:19:20,867 views Período: 10/2025
+INFO 2025-10-27 16:19:20,867 views Entradas: 1370.25
+INFO 2025-10-27 16:19:20,867 views Saídas: 470.03
+INFO 2025-10-27 16:19:20,867 views Saldo: 900.22
+INFO 2025-10-27 16:19:21,156 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:19:33,678 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:19:33,776 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:33,777 views Tipo: mes_atual
+INFO 2025-10-27 16:19:33,778 views Período: 10/2025
+INFO 2025-10-27 16:19:33,779 views Entradas: 1370.25
+INFO 2025-10-27 16:19:33,780 views Saídas: 470.03
+INFO 2025-10-27 16:19:33,780 views Saldo: 900.22
+INFO 2025-10-27 16:19:33,788 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:33,789 views Tipo: total
+INFO 2025-10-27 16:19:33,789 views Período: None/atual
+INFO 2025-10-27 16:19:33,798 views Entradas: 1531.7
+INFO 2025-10-27 16:19:33,799 views Saídas: 470.03
+INFO 2025-10-27 16:19:33,800 views Saldo: 1061.67
+INFO 2025-10-27 16:19:34,074 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:34,074 views Tipo: ate_mes
+INFO 2025-10-27 16:19:34,075 views Período: 9/2025
+INFO 2025-10-27 16:19:34,075 views Entradas: 161.45
+INFO 2025-10-27 16:19:34,075 views Saídas: 0.0
+INFO 2025-10-27 16:19:34,076 views Saldo: 161.45
+INFO 2025-10-27 16:19:34,260 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:34,261 views Tipo: mes_atual
+INFO 2025-10-27 16:19:34,261 views Período: 10/2025
+INFO 2025-10-27 16:19:34,262 views Entradas: 1370.25
+INFO 2025-10-27 16:19:34,263 views Saídas: 470.03
+INFO 2025-10-27 16:19:34,264 views Saldo: 900.22
+INFO 2025-10-27 16:19:34,264 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:34,267 views Tipo: total
+INFO 2025-10-27 16:19:34,267 views Período: None/atual
+INFO 2025-10-27 16:19:34,268 views Entradas: 1531.7
+INFO 2025-10-27 16:19:34,269 views Saídas: 470.03
+INFO 2025-10-27 16:19:34,271 views Saldo: 1061.67
+INFO 2025-10-27 16:19:34,584 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:34,585 views Tipo: ate_mes
+INFO 2025-10-27 16:19:34,585 views Período: 9/2025
+INFO 2025-10-27 16:19:34,586 views Entradas: 161.45
+INFO 2025-10-27 16:19:34,587 views Saídas: 0.0
+INFO 2025-10-27 16:19:34,587 views Saldo: 161.45
+INFO 2025-10-27 16:19:34,759 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:34,760 views Tipo: mes_atual
+INFO 2025-10-27 16:19:34,762 views Período: 10/2025
+INFO 2025-10-27 16:19:34,763 views Entradas: 1370.25
+INFO 2025-10-27 16:19:34,764 views Saídas: 470.03
+INFO 2025-10-27 16:19:34,765 views Saldo: 900.22
+INFO 2025-10-27 16:19:35,398 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:19:46,831 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:19:46,925 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:46,926 views Tipo: total
+INFO 2025-10-27 16:19:46,929 views Período: None/atual
+INFO 2025-10-27 16:19:46,930 views Entradas: 1531.7
+INFO 2025-10-27 16:19:46,931 views Saídas: 470.03
+INFO 2025-10-27 16:19:46,933 views Saldo: 1061.67
+INFO 2025-10-27 16:19:46,947 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:46,948 views Tipo: ate_mes
+INFO 2025-10-27 16:19:46,948 views Período: 9/2025
+INFO 2025-10-27 16:19:46,948 views Entradas: 161.45
+INFO 2025-10-27 16:19:46,949 views Saídas: 0.0
+INFO 2025-10-27 16:19:46,949 views Saldo: 161.45
+INFO 2025-10-27 16:19:46,949 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:46,950 views Tipo: mes_atual
+INFO 2025-10-27 16:19:46,950 views Período: 10/2025
+INFO 2025-10-27 16:19:46,951 views Entradas: 1370.25
+INFO 2025-10-27 16:19:46,952 views Saídas: 470.03
+INFO 2025-10-27 16:19:46,956 views Saldo: 900.22
+INFO 2025-10-27 16:19:47,419 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:47,419 views Tipo: mes_atual
+INFO 2025-10-27 16:19:47,420 views Período: 10/2025
+INFO 2025-10-27 16:19:47,420 views Entradas: 1370.25
+INFO 2025-10-27 16:19:47,421 views Saídas: 470.03
+INFO 2025-10-27 16:19:47,422 views Saldo: 900.22
+INFO 2025-10-27 16:19:47,435 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:47,436 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:47,436 views Tipo: ate_mes
+INFO 2025-10-27 16:19:47,436 views Tipo: total
+INFO 2025-10-27 16:19:47,437 views Período: 9/2025
+INFO 2025-10-27 16:19:47,437 views Período: None/atual
+INFO 2025-10-27 16:19:47,440 views Entradas: 161.45
+INFO 2025-10-27 16:19:47,441 views Entradas: 1531.7
+INFO 2025-10-27 16:19:47,442 views Saídas: 0.0
+INFO 2025-10-27 16:19:47,442 views Saídas: 470.03
+INFO 2025-10-27 16:19:47,443 views Saldo: 161.45
+INFO 2025-10-27 16:19:47,444 views Saldo: 1061.67
+INFO 2025-10-27 16:19:47,901 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:19:47,902 views Tipo: mes_atual
+INFO 2025-10-27 16:19:47,902 views Período: 10/2025
+INFO 2025-10-27 16:19:47,902 views Entradas: 1370.25
+INFO 2025-10-27 16:19:47,904 views Saídas: 470.03
+INFO 2025-10-27 16:19:47,905 views Saldo: 900.22
+INFO 2025-10-27 16:19:48,537 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:22:04,059 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:22:04,060 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:22:04,062 views Tipo: mes_atual
+INFO 2025-10-27 16:22:04,063 views Tipo: ate_mes
+INFO 2025-10-27 16:22:04,063 views Período: 10/2025
+INFO 2025-10-27 16:22:04,063 views Período: 9/2025
+INFO 2025-10-27 16:22:04,064 views Entradas: 1370.25
+INFO 2025-10-27 16:22:04,064 views Entradas: 161.45
+INFO 2025-10-27 16:22:04,065 views Saídas: 470.03
+INFO 2025-10-27 16:22:04,065 views Saídas: 0.0
+INFO 2025-10-27 16:22:04,066 views Saldo: 900.22
+INFO 2025-10-27 16:22:04,066 views Saldo: 161.45
+INFO 2025-10-27 16:22:15,821 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:22:16,231 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:22:16,232 views Tipo: ate_mes
+INFO 2025-10-27 16:22:16,232 views Período: 9/2025
+INFO 2025-10-27 16:22:16,232 views Entradas: 161.45
+INFO 2025-10-27 16:22:16,232 views Saídas: 0.0
+INFO 2025-10-27 16:22:16,233 views Saldo: 161.45
+INFO 2025-10-27 16:22:16,242 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:22:16,242 views Tipo: mes_atual
+INFO 2025-10-27 16:22:16,242 views Período: 10/2025
+INFO 2025-10-27 16:22:16,243 views Entradas: 1370.25
+INFO 2025-10-27 16:22:16,243 views Saídas: 470.03
+INFO 2025-10-27 16:22:16,243 views Saldo: 900.22
+INFO 2025-10-27 16:22:16,256 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:22:16,256 views Tipo: total
+INFO 2025-10-27 16:22:16,258 views Período: None/atual
+INFO 2025-10-27 16:22:16,260 views Entradas: 1531.7
+INFO 2025-10-27 16:22:16,260 views Saídas: 470.03
+INFO 2025-10-27 16:22:16,260 views Saldo: 1061.67
+INFO 2025-10-27 16:22:16,678 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:22:16,678 views Tipo: ate_mes
+INFO 2025-10-27 16:22:16,679 views Período: 9/2025
+INFO 2025-10-27 16:22:16,680 views Entradas: 161.45
+INFO 2025-10-27 16:22:16,680 views Saídas: 0.0
+INFO 2025-10-27 16:22:16,681 views Saldo: 161.45
+INFO 2025-10-27 16:22:16,697 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:22:16,697 views Tipo: mes_atual
+INFO 2025-10-27 16:22:16,697 views Período: 10/2025
+INFO 2025-10-27 16:22:16,698 views Entradas: 1370.25
+INFO 2025-10-27 16:22:16,698 views Saídas: 470.03
+INFO 2025-10-27 16:22:16,698 views Saldo: 900.22
+INFO 2025-10-27 16:22:16,709 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:22:16,710 views Tipo: total
+INFO 2025-10-27 16:22:16,710 views Período: None/atual
+INFO 2025-10-27 16:22:16,711 views Entradas: 1531.7
+INFO 2025-10-27 16:22:16,711 views Saídas: 470.03
+INFO 2025-10-27 16:22:16,712 views Saldo: 1061.67
+INFO 2025-10-27 16:22:17,168 views Saldo calculado para igreja 1:
+INFO 2025-10-27 16:22:17,168 views Tipo: mes_atual
+INFO 2025-10-27 16:22:17,168 views Período: 10/2025
+INFO 2025-10-27 16:22:17,169 views Entradas: 1370.25
+INFO 2025-10-27 16:22:17,169 views Saídas: 470.03
+INFO 2025-10-27 16:22:17,170 views Saldo: 900.22
+INFO 2025-10-27 16:22:17,556 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:22:30,555 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\utils.py changed, reloading.
+INFO 2025-10-27 16:22:35,228 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 16:23:24,856 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:23:58,810 views Saldo calculado: 161.45 (Entradas: 161.45, Despesas: 0, Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:32:37,078 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-27 16:32:38,282 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 16:34:48,319 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\models.py changed, reloading.
+INFO 2025-10-27 16:34:49,681 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 16:36:04,070 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\apps.py changed, reloading.
+INFO 2025-10-27 16:36:05,323 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 16:36:33,869 utils Saldo calculado e cacheado para 8/2025: 0.0
+INFO 2025-10-27 16:36:34,204 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:36:40,062 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:36:40,495 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:36:40,501 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:36:40,997 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:36:41,855 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:36:42,072 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:36:43,786 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:08,489 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 16:38:12,850 views Login bem-sucedido para: Frank
+INFO 2025-10-27 16:38:13,980 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:38:14,403 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:14,407 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:14,912 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:15,793 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:38:15,905 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:17,494 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-27 16:38:17,720 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:17,813 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:38:18,359 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:19,228 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:20,085 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:20,641 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:51,329 views Login bem-sucedido para: Eben
+INFO 2025-10-27 16:38:52,567 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-27 16:38:52,670 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:52,684 views Saldo calculado (atual): 22.09 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:53,206 views Saldo calculado (atual): 22.09 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:54,648 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-27 16:38:54,799 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:56,740 utils Saldo calculado e cacheado para 8/2025: 582.54
+INFO 2025-10-27 16:38:56,867 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:57,195 views Saldo calculado (ate_mes): 22.089999999999918 (Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:38:57,724 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:59,294 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:38:59,847 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:39:00,377 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:39:01,184 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:39:26,302 views Login bem-sucedido para: Frank
+INFO 2025-10-27 16:39:27,430 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:39:27,858 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:39:28,220 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:39:28,703 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:39:29,170 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:39:29,374 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:39:31,053 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:39:32,881 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-27 16:39:34,384 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:39:35,103 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:39:35,589 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:39:36,085 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:39:36,562 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:40:23,972 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Gratificação do Líder', 'quantia': 900, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-27 16:40:24,482 utils Saldo encontrado no cache para 9/2025: 161.45
+INFO 2025-10-27 16:40:24,787 signals Saldo mensal atualizado para 1 - 10/2025: 161.67
+INFO 2025-10-27 16:40:24,789 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 210, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '900.00', 'data': '2025-10-31', 'descricao': 'Gratificação do Líder', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-27 16:40:24,801 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'descricao': 'Dízimo da Gratificação', 'quantia': 90, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-27 16:40:25,338 utils Saldo encontrado no cache para 9/2025: 161.45
+INFO 2025-10-27 16:40:25,648 signals Saldo mensal atualizado para 1 - 10/2025: 251.67
+INFO 2025-10-27 16:40:25,650 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 211, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'D', 'quantia': '90.00', 'data': '2025-10-31', 'descricao': 'Dízimo da Gratificação', 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-27 16:40:25,673 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Dízimo da Igreja', 'quantia': 146.03, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-27 16:40:26,187 utils Saldo encontrado no cache para 9/2025: 161.45
+INFO 2025-10-27 16:40:26,488 signals Saldo mensal atualizado para 1 - 10/2025: 105.63999999999999
+INFO 2025-10-27 16:40:26,489 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 212, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '146.03', 'data': '2025-10-31', 'descricao': 'Dízimo da Igreja', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-27 16:40:26,890 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:40:31,377 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:40:33,414 views Saldo calculado (mes): -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:40:34,348 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:40:34,758 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:40:36,356 views Saldo calculado (mes): -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:40:44,209 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-27 16:40:44,513 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:40:45,570 views Saldo calculado (mes): -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:40:52,227 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-27 16:40:52,550 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:42:36,347 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['11'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:42:36,451 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:42:36,948 views Saldo calculado (mes): -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:42:37,968 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-27 16:42:38,289 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:42:47,254 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-27 16:42:47,577 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:42:49,511 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:42:49,946 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:42:51,553 views Saldo calculado (mes): -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:42:52,630 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-27 16:42:52,946 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:46:40,138 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-27 16:46:40,475 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:46:51,059 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:46:51,472 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:46:51,482 views Saldo calculado (mes): -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:46:51,987 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:46:53,089 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-27 16:46:53,240 views Saldo calculado (mes): -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:46:55,293 views Saldo calculado (mes): -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:47:21,987 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\utils.py changed, reloading.
+INFO 2025-10-27 16:47:25,267 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 16:47:28,911 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-27 16:47:29,251 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:47:29,782 views Saldo calculado (mes): -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:47:42,174 views Login bem-sucedido para: Eben
+INFO 2025-10-27 16:47:43,417 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-27 16:47:43,808 views Saldo calculado (atual): 22.09 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:47:43,818 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:47:44,304 views Saldo calculado (atual): 22.09 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:47:45,398 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-27 16:47:45,561 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:47:47,561 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:47:48,366 utils Saldo encontrado no cache para 8/2025: 582.54
+INFO 2025-10-27 16:47:48,712 views Saldo calculado (ate_mes): 22.089999999999918 (Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:47:49,266 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:47:57,921 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-27 16:48:00,383 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 16:48:15,205 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-27 16:48:16,988 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 16:48:25,182 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-27 16:48:26,599 autoreload Watching for file changes with StatReloader
+INFO 2025-10-27 16:51:09,066 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-27 16:51:09,200 views Saldo calculado (atual): 22.09 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:51:09,201 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:51:09,686 views Saldo calculado (atual): 22.09 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:51:11,022 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-27 16:51:11,163 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:51:12,180 utils Saldo encontrado no cache para 8/2025: 582.54
+INFO 2025-10-27 16:51:12,492 views Saldo calculado (ate_mes): 22.089999999999918 (Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:51:12,988 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:51:13,493 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:53:17,947 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:56:30,357 utils Saldo encontrado no cache para 8/2025: 582.54
+INFO 2025-10-27 16:56:30,700 views Saldo calculado (ate_mes): 22.089999999999918 (Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-27 16:56:31,262 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:56:31,907 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:56:32,429 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-27 16:57:24,447 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\utils.py changed, reloading.
+INFO 2025-10-27 16:57:26,215 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 13:03:57,070 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-28 13:04:56,910 log Unauthorized: /api/me/
+WARNING 2025-10-28 13:04:56,943 log Unauthorized: /api/me/
+INFO 2025-10-28 13:05:23,964 views Login bem-sucedido para: Eben
+INFO 2025-10-28 13:05:25,196 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-28 13:05:25,650 views Saldo calculado (atual): 22.09 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:05:25,662 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:05:26,180 views Saldo calculado (atual): 22.09 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:05:27,223 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-28 13:05:27,395 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:05:29,488 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:14:13,259 utils Saldo encontrado no cache para 8/2025: 582.54
+INFO 2025-10-28 13:14:13,641 views Saldo calculado (ate_mes): 22.089999999999918 (Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-28 13:14:14,198 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:28:33,336 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-28 13:28:33,474 views Saldo calculado (atual): 22.09 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:28:33,754 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:28:33,988 views Saldo calculado (atual): 22.09 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:28:35,388 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-28 13:28:35,524 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:28:37,504 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:28:37,746 utils Saldo encontrado no cache para 8/2025: 582.54
+INFO 2025-10-28 13:28:38,098 views Saldo calculado (ate_mes): 22.089999999999918 (Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-28 13:28:38,622 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:28:43,799 utils Saldo encontrado no cache para 8/2025: 582.54
+INFO 2025-10-28 13:28:44,127 views Saldo calculado (ate_mes): 22.089999999999918 (Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-28 13:28:48,791 utils Saldo encontrado no cache para 8/2025: 582.54
+INFO 2025-10-28 13:28:49,113 views Saldo calculado (ate_mes): 22.089999999999918 (Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-28 13:28:51,957 utils Saldo encontrado no cache para 8/2025: 582.54
+INFO 2025-10-28 13:28:52,293 views Saldo calculado (ate_mes): 22.089999999999918 (Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-28 13:32:04,598 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\serializers.py changed, reloading.
+INFO 2025-10-28 13:32:06,595 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 13:33:21,058 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-28 13:33:22,043 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 13:45:01,801 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 13:46:21,262 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-28 13:46:22,726 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 13:46:41,612 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\serializers.py changed, reloading.
+INFO 2025-10-28 13:46:42,392 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 13:47:34,899 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 13:49:29,437 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\models.py changed, reloading.
+INFO 2025-10-28 13:49:31,320 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 13:49:40,791 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-28 13:49:41,970 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 13:50:57,957 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-28 13:51:00,495 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 13:55:02,351 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\models.py changed, reloading.
+INFO 2025-10-28 13:55:03,867 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 13:57:16,449 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-28 13:57:16,886 views Saldo calculado (atual): 22.09 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:57:16,896 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:57:17,390 views Saldo calculado (atual): 22.09 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:57:18,621 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-28 13:57:18,798 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:57:20,908 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:57:58,572 utils Saldo encontrado no cache para 8/2025: 582.54
+INFO 2025-10-28 13:57:58,935 views Saldo calculado (ate_mes): 22.089999999999918 (Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-28 13:57:59,472 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:58:01,650 utils Saldo encontrado no cache para 8/2025: 582.54
+INFO 2025-10-28 13:58:02,007 views Saldo calculado (ate_mes): 22.089999999999918 (Igreja: 10, Mês: 9, Ano: 2025)
+INFO 2025-10-28 13:58:07,063 utils Saldo encontrado no cache para 8/2025: 582.54
+INFO 2025-10-28 13:58:07,411 signals Saldo mensal atualizado para 10 - 9/2025: 222.08999999999997
+INFO 2025-10-28 13:58:07,860 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-28 13:58:10,039 views Saldo calculado (atual): 222.09 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:58:10,076 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:58:38,929 utils Saldo encontrado no cache para 8/2025: 582.54
+INFO 2025-10-28 13:58:39,270 signals Saldo mensal atualizado para 10 - 9/2025: 340.2099999999999
+INFO 2025-10-28 13:58:39,742 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['10']}>
+INFO 2025-10-28 13:58:41,932 views Saldo calculado (atual): 340.21 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:58:41,934 views Saldo calculado (mes): 0.0 (Igreja: 10, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:59:02,216 views Login bem-sucedido para: Frank
+INFO 2025-10-28 13:59:03,453 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 13:59:03,850 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:59:03,854 views Saldo calculado (mes): -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:59:04,379 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:59:05,577 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 13:59:05,793 views Saldo calculado (mes): -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:59:07,943 views Saldo calculado (mes): -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:59:19,397 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-28 13:59:19,748 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 13:59:20,295 views Saldo calculado (mes): -55.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:59:21,853 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-28 13:59:22,198 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 13:59:27,314 utils Saldo encontrado no cache para 9/2025: 161.45
+INFO 2025-10-28 13:59:27,655 signals Saldo mensal atualizado para 1 - 10/2025: 15.639999999999986
+INFO 2025-10-28 13:59:28,135 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 13:59:30,281 views Saldo calculado (atual): 15.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:59:30,290 views Saldo calculado (mes): -145.81 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:59:33,143 utils Saldo encontrado no cache para 9/2025: 161.45
+INFO 2025-10-28 13:59:33,482 signals Saldo mensal atualizado para 1 - 10/2025: 915.6400000000001
+INFO 2025-10-28 13:59:33,986 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 13:59:36,165 views Saldo calculado (mes): 754.19 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:59:36,170 views Saldo calculado (atual): 915.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:59:38,881 utils Saldo encontrado no cache para 9/2025: 161.45
+INFO 2025-10-28 13:59:39,203 signals Saldo mensal atualizado para 1 - 10/2025: 1061.67
+INFO 2025-10-28 13:59:39,672 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 13:59:41,581 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 13:59:41,597 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:00:55,989 utils Saldo calculado e cacheado para 8/2025: 0.0
+INFO 2025-10-28 14:00:56,534 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 14:00:57,890 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:00:58,432 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:00:59,221 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:01:06,137 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-28 14:01:06,481 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 14:01:14,000 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:01:14,116 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:01:14,403 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:01:14,607 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:01:15,861 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:01:16,046 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:01:17,929 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:03:31,705 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-28 14:03:32,064 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 14:03:32,458 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:03:32,977 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:03:33,481 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:03:33,993 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:04:16,050 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:04:18,098 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:04:19,495 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-28 14:04:19,826 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 14:04:51,435 views Login bem-sucedido para: Frank
+INFO 2025-10-28 14:04:52,606 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:04:53,028 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:04:53,049 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:04:53,570 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:04:54,440 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:04:54,568 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:04:56,242 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-28 14:04:56,382 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:04:56,561 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 14:04:57,077 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:04:57,568 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:04:58,092 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:04:58,626 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:09:18,658 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-28 14:09:19,000 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 14:09:24,414 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:09:24,822 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:09:24,829 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:09:25,333 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:09:26,312 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:09:26,535 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:09:28,338 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:09:57,578 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-28 14:09:57,901 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 14:09:58,410 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:09:59,099 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:10:00,163 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:10:00,803 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:13:16,679 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-28 14:13:17,059 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 14:13:20,204 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-28 14:13:20,546 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 14:13:24,707 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:13:25,136 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:13:25,150 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:13:25,665 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:13:26,544 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:13:26,753 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:13:28,515 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:13:37,359 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-28 14:13:37,681 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 14:13:38,194 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:13:38,691 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:13:39,219 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:13:39,721 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:19:05,329 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\utils.py changed, reloading.
+INFO 2025-10-28 14:19:09,259 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 14:27:07,464 utils Saldo encontrado no cache para 9/2025: 161.45
+INFO 2025-10-28 14:27:07,476 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 14:27:07,768 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:27:08,391 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:27:08,897 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:27:09,448 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:28:41,963 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 14:28:58,445 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:28:58,869 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:28:58,870 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:28:59,372 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:29:00,261 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:29:00,427 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:29:02,206 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:29:19,531 utils Saldo encontrado no cache para 9/2025: 161.45
+INFO 2025-10-28 14:29:19,534 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 14:29:20,047 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:29:21,015 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:29:21,882 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:29:22,404 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:29:45,273 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:29:45,392 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+ERROR 2025-10-28 14:29:45,915 views Erro na simulação de fechamento: name 'simular_fechamento_mes' is not defined
+ERROR 2025-10-28 14:29:45,918 log Internal Server Error: /api/simular-fechamento/
+INFO 2025-10-28 14:29:50,463 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:29:50,583 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:29:52,508 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:30:09,624 utils Saldo encontrado no cache para 9/2025: 161.45
+INFO 2025-10-28 14:30:09,625 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 14:30:35,415 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-28 14:30:37,199 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 14:30:38,588 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+WARNING 2025-10-28 14:31:59,040 log Not Found: /api/saldo-mensal/verificar/
+INFO 2025-10-28 14:31:59,663 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-28 14:32:00,053 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+WARNING 2025-10-28 14:32:06,754 log Not Found: /api/saldo-mensal/verificar/
+INFO 2025-10-28 14:32:07,212 utils Saldo encontrado no cache para 8/2025: 0.00
+INFO 2025-10-28 14:32:07,558 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 14:32:09,037 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:32:09,653 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:32:10,203 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:32:10,731 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:42:01,307 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:42:01,440 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:42:01,449 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:42:01,942 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:42:03,162 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:42:03,588 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:42:05,104 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:42:12,972 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:42:13,405 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:42:13,407 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:42:13,897 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:42:14,791 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 14:42:15,013 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:42:16,745 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 14:42:51,320 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 15:24:35,608 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-28 15:24:45,352 log Unauthorized: /api/me/
+WARNING 2025-10-28 15:24:45,358 log Unauthorized: /api/me/
+INFO 2025-10-28 15:35:42,048 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 15:35:56,066 views Login bem-sucedido para: Frank
+WARNING 2025-10-28 15:35:57,551 log Not Found: /api/saldo/
+WARNING 2025-10-28 15:35:57,558 log Not Found: /api/saldo/
+WARNING 2025-10-28 15:35:57,568 log Not Found: /api/saldo/
+INFO 2025-10-28 15:35:57,626 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:35:59,640 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:36:58,886 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+WARNING 2025-10-28 15:37:00,428 log Not Found: /api/saldo/
+WARNING 2025-10-28 15:38:09,631 log Not Found: /api/saldo/
+WARNING 2025-10-28 15:38:12,095 log Not Found: /api/saldo/
+WARNING 2025-10-28 15:38:12,594 log Not Found: /api/saldo/
+WARNING 2025-10-28 15:38:13,437 log Not Found: /api/saldo/
+WARNING 2025-10-28 15:38:50,449 log Not Found: /api/saldo/
+WARNING 2025-10-28 15:38:50,451 log Not Found: /api/saldo/
+INFO 2025-10-28 15:38:50,533 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+WARNING 2025-10-28 15:38:50,634 log Not Found: /api/saldo/
+INFO 2025-10-28 15:38:52,491 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:39:05,530 views Login bem-sucedido para: Frank
+WARNING 2025-10-28 15:39:06,583 log Not Found: /api/saldo/
+WARNING 2025-10-28 15:39:06,589 log Not Found: /api/saldo/
+INFO 2025-10-28 15:39:06,686 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+WARNING 2025-10-28 15:39:06,863 log Not Found: /api/saldo/
+INFO 2025-10-28 15:39:08,596 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:39:31,912 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 15:39:45,341 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+WARNING 2025-10-28 15:39:46,980 log Not Found: /api/saldo/
+INFO 2025-10-28 15:39:56,624 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-28 15:39:57,470 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 15:40:16,434 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-10-28 15:40:17,184 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-28 15:40:41,987 log Not Found: /api/saldo/
+WARNING 2025-10-28 15:41:03,008 log Not Found: /api/saldo/
+WARNING 2025-10-28 15:41:03,014 log Not Found: /api/saldo/
+INFO 2025-10-28 15:41:03,057 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+WARNING 2025-10-28 15:41:03,724 log Not Found: /api/saldo/
+INFO 2025-10-28 15:41:05,044 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:41:32,719 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 15:41:47,302 views Login bem-sucedido para: Frank
+WARNING 2025-10-28 15:41:48,431 log Not Found: /api/saldo/
+WARNING 2025-10-28 15:41:48,435 log Not Found: /api/saldo/
+INFO 2025-10-28 15:41:48,493 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+WARNING 2025-10-28 15:41:48,602 log Not Found: /api/saldo/
+INFO 2025-10-28 15:41:50,378 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:44:24,602 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 15:44:37,844 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:44:38,282 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:44:38,288 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:44:38,803 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:44:39,809 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:44:40,026 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:44:41,836 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:44:44,129 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 15:44:44,687 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:44:45,865 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:44:46,391 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:44:46,926 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:45:57,921 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:45:58,344 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:45:58,355 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:45:58,905 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:45:59,907 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:46:00,036 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:46:26,431 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:46:26,855 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:46:26,883 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:46:27,373 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:46:28,319 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:46:28,506 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:46:30,367 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:49:19,152 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 15:49:19,693 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:50:39,318 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:50:39,834 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:50:40,325 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:50:42,951 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 15:51:05,388 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-10-28 15:51:07,416 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 15:53:17,583 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 15:54:01,803 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 15:54:02,282 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:54:03,160 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:54:03,697 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:54:04,224 views Saldo calculado (mes): 900.22 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:54:33,065 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:54:33,582 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:54:34,111 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:54:35,102 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:54:38,103 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 15:55:05,067 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 15:56:58,516 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 15:57:00,957 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:57:01,379 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:57:01,924 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 15:57:02,950 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 15:57:04,161 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 16:02:43,713 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 16:27:37,154 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 16:27:45,655 views Login bem-sucedido para: Frank
+INFO 2025-10-28 16:27:46,824 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 16:27:47,245 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 16:27:47,744 views Saldo calculado (atual): 1061.67 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 16:27:48,662 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+WARNING 2025-10-28 16:27:50,806 log Not Found: /api/fechamento/status/1/10/2025/
+INFO 2025-10-28 16:27:51,339 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+WARNING 2025-10-28 16:28:01,619 log Not Found: /api/fechamento/status/1/10/2025/
+INFO 2025-10-28 16:28:02,127 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+WARNING 2025-10-28 16:28:05,733 log Not Found: /api/fechamento/status/1/10/2025/
+INFO 2025-10-28 16:28:06,235 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+WARNING 2025-10-28 16:28:12,928 log Not Found: /api/fechamento/status/1/10/2025/
+INFO 2025-10-28 16:28:13,432 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 16:28:28,297 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Gratificação do Líder', 'quantia': 900, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-28 16:28:28,767 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 213, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '900.00', 'data': '2025-10-31', 'descricao': 'Gratificação do Líder', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-28 16:28:28,773 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'D', 'descricao': 'Dízimo da Gratificação', 'quantia': 90, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-28 16:28:29,228 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 214, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'D', 'quantia': '90.00', 'data': '2025-10-31', 'descricao': 'Dízimo da Gratificação', 'nome': None, 'culto': None, 'tipo_despesa': None, 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-28 16:28:29,253 views [TransacaoListCreateView] Dados recebidos para criação: {'tipo': 'S', 'tipo_despesa': 'OT', 'descricao': 'Dízimo da Igreja', 'quantia': 146.03, 'data': '2025-10-31', 'igreja_id': 1}
+INFO 2025-10-28 16:28:29,715 views [TransacaoListCreateView] Transação criada com sucesso: {'id': 215, 'igreja': {'id': 1, 'nome': 'Ebenezer unnoficial', 'lider': 'Lindomar', 'criado_em': '2025-05-15T19:20:09.402478-03:00', 'atualizado_em': '2025-06-01T21:59:35.417684-03:00'}, 'tipo': 'S', 'quantia': '146.03', 'data': '2025-10-31', 'descricao': 'Dízimo da Igreja', 'nome': None, 'culto': None, 'tipo_despesa': 'OT', 'mes': 10, 'ano': 2025, 'manual': False, 'discriminacao': None}
+INFO 2025-10-28 16:28:30,146 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 16:28:34,537 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 16:28:37,905 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 16:28:38,018 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+WARNING 2025-10-28 16:28:55,431 log Not Found: /api/fechamento/status/1/10/2025/
+INFO 2025-10-28 16:28:55,977 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+WARNING 2025-10-28 16:29:02,181 log Not Found: /api/fechamento/status/1/10/2025/
+INFO 2025-10-28 16:29:02,681 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 16:29:15,532 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['11'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 16:29:15,647 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+WARNING 2025-10-28 16:29:17,267 log Not Found: /api/fechamento/status/1/10/2025/
+INFO 2025-10-28 16:29:17,779 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 16:29:32,179 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 16:29:32,303 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 16:29:35,252 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['9'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 16:29:35,359 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+WARNING 2025-10-28 16:29:36,567 log Not Found: /api/fechamento/status/1/10/2025/
+INFO 2025-10-28 16:29:37,085 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 16:29:39,766 views Requisição recebida - Parâmetros: <QueryDict: {'mes': ['10'], 'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 16:29:39,869 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+WARNING 2025-10-28 16:29:58,261 log Not Found: /api/fechamento/status/1/10/2025/
+INFO 2025-10-28 16:29:58,742 views Saldo calculado (ate_mes): 161.45 (Igreja: 1, Mês: 9, Ano: 2025)
+INFO 2025-10-28 16:30:20,984 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 16:30:21,401 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 16:30:21,923 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 16:30:23,115 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 16:30:39,842 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\utils.py changed, reloading.
+INFO 2025-10-28 16:30:42,398 autoreload Watching for file changes with StatReloader
+INFO 2025-10-28 16:32:31,694 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 16:32:31,831 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 16:32:32,368 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-10-28 16:32:33,906 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>

@@ -33,8 +33,7 @@ urlpatterns = [
     path('register/', user_register, name='register'),
     path('login/', user_login, name='login'),
 
-    # Saldo e Estatísticas
-    path('saldo/', calcular_saldo, name='calcular_saldo'),
+    # Estatísticas
     path('transacoes/estatisticas/', estatisticas_transacoes, name='estatisticas-transacoes'),
     #relatorios
     path('relatorios/', RelatorioListView.as_view(), name='relatorios-list'),
@@ -58,4 +57,7 @@ urlpatterns = [
     path('backup/status/', verificar_status_backup, name='backup-status'),
     path('backup/run/', views_module.run_backup, name='backup-run'),
     path('backup/list/', views_module.list_backups, name='backup-list'),
+    
+    # Saldo
+    path('saldo/', calcular_saldo, name='calcular-saldo'),
 ]

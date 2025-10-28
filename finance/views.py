@@ -246,24 +246,54 @@ def me(request):
 # -------------------------------
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def calcular_saldo(request):
-    """Calcula o saldo total (entradas - despesas), podendo filtrar por igreja_id, mês e ano."""
+    """
+    Calcula saldo com opções:
+    - Saldo atual (todas as transações)
+    - Saldo até um mês específico (total em caixa até fim do mês)
+    - Saldo apenas do mês (transações apenas do mês)
+    """
     try:
         igreja_id = request.query_params.get('igreja_id')
         mes = request.query_params.get('mes')
         ano = request.query_params.get('ano')
-        qs = Transacao.objects.all()
-        if igreja_id:
-            qs = qs.filter(igreja_id=igreja_id)
-        if mes:
-            qs = qs.filter(data__month=int(mes))
-        if ano:
-            qs = qs.filter(data__year=int(ano))
-        total_entradas = qs.filter(tipo__in=['D', 'O']).aggregate(Sum('quantia'))['quantia__sum'] or 0
-        total_despesas = qs.filter(tipo='S').aggregate(Sum('quantia'))['quantia__sum'] or 0
-        saldo = total_entradas - total_despesas
-        logger.info(f"Saldo calculado: {saldo} (Entradas: {total_entradas}, Despesas: {total_despesas}, Igreja: {igreja_id}, Mês: {mes}, Ano: {ano})")
-        return Response({'saldo': saldo})
+        tipo_saldo = request.query_params.get('tipo', 'atual')  # 'atual', 'ate_mes', 'mes'
+        
+        if not igreja_id:
+            return Response({'error': 'igreja_id é obrigatório'}, status=status.HTTP_400_BAD_REQUEST)
+            
+        # Se mês/ano não fornecidos, usar data atual
+        if not mes or not ano:
+            data_atual = datetime.now()
+            mes = data_atual.month
+            ano = data_atual.year
+        else:
+            mes = int(mes)
+            ano = int(ano)
+            
+        from .utils import calcular_saldo_ate_mes, calcular_saldo_mes_atual
+        
+        if tipo_saldo == 'ate_mes':
+            # Calcula total em caixa até o fim do mês especificado
+            saldo = calcular_saldo_ate_mes(igreja_id, mes, ano)
+        elif tipo_saldo == 'mes':
+            # Calcula saldo apenas das transações do mês
+            saldo = calcular_saldo_mes_atual(igreja_id, mes, ano)
+        else:
+            # Saldo atual (todas as transações até agora)
+            qs = Transacao.objects.filter(igreja_id=igreja_id)
+            total_entradas = qs.filter(tipo__in=['D', 'O']).aggregate(Sum('quantia'))['quantia__sum'] or 0
+            total_despesas = qs.filter(tipo='S').aggregate(Sum('quantia'))['quantia__sum'] or 0
+            saldo = float(total_entradas - total_despesas)
+            
+        logger.info(f"Saldo calculado ({tipo_saldo}): {saldo} (Igreja: {igreja_id}, Mês: {mes}, Ano: {ano})")
+        return Response({
+            'saldo': saldo,
+            'mes': mes,
+            'ano': ano,
+            'tipo': tipo_saldo
+        })
     except Exception as e:
         logger.exception(f"Erro ao calcular saldo: {str(e)}")
         return Response({'error': 'Erro ao calcular saldo'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -438,6 +468,67 @@ def listar_transacoes(request):
     except Exception as e:
         logger.exception(f"Erro ao listar transações: {str(e)}")
         return Response({'error': 'Erro interno ao listar transações'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+# -------------------------------
+# Views de Simulação
+# -------------------------------
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def simular_fechamento(request):
+    """Simula o fechamento do mês, calculando totais e saldos sem salvar mudanças."""
+    try:
+        # Obtém parâmetros
+        mes = int(request.query_params.get('mes', datetime.now().month))
+        ano = int(request.query_params.get('ano', datetime.now().year))
+        igreja = request.user.profile.igreja if hasattr(request.user, 'profile') else None
+        
+        if not igreja:
+            return Response({'error': 'Igreja não encontrada'}, status=status.HTTP_404_NOT_FOUND)
+            
+        # Filtra transações do mês
+        transacoes = Transacao.objects.filter(
+            igreja=igreja,
+            data__month=mes,
+            data__year=ano
+        )
+        
+        # Calcula totais
+        entradas = transacoes.filter(tipo__in=['D', 'O']).aggregate(Sum('quantia'))['quantia__sum'] or 0
+        saidas = transacoes.filter(tipo='S').aggregate(Sum('quantia'))['quantia__sum'] or 0
+        
+        # Calcula saldo do mês e total em caixa
+        saldo_mes = float(entradas - saidas)
+        
+        # Calcula saldo anterior (até o mês anterior)
+        from .utils import calcular_saldo_ate_mes
+        mes_anterior = mes - 1
+        ano_anterior = ano
+        if mes_anterior == 0:
+            mes_anterior = 12
+            ano_anterior = ano - 1
+        saldo_anterior = calcular_saldo_ate_mes(igreja.id, mes_anterior, ano_anterior)
+        
+        # Calcula saldo final (saldo anterior + saldo do mês)
+        saldo_final = saldo_anterior + saldo_mes
+        
+        return Response({
+            'totalEntradas': float(entradas),
+            'totalSaidas': float(saidas),
+            'saldoMes': float(saldo_mes),
+            'saldoAnterior': float(saldo_anterior),
+            'saldoFinal': float(saldo_final),
+            'dizimoIgreja': float(entradas) * 0.1 if entradas > 0 else 0,
+            'mes': mes,
+            'ano': ano
+        })
+        
+    except Exception as e:
+        logger.exception(f"Erro ao simular fechamento: {str(e)}")
+        return Response(
+            {'error': f'Erro ao simular fechamento: {str(e)}'},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
 
 # -------------------------------
 # Views de Relatórios
