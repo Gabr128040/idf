@@ -45,6 +45,9 @@ const Monitoring = () => {
   const [customDateRange, setCustomDateRange] = useState({ start: null, end: null });
   const [selectedMetrics, setSelectedMetrics] = useState(['entradas', 'saidas']); // padrão: entradas/saídas
   const [availableMonths, setAvailableMonths] = useState([]);
+  const [periodModalOpen, setPeriodModalOpen] = useState(false);
+  const [monthsModalOpen, setMonthsModalOpen] = useState(false);
+  const [backupModalOpen, setBackupModalOpen] = useState(false);
   const [selectedCompareMonths, setSelectedCompareMonths] = useState(() => {
     const today = new Date();
     const currentMonth = `${String(today.getMonth() + 1).padStart(2, '0')}/${today.getFullYear()}`;
@@ -250,59 +253,232 @@ const Monitoring = () => {
           </div>
         </div>
 
-        {/* Controles simplificados para mobile */}
+        {/* Controles principais */}
         <div className="monitoring-controls">
-          {/* Seletor de período simples */}
-          <div className="period-selector">
-            <button 
-              className={`period-btn ${periodMonths === 3 ? 'active' : ''}`}
-              onClick={() => {
-                setPeriodMonths(3);
-                setCustomDateRange({ start: null, end: null });
-              }}
-            >
-              3 meses
-            </button>
-            <button 
-              className={`period-btn ${periodMonths === 6 ? 'active' : ''}`}
-              onClick={() => {
-                setPeriodMonths(6);
-                setCustomDateRange({ start: null, end: null });
-              }}
-            >
-              6 meses
-            </button>
-            <button 
-              className={`period-btn ${periodMonths === 12 ? 'active' : ''}`}
-              onClick={() => {
-                setPeriodMonths(12);
-                setCustomDateRange({ start: null, end: null });
-              }}
-            >
-              12 meses
-            </button>
-          </div>
+          <button 
+            className={`control-button ${customDateRange.start ? 'active' : ''}`}
+            onClick={() => setPeriodModalOpen(true)}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="2"/>
+              <path d="M3 10h18M8 2v4M16 2v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+            {customDateRange.start 
+              ? `${formatDateForApi(customDateRange.start)} - ${formatDateForApi(customDateRange.end)}`
+              : `${periodMonths} meses`}
+          </button>
 
-          {/* Comparação de meses simplificada */}
-          <div className="months-comparison">
-            <div className="months-scroll">
-              {(availableMonths || []).map(m => (
-                <button
-                  key={m}
-                  className={`month-btn ${selectedCompareMonths.includes(m) ? 'active' : ''}`}
+          <button 
+            className={`control-button ${selectedCompareMonths.length > 0 ? 'active' : ''}`}
+            onClick={() => setMonthsModalOpen(true)}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M16 3v4M8 3v4M4 11h16M4 8h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" strokeWidth="2"/>
+            </svg>
+            {selectedCompareMonths.length 
+              ? `${selectedCompareMonths.length} meses selecionados`
+              : 'Selecionar meses'}
+          </button>
+
+          <button 
+            className="control-button"
+            onClick={() => setBackupModalOpen(true)}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M12 15V3m0 12l-4-4m4 4l4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <path d="M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+            Backup e Relatórios
+          </button>
+        </div>
+
+        {/* Modal de Período */}
+        {periodModalOpen && (
+          <div className="modal-overlay" onClick={() => setPeriodModalOpen(false)}>
+            <div className="modal-content" onClick={e => e.stopPropagation()}>
+              <div className="modal-header">
+                <h3 className="modal-title">Selecionar Período</h3>
+                <button className="modal-close" onClick={() => setPeriodModalOpen(false)}>×</button>
+              </div>
+              
+              <div className="period-selector">
+                <button 
+                  className={`period-button ${periodMonths === 3 && !customDateRange.start ? 'active' : ''}`}
                   onClick={() => {
-                    const v = m;
-                    setSelectedCompareMonths(prev => 
-                      prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]
-                    );
+                    setPeriodMonths(3);
+                    setCustomDateRange({ start: null, end: null });
                   }}
                 >
-                  {m}
+                  3 meses
                 </button>
-              ))}
+                <button 
+                  className={`period-button ${periodMonths === 6 && !customDateRange.start ? 'active' : ''}`}
+                  onClick={() => {
+                    setPeriodMonths(6);
+                    setCustomDateRange({ start: null, end: null });
+                  }}
+                >
+                  6 meses
+                </button>
+                <button 
+                  className={`period-button ${periodMonths === 12 && !customDateRange.start ? 'active' : ''}`}
+                  onClick={() => {
+                    setPeriodMonths(12);
+                    setCustomDateRange({ start: null, end: null });
+                  }}
+                >
+                  12 meses
+                </button>
+              </div>
+
+              <div className="modal-actions">
+                <button 
+                  className="modal-button secondary"
+                  onClick={() => setPeriodModalOpen(false)}
+                >
+                  Cancelar
+                </button>
+                <button 
+                  className="modal-button primary"
+                  onClick={() => {
+                    setPeriodModalOpen(false);
+                    fetchTransactionData(periodMonths);
+                  }}
+                >
+                  Aplicar
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        )}
+
+        {/* Modal de Meses */}
+        {monthsModalOpen && (
+          <div className="modal-overlay" onClick={() => setMonthsModalOpen(false)}>
+            <div className="modal-content" onClick={e => e.stopPropagation()}>
+              <div className="modal-header">
+                <h3 className="modal-title">Selecionar Meses para Comparação</h3>
+                <button className="modal-close" onClick={() => setMonthsModalOpen(false)}>×</button>
+              </div>
+
+              <div className="months-grid">
+                {(availableMonths || []).map(m => (
+                  <div 
+                    key={m}
+                    className={`month-option ${selectedCompareMonths.includes(m) ? 'selected' : ''}`}
+                    onClick={() => {
+                      setSelectedCompareMonths(prev => 
+                        prev.includes(m) ? prev.filter(x => x !== m) : [...prev, m]
+                      );
+                    }}
+                  >
+                    <input 
+                      type="checkbox" 
+                      checked={selectedCompareMonths.includes(m)}
+                      readOnly 
+                    />
+                    <span>{m}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="modal-actions">
+                <button 
+                  className="modal-button secondary"
+                  onClick={() => setMonthsModalOpen(false)}
+                >
+                  Cancelar
+                </button>
+                <button 
+                  className="modal-button primary"
+                  onClick={() => setMonthsModalOpen(false)}
+                >
+                  Aplicar
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Modal de Backup */}
+        {backupModalOpen && (
+          <div className="modal-overlay" onClick={() => setBackupModalOpen(false)}>
+            <div className="modal-content" onClick={e => e.stopPropagation()}>
+              <div className="modal-header">
+                <h3 className="modal-title">Backup e Relatórios</h3>
+                <button className="modal-close" onClick={() => setBackupModalOpen(false)}>×</button>
+              </div>
+
+              <div className="status-grid" style={{ marginBottom: '24px' }}>
+                <div className="status-item">
+                  <span className="status-label">Backup de Relatórios</span>
+                  <div className="status-value">
+                    <span className={`status-indicator ${backupStatus.reports}`}></span>
+                    {backupStatus.reports === 'ok' ? 'Atualizado' : 'Desatualizado'}
+                  </div>
+                </div>
+
+                <div className="status-item">
+                  <span className="status-label">Backup do Banco</span>
+                  <div className="status-value">
+                    <span className={`status-indicator ${backupStatus.database}`}></span>
+                    {backupStatus.database === 'ok' ? 'Atualizado' : 'Desatualizado'}
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: '12px', marginBottom: '24px' }}>
+                <button
+                  className="modal-button primary"
+                  onClick={() => {
+                    runBackup('all');
+                    setBackupModalOpen(false);
+                  }}
+                  disabled={runningBackup}
+                >
+                  {runningBackup ? 'Executando...' : 'Backup Completo'}
+                </button>
+                <button
+                  className="modal-button secondary"
+                  onClick={() => {
+                    handleGeneratePdf();
+                    setBackupModalOpen(false);
+                  }}
+                  disabled={isGeneratingPdf}
+                >
+                  {isGeneratingPdf ? 'Gerando...' : 'Gerar PDF'}
+                </button>
+              </div>
+
+              {backupsList.length > 0 && (
+                <div className="backups-list">
+                  <h4 style={{ marginBottom: '12px' }}>Backups Recentes</h4>
+                  <div className="backup-items" style={{ 
+                    display: 'flex', 
+                    flexDirection: 'column',
+                    gap: '8px'
+                  }}>
+                    {backupsList.slice(0, 5).map((b, idx) => (
+                      <div key={idx} style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        padding: '8px',
+                        background: '#f8fafc',
+                        borderRadius: '6px'
+                      }}>
+                        <span style={{ fontSize: '13px' }}>{b.name || b.filename || b.id}</span>
+                        <span style={{ fontSize: '12px', color: '#64748b' }}>
+                          {b.created_at || b.created || b.timestamp || ''}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Grid de cards principais */}

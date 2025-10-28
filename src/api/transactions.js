@@ -2,6 +2,26 @@ import axios from 'axios';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
+// Função para simular fechamento do mês
+export const simularFechamento = async (mes, ano, navigate) => {
+  try {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('Nenhum token encontrado. Por favor, faça login.');
+    }
+
+    const response = await axios.get(`${API_URL}/api/simular-fechamento/`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      params: { mes, ano }
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.detail || error.message);
+  }
+};
+
 // Função para configurar o token em todas as requisições
 const setupAxiosInterceptors = (navigate) => {
   axios.interceptors.response.use(
@@ -42,16 +62,23 @@ export const fetchTransactions = async (month, year, navigate, igrejaId = null) 
   }
 };
 
-export const fetchSaldo = async (navigate, igrejaId = null, mes = null, ano = null) => {
+export const fetchSaldo = async (navigate, igrejaId = null, mes = null, ano = null, tipo = 'atual') => {
   try {
     const token = localStorage.getItem('token');
     if (!token) {
       throw new Error('Nenhum token encontrado. Por favor, faça login.');
     }
-    const params = {};
-    if (igrejaId) params.igreja_id = igrejaId;
+    if (!igrejaId) {
+      throw new Error('Igreja ID é obrigatório');
+    }
+    
+    const params = {
+      igreja_id: igrejaId,
+      tipo
+    };
     if (mes) params.mes = mes;
     if (ano) params.ano = ano;
+    
     const response = await axios.get(`${API_URL}/api/saldo/`, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -96,6 +123,8 @@ export const createManualTransaction = async (transacao, navigate) => {
     throw new Error(error.response?.data?.detail || error.message);
   }
 };
+
+
 
 // Exporta a função para configurar os interceptors
 export { setupAxiosInterceptors };

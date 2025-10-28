@@ -47,37 +47,180 @@
   margin-top: clamp(8px, 2vw, 12px);
   display: flex;
   gap: clamp(12px, 3vw, 16px);
-  align-items: flex-start;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-.monitoring-controls label { 
-  font-size: 13px; 
-  color: #334155; 
-  display: flex; 
-  gap: 8px; 
+.control-button {
+  padding: 8px 16px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #1e293b;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
   align-items: center;
-  white-space: nowrap;
+  gap: 8px;
+  transition: all 0.2s;
 }
 
-.months-multiselect { 
-  display: flex; 
-  gap: 8px; 
-  flex-wrap: wrap; 
-  width: 100%; 
-  max-width: 560px; 
+.control-button:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
 }
 
-.month-checkbox { 
-  display: flex; 
-  gap: 6px; 
-  align-items: center; 
-  background: #f8fafc; 
-  padding: 6px 8px; 
-  border-radius: 8px; 
-  border: 1px solid #e6eef9;
-  white-space: nowrap;
-  font-size: clamp(12px, 3vw, 13px);
+.control-button.active {
+  background: #4f8cff;
+  border-color: #4f8cff;
+  color: #fff;
+}
+
+.control-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.period-selector {
+  display: flex;
+  gap: 8px;
+}
+
+.period-button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.period-button:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.period-button.active {
+  background: #4f8cff;
+  border-color: #4f8cff;
+  color: #fff;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 90%;
+  width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modal-title {
+  font-size: 18px;
+  color: #1e293b;
+  font-weight: 500;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.modal-close:hover {
+  color: #1e293b;
+}
+
+.months-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.month-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.month-option:hover {
+  background: #f1f5f9;
+}
+
+.month-option.selected {
+  background: #4f8cff;
+  border-color: #4f8cff;
+  color: #fff;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.modal-button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-button.secondary {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+}
+
+.modal-button.secondary:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.modal-button.primary {
+  background: #4f8cff;
+  border: 1px solid #4f8cff;
+  color: #fff;
+}
+
+.modal-button.primary:hover {
+  background: #3b7dff;
 }
 .month-checkbox input { width: 14px; height: 14px; }
 
@@ -195,6 +338,104 @@
 
 .test-connection-btn:hover {
   background: #f1f5f9;
+}
+
+.backup-actions {
+  margin-top: clamp(20px, 5vw, 32px);
+  padding-top: clamp(16px, 4vw, 24px);
+  border-top: 1px solid #e2e8f0;
+}
+
+.backup-actions h4 {
+  margin: 0 0 clamp(12px, 3vw, 16px);
+  color: #1e293b;
+  font-size: clamp(14px, 3.5vw, 16px);
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: clamp(12px, 3vw, 16px);
+  margin-bottom: clamp(20px, 5vw, 32px);
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: clamp(10px, 2.5vw, 12px) clamp(16px, 4vw, 20px);
+  border-radius: 8px;
+  border: none;
+  font-size: clamp(13px, 3.2vw, 14px);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #fff;
+}
+
+.action-btn svg {
+  width: clamp(16px, 4vw, 20px);
+  height: clamp(16px, 4vw, 20px);
+}
+
+.action-btn.pdf {
+  background: #4f8cff;
+}
+
+.action-btn.pdf:hover {
+  background: #3b7aff;
+}
+
+.action-btn.backup {
+  background: #7c3aed;
+}
+
+.action-btn.backup:hover {
+  background: #6d28d9;
+}
+
+.action-btn.check {
+  background: #10b981;
+}
+
+.action-btn.check:hover {
+  background: #059669;
+}
+
+.action-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.backups-list {
+  margin-top: clamp(16px, 4vw, 24px);
+}
+
+.backup-items {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 2vw, 12px);
+}
+
+.backup-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(8px, 2vw, 12px);
+  background: #f8fafc;
+  border-radius: 8px;
+  font-size: clamp(12px, 3vw, 13px);
+}
+
+.backup-name {
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.backup-date {
+  color: #64748b;
 }
 
 .monitoring-loading {

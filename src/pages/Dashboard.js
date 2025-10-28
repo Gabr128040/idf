@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { fetchTransactions, fetchSaldo, deleteTransaction, setupAxiosInterceptors } from '../api/transactions';
+import { fetchTransactions, fetchSaldo, deleteTransaction, setupAxiosInterceptors, simularFechamento } from '../api/transactions';
+import { verificarFechamento } from '../api/fechamento';
 import SmartCalculator from '../components/SmartCalculator';
 import TransactionForm from '../components/TransactionForm';
 import TransactionList from '../components/TransactionList';
@@ -12,6 +13,8 @@ import Navbar from '../components/Navbar';
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import { motion } from 'framer-motion';
+
+
 import axiosLocal from 'axios';
 import logo from '../assets/logo.png';
 import './Dashboard.css';
@@ -46,6 +49,7 @@ const Dashboard = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [igrejaUsuario, setIgrejaUsuario] = useState(null);
+  const [saldoMensal, setSaldoMensal] = useState(null);
   const [showReportModal, setShowReportModal] = useState(false);
   const [includeGratificacao, setIncludeGratificacao] = useState(false);
   const [includeDizimoGratificacao, setIncludeDizimoGratificacao] = useState(false);
@@ -105,7 +109,8 @@ const Dashboard = () => {
 
   const updateSaldo = async () => {
     try {
-      const saldoData = await fetchSaldo(navigate, igrejaUsuario ? igrejaUsuario.id : null);
+      // Para o indicador de saldo, usamos o saldo atual (todas as transações)
+      const saldoData = await fetchSaldo(navigate, igrejaUsuario ? igrejaUsuario.id : null, null, null, 'atual');
       setSaldo(saldoData);
     } catch (err) {
       setNotification({ message: 'Erro ao atualizar saldo: ' + err.message, type: 'error' });
@@ -452,17 +457,14 @@ const Dashboard = () => {
     doc.text('TOTAL DE SAÍDA DO MÊS:', infoStartX, infoStartY);
     doc.text(`R$ ${truncateToTwoDecimals(previewData.totalSaidas)}`, infoStartX + 60, infoStartY);
     infoStartY += 4;
-    doc.text('SALDO DO MÊS:', infoStartX, infoStartY);
-    doc.text(`R$ ${previewData.saldoMes.toFixed(2)}`, infoStartX + 60, infoStartY);
-    infoStartY += 4;
-    doc.text('SALDO ANTERIOR:', infoStartX, infoStartY);
-    doc.text(`R$ ${previewData.saldoAnterior.toFixed(2)}`, infoStartX + 60, infoStartY);
-    infoStartY += 4;
-    doc.text('TOTAL EM CAIXA:', infoStartX, infoStartY);
-    const totalEmCaixa = previewData.saldoFinal;
-    doc.text(`R$ ${truncateToTwoDecimals(totalEmCaixa)}`, infoStartX + 60, infoStartY);
-    
-    // Linhas de assinatura
+      doc.text('SALDO ANTERIOR:', infoStartX, infoStartY);
+      doc.text(`R$ ${truncateToTwoDecimals(previewData.saldoAnterior)}`, infoStartX + 60, infoStartY);
+      infoStartY += 4;
+      doc.text('SALDO DO MÊS:', infoStartX, infoStartY);
+      doc.text(`R$ ${truncateToTwoDecimals(previewData.saldoMes)}`, infoStartX + 60, infoStartY);
+      infoStartY += 4;
+      doc.text('TOTAL EM CAIXA:', infoStartX, infoStartY);
+      doc.text(`R$ ${truncateToTwoDecimals(previewData.saldoFinal)}`, infoStartX + 60, infoStartY);    // Linhas de assinatura
     const signatureY = infoBoxY + infoBoxHeight + 6;
     doc.setFontSize(8);
     doc.setFont('times', 'normal');
@@ -682,11 +684,11 @@ const Dashboard = () => {
       doc.text('TOTAL DE SAÍDA DO MÊS:', infoStartX, infoStartY);
       doc.text(`R$ ${truncateToTwoDecimals(previewData.totalSaidas)}`, infoStartX + 60, infoStartY);
       infoStartY += 4;
-      doc.text('SALDO DO MÊS:', infoStartX, infoStartY);
-      doc.text(`R$ ${previewData.saldoMes.toFixed(2)}`, infoStartX + 60, infoStartY);
-      infoStartY += 4;
       doc.text('SALDO ANTERIOR:', infoStartX, infoStartY);
       doc.text(`R$ ${previewData.saldoAnterior.toFixed(2)}`, infoStartX + 60, infoStartY);
+      infoStartY += 4;
+      doc.text('SALDO DO MÊS:', infoStartX, infoStartY);
+      doc.text(`R$ ${previewData.saldoMes.toFixed(2)}`, infoStartX + 60, infoStartY);
       infoStartY += 4;
       doc.text('TOTAL EM CAIXA:', infoStartX, infoStartY);
       const totalEmCaixa = previewData.saldoFinal;
@@ -766,6 +768,18 @@ const Dashboard = () => {
   // Buscar saldo do mês anterior ao abrir o modal de relatório
   useEffect(() => {
     if (!showReportModal || !igrejaUsuario) return;
+    
+    // Verifica se o mês já está fechado
+    const checkFechamento = async () => {
+      try {
+        const dados = await verificarFechamento(igrejaUsuario.id, currentMonth, currentYear);
+        setSaldoMensal(dados);
+      } catch (err) {
+        console.error('Erro ao verificar fechamento:', err);
+        setSaldoMensal(null);
+      }
+    };
+    checkFechamento();
     let mes = currentMonth - 1;
     let ano = currentYear;
     if (mes < 1) {
@@ -774,7 +788,8 @@ const Dashboard = () => {
     }
     const fetchSaldoAnterior = async () => {
       try {
-        const saldoAnt = await fetchSaldo(navigate, igrejaUsuario.id, mes, ano);
+        // Busca o total em caixa até o fim do mês anterior
+        const saldoAnt = await fetchSaldo(navigate, igrejaUsuario.id, mes, ano, 'ate_mes');
         setSaldoAnterior(saldoAnt);
       } catch {
         setSaldoAnterior(0);
@@ -785,51 +800,82 @@ const Dashboard = () => {
 
   // Atualiza a prévia do relatório sempre que filtros ou opções mudam
   useEffect(() => {
-    // Filtra as transações do mês/ano ATUAL
-    let transacoesMes = transactions.filter(t => {
-      const [ano, mes] = t.data.split('-');
-      return parseInt(mes) === currentMonth && parseInt(ano) === currentYear;
-    });
+    const atualizarPreviewData = async () => {
+      try {
+        // Filtra as transações do mês/ano atual
+        let transacoesMes = transactions.filter(t => {
+          const [ano, mes] = t.data.split('-');
+          return parseInt(mes) === currentMonth && parseInt(ano) === currentYear;
+        });
 
-    // 1. Entradas regulares do mês (ofertas + dízimos)
-    let entradasRegulares = transacoesMes.filter(t => t.tipo === 'D' || t.tipo === 'O').reduce((acc, t) => acc + Number(t.quantia), 0);
+        // 1. Entradas regulares do mês (ofertas + dízimos)
+        let entradasRegulares = transacoesMes
+          .filter(t => t.tipo === 'D' || t.tipo === 'O')
+          .reduce((acc, t) => acc + Number(t.quantia), 0);
 
-    // 2. Saídas regulares do mês
-    let saidasRegulares = transacoesMes.filter(t => t.tipo === 'S').reduce((acc, t) => acc + Number(t.quantia), 0);
+        // 2. Saídas regulares do mês
+        let saidasRegulares = transacoesMes
+          .filter(t => t.tipo === 'S')
+          .reduce((acc, t) => acc + Number(t.quantia), 0);
 
-    // 3. Dízimo da gratificação (se marcado)
-    let dizimoGratificacao = includeDizimoGratificacao ? Number(valorGratificacao) * 0.1 : 0;
+        // 3. Dízimo da gratificação (se marcado)
+        let dizimoGratificacao = includeDizimoGratificacao ? Number(valorGratificacao) * 0.1 : 0;
 
-    // 4. Gratificação (se marcada)
-    let gratificacao = includeGratificacao ? Number(valorGratificacao) : 0;
+        // 4. Gratificação (se marcada)
+        let gratificacao = includeGratificacao ? Number(valorGratificacao) : 0;
 
-    // 5. Total de entradas do mês (regulares + dízimo da gratificação se marcado)
-    let totalEntradas = entradasRegulares + dizimoGratificacao;
+        // 5. Total de entradas do mês (regulares + dízimo da gratificação se marcado)
+        let totalEntradas = entradasRegulares + (includeDizimoGratificacao ? dizimoGratificacao : 0);
 
-    // 6. Dízimo da igreja (se marcado)
-    let dizimoIgreja = includeDizimoIgreja ? totalEntradas * 0.1 : 0;
+        // 6. Dízimo da igreja (se marcado)
+        let dizimoIgreja = includeDizimoIgreja ? totalEntradas * 0.1 : 0;
 
-    // 7. Total de saídas do mês (regulares + gratificação + dízimo da igreja se marcados)
-    let totalSaidas = saidasRegulares + gratificacao + dizimoIgreja;
+        // 7. Total de saídas do mês (regulares + gratificação + dízimo da igreja se marcados)
+        let totalSaidas = saidasRegulares + 
+          (includeGratificacao ? gratificacao : 0) + 
+          (includeDizimoIgreja ? dizimoIgreja : 0);
 
-    // 8. Saldo do mês (apenas entradas - saídas atuais)
-    let saldoMes = totalEntradas - totalSaidas;
+        // 8. Saldo do mês (entradas - saídas)
+        let saldoMes = totalEntradas - totalSaidas;
 
-    // 9. Saldo final (simulação do caixa após todas as operações)
-    // Não inclui saldo anterior, apenas transações do mês + extras
-    let saldoFinal = saldoMes;
+        // 9. Total em caixa após todas as operações
+        let saldoFinal = saldoAnterior + saldoMes;
 
-    setPreviewData({
-      totalEntradas,
-      totalSaidas,
-      saldoMes,
-      saldoAnterior,
-      saldoFinal,
-      dizimoIgreja,
-      dizimoGratificacao,
-      gratificacao,
-    });
-  }, [transactions, includeGratificacao, includeDizimoGratificacao, includeDizimoIgreja, saldoAnterior, currentMonth, currentYear, valorGratificacao]);
+        setPreviewData({
+          totalEntradas,
+          totalSaidas,
+          saldoMes,
+          saldoAnterior, // Total em caixa até o fim do mês anterior
+          saldoFinal,   // Total em caixa após todas as operações do mês
+          dizimoIgreja,
+          dizimoGratificacao,
+          gratificacao,
+        });
+
+      } catch (error) {
+        console.error('Erro ao atualizar preview:', error);
+        setNotification({
+          message: 'Erro ao calcular valores: ' + error.message,
+          type: 'error'
+        });
+      }
+    };
+
+    if (igrejaUsuario?.id) {
+      atualizarPreviewData();
+    }
+  }, [
+    transactions,
+    includeGratificacao,
+    includeDizimoGratificacao,
+    includeDizimoIgreja,
+    saldoAnterior,
+    currentMonth,
+    currentYear,
+    valorGratificacao,
+    igrejaUsuario?.id,
+    navigate
+  ]);
 
   useEffect(() => {
     function handleResize() {
@@ -928,7 +974,7 @@ const Dashboard = () => {
                   boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
                 }}>
                   <button 
-                    onClick={() => {
+                    onClick={async () => {
                       const newMonth = selectedMonth ? parseInt(selectedMonth) - 1 : currentMonth - 1;
                       if (newMonth >= 1) {
                         setSelectedMonth(String(newMonth));
@@ -1804,90 +1850,109 @@ const Dashboard = () => {
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#888" strokeWidth="2" strokeLinecap="round"/></svg>
               </button>
             </div>
-            <div className="modal-cards-row-mobile" style={{ flexWrap: 'wrap', justifyContent: 'space-between', gap: 8, marginBottom: 8 }}>
-              <div className="modal-card-mobile entradas">R$ {previewData ? previewData.totalEntradas.toFixed(2) : '0,00'}<span>Entradas</span></div>
-              <div className="modal-card-mobile saidas">R$ {previewData ? previewData.totalSaidas.toFixed(2) : '0,00'}<span>Saídas</span></div>
-              <div className="modal-card-mobile saldo">R$ {previewData ? previewData.saldoMes.toFixed(2) : '0,00'}<span>Saldo do mês</span></div>
-              <div className="modal-card-mobile final">R$ {previewData ? previewData.saldoFinal.toFixed(2) : '0,00'}<span>Total em caixa</span></div>
-              <div className="modal-card-mobile saldo-anterior">R$ {previewData ? previewData.saldoAnterior.toFixed(2) : '0,00'}<span>Saldo Anterior</span></div>
-              <div className="modal-card-mobile dizimo-igreja">R$ {previewData ? (previewData.dizimoIgreja || 0).toFixed(2) : '0,00'}<span>Dízimo Igreja</span></div>
-            </div>
-            <div className="modal-options-mobile" style={{display:'flex',flexDirection:'column',gap:4,alignItems:'flex-start',margin:'10px 0 8px 0'}}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-                <label className="modal-checkbox-mobile">
-                  <input type="checkbox" checked={includeGratificacao} onChange={e => handleGratificacaoChange(e.target.checked)} disabled={!isGratificacaoEnabled} />
-                  <span className="icon"></span>
-                  Gratificação do Líder
-                </label>
-                {includeGratificacao && (
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <input
-                      type="number"
-                      value={valorGratificacao}
-                      onChange={(e) => setValorGratificacao(e.target.value)}
-                      style={{
-                        padding: '8px',
-                        borderRadius: '8px',
-                        border: '1.5px solid #e3e9f7',
-                        width: '120px',
-                        fontSize: '14px'
-                      }}
-                      placeholder="Valor"
-                      required
-                      min="0"
-                      step="0.01"
-                    />
-                    <button
-                      onClick={() => {
-                        if (Number(valorGratificacao) >= 0) {
-                          setPreviewData(prev => ({
-                            ...prev,
-                            gratificacao: Number(valorGratificacao)
-                          }));
-                        }
-                      }}
-                      style={{
-                        padding: '8px 12px',
-                        borderRadius: '8px',
-                        border: 'none',
-                        background: '#4f8cff',
-                        color: 'white',
-                        cursor: 'pointer',
-                        fontSize: '14px'
-                      }}
-                    >
-                      Confirmar
-                    </button>
-                  </div>
-                )}
+
+            {saldoMensal?.fechado ? (
+              // Mês já fechado - mostrar resumo simples (FechamentoMes removido)
+              <div className="modal-closed-simple" style={{ padding: 12 }}>
+                <div style={{ fontWeight: 700, marginBottom: 8 }}>
+                  Mês já fechado em {saldoMensal?.data_fechamento ? new Date(saldoMensal.data_fechamento).toLocaleString('pt-BR', { day: '2-digit', month: 'long', hour: '2-digit', minute: '2-digit' }) : ''}
+                </div>
+                <div style={{ marginBottom: 6 }}>Saldo Anterior: R$ {saldoMensal?.saldo_anterior?.toFixed ? saldoMensal.saldo_anterior.toFixed(2) : Number(saldoMensal?.saldo_anterior || 0).toFixed(2)}</div>
+                <div style={{ marginBottom: 6 }}>Saldo do Mês: R$ {saldoMensal?.saldo_mes?.toFixed ? saldoMensal.saldo_mes.toFixed(2) : Number(saldoMensal?.saldo_mes || 0).toFixed(2)}</div>
+                <div style={{ marginBottom: 12 }}>Total em Caixa: R$ {saldoMensal?.saldo_final?.toFixed ? saldoMensal.saldo_final.toFixed(2) : Number(saldoMensal?.saldo_final || 0).toFixed(2)}</div>
+                <div>
+                  <button className="btn-mobile-pdf-full" onClick={generatePdfPreview} title="Baixar PDF de Prévia">Ver PDF</button>
+                </div>
               </div>
-              <label className="modal-checkbox-mobile">
-                <input type="checkbox" checked={includeDizimoGratificacao} onChange={e => setIncludeDizimoGratificacao(e.target.checked)} disabled={!includeGratificacao} />
-                <span className="icon"></span>
-                Dízimo da Gratificação
-              </label>
-              <label className="modal-checkbox-mobile">
-                <input type="checkbox" checked={includeDizimoIgreja} onChange={e => setIncludeDizimoIgreja(e.target.checked)} />
-                <span className="icon"></span>
-                Dízimo da Igreja
-              </label>
-              {!isGratificacaoEnabled && (
-                <div className="modal-warning-mobile">Saldo insuficiente para gratificação do pastor.</div>
-              )}
-            </div>
-            <div className="modal-actions-mobile" style={{display:'flex',flexDirection:'row',justifyContent:'center',alignItems:'center',gap:12,marginTop:10}}>
-              <button className="btn-mobile-primary" style={{background:'#2563eb',color:'#fff',fontWeight:700,padding:'10px 18px',borderRadius:8,border:'none',fontSize:'1.08rem',display:'flex',alignItems:'center',gap:6,boxShadow:'0 2px 8px #0001',cursor:'pointer'}} onClick={generateMonthlyReport} disabled={isLoading}>
-                Gerar
-              </button>
-              <button className="btn-mobile-pdf-full" style={{background:'#fff',color:'#2563eb',fontWeight:600,padding:'10px 14px',borderRadius:8,border:'1.5px solid #2563eb',fontSize:'1.08rem',display:'flex',alignItems:'center',gap:6,boxShadow:'0 2px 8px #0001',cursor:'pointer'}}
-                onClick={generatePdfPreview}
-                title="Baixar PDF de Prévia">
-                Ver PDF
-              </button>
-              <button className="btn-mobile-secondary" style={{background:'#fff',color:'#888',fontWeight:600,padding:'10px 14px',borderRadius:8,border:'1.5px solid #ccc',fontSize:'1.08rem',display:'flex',alignItems:'center',gap:6,boxShadow:'0 2px 8px #0001',cursor:'pointer'}} onClick={() => setShowReportModal(false)}>
-                Cancelar
-              </button>
-            </div>
+            ) : (
+              // Interface para novo fechamento
+              <>
+                <div className="modal-cards-row-mobile" style={{ flexWrap: 'wrap', justifyContent: 'space-between', gap: 8, marginBottom: 8 }}>
+                  <div className="modal-card-mobile entradas">R$ {previewData ? previewData.totalEntradas.toFixed(2) : '0,00'}<span>Entradas</span></div>
+                  <div className="modal-card-mobile saidas">R$ {previewData ? previewData.totalSaidas.toFixed(2) : '0,00'}<span>Saídas</span></div>
+                  <div className="modal-card-mobile saldo">R$ {previewData ? previewData.saldoMes.toFixed(2) : '0,00'}<span>Saldo do mês</span></div>
+                  <div className="modal-card-mobile final">R$ {previewData ? previewData.saldoFinal.toFixed(2) : '0,00'}<span>Total em caixa</span></div>
+                  <div className="modal-card-mobile saldo-anterior">R$ {previewData ? previewData.saldoAnterior.toFixed(2) : '0,00'}<span>Saldo Anterior</span></div>
+                  <div className="modal-card-mobile dizimo-igreja">R$ {previewData ? (previewData.dizimoIgreja || 0).toFixed(2) : '0,00'}<span>Dízimo Igreja</span></div>
+                </div>
+                <div className="modal-options-mobile" style={{display:'flex',flexDirection:'column',gap:4,alignItems:'flex-start',margin:'10px 0 8px 0'}}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+                    <label className="modal-checkbox-mobile">
+                      <input type="checkbox" checked={includeGratificacao} onChange={e => handleGratificacaoChange(e.target.checked)} disabled={!isGratificacaoEnabled} />
+                      <span className="icon"></span>
+                      Gratificação do Líder
+                    </label>
+                    {includeGratificacao && (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <input
+                          type="number"
+                          value={valorGratificacao}
+                          onChange={(e) => setValorGratificacao(e.target.value)}
+                          style={{
+                            padding: '8px',
+                            borderRadius: '8px',
+                            border: '1.5px solid #e3e9f7',
+                            width: '120px',
+                            fontSize: '14px'
+                          }}
+                          placeholder="Valor"
+                          required
+                          min="0"
+                          step="0.01"
+                        />
+                        <button
+                          onClick={() => {
+                            if (Number(valorGratificacao) >= 0) {
+                              setPreviewData(prev => ({
+                                ...prev,
+                                gratificacao: Number(valorGratificacao)
+                              }));
+                            }
+                          }}
+                          style={{
+                            padding: '8px 12px',
+                            borderRadius: '8px',
+                            border: 'none',
+                            background: '#4f8cff',
+                            color: 'white',
+                            cursor: 'pointer',
+                            fontSize: '14px'
+                          }}
+                        >
+                          Confirmar
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                  <label className="modal-checkbox-mobile">
+                    <input type="checkbox" checked={includeDizimoGratificacao} onChange={e => setIncludeDizimoGratificacao(e.target.checked)} disabled={!includeGratificacao} />
+                    <span className="icon"></span>
+                    Dízimo da Gratificação
+                  </label>
+                  <label className="modal-checkbox-mobile">
+                    <input type="checkbox" checked={includeDizimoIgreja} onChange={e => setIncludeDizimoIgreja(e.target.checked)} />
+                    <span className="icon"></span>
+                    Dízimo da Igreja
+                  </label>
+                  {!isGratificacaoEnabled && (
+                    <div className="modal-warning-mobile">Saldo insuficiente para gratificação do pastor.</div>
+                  )}
+                </div>
+                <div className="modal-actions-mobile" style={{display:'flex',flexDirection:'row',justifyContent:'center',alignItems:'center',gap:12,marginTop:10}}>
+                  <button className="btn-mobile-primary" style={{background:'#2563eb',color:'#fff',fontWeight:700,padding:'10px 18px',borderRadius:8,border:'none',fontSize:'1.08rem',display:'flex',alignItems:'center',gap:6,boxShadow:'0 2px 8px #0001',cursor:'pointer'}} onClick={generateMonthlyReport} disabled={isLoading}>
+                    Gerar
+                  </button>
+                  <button className="btn-mobile-pdf-full" style={{background:'#fff',color:'#2563eb',fontWeight:600,padding:'10px 14px',borderRadius:8,border:'1.5px solid #2563eb',fontSize:'1.08rem',display:'flex',alignItems:'center',gap:6,boxShadow:'0 2px 8px #0001',cursor:'pointer'}}
+                    onClick={generatePdfPreview}
+                    title="Baixar PDF de Prévia">
+                    Ver PDF
+                  </button>
+                  <button className="btn-mobile-secondary" style={{background:'#fff',color:'#888',fontWeight:600,padding:'10px 14px',borderRadius:8,border:'1.5px solid #ccc',fontSize:'1.08rem',display:'flex',alignItems:'center',gap:6,boxShadow:'0 2px 8px #0001',cursor:'pointer'}} onClick={() => setShowReportModal(false)}>
+                    Cancelar
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </ModalBase>
       )}
