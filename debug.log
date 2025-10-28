@@ -11849,3 +11849,5 @@ INFO 2025-10-28 16:32:31,694 views Requisição recebida - Parâmetros: <QueryDict:
 INFO 2025-10-28 16:32:31,831 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
 INFO 2025-10-28 16:32:32,368 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
 INFO 2025-10-28 16:32:33,906 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-10-28 16:48:47,222 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\models.py changed, reloading.
+INFO 2025-10-28 16:48:50,760 autoreload Watching for file changes with StatReloader
