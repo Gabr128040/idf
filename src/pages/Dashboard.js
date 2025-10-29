@@ -4,6 +4,8 @@ import { fetchTransactions, fetchSaldo, deleteTransaction, setupAxiosInterceptor
 import { verificarFechamento } from '../api/fechamento';
 import SmartCalculator from '../components/SmartCalculator';
 import TransactionForm from '../components/TransactionForm';
+import RelatorioPdfInterativo from '../components/RelatorioPdfInterativo';
+import { FaPlus, FaFileAlt } from 'react-icons/fa';
 import TransactionList from '../components/TransactionList';
 import EditTransactionModal from '../components/EditTransactionModal';
 import SaldoIndicator from '../components/SaldoIndicator';
@@ -19,8 +21,6 @@ import axiosLocal from 'axios';
 import logo from '../assets/logo.png';
 import './Dashboard.css';
 import { getTipoDespesaDisplay, getLastDayOfMonth } from '../utils';
-import { FaPlus, FaFileAlt } from 'react-icons/fa';
-import RelatorioPdfInterativo from '../components/RelatorioPdfInterativo';
 import ModalBase from '../components/ModalBase';
 import Tooltip from '../components/Tooltip';
 
@@ -262,25 +262,25 @@ const Dashboard = () => {
       })
       .sort((a, b) => new Date(a.data) - new Date(b.data))
       .map(t => ({
-        dia: t.data.split('-')[2],
-        discriminacao: t.descricao || '-',
-        entrada: (t.tipo === 'D' || t.tipo === 'O') ? truncateToTwoDecimals(t.quantia) : '-',
-        saida: t.tipo === 'S' ? truncateToTwoDecimals(t.quantia) : '-',
-      }));
+          dia: t.data.split('-')[2],
+          discriminacao: t.descricao || '-',
+          entrada: (t.tipo === 'D' || t.tipo === 'O') ? truncateToTwoDecimals(t.quantia) : '-',
+          saida: t.tipo === 'S' ? truncateToTwoDecimals(t.quantia) : '-',
+        }));
   }
 
   // Função para gerar PDF de prévia simulada (sem salvar no sistema)
   const generatePdfPreview = () => {
     if (!previewData) return;
 
-    const pdfMonth = currentMonth;
-    const pdfYear = currentYear;
+  const pdfMonth = effectiveMonth;
+  const pdfYear = effectiveYear;
     const lastDayOfMonth = getLastDayOfMonth(pdfYear, pdfMonth);
     
     // Filtrar transações do mês/ano atual
     let baseTransacoes = transactions.filter(t => {
       const [ano, mes] = t.data.split('-');
-      return parseInt(mes) === currentMonth && parseInt(ano) === currentYear;
+      return parseInt(mes) === effectiveMonth && parseInt(ano) === effectiveYear;
     });
 
     // Simular transações extras (apenas para prévia - NÃO criar no sistema)
@@ -371,7 +371,7 @@ const Dashboard = () => {
           discriminacao: 'Dízimo', 
           entrada: `R$ ${truncateToTwoDecimals(grouped[day].D)}`, 
           saida: '-',
-          data: `${currentYear}-${currentMonth.toString().padStart(2, '0')}-${day}`
+    data: `${effectiveYear}-${String(effectiveMonth).padStart(2, '0')}-${day}`
         });
       }
       if (grouped[day].O > 0) {
@@ -380,7 +380,7 @@ const Dashboard = () => {
           discriminacao: 'Oferta', 
           entrada: `R$ ${truncateToTwoDecimals(grouped[day].O)}`, 
           saida: '-',
-          data: `${currentYear}-${currentMonth.toString().padStart(2, '0')}-${day}`
+          data: `${effectiveYear}-${String(effectiveMonth).padStart(2, '0')}-${day}`
         });
       }
     });
@@ -616,7 +616,7 @@ const Dashboard = () => {
             discriminacao: 'Dízimo', 
             entrada: `R$ ${truncateToTwoDecimals(grouped[dia].D)}`, 
             saida: '-',
-            data: `${currentYear}-${currentMonth.toString().padStart(2, '0')}-${dia}`
+            data: `${effectiveYear}-${String(effectiveMonth).padStart(2, '0')}-${dia}`
           });
         }
         if (grouped[dia].O > 0) {
@@ -625,7 +625,7 @@ const Dashboard = () => {
             discriminacao: 'Oferta', 
             entrada: `R$ ${truncateToTwoDecimals(grouped[dia].O)}`, 
             saida: '-',
-            data: `${currentYear}-${currentMonth.toString().padStart(2, '0')}-${dia}`
+            data: `${effectiveYear}-${String(effectiveMonth).padStart(2, '0')}-${dia}`
           });
         }
       });
@@ -765,6 +765,11 @@ const Dashboard = () => {
   const currentMonth = currentDate.getMonth() + 1; // Janeiro = 0
   const currentYear = currentDate.getFullYear();
 
+  // Mês/ano efetivo usados em previews e relatórios — se o usuário selecionou, usa os selecionados,
+  // caso contrário, usa o mês/ano atual.
+  const effectiveMonth = selectedMonth ? parseInt(selectedMonth, 10) : currentMonth;
+  const effectiveYear = selectedMonth ? parseInt(selectedYear, 10) : currentYear;
+
   // Buscar saldo do mês anterior ao abrir o modal de relatório
   useEffect(() => {
     if (!showReportModal || !igrejaUsuario) return;
@@ -772,7 +777,7 @@ const Dashboard = () => {
     // Verifica se o mês já está fechado
     const checkFechamento = async () => {
       try {
-        const dados = await verificarFechamento(igrejaUsuario.id, currentMonth, currentYear);
+        const dados = await verificarFechamento(igrejaUsuario.id, effectiveMonth, effectiveYear);
         setSaldoMensal(dados);
       } catch (err) {
         console.error('Erro ao verificar fechamento:', err);
@@ -780,8 +785,8 @@ const Dashboard = () => {
       }
     };
     checkFechamento();
-    let mes = currentMonth - 1;
-    let ano = currentYear;
+    let mes = effectiveMonth - 1;
+    let ano = effectiveYear;
     if (mes < 1) {
       mes = 12;
       ano--;
@@ -796,7 +801,7 @@ const Dashboard = () => {
       }
     };
     fetchSaldoAnterior();
-  }, [showReportModal, igrejaUsuario, currentMonth, currentYear]);
+  }, [showReportModal, igrejaUsuario, selectedMonth, selectedYear]);
 
   // Atualiza a prévia do relatório sempre que filtros ou opções mudam
   useEffect(() => {
@@ -926,7 +931,7 @@ const Dashboard = () => {
               {/* Bloco info igreja/mês */}
               <div id="dashboard-top" data-pulse={pulseKey} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '18px 16px 8px 16px' }}>
                 <span style={{ fontWeight: 700, fontSize: 15, color: '#4f8cff', letterSpacing: 0.1 }}>{igrejaUsuario ? igrejaUsuario.nome : 'Igreja'}</span>
-                <span style={{ fontWeight: 500, fontSize: 14, color: '#222' }}>{new Date(0, selectedMonth ? selectedMonth-1 : currentMonth-1).toLocaleString('pt-BR', { month: 'long' })} {selectedYear}</span>
+                <span style={{ fontWeight: 500, fontSize: 14, color: '#222' }}>{new Date(0, effectiveMonth - 1).toLocaleString('pt-BR', { month: 'long' })} {effectiveYear}</span>
               </div>
 
               {/* Saldo centralizado com mini-cards */}
@@ -1252,11 +1257,11 @@ const Dashboard = () => {
                       <RelatorioPdfInterativo
                         igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
                         igrejaNome={igrejaUsuario ? igrejaUsuario.nome : ''}
-                        mes={new Date(0, currentMonth - 1).toLocaleString('pt-BR', { month: 'long' })}
+                        mes={new Date(0, effectiveMonth - 1).toLocaleString('pt-BR', { month: 'long' })}
                         transactions={filteredTransactions}
                         getTipoDespesaDisplay={getTipoDespesaDisplay}
-                        currentMonth={currentMonth}
-                        currentYear={currentYear}
+                        currentMonth={effectiveMonth}
+                        currentYear={effectiveYear}
                       />
                     </div>
                   )
@@ -1661,11 +1666,11 @@ const Dashboard = () => {
                   <RelatorioPdfInterativo
                     igrejaId={igrejaUsuario ? igrejaUsuario.id : null}
                     igrejaNome={igrejaUsuario ? igrejaUsuario.nome : ''}
-                    mes={new Date(0, currentMonth - 1).toLocaleString('pt-BR', { month: 'long' })}
+                    mes={new Date(0, effectiveMonth - 1).toLocaleString('pt-BR', { month: 'long' })}
                     transactions={filteredTransactions}
                     getTipoDespesaDisplay={getTipoDespesaDisplay}
-                    currentMonth={currentMonth}
-                    currentYear={currentYear}
+                    currentMonth={effectiveMonth}
+                    currentYear={effectiveYear}
                   />
                 )}
               </section>
@@ -1844,12 +1849,19 @@ const Dashboard = () => {
             <div className="modal-header-mobile">
               <span className="modal-title-mobile">
                 <svg width="20" height="20" style={{marginRight:6,verticalAlign:'middle'}} fill="none" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="4" stroke="#f39c12" strokeWidth="2"/><path d="M8 2v4M16 2v4M3 10h18" stroke="#f39c12" strokeWidth="2" strokeLinecap="round"/></svg>
-                Fechamento: {new Date(0, currentMonth - 1).toLocaleString('pt-BR', { month: 'long' }).toUpperCase()} {currentYear}
+                Fechamento: {new Date(0, effectiveMonth - 1).toLocaleString('pt-BR', { month: 'long' }).toUpperCase()} {effectiveYear}
               </span>
               <button className="modal-close-btn-mobile" onClick={() => setShowReportModal(false)} aria-label="Fechar">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#888" strokeWidth="2" strokeLinecap="round"/></svg>
               </button>
             </div>
+
+            {/* Aviso se estiver visualizando mês anterior */}
+            {(effectiveMonth !== currentMonth || effectiveYear !== currentYear) && (
+              <div style={{ background: '#fff7ed', border: '1px solid #fcd34d', padding: 8, borderRadius: 8, marginBottom: 8, color: '#92400e', fontWeight: 600 }}>
+                ⚠️ Você está visualizando o fechamento de um mês passado ({new Date(0, effectiveMonth - 1).toLocaleString('pt-BR', { month: 'long' })} {effectiveYear}).
+              </div>
+            )}
 
             {saldoMensal?.fechado ? (
               // Mês já fechado - mostrar resumo simples (FechamentoMes removido)

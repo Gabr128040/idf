@@ -58,6 +58,9 @@ const Monitoring = () => {
   const [pieDateRange, setPieDateRange] = useState({ start: null, end: null });
   const [selectedMetric, setSelectedMetric] = useState('dizimos');
   const [dbStatus, setDbStatus] = useState({ status: 'checking', lastCheck: null });
+  const [dbChecking, setDbChecking] = useState(false);
+  const [dbCheckSteps, setDbCheckSteps] = useState([]);
+  const [dbCheckMessage, setDbCheckMessage] = useState('');
   const [backupStatus, setBackupStatus] = useState({ reports: 'checking', database: 'checking' });
   const [backupsList, setBackupsList] = useState([]);
   const [runningBackup, setRunningBackup] = useState(false);
@@ -157,17 +160,54 @@ const Monitoring = () => {
   };
 
   const checkDatabaseConnection = async () => {
+    // Usa endpoint detalhado /api/check-db-status/ quando disponível
+    setDbChecking(true);
+    setDbCheckSteps([
+      { step: 'Testando ping...', status: 'pending' },
+      { step: 'Verificando se o banco de dados está online...', status: 'pending' },
+      { step: 'Validando retorno de dados...', status: 'pending' },
+      { step: 'Analisando dados recebidos...', status: 'pending' }
+    ]);
+    setDbCheckMessage('Iniciando verificação...');
+
+    // Sequência visual simulada para feedback progressivo
+    const messages = [
+      'Testando ping...',
+      'Verificando se o banco de dados está online...',
+      'Validando retorno de dados...',
+      'Analisando dados recebidos...'
+    ];
+    let idx = 0;
+    const interval = setInterval(() => {
+      setDbCheckMessage(messages[idx] || 'Aguardando resultado...');
+      idx += 1;
+      if (idx >= messages.length) clearInterval(interval);
+    }, 700);
+
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/health/`);
-      setDbStatus({
-        status: response.data.database_status === 'ok' ? 'connected' : 'error',
-        lastCheck: new Date().toISOString()
-      });
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/check-db-status/`);
+      clearInterval(interval);
+      const data = response.data;
+      // map steps if present
+      const steps = (data.steps || []).map(s => ({ step: s.step || s.step, status: s.status || 'ok', message: s.message || '' }));
+      setDbCheckSteps(steps);
+      setDbCheckMessage(steps.length ? steps[steps.length - 1].message || '' : 'Concluído');
+      setDbStatus({ status: data.overall_status === 'ok' ? 'connected' : 'error', lastCheck: data.last_check || new Date().toISOString() });
     } catch (err) {
-      setDbStatus({
-        status: 'error',
-        lastCheck: new Date().toISOString()
-      });
+      clearInterval(interval);
+      // fallback para health
+      try {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/health/`);
+        setDbStatus({ status: response.data.database_status === 'ok' ? 'connected' : 'error', lastCheck: new Date().toISOString() });
+        setDbCheckSteps([{ step: 'Checagem simples (health)', status: response.data.database_status === 'ok' ? 'ok' : 'error', message: '' }]);
+        setDbCheckMessage('Checagem simples concluída');
+      } catch (err2) {
+        setDbStatus({ status: 'error', lastCheck: new Date().toISOString() });
+        setDbCheckSteps([{ step: 'Checagem', status: 'error', message: err2.message || 'Erro desconhecido' }]);
+        setDbCheckMessage('Erro ao verificar conexão');
+      }
+    } finally {
+      setDbChecking(false);
     }
   };
 
@@ -660,11 +700,31 @@ const Monitoring = () => {
           {/* Status Grid */}
           <div className="status-grid">
             <div className="status-item">
-              <span className="status-label">Conexão com Banco de Dados</span>
-              <div className="status-value">
-                <span className={`status-indicator ${dbStatus.status}`}></span>
-                {dbStatus.status === 'connected' ? 'Conectado' : 'Erro'}
-              </div>
+                <span className="status-label">Conexão com Banco de Dados</span>
+                <div className="status-value">
+                  <span className={`status-indicator ${dbStatus.status}`}></span>
+                  {dbStatus.status === 'connected' ? 'Conectado' : 'Erro'}
+                </div>
+                <div style={{ marginTop: 8, fontSize: 13, color: '#666' }}>
+                  {dbChecking ? (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                      <div style={{ fontWeight: 600 }}>{dbCheckMessage}</div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                        {dbCheckSteps.map((s, i) => (
+                          <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                            <div style={{ width: 10, height: 10, borderRadius: 6, background: s.status === 'ok' ? '#34d399' : s.status === 'pending' ? '#f59e0b' : '#f43f5e' }} />
+                            <div style={{ fontSize: 13 }}>{s.step} {s.message ? `— ${s.message}` : ''}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                      <div style={{ fontSize: 13, color: '#444' }}>{dbStatus.status === 'connected' ? 'Conectado' : 'Erro'}</div>
+                      {dbStatus.lastCheck && <div style={{ fontSize: 12, color: '#888' }}>Última verificação: {new Date(dbStatus.lastCheck).toLocaleString()}</div>}
+                    </div>
+                  )}
+                </div>
             </div>
 
             <div className="status-item">
