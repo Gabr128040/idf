@@ -18,6 +18,7 @@ from .views import (
     estatisticas_transacoes,  # Nova view de estatísticas
     verificar_saude_sistema,  # Views de monitoramento
     verificar_status_backup,  # Views de monitoramento
+    check_db_status,  # Novo endpoint detalhado de status
 )
 from . import views as views_module
 
@@ -54,6 +55,7 @@ urlpatterns = [
 
     # Monitoramento do sistema
     path('health/', verificar_saude_sistema, name='health-check'),
+    path('check-db-status/', check_db_status, name='check-db-status'),
     path('backup/status/', verificar_status_backup, name='backup-status'),
     path('backup/run/', views_module.run_backup, name='backup-run'),
     path('backup/list/', views_module.list_backups, name='backup-list'),

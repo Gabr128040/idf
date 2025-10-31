@@ -1,1 +1,6 @@
 debug.log
+
+# Google OAuth / Service account secrets
+/backend/finance/client_secret.json
+/backend/finance/token.pickle
+/backend/fimiss-backup-*.json

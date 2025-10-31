@@ -72,7 +72,9 @@ class Relatorio(models.Model):
     mes = models.IntegerField()  # Mês do relatório
     ano = models.IntegerField()  # Ano do relatório
     data_geracao = models.DateTimeField(auto_now_add=True)  # Data de geração
-    arquivo = models.FileField(storage=MediaCloudinaryStorage(), upload_to='relatorios/')  # Salvar no Cloudinary
+    arquivo = models.FileField(storage=MediaCloudinaryStorage(), upload_to='relatorios/', null=True, blank=True)  # Legacy
+    drive_id = models.CharField(max_length=255, null=True, blank=True)  # ID do arquivo no Drive
+    drive_url = models.URLField(null=True, blank=True)  # URL do arquivo no Drive
     igreja = models.ForeignKey('Igreja', on_delete=models.CASCADE, related_name='relatorios', null=True, blank=True)
 
     def __str__(self):

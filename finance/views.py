@@ -48,6 +48,71 @@ def verificar_saude_sistema(request):
             'error': str(e)
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+
+@api_view(['GET'])
+def check_db_status(request):
+    """Endpoint mais detalhado para checar status do banco de dados em passos.
+
+    Retorna uma lista de passos executados (ping, fetch sample) com status e mensagens
+    para que o frontend possa exibir feedback progressivo e sugestões de causa.
+    """
+    from django.db import connection
+    from django.db.utils import OperationalError
+    steps = []
+    last_check = datetime.now().isoformat()
+    overall = 'ok'
+    try:
+        # 1) Testar ping (SELECT 1)
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute('SELECT 1')
+                cursor.fetchone()
+            steps.append({'step': 'Testando ping', 'status': 'ok', 'message': 'Resposta do banco recebida.'})
+        except Exception as e:
+            logger.exception('Ping ao banco falhou')
+            steps.append({'step': 'Testando ping', 'status': 'error', 'message': str(e)})
+            overall = 'error'
+
+        # 2) Verificar se consegue ler dados (ex: pegar 1 transação)
+        try:
+            from .models import Transacao
+            sample = Transacao.objects.all()[:1]
+            if sample:
+                steps.append({'step': 'Validando retorno de dados', 'status': 'ok', 'message': 'Dados de transações retornados.'})
+            else:
+                steps.append({'step': 'Validando retorno de dados', 'status': 'ok', 'message': 'Conexão OK, mas sem transações no banco.'})
+        except OperationalError as oe:
+            logger.exception('Erro operacional ao ler transações')
+            steps.append({'step': 'Validando retorno de dados', 'status': 'error', 'message': str(oe)})
+            overall = 'error'
+        except Exception as e:
+            logger.exception('Erro ao validar retorno de dados')
+            steps.append({'step': 'Validando retorno de dados', 'status': 'error', 'message': str(e)})
+            overall = 'error'
+
+        # 3) Analisar resultados e sugerir causa provável se for erro
+        probable = None
+        if overall != 'ok':
+            # Tentar detectar motivo comum
+            ping_fail = any(s.get('step') == 'Testando ping' and s.get('status') == 'error' for s in steps)
+            data_fail = any(s.get('step') == 'Validando retorno de dados' and s.get('status') == 'error' for s in steps)
+            if ping_fail:
+                probable = 'Conexão com o banco falhou (host inacessível ou credenciais). Verifique URL/serviço (ex: Supabase downtime).'
+            elif data_fail:
+                probable = 'Conexão estabelecida, porém erro ao ler tabelas. Verifique migrações/permissões ou saúde do DB.'
+            else:
+                probable = 'Erro não identificado. Verifique logs do servidor.'
+
+        return Response({
+            'overall_status': overall,
+            'last_check': last_check,
+            'steps': steps,
+            'probable_cause': probable
+        })
+    except Exception as e:
+        logger.exception('Erro no check_db_status')
+        return Response({'overall_status': 'error', 'last_check': datetime.now().isoformat(), 'steps': [{'step': 'internal', 'status': 'error', 'message': str(e)}], 'probable_cause': 'Erro interno no servidor'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 @api_view(['GET'])
 def verificar_status_backup(request):
     """Verifica o status dos backups do sistema."""
@@ -558,24 +623,60 @@ class RelatorioListView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class SalvarRelatorioView(APIView):
-    """Salva um relatório enviado pelo frontend."""
+    """Salva um relatório enviado pelo frontend no Google Drive."""
     def post(self, request):
         nome = request.data.get('nome')
         mes = request.data.get('mes')
         ano = request.data.get('ano')
         arquivo = request.FILES['arquivo']
+        igreja_id = request.data.get('igreja_id')
+        
+        try:
+            igreja = Igreja.objects.get(id=igreja_id) if igreja_id else None
+        except Igreja.DoesNotExist:
+            igreja = None
+            
+        try:
+            # Configuração do Drive
+            folder_id = os.environ.get('DRIVE_REPORTS_FOLDER_ID')
+            if not folder_id:
+                raise ValueError("DRIVE_REPORTS_FOLDER_ID não configurado")
+            
+            # Lê o conteúdo do arquivo
+            content = arquivo.read()
+            
+            # Nome do arquivo no Drive
+            drive_filename = f"relatorio-{igreja.id if igreja else 'na'}-{mes}-{ano}.pdf"
+            
+            # Upload para o Drive
+            file = drive_backup.upload_bytes_to_drive(
+                content,
+                drive_filename,
+                mime_type='application/pdf',
+                folder_id=folder_id
+            )
+            
+            # Salva o registro no banco
+            relatorio = Relatorio.objects.create(
+                nome=nome,
+                mes=mes,
+                ano=ano,
+                igreja=igreja,
+                drive_id=file['id'],
+                drive_url=file['webViewLink']
+            )
 
-        relatorio = Relatorio.objects.create(
-            nome=nome,
-            mes=mes,
-            ano=ano,
-            arquivo=arquivo
-        )
-
-        return Response({
-            'message': 'Relatório salvo com sucesso!',
-            'url': relatorio.arquivo.url
-        }, status=status.HTTP_201_CREATED)
+            return Response({
+                'message': 'Relatório salvo com sucesso!',
+                'url': file['webViewLink'],
+                'id': relatorio.id
+            }, status=status.HTTP_201_CREATED)
+            
+        except Exception as e:
+            logger.exception(f"Erro ao salvar relatório no Drive: {str(e)}")
+            return Response({
+                'error': f'Erro ao salvar relatório: {str(e)}'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class DeletarRelatorioView(APIView):
     """Deleta um relatório existente."""

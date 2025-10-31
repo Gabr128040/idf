@@ -25,10 +25,11 @@ class RelatorioSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Relatorio
-        fields = ['id', 'nome', 'mes', 'ano', 'data_geracao', 'url', 'igreja', 'igreja_id']
+        fields = ['id', 'nome', 'mes', 'ano', 'data_geracao', 'url', 'igreja', 'igreja_id', 'drive_url']
 
     def get_url(self, obj):
-        return obj.arquivo.url if obj.arquivo else None
+        # Retorna a URL do Drive se existir, senão tenta a URL do Cloudinary
+        return obj.drive_url or (obj.arquivo.url if obj.arquivo else None)
 
 class ProfileSerializer(serializers.ModelSerializer):
     igreja = IgrejaSerializer(read_only=True)
