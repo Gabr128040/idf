@@ -72,7 +72,7 @@ SIMPLE_JWT = {
 
 # CORS (django-cors-headers)
 # Permitimos explicitamente o frontend hospedado no Netlify.
-CORS_ALLOWED_ALL_ORIGINS = True
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOWED_ORIGINS = [
     "*",
 ]
