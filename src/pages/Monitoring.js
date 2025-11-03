@@ -63,6 +63,8 @@ const Monitoring = () => {
   const [dbCheckMessage, setDbCheckMessage] = useState('');
   const [backupStatus, setBackupStatus] = useState({ reports: 'checking', database: 'checking' });
   const [backupsList, setBackupsList] = useState([]);
+  const [backupError, setBackupError] = useState(null);
+  const [backendInfo, setBackendInfo] = useState(null);
   const [runningBackup, setRunningBackup] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -226,6 +228,16 @@ const Monitoring = () => {
     }
   };
 
+  const fetchBackendInfo = async () => {
+    try {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/backend/info/`);
+      setBackendInfo(response.data);
+    } catch (err) {
+      console.error('Erro ao buscar backend info:', err);
+      setBackendInfo(null);
+    }
+  };
+
   const runBackup = async (target = 'all') => {
     try {
       setRunningBackup(true);
@@ -253,12 +265,27 @@ const Monitoring = () => {
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/backup/list/`, {
         headers: { Authorization: `Bearer ${token}` }
       });
-      setBackupsList(response.data.results || response.data || []);
+      // backend returns { files: [...] } or { error: '...' }
+      setBackupError(null);
+      if (response.data && response.data.error) {
+        setBackupsList([]);
+        setBackupError(response.data.error);
+      } else {
+        setBackupsList(response.data.files || response.data.results || response.data || []);
+      }
     } catch (err) {
       console.error('Erro ao listar backups:', err);
       setBackupsList([]);
+      const msg = err.response?.data?.error || err.response?.data?.detail || err.message || 'Erro desconhecido';
+      setBackupError(msg);
     }
   };
+
+  useEffect(() => {
+    fetchBackendInfo();
+    // busca lista de backups ao carregar o painel para mostrar já que o endpoint existe
+    listBackups();
+  }, []);
 
   if (loading) {
     return (
@@ -323,7 +350,11 @@ const Monitoring = () => {
 
           <button 
             className="control-button"
-            onClick={() => setBackupModalOpen(true)}
+            onClick={() => {
+              // abrir modal e atualizar lista de backups
+              setBackupModalOpen(true);
+              listBackups();
+            }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M12 15V3m0 12l-4-4m4 4l4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
@@ -331,6 +362,22 @@ const Monitoring = () => {
             </svg>
             Backup e Relatórios
           </button>
+        </div>
+
+        {/* Quick backend info (URL, image, health) */}
+        <div style={{ marginLeft: 16, textAlign: 'right' }}>
+          <div style={{ fontSize: 12, color: '#94a3b8' }}>Backend</div>
+          <div style={{ fontWeight: 700 }}>{process.env.REACT_APP_API_URL}</div>
+          <div style={{ fontSize: 12, color: '#64748b' }}>
+            {backendInfo ? (
+              <>
+                {backendInfo.docker_image || 'imagem: não informada'} • {backendInfo.health ? 'saudável' : 'sem health'}
+              </>
+            ) : 'carregando...' }
+          </div>
+          <div style={{ marginTop: 6 }}>
+            <button className="control-button" onClick={fetchBackendInfo} style={{ fontSize: 12, padding: '6px 8px' }}>Atualizar</button>
+          </div>
         </div>
 
         {/* Modal de Período */}
@@ -491,7 +538,7 @@ const Monitoring = () => {
                 </button>
               </div>
 
-              {backupsList.length > 0 && (
+              {backupsList.length > 0 ? (
                 <div className="backups-list">
                   <h4 style={{ marginBottom: '12px' }}>Backups Recentes</h4>
                   <div className="backup-items" style={{ 
@@ -515,6 +562,39 @@ const Monitoring = () => {
                     ))}
                   </div>
                 </div>
+              ) : (
+                <div style={{ padding: 12, background: '#fff7ed', borderRadius: 8, marginTop: 8 }}>
+                  <strong>Nenhum backup encontrado</strong>
+                  <div style={{ marginTop: 8, fontSize: 13 }}>
+                    {backupError ? (
+                      <div>
+                        <div style={{ color: '#b91c1c' }}>Erro: {backupError}</div>
+                        <div style={{ marginTop: 8 }}>Possíveis causas:</div>
+                        <ul>
+                          <li>Variável <code>DRIVE_BACKUP_FOLDER_ID</code> não configurada no backend.</li>
+                          <li>Credenciais do Google Drive faltando (token/client_secret/service account).</li>
+                          <li>Pasta do Drive não compartilhada com a service account / sem permissões.</li>
+                        </ul>
+                        <div style={{ marginTop: 8 }}>
+                          <button className="modal-button secondary" onClick={() => { fetchBackendInfo(); listBackups(); }}>Tentar diagnóstico</button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div>
+                        <div style={{ marginBottom: 8 }}>A lista de backups está vazia. Possíveis ações:</div>
+                        <ul>
+                          <li>Verificar se a variável <code>DRIVE_BACKUP_FOLDER_ID</code> está configurada no backend.</li>
+                          <li>Gerar um backup manualmente usando o botão <em>Backup Completo</em>.</li>
+                          <li>Verificar se o token/credentials do Drive estão disponíveis no servidor.</li>
+                        </ul>
+                        <div style={{ marginTop: 8 }}>
+                          <button className="modal-button primary" onClick={() => { runBackup('all'); }}>Executar backup agora</button>
+                          <button className="modal-button secondary" onClick={() => { fetchBackendInfo(); listBackups(); }} style={{ marginLeft: 8 }}>Verificar backend</button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
               )}
             </div>
           </div>
@@ -523,7 +603,6 @@ const Monitoring = () => {
 
       {/* Grid de cards principais */}
       <div className="monitoring-grid">
-        {/* Card de Entradas vs Saídas */}
         <div className="monitoring-card wide">
           <h3>Entradas vs Saídas</h3>
           {transactionData?.monthlyTotals && (

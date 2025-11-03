@@ -21,14 +21,15 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.3.0",
     "react-scripts": "^5.0.1",
+    "cross-env": "^7.0.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start": "react-scripts start",
-    "start-prod": "REACT_APP_API_URL=https://idf-ni2j.onrender.com react-scripts start",
-    "build": "REACT_APP_API_URL=https://idf-ni2j.onrender.com react-scripts build"
+    "start-prod": "cross-env REACT_APP_API_URL=https://idf-docker-version.onrender.com/ react-scripts start",
+    "build": "cross-env REACT_APP_API_URL=https://idf-docker-version.onrender.com/ react-scripts build"
   },
   "eslintConfig": {
     "extends": [
