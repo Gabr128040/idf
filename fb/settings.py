@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security
 SECRET_KEY = 'django-insecure-&)$+e@akx1_6+$8lsk35-wh7_l9#zb0(=+$sb%2=)mgb#$3if*'
 DEBUG = True
-ALLOWED_HOSTS = ['*', 'idf-docker-version.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 # Installed Apps
 INSTALLED_APPS = [
@@ -72,8 +72,9 @@ SIMPLE_JWT = {
 
 # CORS (django-cors-headers)
 # Permitimos explicitamente o frontend hospedado no Netlify.
+CORS_ALLOWED_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
-    "https://fimiss.netlify.app",
+    "*",
 ]
 # Se precisar aceitar credenciais (cookies/Authorization), habilite abaixo.
 CORS_ALLOW_CREDENTIALS = True
