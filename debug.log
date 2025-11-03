@@ -22338,3 +22338,5 @@ INFO 2025-11-03 16:04:15,302 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss
 INFO 2025-11-03 16:04:18,228 autoreload Watching for file changes with StatReloader
 INFO 2025-11-03 16:05:05,562 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py changed, reloading.
 INFO 2025-11-03 16:05:06,700 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 16:09:21,662 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\fb\settings.py changed, reloading.
+INFO 2025-11-03 16:09:24,180 autoreload Watching for file changes with StatReloader
