@@ -170,8 +170,71 @@ def list_backups(request):
     folder = os.environ.get('DRIVE_BACKUP_FOLDER_ID')
     if not folder:
         return Response({'error': 'Drive folder not configured'}, status=status.HTTP_400_BAD_REQUEST)
+    # Verifica se o serviço do Drive está disponível/configurado
+    try:
+        service = drive_backup.get_drive_service()
+    except Exception:
+        service = None
+
+    if not service:
+        # Retorna erro claro para o frontend ajudá-lo a diagnosticar
+        return Response({'error': 'Drive service not configured or credentials missing (token/client_secret/service_account).'}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+
     files = drive_backup.list_files_in_folder(folder, page_size=50)
     return Response({'files': files})
+
+
+@api_view(['GET'])
+def backend_info(request):
+    """Retorna informações básicas sobre o backend para o painel de monitoramento.
+
+    Não é sensível — retorna dados públicos/configuração para exibição.
+    """
+    try:
+        backend_url = os.environ.get('BACKEND_PUBLIC_URL') or (request.build_absolute_uri('/')[:-1])
+        docker_image = os.environ.get('BACKEND_DOCKER_IMAGE')
+        api_endpoints = {
+            'health': f'{backend_url}/api/health/',
+            'check_db_status': f'{backend_url}/api/check-db-status/',
+            'backup_status': f'{backend_url}/api/backup/status/',
+            'backup_run': f'{backend_url}/api/backup/run/',
+            'backup_list': f'{backend_url}/api/backup/list/',
+            'relatorios': f'{backend_url}/api/relatorios/'
+        }
+
+        # quick ping to health (best-effort)
+        health = None
+        try:
+            from django.test import Client
+            c = Client()
+            resp = c.get('/api/health/')
+            if resp.status_code == 200:
+                health = resp.json()
+        except Exception:
+            health = None
+
+        # Drive diagnostic hints for frontend
+        drive_folder_id = os.environ.get('DRIVE_BACKUP_FOLDER_ID') or os.environ.get('DRIVE_BACKUP_FOLDER_ID')
+        drive_configured = bool(drive_folder_id)
+        drive_service_available = False
+        try:
+            svc = drive_backup.get_drive_service()
+            drive_service_available = svc is not None
+        except Exception:
+            drive_service_available = False
+
+        return Response({
+            'backend_url': backend_url,
+            'docker_image': docker_image,
+            'api_endpoints': api_endpoints,
+            'health': health,
+            'drive_folder_id': drive_folder_id,
+            'drive_configured': drive_configured,
+            'drive_service_available': drive_service_available,
+        })
+    except Exception as e:
+        logger.exception('Erro ao obter backend_info: %s', e)
+        return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 # CRUD de Igrejas
 class IgrejaListCreateView(generics.ListCreateAPIView):

@@ -59,6 +59,7 @@ urlpatterns = [
     path('backup/status/', verificar_status_backup, name='backup-status'),
     path('backup/run/', views_module.run_backup, name='backup-run'),
     path('backup/list/', views_module.list_backups, name='backup-list'),
+    path('backend/info/', views_module.backend_info, name='backend-info'),
     
     # Saldo
     path('saldo/', calcular_saldo, name='calcular-saldo'),

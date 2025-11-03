@@ -4,3 +4,6 @@ debug.log
 /backend/finance/client_secret.json
 /backend/finance/token.pickle
 /backend/fimiss-backup-*.json
+finance/client_secret.json
+finance/service_account.json
+finance/token.pickle

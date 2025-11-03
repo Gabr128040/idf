@@ -7,6 +7,7 @@ import subprocess
 import tempfile
 import pickle
 import shutil
+import json
 
 from django.conf import settings
 
@@ -15,6 +16,11 @@ logger = logging.getLogger('finance')
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+try:
+    # import opcional: credenciais de service account
+    from google.oauth2 import service_account
+except Exception:
+    service_account = None
 
 # Escopo para permitir criação de arquivos no Drive do usuário
 SCOPES = ['https://www.googleapis.com/auth/drive.file']
@@ -47,6 +53,38 @@ def get_drive_service():
         if token_path:
             with open(token_path, 'rb') as token:
                 creds = pickle.load(token)
+
+        # Se houver um arquivo de service account configurado, use-o (mais adequado para servidores)
+        sa_file_candidates = [
+            os.environ.get('GOOGLE_SERVICE_ACCOUNT_FILE'),
+            os.path.join(os.path.dirname(__file__), 'service_account.json'),
+            '/etc/secrets/service_account.json',
+        ]
+        sa_file = None
+        for p in sa_file_candidates:
+            if p and os.path.exists(p):
+                sa_file = p
+                break
+        # Alternativa: credenciais no conteúdo da variável de ambiente (útil para Render / containers)
+        sa_json_env = os.environ.get('GOOGLE_SERVICE_ACCOUNT_JSON')
+        if sa_json_env:
+            try:
+                info = json.loads(sa_json_env)
+                if service_account is not None:
+                    creds = service_account.Credentials.from_service_account_info(info, scopes=SCOPES)
+                    from googleapiclient.discovery import build
+                    return build('drive', 'v3', credentials=creds)
+            except Exception as e:
+                logger.exception('Erro iniciando Drive service usando GOOGLE_SERVICE_ACCOUNT_JSON: %s', e)
+
+        if sa_file and service_account is not None:
+            try:
+                creds = service_account.Credentials.from_service_account_file(sa_file, scopes=SCOPES)
+                from googleapiclient.discovery import build
+                return build('drive', 'v3', credentials=creds)
+            except Exception as e:
+                logger.exception('Erro iniciando Drive service usando Service Account (%s): %s', sa_file, e)
+                # continua para tentar OAuth/token
 
         if not creds or not getattr(creds, 'valid', False):
             if creds and getattr(creds, 'expired', False) and getattr(creds, 'refresh_token', None):
@@ -88,7 +126,7 @@ def upload_bytes_to_drive(content_bytes, filename, mime_type='application/octet-
 
     file_metadata = {
         'name': filename,
-        'driveId': os.environ.get('DRIVE_BACKUP_FOLDER_ID'),  # ID do Shared Drive
+        # Não incluir driveId no metadata — usamos 'parents' para indicar a pasta.
     }
     if folder_id:
         file_metadata['parents'] = [folder_id]
@@ -110,6 +148,13 @@ def upload_bytes_to_drive(content_bytes, filename, mime_type='application/octet-
         raise
 
 def list_files_in_folder(folder_id, page_size=20):
+    return list_files_in_folder_recursive(folder_id, page_size=page_size, include_subfolders=False)
+
+
+def list_files_in_folder_recursive(folder_id, page_size=20, include_subfolders=False):
+    """Lista arquivos numa pasta. Se include_subfolders=True, lista também arquivos em subpastas imediatas.
+    Retorna lista de dicts com campos id,name,createdTime,webViewLink.
+    """
     service = get_drive_service()
     if not service:
         return []
@@ -122,10 +167,59 @@ def list_files_in_folder(folder_id, page_size=20):
             supportsAllDrives=True,  # Habilita suporte a Shared Drives
             includeItemsFromAllDrives=True,  # Inclui arquivos de Shared Drives
             corpora='drive',  # Pesquisa em Drives compartilhados
-            driveId=os.environ.get('DRIVE_BACKUP_FOLDER_ID'),  # ID do Shared Drive
-            ).execute()
-        return res.get('files', [])
+            driveId=os.environ.get('DRIVE_BACKUP_FOLDER_ID'),  # ID do Shared Drive (opcional)
+        ).execute()
+        files = res.get('files', [])
+
+        if include_subfolders:
+            # lista subpastas imediatas e agrega os arquivos
+            try:
+                qf = f"'{folder_id}' in parents and mimeType = 'application/vnd.google-apps.folder' and trashed = false"
+                subres = service.files().list(
+                    q=qf,
+                    pageSize=50,
+                    fields='files(id,name)'
+                ).execute()
+                subs = subres.get('files', [])
+                for sf in subs:
+                    try:
+                        q2 = f"'{sf.get('id')}' in parents and trashed = false"
+                        r2 = service.files().list(q=q2, pageSize=page_size, fields='files(id,name,createdTime,webViewLink)').execute()
+                        files.extend(r2.get('files', []))
+                    except Exception:
+                        # ignora falha ao listar subpasta específica
+                        logger.exception('Falha listando subpasta %s', sf.get('id'))
+            except Exception:
+                logger.exception('Falha listando subpastas de %s', folder_id)
+
+        return files
     except Exception as e:
+        # Tenta detectar HttpError de Shared Drive ausente e fazer um fallback
+        try:
+            from googleapiclient.errors import HttpError
+            if isinstance(e, HttpError):
+                content = getattr(e, 'content', b'')
+                try:
+                    msg = content.decode('utf-8') if isinstance(content, (bytes, bytearray)) else str(content)
+                except Exception:
+                    msg = str(content)
+                if 'Shared drive not found' in msg or 'drive not found' in msg:
+                    logger.warning('Shared drive não encontrado (driveId=%s). Tentando pesquisa sem driveId/Shared Drives...', os.environ.get('DRIVE_BACKUP_FOLDER_ID'))
+                    # Fallback: pesquisa simples em My Drive (remove parâmetros de Shared Drive)
+                    try:
+                        res2 = service.files().list(
+                            q=q,
+                            pageSize=page_size,
+                            fields='files(id,name,createdTime,webViewLink)'
+                        ).execute()
+                        return res2.get('files', [])
+                    except Exception as e2:
+                        logger.exception('Fallback simples também falhou listando arquivos no Drive: %s', e2)
+                        return []
+        except Exception:
+            # se não conseguimos importar HttpError, cai no comportamento genérico abaixo
+            pass
+
         logger.exception('Erro listando arquivos no Drive: %s', e)
         return []
 
@@ -303,15 +397,28 @@ def backup_reports(folder_id=None):
     relatorios = Relatorio.objects.all().order_by('-data_geracao')[:50]
     for r in relatorios:
         try:
+            # Protege contra Relatorio sem arquivo associado
+            if not getattr(r, 'arquivo', None):
+                logger.info('Relatorio id %s não tem arquivo associado — pulando', getattr(r, 'id', None))
+                continue
+            # Alguns storages levantam ValueError quando não há arquivo; cheque o 'name' também
+            if not getattr(r.arquivo, 'name', None):
+                logger.info('Relatorio id %s tem atributo arquivo, mas sem nome — pulando', getattr(r, 'id', None))
+                continue
+
             url = r.arquivo.url
             if not url:
+                logger.info('Relatorio id %s tem arquivo mas URL vazia — pulando', getattr(r, 'id', None))
                 continue
+
             resp = requests.get(url, timeout=30)
             if resp.status_code == 200:
                 ext = 'pdf'
                 filename = f"relatorio-{r.igreja.id if r.igreja else 'na' }-{r.mes}-{r.ano}-{r.id}.{ext}"
                 file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
                 results.append({'relatorio_id': r.id, 'drive': file})
+            else:
+                logger.warning('Falha ao baixar relatorio id %s: status %s', getattr(r, 'id', None), resp.status_code)
         except Exception as e:
             logger.exception('Erro backup relatorio id %s: %s', getattr(r, 'id', None), e)
     return results
@@ -325,15 +432,49 @@ def backup_all(folder_db=None, folder_reports=None):
         except Exception:
             engine = ''
 
+        # Se foi passado um folder pai que contém subpastas (por exemplo: parent -> [relatorios/, bd/]),
+        # tentamos detectar a subpasta apropriada automaticamente.
+        def _resolve_folder_for_kind(parent_folder, kind):
+            """Detecta subpasta sob parent_folder usando hints para kind ('db' ou 'reports').
+            Retorna child folder id se encontrado, senão retorna parent_folder.
+            """
+            if not parent_folder:
+                return parent_folder
+            hints_db = ['db', 'bd', 'banco', 'database', 'dump']
+            hints_reports = ['relatorio', 'relatorios', 'relatório', 'relatórios', 'reports']
+            hints = hints_db if kind == 'db' else hints_reports
+            try:
+                service = get_drive_service()
+                if not service:
+                    return parent_folder
+                # lista subpastas imediatas
+                qf = f"'{parent_folder}' in parents and mimeType = 'application/vnd.google-apps.folder' and trashed = false"
+                subres = service.files().list(q=qf, pageSize=50, fields='files(id,name)', supportsAllDrives=True, includeItemsFromAllDrives=True, corpora='drive', driveId=os.environ.get('DRIVE_BACKUP_FOLDER_ID')).execute()
+                subs = subres.get('files', [])
+                for sf in subs:
+                    name = (sf.get('name') or '').lower()
+                    for h in hints:
+                        if h in name:
+                            return sf.get('id')
+            except Exception:
+                logger.exception('Erro detectando subpastas em %s', parent_folder)
+            return parent_folder
+
         if folder_db:
+            db_folder = _resolve_folder_for_kind(folder_db, 'db')
             if 'postgres' in engine or 'postgresql' in engine:
-                out['db'] = backup_postgres_db(folder_db)
+                out['db'] = backup_postgres_db(db_folder)
             else:
-                out['db'] = backup_sqlite_db(folder_db)
+                out['db'] = backup_sqlite_db(db_folder)
     except Exception as e:
         out['db_error'] = str(e)
     try:
-        out['reports'] = backup_reports(folder_reports)
+        # resolve a subpasta de relatórios se necessário
+        try:
+            reports_folder = _resolve_folder_for_kind(folder_reports, 'reports')
+        except Exception:
+            reports_folder = folder_reports
+        out['reports'] = backup_reports(reports_folder)
     except Exception as e:
         out['reports_error'] = str(e)
     return out

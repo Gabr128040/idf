@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: fimiss
+      POSTGRES_PASSWORD: fimisspass
+      POSTGRES_DB: fimissdb
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: gunicorn fb.wsgi:application --bind 0.0.0.0:8000 --workers 2
+    environment:
+      DATABASE_URL: postgres://fimiss:fimisspass@db:5432/fimissdb
+      DRIVE_REPORTS_FOLDER_ID: "YOUR_DRIVE_REPORTS_FOLDER_ID"
+      DRIVE_DB_FOLDER_ID: "YOUR_DRIVE_DB_FOLDER_ID"
+      DRIVE_BACKUP_FOLDER_ID: "YOUR_DRIVE_BACKUP_FOLDER_ID"
+      # Add other env vars as needed
+    volumes:
+      - ./:/app
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+
+volumes:
+  db-data:

@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Security
 SECRET_KEY = 'django-insecure-&)$+e@akx1_6+$8lsk35-wh7_l9#zb0(=+$sb%2=)mgb#$3if*'
 DEBUG = True
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','https://idf-docker-version.onrender.com/']
 
 # Installed Apps
 INSTALLED_APPS = [
@@ -71,6 +71,9 @@ SIMPLE_JWT = {
 }
 
 # CORS
+CORS_ALLOWED_ORIGINS = [
+  "https://fimiss.netlify.app",
+]
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_HEADERS = [
     'accept',

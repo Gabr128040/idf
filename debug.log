@@ -21767,3 +21767,572 @@ INFO 2025-10-30 14:14:07,552 __init__ file_cache is only supported with oauth2cl
 INFO 2025-10-30 14:14:11,497 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
 INFO 2025-10-30 14:14:13,694 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
 INFO 2025-10-30 14:14:13,795 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-11-03 14:13:53,958 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-03 14:14:10,616 log Unauthorized: /api/me/
+WARNING 2025-11-03 14:14:10,639 log Unauthorized: /api/me/
+INFO 2025-11-03 14:14:18,086 views Login bem-sucedido para: Frank
+INFO 2025-11-03 14:14:19,206 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-11-03 14:14:19,626 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 11, Ano: 2025)
+INFO 2025-11-03 14:14:20,097 views Saldo calculado (atual): 105.64 (Igreja: 1, Mês: 11, Ano: 2025)
+INFO 2025-11-03 14:14:21,226 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+WARNING 2025-11-03 14:14:31,275 log Not Found: /api/fechamento/status/1/11/2025/
+INFO 2025-11-03 14:14:31,751 views Saldo calculado (ate_mes): 105.64 (Igreja: 1, Mês: 10, Ano: 2025)
+INFO 2025-11-03 14:14:36,636 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-11-03 14:14:38,582 views Saldo calculado (atual): 251.67 (Igreja: 1, Mês: 11, Ano: 2025)
+INFO 2025-11-03 14:14:46,724 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-11-03 14:14:48,617 views Saldo calculado (atual): 1151.67 (Igreja: 1, Mês: 11, Ano: 2025)
+INFO 2025-11-03 14:43:57,206 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\fb\settings.py changed, reloading.
+INFO 2025-11-03 14:43:58,910 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 14:44:03,556 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\fb\settings.py changed, reloading.
+INFO 2025-11-03 14:44:04,349 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 14:45:03,102 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\fb\settings.py changed, reloading.
+INFO 2025-11-03 14:45:03,935 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 14:45:14,749 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\fb\settings.py changed, reloading.
+INFO 2025-11-03 14:45:15,614 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 14:45:21,208 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\fb\settings.py changed, reloading.
+INFO 2025-11-03 14:45:21,968 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 14:45:25,454 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\fb\settings.py changed, reloading.
+INFO 2025-11-03 14:45:26,173 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 14:53:22,816 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-11-03 14:53:24,424 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 14:53:32,343 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\urls.py changed, reloading.
+INFO 2025-11-03 14:53:33,405 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 15:06:13,804 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-11-03 15:06:14,354 views Saldo calculado (atual): 1151.67 (Igreja: 1, Mês: 11, Ano: 2025)
+INFO 2025-11-03 15:06:14,810 views Saldo calculado (atual): 1151.67 (Igreja: 1, Mês: 11, Ano: 2025)
+INFO 2025-11-03 15:06:15,697 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+ERROR 2025-11-03 15:12:18,482 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:12:18,483 drive_backup Erro gerando backup Postgres: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 198, in backup_postgres_db
+    return upload_bytes_to_drive(content, filename, mime_type='application/octet-stream', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 87, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+ERROR 2025-11-03 15:12:18,632 drive_backup Erro backup relatorio id 23: The 'arquivo' attribute has no file associated with it.
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 306, in backup_reports
+    url = r.arquivo.url
+          ^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\fields\files.py", line 69, in url
+    self._require_file()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\fields\files.py", line 44, in _require_file
+    raise ValueError(
+        "The '%s' attribute has no file associated with it." % self.field.name
+    )
+ValueError: The 'arquivo' attribute has no file associated with it.
+ERROR 2025-11-03 15:12:18,638 drive_backup Erro backup relatorio id 22: The 'arquivo' attribute has no file associated with it.
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 306, in backup_reports
+    url = r.arquivo.url
+          ^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\fields\files.py", line 69, in url
+    self._require_file()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\fields\files.py", line 44, in _require_file
+    raise ValueError(
+        "The '%s' attribute has no file associated with it." % self.field.name
+    )
+ValueError: The 'arquivo' attribute has no file associated with it.
+ERROR 2025-11-03 15:12:19,581 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:12:19,581 drive_backup Erro backup relatorio id 21: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 313, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 87, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+ERROR 2025-11-03 15:12:20,109 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:12:20,110 drive_backup Erro backup relatorio id 20: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 313, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 87, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+ERROR 2025-11-03 15:12:20,520 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:12:20,521 drive_backup Erro backup relatorio id 19: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 313, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 87, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+ERROR 2025-11-03 15:12:20,903 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:12:20,904 drive_backup Erro backup relatorio id 18: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 313, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 87, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+ERROR 2025-11-03 15:12:21,289 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:12:21,289 drive_backup Erro backup relatorio id 17: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 313, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 87, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+ERROR 2025-11-03 15:12:21,539 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:12:21,540 drive_backup Erro backup relatorio id 16: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 313, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 87, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+ERROR 2025-11-03 15:12:21,952 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:12:21,952 drive_backup Erro backup relatorio id 15: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 313, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 87, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+ERROR 2025-11-03 15:12:22,173 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:12:22,178 drive_backup Erro backup relatorio id 14: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 313, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 87, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+ERROR 2025-11-03 15:12:22,410 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:12:22,411 drive_backup Erro backup relatorio id 13: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 313, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 87, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+ERROR 2025-11-03 15:12:22,614 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:12:22,615 drive_backup Erro backup relatorio id 12: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 313, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 87, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+ERROR 2025-11-03 15:12:22,992 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:12:22,994 drive_backup Erro backup relatorio id 11: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 313, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 87, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+ERROR 2025-11-03 15:12:23,208 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:12:23,208 drive_backup Erro backup relatorio id 10: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 313, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 87, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+ERROR 2025-11-03 15:12:23,407 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:12:23,408 drive_backup Erro backup relatorio id 9: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 313, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 87, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+ERROR 2025-11-03 15:12:23,916 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:12:23,916 drive_backup Erro backup relatorio id 8: Drive service não configurado
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 313, in backup_reports
+    file = upload_bytes_to_drive(resp.content, filename, mime_type='application/pdf', folder_id=folder_id)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 87, in upload_bytes_to_drive
+    raise RuntimeError('Drive service não configurado')
+RuntimeError: Drive service não configurado
+ERROR 2025-11-03 15:12:24,650 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+WARNING 2025-11-03 15:14:54,935 log Unauthorized: /api/transacoes/estatisticas/
+WARNING 2025-11-03 15:14:54,938 log Unauthorized: /api/backup/status/
+WARNING 2025-11-03 15:15:14,930 log Unauthorized: /api/transacoes/estatisticas/
+WARNING 2025-11-03 15:15:14,933 log Unauthorized: /api/backup/status/
+WARNING 2025-11-03 15:15:40,694 log Unauthorized: /api/transacoes/estatisticas/
+WARNING 2025-11-03 15:15:40,710 log Unauthorized: /api/backup/status/
+WARNING 2025-11-03 15:15:45,723 log Unauthorized: /api/me/
+WARNING 2025-11-03 15:15:45,731 log Unauthorized: /api/me/
+WARNING 2025-11-03 15:16:15,272 log Unauthorized: /api/transacoes/estatisticas/
+WARNING 2025-11-03 15:16:15,282 log Unauthorized: /api/backup/status/
+INFO 2025-11-03 15:17:11,412 views Login bem-sucedido para: Frank
+INFO 2025-11-03 15:17:12,895 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-11-03 15:17:13,016 views Saldo calculado (atual): 1151.67 (Igreja: 1, Mês: 11, Ano: 2025)
+INFO 2025-11-03 15:17:13,493 views Saldo calculado (atual): 1151.67 (Igreja: 1, Mês: 11, Ano: 2025)
+INFO 2025-11-03 15:17:14,644 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+ERROR 2025-11-03 15:17:24,322 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:17:24,713 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:17:37,437 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+INFO 2025-11-03 15:18:28,698 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-11-03 15:18:31,724 autoreload Watching for file changes with StatReloader
+ERROR 2025-11-03 15:18:36,042 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:18:36,111 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:18:36,111 log Service Unavailable: /api/backup/list/
+ERROR 2025-11-03 15:18:36,393 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:18:36,480 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:18:36,482 log Service Unavailable: /api/backup/list/
+ERROR 2025-11-03 15:18:41,615 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:18:41,627 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:18:41,628 log Service Unavailable: /api/backup/list/
+ERROR 2025-11-03 15:18:41,993 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:18:41,996 log Service Unavailable: /api/backup/list/
+ERROR 2025-11-03 15:18:42,001 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:18:51,519 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:18:51,523 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:18:51,528 log Service Unavailable: /api/backup/list/
+ERROR 2025-11-03 15:18:53,115 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:18:53,116 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:18:53,117 log Service Unavailable: /api/backup/list/
+ERROR 2025-11-03 15:18:53,470 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:18:53,475 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:18:53,476 log Service Unavailable: /api/backup/list/
+INFO 2025-11-03 15:23:04,596 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py changed, reloading.
+INFO 2025-11-03 15:23:06,273 autoreload Watching for file changes with StatReloader
+ERROR 2025-11-03 15:23:25,243 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:23:25,259 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:23:25,260 log Service Unavailable: /api/backup/list/
+ERROR 2025-11-03 15:23:25,602 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:23:25,607 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:23:25,609 log Service Unavailable: /api/backup/list/
+INFO 2025-11-03 15:24:01,866 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-11-03 15:24:02,033 views Saldo calculado (atual): 1151.67 (Igreja: 1, Mês: 11, Ano: 2025)
+INFO 2025-11-03 15:24:02,488 views Saldo calculado (atual): 1151.67 (Igreja: 1, Mês: 11, Ano: 2025)
+INFO 2025-11-03 15:24:03,643 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+ERROR 2025-11-03 15:24:06,797 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:24:06,812 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:24:06,814 log Service Unavailable: /api/backup/list/
+ERROR 2025-11-03 15:24:07,182 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:24:07,197 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:24:07,199 log Service Unavailable: /api/backup/list/
+ERROR 2025-11-03 15:24:15,531 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:24:15,533 log Service Unavailable: /api/backup/list/
+ERROR 2025-11-03 15:24:32,219 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:24:32,514 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:24:32,516 log Service Unavailable: /api/backup/list/
+ERROR 2025-11-03 15:24:38,384 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+ERROR 2025-11-03 15:24:38,387 log Service Unavailable: /api/backup/list/
+ERROR 2025-11-03 15:24:38,393 drive_backup client_secret.json não encontrado nas opções: [None, 'C:\\Users\\Biel Silva\\Desktop\\Codes\\fimiss\\backend\\finance\\client_secret.json', '/etc/secrets/client_secret.json']
+INFO 2025-11-03 15:29:08,612 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 15:29:16,882 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:29:16,883 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:29:16,923 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:29:17,301 __init__ file_cache is only supported with oauth2client<4.0.0
+ERROR 2025-11-03 15:29:18,124 drive_backup Erro listando arquivos no Drive: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 126, in list_files_in_folder
+    ).execute()
+      ~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+INFO 2025-11-03 15:29:18,523 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:29:18,546 __init__ file_cache is only supported with oauth2client<4.0.0
+ERROR 2025-11-03 15:29:19,661 drive_backup Erro listando arquivos no Drive: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 126, in list_files_in_folder
+    ).execute()
+      ~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+INFO 2025-11-03 15:29:23,131 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:29:23,152 __init__ file_cache is only supported with oauth2client<4.0.0
+ERROR 2025-11-03 15:29:24,213 drive_backup Erro listando arquivos no Drive: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 126, in list_files_in_folder
+    ).execute()
+      ~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+INFO 2025-11-03 15:29:29,513 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:29:29,838 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:29:29,851 __init__ file_cache is only supported with oauth2client<4.0.0
+ERROR 2025-11-03 15:29:31,171 drive_backup Erro listando arquivos no Drive: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 126, in list_files_in_folder
+    ).execute()
+      ~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+INFO 2025-11-03 15:29:38,082 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:29:38,096 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:29:38,143 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:29:38,733 __init__ file_cache is only supported with oauth2client<4.0.0
+ERROR 2025-11-03 15:29:39,478 drive_backup Erro listando arquivos no Drive: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 126, in list_files_in_folder
+    ).execute()
+      ~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+INFO 2025-11-03 15:29:39,867 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:29:39,869 __init__ file_cache is only supported with oauth2client<4.0.0
+ERROR 2025-11-03 15:29:41,047 drive_backup Erro listando arquivos no Drive: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 126, in list_files_in_folder
+    ).execute()
+      ~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+INFO 2025-11-03 15:29:42,214 __init__ file_cache is only supported with oauth2client<4.0.0
+ERROR 2025-11-03 15:29:45,631 views Erro ao obter estatísticas: relation "transacoes" does not exist
+LINE 1: ...UM("transacoes"."quantia") AS "quantia__sum" FROM "transacoe...
+                                                             ^
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "transacoes" does not exist
+LINE 1: ...UM("transacoes"."quantia") AS "quantia__sum" FROM "transacoe...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\views.py", line 516, in estatisticas_transacoes
+    dizimos = transacoes_mes.filter(tipo='D').aggregate(Sum('quantia'))['quantia__sum'] or 0
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\query.py", line 604, in aggregate
+    return self.query.chain().get_aggregation(self.db, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\sql\query.py", line 616, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "transacoes" does not exist
+LINE 1: ...UM("transacoes"."quantia") AS "quantia__sum" FROM "transacoe...
+                                                             ^
+
+ERROR 2025-11-03 15:29:45,694 log Internal Server Error: /api/transacoes/estatisticas/
+INFO 2025-11-03 15:29:49,330 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:29:49,330 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:29:49,385 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:29:49,775 __init__ file_cache is only supported with oauth2client<4.0.0
+ERROR 2025-11-03 15:29:50,717 drive_backup Erro listando arquivos no Drive: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 126, in list_files_in_folder
+    ).execute()
+      ~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+INFO 2025-11-03 15:29:51,137 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:29:51,151 __init__ file_cache is only supported with oauth2client<4.0.0
+ERROR 2025-11-03 15:29:52,460 drive_backup Erro listando arquivos no Drive: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 126, in list_files_in_folder
+    ).execute()
+      ~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+INFO 2025-11-03 15:30:01,910 __init__ file_cache is only supported with oauth2client<4.0.0
+ERROR 2025-11-03 15:30:05,194 drive_backup Erro backup relatorio id 23: The 'arquivo' attribute has no file associated with it.
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 306, in backup_reports
+    url = r.arquivo.url
+          ^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\fields\files.py", line 69, in url
+    self._require_file()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\fields\files.py", line 44, in _require_file
+    raise ValueError(
+        "The '%s' attribute has no file associated with it." % self.field.name
+    )
+ValueError: The 'arquivo' attribute has no file associated with it.
+ERROR 2025-11-03 15:30:05,198 drive_backup Erro backup relatorio id 22: The 'arquivo' attribute has no file associated with it.
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 306, in backup_reports
+    url = r.arquivo.url
+          ^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\fields\files.py", line 69, in url
+    self._require_file()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\django\db\models\fields\files.py", line 44, in _require_file
+    raise ValueError(
+        "The '%s' attribute has no file associated with it." % self.field.name
+    )
+ValueError: The 'arquivo' attribute has no file associated with it.
+INFO 2025-11-03 15:30:05,460 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:30:08,290 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:30:10,884 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:30:13,822 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:30:16,609 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:30:19,213 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:30:22,073 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:30:24,664 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:30:27,645 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:30:27,653 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:30:27,692 __init__ file_cache is only supported with oauth2client<4.0.0
+ERROR 2025-11-03 15:30:28,787 drive_backup Erro listando arquivos no Drive: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 126, in list_files_in_folder
+    ).execute()
+      ~~~~~~~^^
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\venv\Lib\site-packages\googleapiclient\http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 404 when requesting https://www.googleapis.com/drive/v3/files?q=%271DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM%27+in+parents+and+trashed+%3D+false&pageSize=50&fields=files%28id%2Cname%2CcreatedTime%2CwebViewLink%29&supportsAllDrives=true&includeItemsFromAllDrives=true&corpora=drive&driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM&alt=json returned "Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM". Details: "[{'message': 'Shared drive not found: 1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM', 'domain': 'global', 'reason': 'notFound', 'location': 'driveId', 'locationType': 'parameter'}]">
+INFO 2025-11-03 15:30:30,637 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:30:33,901 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:30:34,779 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:30:36,734 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:30:39,778 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:30:42,543 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:31:36,883 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:32:38,742 __init__ file_cache is only supported with oauth2client<4.0.0
+ERROR 2025-11-03 15:32:44,568 drive_backup Erro ao enviar arquivo ao Drive: <HttpError 404 when requesting None returned "File not found: <YOUR_FOLDER_ID>.". Details: "[{'message': 'File not found: <YOUR_FOLDER_ID>.', 'domain': 'global', 'reason': 'notFound', 'location': 'fileId', 'locationType': 'parameter'}]">
+Traceback (most recent call last):
+  File "C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py", line 106, in upload_bytes_to_drive
+    ).execute()
+      ~~~~~~~^^
+  File "C:\Users\Biel Silva\AppData\Roaming\Python\Python313\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\Biel Silva\AppData\Roaming\Python\Python313\site-packages\googleapiclient\http.py", line 902, in execute
+    _, body = self.next_chunk(http=http, num_retries=num_retries)
+              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Biel Silva\AppData\Roaming\Python\Python313\site-packages\googleapiclient\_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\Biel Silva\AppData\Roaming\Python\Python313\site-packages\googleapiclient\http.py", line 1022, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 404 when requesting None returned "File not found: <YOUR_FOLDER_ID>.". Details: "[{'message': 'File not found: <YOUR_FOLDER_ID>.', 'domain': 'global', 'reason': 'notFound', 'location': 'fileId', 'locationType': 'parameter'}]">
+INFO 2025-11-03 15:36:51,910 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py changed, reloading.
+INFO 2025-11-03 15:36:54,139 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 15:43:33,097 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-03 15:44:07,919 log Unauthorized: /api/transacoes/estatisticas/
+WARNING 2025-11-03 15:48:14,364 log Unauthorized: /api/transacoes/estatisticas/
+WARNING 2025-11-03 15:48:14,885 log Not Found: /favicon.ico
+INFO 2025-11-03 15:48:28,736 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:48:28,737 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:48:28,761 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:48:29,439 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:48:29,950 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:48:30,811 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:48:30,815 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:48:32,141 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:48:33,487 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:48:33,488 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:48:33,505 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:48:33,878 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:48:34,259 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:48:35,019 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:48:35,021 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:48:35,761 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:49:20,267 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:49:21,064 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:49:21,076 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:49:22,466 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:49:22,671 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:49:23,463 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:49:23,497 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:49:25,174 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:49:48,463 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 15:49:58,090 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:49:58,090 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:49:58,099 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:49:59,217 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:50:28,987 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:50:29,697 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:50:29,713 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:50:31,180 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:50:55,117 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:50:55,123 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:50:55,891 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:53:50,305 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:53:50,320 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:53:50,321 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:53:51,672 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:53:57,152 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-11-03 15:53:57,263 views Saldo calculado (atual): 1151.67 (Igreja: 1, Mês: 11, Ano: 2025)
+INFO 2025-11-03 15:53:57,751 views Saldo calculado (atual): 1151.67 (Igreja: 1, Mês: 11, Ano: 2025)
+INFO 2025-11-03 15:53:58,936 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-11-03 15:53:59,509 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py changed, reloading.
+INFO 2025-11-03 15:54:03,347 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 15:54:06,121 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:54:06,121 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:54:06,146 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:54:06,569 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:54:06,585 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:54:06,590 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:54:06,937 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:54:07,153 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+WARNING 2025-11-03 15:54:07,763 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:54:08,194 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:54:08,205 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:54:09,575 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:54:10,567 views Login bem-sucedido para: Frank
+INFO 2025-11-03 15:54:11,693 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-11-03 15:54:11,798 views Saldo calculado (atual): 1151.67 (Igreja: 1, Mês: 11, Ano: 2025)
+INFO 2025-11-03 15:54:12,277 views Saldo calculado (atual): 1151.67 (Igreja: 1, Mês: 11, Ano: 2025)
+INFO 2025-11-03 15:54:13,390 views Requisição recebida - Parâmetros: <QueryDict: {'ano': ['2025'], 'igreja_id': ['1']}>
+INFO 2025-11-03 15:54:18,958 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py changed, reloading.
+INFO 2025-11-03 15:54:20,049 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 15:54:34,199 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:54:34,200 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:54:34,204 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:54:34,549 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:54:35,017 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:54:35,776 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:54:35,778 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:54:36,527 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:54:37,723 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:54:37,728 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:54:38,487 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:55:00,190 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:55:00,202 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:55:01,241 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 15:57:17,604 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py changed, reloading.
+INFO 2025-11-03 15:57:19,655 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 15:57:54,230 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py changed, reloading.
+INFO 2025-11-03 15:57:55,038 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 15:58:22,029 __init__ file_cache is only supported with oauth2client<4.0.0
+INFO 2025-11-03 15:58:23,636 __init__ file_cache is only supported with oauth2client<4.0.0
+WARNING 2025-11-03 15:58:25,008 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
+INFO 2025-11-03 16:04:15,302 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py changed, reloading.
+INFO 2025-11-03 16:04:18,228 autoreload Watching for file changes with StatReloader
