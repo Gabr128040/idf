@@ -22336,3 +22336,5 @@ INFO 2025-11-03 15:58:23,636 __init__ file_cache is only supported with oauth2cl
 WARNING 2025-11-03 15:58:25,008 drive_backup Shared drive não encontrado (driveId=1DzNWs6L7it1Cll-s3bMyC0RHJnQM-KcM). Tentando pesquisa sem driveId/Shared Drives...
 INFO 2025-11-03 16:04:15,302 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py changed, reloading.
 INFO 2025-11-03 16:04:18,228 autoreload Watching for file changes with StatReloader
+INFO 2025-11-03 16:05:05,562 autoreload C:\Users\Biel Silva\Desktop\Codes\fimiss\backend\finance\drive_backup.py changed, reloading.
+INFO 2025-11-03 16:05:06,700 autoreload Watching for file changes with StatReloader
